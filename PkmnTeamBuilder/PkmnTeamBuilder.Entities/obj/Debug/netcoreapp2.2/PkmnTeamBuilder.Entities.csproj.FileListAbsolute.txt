@@ -1,0 +1,11 @@
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.deps.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.dll
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.csproj.CoreCompileInputs.cache
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.AssemblyInfoInputs.cache
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.AssemblyInfo.cs
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.runtimeconfig.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.runtimeconfig.dev.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.pdb
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.dll
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.pdb
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.csprojAssemblyReference.cache

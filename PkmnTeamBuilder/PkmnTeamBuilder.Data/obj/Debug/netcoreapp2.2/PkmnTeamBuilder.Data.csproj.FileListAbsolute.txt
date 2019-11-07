@@ -1,0 +1,12 @@
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Data.deps.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Data.dll
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Data.pdb
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.dll
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.pdb
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Data.csprojAssemblyReference.cache
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Data.csproj.CoreCompileInputs.cache
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Data.AssemblyInfoInputs.cache
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Data.AssemblyInfo.cs
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Data.csproj.CopyComplete
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Data.dll
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Data.pdb
