@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="form-title primary">
+        <h2>Please enter your information</h2>
+    </div>
+    <div class="container-body">
+        <form #f="ngForm" novalidate (ngSubmit)="registerUser(f)">
+            <div class="form-group">
+                <mat-form-field class="input">
+                    <input matInput id="email" type="text" ngModel required name="email" placeholder="Email"
+                        #email="ngModel" autocomplete="off" />
+                    <mat-hint *ngIf="!validateEmail(email.value) && email.dirty" style=" color: red;">
+                        Please enter a valid email address
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="input">
+                    <input matInput type="password" ngModel required class="form-control" id="password" name="password"
+                        placeholder="Password" #password="ngModel">
+                    <mat-hint *ngIf="!validatePassword(password.value) && password.dirty" style=" color: red;">
+                        Password must have at least 5 characters and contain at least one uppercase, lowercase, and
+                        number
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="input">
+                    <input matInput type="password" required class="form-control" id="password" name="confirm"
+                        placeholder="Confirm Password" ngModel #confirm="ngModel">
+                    <mat-hint *ngIf="!validateConfirm(confirm.value, password.value) && confirm.dirty"
+                        style=" color: red;">
+                        Passwords must match
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <button mat-button class="highlight left-button" routerLink="/">Back</button>
+                <button mat-button type="submit" class="secondary"
+                    [disabled]="!validateEmail(email.value) || !validatePassword(password.value) || !validateConfirm(confirm.value, password.value)">Sign
+                    Up</button>
+                <!-- <app-spinner [isRunning]="isRequesting"></app-spinner>  -->
+            </div>
+
+            <div *ngIf="errors" class="alert alert-danger" role="alert">
+                <strong>Oops!</strong> {{errors}}
+            </div>
+
+        </form>
+    </div>
+</div>
