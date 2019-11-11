@@ -7,11 +7,13 @@ import { routing } from './account.routing';
 import { HttpClient } from '@angular/common/http';
 import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { UserService } from '../shared/services/user.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [SignupComponent, LoginComponent],
   imports: [
     CommonModule,    
+    SharedModule,
     FormsModule,
     routing,
     MatFormFieldModule,

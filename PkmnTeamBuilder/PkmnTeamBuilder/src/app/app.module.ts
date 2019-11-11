@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccountModule } from './account/account.module';
+import { AuthGuard } from './auth.guard';
+import { HttpClientModule } from '@angular/common/http';
+import { ConfigService } from './shared/services/config.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,9 +16,11 @@ import { AccountModule } from './account/account.module';
   imports: [
     AccountModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ConfigService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
