@@ -9,3 +9,14 @@ D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug
 D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.dll
 D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.pdb
 D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.csprojAssemblyReference.cache
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.deps.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.runtimeconfig.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.runtimeconfig.dev.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.dll
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\bin\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.pdb
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.csprojAssemblyReference.cache
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.csproj.CoreCompileInputs.cache
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.AssemblyInfoInputs.cache
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.AssemblyInfo.cs
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.dll
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Entities\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Entities.pdb

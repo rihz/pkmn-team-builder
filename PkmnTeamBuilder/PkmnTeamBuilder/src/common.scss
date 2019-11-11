@@ -1,0 +1,75 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$mat-charmander: (
+    50 : #fff2e8,
+    100 : #ffdfc6,
+    200 : #ffcaa0,
+    300 : #ffb47a,
+    400 : #ffa45e,
+    500 : #ff9441,
+    600 : #ff8c3b,
+    700 : #ff8132,
+    800 : #ff772a,
+    900 : #ff651c,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffdbcd,
+    A700 : #ffc9b3,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-charmander-acc: (
+    50 : #fbeae7,
+    100 : #f5cbc4,
+    200 : #efa99c,
+    300 : #e88674,
+    400 : #e36c57,
+    500 : #de5239,
+    600 : #da4b33,
+    700 : #d5412c,
+    800 : #d13824,
+    900 : #c82817,
+    A100 : #fffbfb,
+    A200 : #ffccc8,
+    A400 : #ff9d95,
+    A700 : #ff857b,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-charmander-primary: mat-palette($mat-charmander);
+$mat-charmander-accent: mat-palette($mat-charmander-acc);
+
+$mat-charmander-theme: mat-light-theme($mat-charmander-primary, $mat-charmander-accent);
+
+@include angular-material-theme($mat-charmander-theme);

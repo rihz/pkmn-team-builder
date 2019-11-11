@@ -1,3 +1,5 @@
+@import '../../../common.scss';
+
 .title {
     border-radius: 5px 5px 0px 0px;
     color: white;
@@ -13,7 +15,7 @@
     margin: 0;
     position: absolute;
     text-align: center;
-    background-color: #f3f3f3;
+    background-color: mat-color($mat-charmander-primary, 500);
     border: 1px solid #293c66;
     border-radius: 7px;
     top: 50%;
@@ -30,6 +32,7 @@ button {
     font-weight: bold;
     width: 50%;
     margin-top: 15px;
+    background-color: mat-color($mat-charmander-accent, 500);
 }
 
 .input {
