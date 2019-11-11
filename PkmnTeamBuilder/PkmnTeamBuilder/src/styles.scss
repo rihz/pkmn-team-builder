@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import './common.scss';
+
+body {
+    background-color: mat-color($mat-charmander-primary, 100);
+}
+
+.container {
+    background-color: mat-color($mat-charmander-primary, 500) !important;
+}
+
+button {
+    background-color: mat-color($mat-charmander-primary, 900) !important;
+}

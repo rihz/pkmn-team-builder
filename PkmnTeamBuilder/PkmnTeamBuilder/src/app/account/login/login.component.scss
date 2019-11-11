@@ -15,7 +15,7 @@
     margin: 0;
     position: absolute;
     text-align: center;
-    background-color: mat-color($mat-charmander-primary, 500);
+    background-color: white;
     border: 1px solid #293c66;
     border-radius: 7px;
     top: 50%;
@@ -32,7 +32,6 @@ button {
     font-weight: bold;
     width: 50%;
     margin-top: 15px;
-    background-color: mat-color($mat-charmander-accent, 500);
 }
 
 .input {
