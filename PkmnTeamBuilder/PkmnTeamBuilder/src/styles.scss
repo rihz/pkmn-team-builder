@@ -1,12 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import './common.scss';
 
-body {
+body, html {
     background-color: mat-color($mat-charmander-primary, 100);
-}
-
-.container {
-    background-color: mat-color($mat-charmander-primary, 500) !important;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 button {
