@@ -8,6 +8,8 @@ import { AuthGuard } from './auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfigService } from './shared/services/config.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TeamBuilderComponent } from './team-builder/team-builder.component';
+import { TeamBuilderModule } from './team-builder/team-builder.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TeamBuilderModule
   ],
   providers: [ConfigService, AuthGuard],
   bootstrap: [AppComponent]

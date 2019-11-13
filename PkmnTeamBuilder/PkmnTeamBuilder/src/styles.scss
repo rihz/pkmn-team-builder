@@ -8,4 +8,22 @@ body, html {
 
 button {
     background-color: mat-color($mat-charmander-primary, 900) !important;
+    font-weight: bold !important;
+}
+
+.form-title {
+    background-color: mat-color($mat-charmander-primary, 600) !important;
+    border-bottom: 2px solid black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: white;
+}
+
+.form-title h2 {
+    margin: 0px;
+    padding: 20px;
+}
+
+.container {    
+    background-color: white;
 }

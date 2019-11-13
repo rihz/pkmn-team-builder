@@ -29,7 +29,7 @@ export class UserService extends BaseService {
         const body = JSON.stringify({ email, password });
         const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-        this.http.post(this.baseUrl + '/account', body, { headers: headers })
+        this.http.post(this.baseUrl + '/auth/signup', body, { headers: headers })
             .subscribe(result => {
                 if(result) {
                     this.router.navigate(['/']);
@@ -42,7 +42,7 @@ export class UserService extends BaseService {
 
         return this.http
             .post<any>(
-                this.baseUrl + '/account/login',
+                this.baseUrl + '/auth/login',
                 JSON.stringify({ userName, password }), { headers }
             );
     }

@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
+using PkmnTeamBuilder.Api.Controllers.Auth;
 using PkmnTeamBuilder.Data.Context;
 using PkmnTeamBuilder.Entities;
 
@@ -45,6 +46,11 @@ namespace PkmnTeamBuilder.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            _mapperConfiguration = new MapperConfiguration(config =>
+            {
+                config.AddProfile(new AuthMapProfile());
+            });
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll",
@@ -68,6 +74,8 @@ namespace PkmnTeamBuilder.Api
 
             services.AddMvc();
 
+            services.AddSingleton<IJwtFactory, JwtFactory>();
+            
             services.AddSingleton(sp => _mapperConfiguration.CreateMapper());
 
             var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
