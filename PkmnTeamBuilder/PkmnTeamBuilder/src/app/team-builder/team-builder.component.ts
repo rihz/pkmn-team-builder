@@ -11,10 +11,13 @@ export class TeamBuilderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.gen = localStorage.getItem('teamBuilderGen');
   }
 
   setGen(gen: number) {
     this.gen = gen;
+    
+    localStorage.setItem('teamBuilderGen', gen.toString());
   }
 
 }

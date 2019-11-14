@@ -6,9 +6,9 @@
         <div class="gen-option">
             <h3 class="gen-option-name">Gen 7</h3>
             <div class="gen-option-row">
-                <img [src]="litten.sprites.front_default" />
-                <img [src]="popplio.sprites.front_default" />
-                <img [src]="rowlet.sprites.front_default" />
+                <img *ngIf="litten" [src]="litten.sprites.front_default" />
+                <img *ngIf="popplio" [src]="popplio.sprites.front_default" />
+                <img *ngIf="rowlet" [src]="rowlet.sprites.front_default" />
             </div>
         </div>
         <button mat-button (click)="select()">Continue</button>

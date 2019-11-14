@@ -1,1 +1,4 @@
 <gen-selector *ngIf="!gen" (onSelect)="setGen($event)"></gen-selector>
+<div class="team-builder-main" *ngIf="gen">
+    <add-pkmn></add-pkmn>
+</div>

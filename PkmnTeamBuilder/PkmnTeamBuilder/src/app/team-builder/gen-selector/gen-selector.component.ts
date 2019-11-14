@@ -12,7 +12,7 @@ export class GenSelectorComponent implements OnInit {
   popplio: any;
   rowlet: any;
 
-  gen: 7;
+  gen: number = 7;
 
   constructor(private pkmn: PkmnService) { }
 
