@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamBuilderComponent implements OnInit {
   gen = null;
+  team: any[] = [];
 
   constructor() { }
 
@@ -18,6 +19,10 @@ export class TeamBuilderComponent implements OnInit {
     this.gen = gen;
     
     localStorage.setItem('teamBuilderGen', gen.toString());
+  }
+
+  addPokemon(pokemon: any) {
+    this.team.push(pokemon);
   }
 
 }

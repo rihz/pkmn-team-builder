@@ -13,20 +13,23 @@ export class PkmnService extends BaseService {
         const self = this;
         this._pokedex = new Pokedex.Pokedex();
         
-        if(this._pkmn) {
+        if(this._pkmn.length <= 0) {
             this._pokedex.resource(['/api/v2/pokemon/?limit=964'])
             .then(function(response) {
-                self._pkmn = response;
-                console.log(self._pkmn);
+                self._pkmn = response[0].results;
             });
         }
     }
 
     async getPokemon(name: string) {
-        return await this._pokedex.getPokemonByName();
+        return await this._pokedex.getPokemonByName(name);
     }
 
-    searchPokemon(value: string) {
-        
+    searchPokemon(search: string) {
+        return this._pkmn.filter(pkmn => {
+            if(pkmn.name.indexOf(search) > -1) {
+                return true;
+            }
+        });
     }
 }

@@ -1,6 +1,29 @@
+@import '../../../common.scss';
+
 .search-input {
-    width: 100%;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 18px;
+    font-size: 16px; 
+    border: 0px; 
+    width: 95%; 
+    border-radius: 10px; 
+    padding: 10px 15px;
+    margin: 5px 0px;
+    background-color: white;
+    text-align: left;
+    color: mat-color($mat-charmander-accent, 900);
+    box-shadow: 0 0 2pt 2pt mat-color($mat-charmander-accent, 100);
+}
+
+.search-input:focus {
+    box-shadow: 0 0 2pt 2pt mat-color($mat-charmander-accent, 300);
+    outline: none;
+}
+
+.result {
+    padding: 0.5em;
+    margin: 0;
+}
+
+.result:hover {
+    cursor: pointer;
+    background-color: mat-color($mat-charmander-accent, 100);
 }

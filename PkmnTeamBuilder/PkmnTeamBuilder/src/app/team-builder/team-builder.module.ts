@@ -8,11 +8,12 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, Mat
 import { PkmnService } from '../shared/services/pkmn.service';
 import { TeamBuilderComponent } from './team-builder.component';
 import { AddPkmnComponent } from './add-pkmn/add-pkmn.component';
+import { TeamMemberComponent } from './team-member/team-member.component';
 
 
 
 @NgModule({
-  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent],
+  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent],
   imports: [
     CommonModule,
     SharedModule,
