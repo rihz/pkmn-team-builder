@@ -5,6 +5,51 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20191204214551_test.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="SeedFiles\abilities.json" />
+    <None Remove="SeedFiles\items.json" />
+    <None Remove="SeedFiles\matchups.json" />
+    <None Remove="SeedFiles\moves.json" />
+    <None Remove="SeedFiles\natures.json" />
+    <None Remove="SeedFiles\pokemon.json" />
+    <None Remove="SeedFiles\stats.json" />
+    <None Remove="SeedFiles\types.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SeedFiles\items.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeedFiles\matchups.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeedFiles\moves.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeedFiles\natures.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeedFiles\pokemon.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeedFiles\stats.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeedFiles\types.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SeedFiles\abilities.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PkmnTeamBuilder.Entities\PkmnTeamBuilder.Entities.csproj" />
   </ItemGroup>
 

@@ -36,3 +36,11 @@ C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTe
 C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Api.csproj.CopyComplete
 C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Api.dll
 C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\obj\Debug\netcoreapp2.2\PkmnTeamBuilder.Api.pdb
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\items.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\matchups.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\moves.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\natures.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\pokemon.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\stats.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\types.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\abilities.json
