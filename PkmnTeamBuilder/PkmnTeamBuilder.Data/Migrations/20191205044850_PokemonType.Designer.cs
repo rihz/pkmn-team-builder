@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PkmnTeamBuilder.Data.Context;
 
 namespace PkmnTeamBuilder.Data.Migrations
 {
     [DbContext(typeof(TeamBuilderContext))]
-    partial class TeamBuilderContextModelSnapshot : ModelSnapshot
+    [Migration("20191205044850_PokemonType")]
+    partial class PokemonType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

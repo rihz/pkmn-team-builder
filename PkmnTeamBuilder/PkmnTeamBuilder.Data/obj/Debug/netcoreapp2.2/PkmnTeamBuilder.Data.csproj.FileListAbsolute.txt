@@ -30,3 +30,11 @@ C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTe
 C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\stats.json
 C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\types.json
 C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\abilities.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\items.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\matchups.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\moves.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\natures.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\pokemon.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\stats.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\types.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\abilities.json
