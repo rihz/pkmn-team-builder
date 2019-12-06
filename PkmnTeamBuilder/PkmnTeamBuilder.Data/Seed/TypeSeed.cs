@@ -18,25 +18,30 @@ namespace PkmnTeamBuilder.Data.Seed
         // example resource: "PkmnTeamBuilder.Data.SeedFiles.items.json"
         public static void Seed(ModelBuilder builder)
         {
-            var types = new List<PokemonType>();
+            var resource = SeedHelper.GetResource("types.json");
 
-            var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream("PkmnTeamBuilder.Data.SeedFiles.types.json");
-
-            using (var reader = new StreamReader(resource))
+            var types = SeedHelper.ReadStream<PokemonType>(resource);
+            types = types.Select((x, index) => new PokemonType
             {
-                var id = 1;
+                Id = index + 1,
+                Name = x.Name
+            });
 
-                while(!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    var type = JsonConvert.DeserializeObject<PokemonType>(line);
-                    type.Id = id;
+            //using (var reader = new StreamReader(resource))
+            //{
+            //    var id = 1;
 
-                    types.Add(type);
+            //    while(!reader.EndOfStream)
+            //    {
+            //        var line = reader.ReadLine();
+            //        var type = JsonConvert.DeserializeObject<PokemonType>(line);
+            //        type.Id = id;
 
-                    id++;
-                }
-            }
+            //        types.Add(type);
+
+            //        id++;
+            //    }
+            //}
 
             builder.Entity<PokemonType>()
                 .HasData(types.ToArray());

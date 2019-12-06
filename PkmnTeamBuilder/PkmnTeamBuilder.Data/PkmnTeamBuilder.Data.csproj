@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Compile Remove="Migrations\20191204214551_test.cs" />
+    <Compile Remove="Migrations\20191206051930_ChangeTypeSeed.cs" />
+    <Compile Remove="Migrations\20191206052754_PokemonMatchups.cs" />
   </ItemGroup>
 
   <ItemGroup>
