@@ -23,6 +23,7 @@ namespace PkmnTeamBuilder.Data.Context
             base.OnModelCreating(builder);
 
             TypeSeed.Seed(builder);
+            MatchupSeed.Seed(builder);
         }
     }
 }
