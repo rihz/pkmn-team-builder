@@ -16,7 +16,7 @@ namespace PkmnTeamBuilder.Data.Seed
     public static class TypeSeed
     {
         // example resource: "PkmnTeamBuilder.Data.SeedFiles.items.json"
-        public static void Seed(ModelBuilder builder)
+        public static List<PokemonType> Seed(ModelBuilder builder)
         {
             var resource = SeedHelper.GetResource("types.json");
 
@@ -45,6 +45,8 @@ namespace PkmnTeamBuilder.Data.Seed
 
             builder.Entity<PokemonType>()
                 .HasData(types.ToArray());
+
+            return types.ToList();
         }
     }
 }

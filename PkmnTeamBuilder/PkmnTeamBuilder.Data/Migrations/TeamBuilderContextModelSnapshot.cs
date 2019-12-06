@@ -184,6 +184,2297 @@ namespace PkmnTeamBuilder.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("PkmnTeamBuilder.Entities.PokemonMatchup", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AttackingTypeId");
+
+                    b.Property<int>("DefendingTypeId");
+
+                    b.Property<decimal>("Modifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AttackingTypeId");
+
+                    b.HasIndex("DefendingTypeId");
+
+                    b.ToTable("PokemonMatchup");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 1,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 13,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 14,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 1,
+                            Modifier = 0m
+                        },
+                        new
+                        {
+                            Id = 15,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 16,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 17,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 18,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 1,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 19,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 2,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 20,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 2,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 21,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 2,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 22,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 2,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 23,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 2,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 24,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 2,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 25,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 2,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 26,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 2,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 27,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 2,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 28,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 2,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 29,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 2,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 30,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 2,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 31,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 2,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 32,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 2,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 33,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 2,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 34,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 2,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 35,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 2,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 36,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 2,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 37,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 38,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 3,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 39,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 3,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 40,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 3,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 41,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 3,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 42,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 3,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 43,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 44,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 45,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 46,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 47,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 48,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 49,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 50,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 51,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 52,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 53,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 3,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 54,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 3,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 55,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 56,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 57,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 58,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 4,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 59,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 60,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 61,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 62,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 63,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 4,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 64,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 4,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 65,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 66,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 67,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 68,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 69,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 70,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 71,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 4,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 72,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 4,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 73,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 5,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 74,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 5,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 75,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 5,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 76,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 5,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 77,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 5,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 78,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 5,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 79,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 5,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 80,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 5,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 81,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 5,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 82,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 5,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 83,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 5,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 84,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 5,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 85,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 5,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 86,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 5,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 87,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 5,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 88,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 5,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 89,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 5,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 90,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 5,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 91,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 92,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 6,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 93,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 94,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 95,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 96,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 6,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 97,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 6,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 98,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 99,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 100,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 101,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 102,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 103,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 6,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 104,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 105,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 106,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 107,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 6,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 108,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 6,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 109,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 110,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 111,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 112,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 113,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 114,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 115,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 116,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 117,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 118,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 7,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 119,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 7,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 120,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 7,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 121,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 7,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 122,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 123,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 124,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 7,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 125,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 7,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 126,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 7,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 127,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 128,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 129,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 130,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 131,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 8,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 132,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 133,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 8,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 134,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 8,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 135,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 8,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 136,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 137,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 8,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 138,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 8,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 139,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 140,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 141,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 142,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 143,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 8,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 144,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 8,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 145,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 146,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 147,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 9,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 148,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 9,
+                            Modifier = 0m
+                        },
+                        new
+                        {
+                            Id = 149,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 9,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 150,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 9,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 151,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 152,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 9,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 153,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 154,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 155,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 156,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 157,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 9,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 158,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 159,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 160,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 161,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 162,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 9,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 163,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 164,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 165,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 166,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 10,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 167,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 10,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 168,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 10,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 169,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 10,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 170,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 171,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 10,
+                            Modifier = 0m
+                        },
+                        new
+                        {
+                            Id = 172,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 173,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 174,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 10,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 175,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 10,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 176,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 177,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 178,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 179,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 180,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 10,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 181,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 182,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 183,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 184,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 185,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 186,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 187,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 11,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 188,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 189,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 190,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 191,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 11,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 192,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 11,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 193,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 194,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 11,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 195,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 196,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 11,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 197,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 198,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 11,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 199,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 200,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 12,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 201,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 202,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 203,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 12,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 204,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 205,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 12,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 206,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 207,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 12,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 208,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 12,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 209,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 210,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 211,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 12,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 212,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 213,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 214,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 215,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 216,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 12,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 217,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 13,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 218,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 13,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 219,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 13,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 220,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 13,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 221,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 13,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 222,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 13,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 223,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 13,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 224,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 13,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 225,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 13,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 226,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 13,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 227,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 13,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 228,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 13,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 229,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 13,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 230,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 13,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 231,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 13,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 232,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 13,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 233,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 13,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 234,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 13,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 235,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 14,
+                            Modifier = 0m
+                        },
+                        new
+                        {
+                            Id = 236,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 237,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 238,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 239,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 240,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 241,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 14,
+                            Modifier = 0m
+                        },
+                        new
+                        {
+                            Id = 242,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 14,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 243,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 244,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 245,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 246,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 14,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 247,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 248,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 14,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 249,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 250,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 14,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 251,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 252,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 14,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 253,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 254,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 15,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 255,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 15,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 256,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 15,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 257,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 15,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 258,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 15,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 259,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 260,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 261,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 262,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 263,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 264,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 265,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 266,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 267,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 15,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 268,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 269,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 15,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 270,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 15,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 271,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 272,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 273,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 274,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 275,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 276,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 277,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 16,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 278,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 279,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 280,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 281,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 16,
+                            Modifier = 0m
+                        },
+                        new
+                        {
+                            Id = 282,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 16,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 283,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 284,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 16,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 285,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 286,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 16,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 287,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 16,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 288,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 16,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 289,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 17,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 290,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 17,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 291,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 17,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 292,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 17,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 293,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 17,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 294,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 17,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 295,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 17,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 296,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 17,
+                            Modifier = 0m
+                        },
+                        new
+                        {
+                            Id = 297,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 17,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 298,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 17,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 299,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 17,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 300,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 17,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 301,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 17,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 302,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 17,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 303,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 17,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 304,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 17,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 305,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 17,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 306,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 17,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 307,
+                            AttackingTypeId = 1,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 308,
+                            AttackingTypeId = 2,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 309,
+                            AttackingTypeId = 3,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 310,
+                            AttackingTypeId = 4,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 311,
+                            AttackingTypeId = 5,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 312,
+                            AttackingTypeId = 6,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 313,
+                            AttackingTypeId = 7,
+                            DefendingTypeId = 18,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 314,
+                            AttackingTypeId = 8,
+                            DefendingTypeId = 18,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 315,
+                            AttackingTypeId = 9,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 316,
+                            AttackingTypeId = 10,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 317,
+                            AttackingTypeId = 11,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 318,
+                            AttackingTypeId = 12,
+                            DefendingTypeId = 18,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 319,
+                            AttackingTypeId = 13,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 320,
+                            AttackingTypeId = 14,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        },
+                        new
+                        {
+                            Id = 321,
+                            AttackingTypeId = 15,
+                            DefendingTypeId = 18,
+                            Modifier = 0m
+                        },
+                        new
+                        {
+                            Id = 322,
+                            AttackingTypeId = 16,
+                            DefendingTypeId = 18,
+                            Modifier = 0.5m
+                        },
+                        new
+                        {
+                            Id = 323,
+                            AttackingTypeId = 17,
+                            DefendingTypeId = 18,
+                            Modifier = 2m
+                        },
+                        new
+                        {
+                            Id = 324,
+                            AttackingTypeId = 18,
+                            DefendingTypeId = 18,
+                            Modifier = 1m
+                        });
+                });
+
             modelBuilder.Entity("PkmnTeamBuilder.Entities.PokemonType", b =>
                 {
                     b.Property<int>("Id")
@@ -332,6 +2623,21 @@ namespace PkmnTeamBuilder.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PkmnTeamBuilder.Entities.PokemonMatchup", b =>
+                {
+                    b.HasOne("PkmnTeamBuilder.Entities.PokemonType", "AttackingType")
+                        .WithMany("Attacking")
+                        .HasForeignKey("AttackingTypeId")
+                        .HasConstraintName("FK_PokemonType_PokemonMatchup_Attacking")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("PkmnTeamBuilder.Entities.PokemonType", "DefendingType")
+                        .WithMany("Defending")
+                        .HasForeignKey("DefendingTypeId")
+                        .HasConstraintName("FK_PokemonType_PokemonMatchup_Defending")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 #pragma warning restore 612, 618
         }
