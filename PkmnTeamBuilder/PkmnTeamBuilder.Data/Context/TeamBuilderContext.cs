@@ -75,6 +75,7 @@ namespace PkmnTeamBuilder.Data.Context
             NatureSeed.Seed(builder);
             StatSeed.Seed(builder);
             var moves = MoveSeed.Seed(builder, types, categories);
+            PokemonSeed.Seed(builder, types);
         }
     }
 }

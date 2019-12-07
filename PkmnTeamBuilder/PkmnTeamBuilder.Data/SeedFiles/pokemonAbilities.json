@@ -1,0 +1,425 @@
+{"PokemonName":"Oddish","AbilityNames":["Chlorophyll","Run Away"]}
+{"PokemonName":"Gloom","AbilityNames":["Chlorophyll","Stench"]}
+{"PokemonName":"Vileplume","AbilityNames":["Chlorophyll","Effect Spore"]}
+{"PokemonName":"Bellossom","AbilityNames":["Chlorophyll","Healer"]}
+{"PokemonName":"Lotad","AbilityNames":["Swift Swim","Rain Dish","Own Tempo"]}
+{"PokemonName":"Lombre","AbilityNames":["Swift Swim","Rain Dish","Own Tempo"]}
+{"PokemonName":"Ludicolo","AbilityNames":["Swift Swim","Rain Dish","Own Tempo"]}
+{"PokemonName":"Seedot","AbilityNames":["Chlorophyll","Early Bird","Pickpocket"]}
+{"PokemonName":"Nuzleaf","AbilityNames":["Chlorophyll","Early Bird","Pickpocket"]}
+{"PokemonName":"Shiftry","AbilityNames":["Chlorophyll","Early Bird","Pickpocket"]}
+{"PokemonName":"Roselia","AbilityNames":["Natural Cure","Poison Point","Leaf Guard"]}
+{"PokemonName":"Budew","AbilityNames":["Natural Cure","Poison Point","Leaf Guard"]}
+{"PokemonName":"Roserade","AbilityNames":["Natural Cure","Poison Point","Technician"]}
+{"PokemonName":"Cherubi","AbilityNames":["Chlorophyll"]}
+{"PokemonName":"Cherrim","AbilityNames":["Flower Gift"]}
+{"PokemonName":"Snover","AbilityNames":["Snow Warning","Soundproof"]}
+{"PokemonName":"Abomasnow","AbilityNames":["Snow Warning","Soundproof"]}
+{"PokemonName":"Leafeon","AbilityNames":["Leaf Guard","Chlorophyll"]}
+{"PokemonName":"Rotom","AbilityNames":["Levitate"]}
+{"PokemonName":"Cottonee","AbilityNames":["Prankster","Infiltrator","Chlorophyll"]}
+{"PokemonName":"Whimsicott","AbilityNames":["Prankster","Infiltrator","Chlorophyll"]}
+{"PokemonName":"Maractus","AbilityNames":["Water Absorb","Chlorophyll","Storm Drain"]}
+{"PokemonName":"Ferroseed","AbilityNames":["Iron Barbs"]}
+{"PokemonName":"Ferrothorn","AbilityNames":["Iron Barbs","Anticipation"]}
+{"PokemonName":"Phantump","AbilityNames":["Natural Cure","Frisk","Harvest"]}
+{"PokemonName":"Trevenant","AbilityNames":["Natural Cure","Frisk","Harvest"]}
+{"PokemonName":"Pumpkaboo","AbilityNames":["Pickup","Frisk","Insomnia"]}
+{"PokemonName":"Gourgeist","AbilityNames":["Pickup","Frisk","Insomnia"]}
+{"PokemonName":"Rowlet","AbilityNames":["Overgrow","Long Reach"]}
+{"PokemonName":"Morelull","AbilityNames":["Illuminate","Effect Spore","Rain Dish"]}
+{"PokemonName":"Shiinotic","AbilityNames":["Illuminate","Effect Spore","Rain Dish"]}
+{"PokemonName":"Bounsweet","AbilityNames":["Leaf Guard","Oblivious","Sweet Veil"]}
+{"PokemonName":"Steenee","AbilityNames":["Leaf Guard","Oblivious","Sweet Veil"]}
+{"PokemonName":"Tsareena","AbilityNames":["Leaf Guard","Queenly Majesty","Sweet Veil"]}
+{"PokemonName":"Silvally","AbilityNames":["RKS System"]}
+{"PokemonName":"Dhelmise","AbilityNames":["Steelworker"]}
+{"PokemonName":"Grookey","AbilityNames":["Overgrow","Grassy Surge"]}
+{"PokemonName":"Thwackey","AbilityNames":["Overgrow","Grassy Surge"]}
+{"PokemonName":"Rillaboom","AbilityNames":["Overgrow","Grassy Surge"]}
+{"PokemonName":"Gossifleur","AbilityNames":["Cotton Down","Regenerator","Effect Spore"]}
+{"PokemonName":"Eldegoss","AbilityNames":["Cotton Down","Regenerator","Effect Spore"]}
+{"PokemonName":"Applin","AbilityNames":["Ripen","Gluttony","Bulletproof"]}
+{"PokemonName":"Flapple","AbilityNames":["Ripen","Gluttony","Hustle"]}
+{"PokemonName":"Appletun","AbilityNames":["
+{"PokemonName":"Shellder","AbilityNames":["Shell Armor","Skill Link","Overcoat"]}
+{"PokemonName":"Cloyster","AbilityNames":["Shell Armor","Skill Link","Overcoat"]}
+{"PokemonName":"Krabby","AbilityNames":["Hyper Cutter","Shell Armor","Sheer Force"]}
+{"PokemonName":"Kingler","AbilityNames":["Hyper Cutter","Shell Armor","Sheer Force"]}
+{"PokemonName":"Goldeen","AbilityNames":["Swift Swim","Water Veil","Lightning Rod"]}
+{"PokemonName":"Seaking","AbilityNames":["Swift Swim","Water Veil","Lightning Rod"]}
+{"PokemonName":"Magikarp","AbilityNames":["Swift Swim","Rattled"]}
+{"PokemonName":"Gyarados","AbilityNames":["Intimidate","Moxie"]}
+{"PokemonName":"Lapras","AbilityNames":["Water Absorb","Shell Armor","Hydration"]}
+{"PokemonName":"Vaporeon","AbilityNames":["Water Absorb","Hydration"]}
+{"PokemonName":"Chinchou","AbilityNames":["Volt Absorb","Illuminate","Water Absorb"]}
+{"PokemonName":"Lanturn","AbilityNames":["Volt Absorb","Illuminate","Water Absorb"]}
+{"PokemonName":"Wooper","AbilityNames":["Damp","Water Absorb","Unaware"]}
+{"PokemonName":"Quagsire","AbilityNames":["Damp","Water Absorb","Unaware"]}
+{"PokemonName":"Qwilfish","AbilityNames":["Poison Point","Swift Swim","Intimidate"]}
+{"PokemonName":"Corsola","AbilityNames":["Hustle","Natural Cure","Regenerator"]}
+{"PokemonName":"Remoraid","AbilityNames":["Hustle","Sniper","Moody"]}
+{"PokemonName":"Octillery","AbilityNames":["Suction Cups","Sniper","Moody"]}
+{"PokemonName":"Mantine","AbilityNames":["Swift Swim","Water Absorb","Water Veil"]}
+{"PokemonName":"Wingull","AbilityNames":["Keen Eye","Hydration","Rain Dish"]}
+{"PokemonName":"Pelipper","AbilityNames":["Keen Eye","Drizzle","Rain Dish"]}
+{"PokemonName":"Wailmer","AbilityNames":["Water Veil","Oblivious","Pressure"]}
+{"PokemonName":"Wailord","AbilityNames":["Water Veil","Oblivious","Pressure"]}
+{"PokemonName":"Barboach","AbilityNames":["Oblivious","Anticipation","Hydration"]}
+{"PokemonName":"Whiscash","AbilityNames":["Oblivious","Anticipation","Hydration"]}
+{"PokemonName":"Corphish","AbilityNames":["Hyper Cutter","Shell Armor","Adaptability"]}
+{"PokemonName":"Crawdaunt","AbilityNames":["Hyper Cutter","Shell Armor","Adaptability"]}
+{"PokemonName":"Feebas","AbilityNames":["Swift Swim","Oblivious","Adaptability"]}
+{"PokemonName":"Milotic","AbilityNames":["Marvel Scale","Competitive","Cute Charm"]}
+{"PokemonName":"Shellos","AbilityNames":["Sticky Hold","Storm Drain","Sand Force"]}
+{"PokemonName":"Gastrodon","AbilityNames":["Sticky Hold","Storm Drain","Sand Force"]}
+{"PokemonName":"Mantyke","AbilityNames":["Swift Swim","Water Absorb","Water Veil"]}
+{"PokemonName":"Tympole","AbilityNames":["Swift Swim","Hydration","Water Absorb"]}
+{"PokemonName":"Palpitoad","AbilityNames":["Swift Swim","Hydration","Water Absorb"]}
+{"PokemonName":"Seismitoad","AbilityNames":["Swift Swim","Poison Touch","Water Absorb"]}
+{"PokemonName":"Basculin","AbilityNames":["Reckless","Adaptability","Mold Breaker"]}
+{"PokemonName":"Basculin","AbilityNames":["Rock Head","Adaptability","Mold Breaker"]}
+{"PokemonName":"Frillish","AbilityNames":["Water Absorb","Cursed Body","Damp"]}
+{"PokemonName":"Jellicent","AbilityNames":["Water Absorb","Cursed Body","Damp"]}
+{"PokemonName":"Binacle","AbilityNames":["Tough Claws","Sniper","Pickpocket"]}
+{"PokemonName":"Barbaracle","AbilityNames":["Tough Claws","Sniper","Pickpocket"]}
+{"PokemonName":"Wishiwashi","AbilityNames":["Schooling"]}
+{"PokemonName":"Mareanie","AbilityNames":["Merciless","Limber","Regenerator"]}
+{"PokemonName":"Toxapex","AbilityNames":["Merciless","Limber","Regenerator"]}
+{"PokemonName":"Dewpider","AbilityNames":["Water Bubble","Water Absorb"]}
+{"PokemonName":"Araquanid","AbilityNames":["Water Bubble","Water Absorb"]}
+{"PokemonName":"Wimpod","AbilityNames":["Wimp Out"]}
+{"PokemonName":"Golisopod","AbilityNames":["Emergency Exit"]}
+{"PokemonName":"Pyukumuku","AbilityNames":["Innards Out","Unaware"]}
+{"PokemonName":"Sobble","AbilityNames":["Torrent","Sniper"]}
+{"PokemonName":"Drizzile","AbilityNames":["Torrent","Sniper"]}
+{"PokemonName":"Inteleon","AbilityNames":["Torrent","Sniper"]}
+{"PokemonName":"Chewtle","AbilityNames":["Strong Jaw","Shell Armor","Swift Swim"]}
+{"PokemonName":"Drednaw","AbilityNames":["Strong Jaw","Shell Armor","Swift Swim"]}
+{"PokemonName":"Cramorant","AbilityNames":["Gulp Missile"]}
+{"PokemonName":"Arrokuda","AbilityNames":["Swift Swim","Propeller Tail"]}
+{"PokemonName":"Barraskewda","AbilityNames":["Swift Swim","Propeller Tail"]}
+{"PokemonName":"Dracovish","AbilityNames":["Water Absorb","Strong Jaw","Sand Rush"]}
+{"PokemonName":"Arctovish","AbilityNames":["Water Absorb","Ice Body","Slush Rush"]}
+{"PokemonName":"Raichu","AbilityNames":["Surge Surfer","Surge Surfer"]}
+{"PokemonName":"Ponyta","AbilityNames":["Run Away","Pastel Veil","Anticipation"]}
+{"PokemonName":"Rapidash","AbilityNames":["Run Away","Pastel Veil","Anticipation"]}
+{"PokemonName":"Mr. Mime","AbilityNames":["Vital Spirit","Screen Cleaner","Ice Body"]}
+{"PokemonName":"Natu","AbilityNames":["Synchronize","Early Bird","Magic Bounce"]}
+{"PokemonName":"Xatu","AbilityNames":["Synchronize","Early Bird","Magic Bounce"]}
+{"PokemonName":"Espeon","AbilityNames":["Synchronize","Magic Bounce"]}
+{"PokemonName":"Wobbuffet","AbilityNames":["Shadow Tag","Telepathy"]}
+{"PokemonName":"Ralts","AbilityNames":["Synchronize","Trace","Telepathy"]}
+{"PokemonName":"Kirlia","AbilityNames":["Synchronize","Trace","Telepathy"]}
+{"PokemonName":"Gardevoir","AbilityNames":["Synchronize","Trace","Telepathy"]}
+{"PokemonName":"Lunatone","AbilityNames":["Levitate"]}
+{"PokemonName":"Solrock","AbilityNames":["Levitate"]}
+{"PokemonName":"Baltoy","AbilityNames":["Levitate"]}
+{"PokemonName":"Claydol","AbilityNames":["Levitate"]}
+{"PokemonName":"Wynaut","AbilityNames":["Shadow Tag","Telepathy"]}
+{"PokemonName":"Jirachi","AbilityNames":["Serene Grace"]}
+{"PokemonName":"Bronzor","AbilityNames":["Levitate","Heatproof","Heavy Metal"]}
+{"PokemonName":"Bronzong","AbilityNames":["Levitate","Heatproof","Heavy Metal"]}
+{"PokemonName":"Mime Jr.","AbilityNames":["Soundproof","Filter","Technician"]}
+{"PokemonName":"Gallade","AbilityNames":["Steadfast","Justified"]}
+{"PokemonName":"Munna","AbilityNames":["Forewarn","Synchronize","Telepathy"]}
+{"PokemonName":"Musharna","AbilityNames":["Forewarn","Synchronize","Telepathy"]}
+{"PokemonName":"Woobat","AbilityNames":["Unaware","Klutz","Simple"]}
+{"PokemonName":"Swoobat","AbilityNames":["Unaware","Klutz","Simple"]}
+{"PokemonName":"Darmanitan","AbilityNames":["Zen Mode"]}
+{"PokemonName":"Sigilyph","AbilityNames":["Wonder Skin","Magic Guard","Tinted Lens"]}
+{"PokemonName":"Gothita","AbilityNames":["Frisk","Competitive","Shadow Tag"]}
+{"PokemonName":"Gothorita","AbilityNames":["Frisk","Competitive","Shadow Tag"]}
+{"PokemonName":"Gothitelle","AbilityNames":["Frisk","Competitive","Shadow Tag"]}
+{"PokemonName":"Solosis","AbilityNames":["Overcoat","Magic Guard","Regenerator"]}
+{"PokemonName":"Duosion","AbilityNames":["Overcoat","Magic Guard","Regenerator"]}
+{"PokemonName":"Reuniclus","AbilityNames":["Overcoat","Magic Guard","Regenerator"]}
+{"PokemonName":"Elgyem","AbilityNames":["Telepathy","Synchronize","Analytic"]}
+{"PokemonName":"Beheeyem","AbilityNames":["Telepathy","Synchronize","Analytic"]}
+{"PokemonName":"Espurr","AbilityNames":["Keen Eye","Infiltrator","Own Tempo"]}
+{"PokemonName":"Meowstic","AbilityNames":["Keen Eye","Infiltrator","Prankster"]}
+{"PokemonName":"Inkay","AbilityNames":["Contrary","Suction Cups","Infiltrator"]}
+{"PokemonName":"Malamar","AbilityNames":["Contrary","Suction Cups","Infiltrator"]}
+{"PokemonName":"Oranguru","AbilityNames":["Inner Focus","Telepathy","Symbiosis"]}
+{"PokemonName":"Flygon","AbilityNames":["Levitate"]}
+{"PokemonName":"Axew","AbilityNames":["Rivalry","Mold Breaker","Unnerve"]}
+{"PokemonName":"Fraxure","AbilityNames":["Rivalry","Mold Breaker","Unnerve"]}
+{"PokemonName":"Haxorus","AbilityNames":["Rivalry","Mold Breaker","Unnerve"]}
+{"PokemonName":"Deino","AbilityNames":["Hustle"]}
+{"PokemonName":"Zweilous","AbilityNames":["Hustle"]}
+{"PokemonName":"Hydreigon","AbilityNames":["Levitate"]}
+{"PokemonName":"Goomy","AbilityNames":["Sap Sipper","Hydration","Gooey"]}
+{"PokemonName":"Sliggoo","AbilityNames":["Sap Sipper","Hydration","Gooey"]}
+{"PokemonName":"Goodra","AbilityNames":["Sap Sipper","Hydration","Gooey"]}
+{"PokemonName":"Noibat","AbilityNames":["Frisk","Infiltrator","Telepathy"]}
+{"PokemonName":"Noivern","AbilityNames":["Frisk","Infiltrator","Telepathy"]}
+{"PokemonName":"Turtonator","AbilityNames":["Shell Armor"]}
+{"PokemonName":"Drampa","AbilityNames":["Berserk","Sap Sipper","Cloud Nine"]}
+{"PokemonName":"Jangmo-o","AbilityNames":["Bulletproof","Soundproof","Overcoat"]}
+{"PokemonName":"Hakamo-o","AbilityNames":["Bulletproof","Soundproof","Overcoat"]}
+{"PokemonName":"Kommo-o","AbilityNames":["Bulletproof","Soundproof","Overcoat"]}
+{"PokemonName":"Dracozolt","AbilityNames":["Volt Absorb","Hustle","Sand Rush"]}
+{"PokemonName":"Duraludon","AbilityNames":["Light Metal","Heavy Metal","Stalwart"]}
+{"PokemonName":"Dreepy","AbilityNames":["Clear Body","Infiltrator","Cursed Body"]}
+{"PokemonName":"Drakloak","AbilityNames":["Clear Body","Infiltrator","Cursed Body"]}
+{"PokemonName":"Dragapult","AbilityNames":["Clear Body","Infiltrator","Cursed Body"]}
+{"PokemonName":"Dottler","AbilityNames":["Swarm","Compoundeyes","Telepathy"]}
+{"PokemonName":"Orbeetle","AbilityNames":["Swarm","Frisk","Telepathy"]}
+{"PokemonName":"Hatenna","AbilityNames":["Healer","Anticipation","Magic Bounce"]}
+{"PokemonName":"Hattrem","AbilityNames":["Healer","Anticipation","Magic Bounce"]}
+{"PokemonName":"Hatterene","AbilityNames":["Healer","Anticipation","Magic Bounce"]}
+{"PokemonName":"Mr. Rime","AbilityNames":["Tangled Feet","Screen Cleaner","Ice Body"]}
+{"PokemonName":"Indeedee","AbilityNames":["Inner Focus","Synchronize","Psychic Surge"]}
+{"PokemonName":"Indeedee","AbilityNames":["Own Tempo","Synchronize","Psychic Surge"]}
+{"PokemonName":"Eternatus","AbilityNames":["Pressure"]}
+{"PokemonName":"Pikachu","AbilityNames":["Static","Lightning Rod"]}
+{"PokemonName":"Raichu","AbilityNames":["Static","Lightning Rod"]}
+{"PokemonName":"Jolteon","AbilityNames":["Volt Absorb","Quick Feet"]}
+{"PokemonName":"Pichu","AbilityNames":["Static","Lightning Rod"]}
+{"PokemonName":"Electrike","AbilityNames":["Static","Lightning Rod","Minus"]}
+{"PokemonName":"Manectric","AbilityNames":["Static","Lightning Rod","Minus"]}
+{"PokemonName":"Joltik","AbilityNames":["Compoundeyes","Unnerve","Swarm"]}
+{"PokemonName":"Galvantula","AbilityNames":["Compoundeyes","Unnerve","Swarm"]}
+{"PokemonName":"Stunfisk","AbilityNames":["Static","Limber","Sand Veil"]}
+{"PokemonName":"Helioptile","AbilityNames":["Dry Skin","Sand Veil","Solar Power"]}
+{"PokemonName":"Heliolisk","AbilityNames":["Dry Skin","Sand Veil","Solar Power"]}
+{"PokemonName":"Charjabug","AbilityNames":["Battery"]}
+{"PokemonName":"Vikavolt","AbilityNames":["Levitate"]}
+{"PokemonName":"Togedemaru","AbilityNames":["Iron Barbs","Lightning Rod","Sturdy"]}
+{"PokemonName":"Zeraora","AbilityNames":["Volt Absorb"]}
+{"PokemonName":"Yamper","AbilityNames":["Ball Fetch","Rattled"]}
+{"PokemonName":"Boltund","AbilityNames":["Strong Jaw","Competitive"]}
+{"PokemonName":"Toxel","AbilityNames":["Rattled","Static","Klutz"]}
+{"PokemonName":"Toxtricity","AbilityNames":["Punk Rock","Plus","Technician"]}
+{"PokemonName":"Pincurchin","AbilityNames":["Lightning Rod","Electric Surge"]}
+{"PokemonName":"Morpeko","AbilityNames":["Hunger Switch"]}
+{"PokemonName":"Arctozolt","AbilityNames":["Volt Absorb","Static","Slush Rush"]}
+{"PokemonName":"Vulpix","AbilityNames":["Snow Cloak","Snow Warning"]}
+{"PokemonName":"Ninetales","AbilityNames":["Snow Cloak","Snow Warning"]}
+{"PokemonName":"Sneasel","AbilityNames":["Inner Focus","Keen Eye","Pickpocket"]}
+{"PokemonName":"Swinub","AbilityNames":["Oblivious","Snow Cloak","Thick Fat"]}
+{"PokemonName":"Piloswine","AbilityNames":["Oblivious","Snow Cloak","Thick Fat"]}
+{"PokemonName":"Delibird","AbilityNames":["Vital Spirit","Hustle","Insomnia"]}
+{"PokemonName":"Snorunt","AbilityNames":["Inner Focus","Ice Body","Moody"]}
+{"PokemonName":"Glalie","AbilityNames":["Inner Focus","Ice Body","Moody"]}
+{"PokemonName":"Charizard","AbilityNames":["Blaze","Solar Power"]}
+{"PokemonName":"Butterfree","AbilityNames":["Compoundeyes","Tinted Lens"]}
+{"PokemonName":"Farfetch'd","AbilityNames":["Keen Eye","Inner Focus","Defiant"]}
+{"PokemonName":"Hoothoot","AbilityNames":["Insomnia","Keen Eye","Tinted Lens"]}
+{"PokemonName":"Noctowl","AbilityNames":["Insomnia","Keen Eye","Tinted Lens"]}
+{"PokemonName":"Togetic","AbilityNames":["Hustle","Serene Grace","Super Luck"]}
+{"PokemonName":"Ninjask","AbilityNames":["Speed Boost","Infiltrator"]}
+{"PokemonName":"Combee","AbilityNames":["Honey Gather","Hustle"]}
+{"PokemonName":"Vespiquen","AbilityNames":["Pressure","Unnerve"]}
+{"PokemonName":"Drifloon","AbilityNames":["Aftermath","Unburden","Flare Boost"]}
+{"PokemonName":"Drifblim","AbilityNames":["Aftermath","Unburden","Flare Boost"]}
+{"PokemonName":"Togekiss","AbilityNames":["Hustle","Serene Grace","Super Luck"]}
+{"PokemonName":"Pidove","AbilityNames":["Big Pecks","Super Luck","Rivalry"]}
+{"PokemonName":"Tranquill","AbilityNames":["Big Pecks","Super Luck","Rivalry"]}
+{"PokemonName":"Unfezant","AbilityNames":["Big Pecks","Super Luck","Rivalry"]}
+{"PokemonName":"Rufflet","AbilityNames":["Keen Eye","Sheer Force","Hustle"]}
+{"PokemonName":"Braviary","AbilityNames":["Keen Eye","Sheer Force","Defiant"]}
+{"PokemonName":"Vullaby","AbilityNames":["Big Pecks","Overcoat","Weak Armor"]}
+{"PokemonName":"Mandibuzz","AbilityNames":["Big Pecks","Overcoat","Weak Armor"]}
+{"PokemonName":"Hawlucha","AbilityNames":["Limber","Unburden","Mold Breaker"]}
+{"PokemonName":"Rookidee","AbilityNames":["Keen Eye","Unnerve","Big Pecks"]}
+{"PokemonName":"Corvisquire","AbilityNames":["Keen Eye","Unnerve","Big Pecks"]}
+{"PokemonName":"Corviknight","AbilityNames":["Pressure","Unnerve","Mirror Armor"]}
+{"PokemonName":"Weavile","AbilityNames":["Pressure","Pickpocket"]}
+{"PokemonName":"Glaceon","AbilityNames":["Snow Cloak","Ice Body"]}
+{"PokemonName":"Mamoswine","AbilityNames":["Oblivious","Snow Cloak","Thick Fat"]}
+{"PokemonName":"Froslass","AbilityNames":["Snow Cloak","Cursed Body"]}
+{"PokemonName":"Darumaka","AbilityNames":["Hustle","Inner Focus"]}
+{"PokemonName":"Darmanitan","AbilityNames":["Gorilla Tactics","Zen Mode"]}
+{"PokemonName":"Vanillite","AbilityNames":["Ice Body","Snow Cloak","Weak Armor"]}
+{"PokemonName":"Vanillish","AbilityNames":["Ice Body","Snow Cloak","Weak Armor"]}
+{"PokemonName":"Vanilluxe","AbilityNames":["Ice Body","Snow Warning","Weak Armor"]}
+{"PokemonName":"Cubchoo","AbilityNames":["Snow Cloak","Slush Rush","Rattled"]}
+{"PokemonName":"Beartic","AbilityNames":["Snow Cloak","Slush Rush","Swift Swim"]}
+{"PokemonName":"Bergmite","AbilityNames":["Own Tempo","Ice Body","Sturdy"]}
+{"PokemonName":"Avalugg","AbilityNames":["Own Tempo","Ice Body","Sturdy"]}
+{"PokemonName":"Snom","AbilityNames":["Shield Dust","Ice Scales"]}
+{"PokemonName":"Frosmoth","AbilityNames":["Shield Dust","Ice Scales"]}
+{"PokemonName":"Eiscue","AbilityNames":["Ice Face"]}
+{"PokemonName":"Meowth","AbilityNames":["Pickup","Technician","Unnerve"]}
+{"PokemonName":"Persian","AbilityNames":["Limber","Technician","Unnerve"]}
+{"PokemonName":"Ditto","AbilityNames":["Limber","Imposter"]}
+{"PokemonName":"Eevee","AbilityNames":["Run Away","Adaptability","Anticipation"]}
+{"PokemonName":"Snorlax","AbilityNames":["Immunity","Thick Fat","Gluttony"]}
+{"PokemonName":"Zigzagoon","AbilityNames":["Pickup","Gluttony","Quick Feet"]}
+{"PokemonName":"Linoone","AbilityNames":["Pickup","Gluttony","Quick Feet"]}
+{"PokemonName":"Munchlax","AbilityNames":["Pickup","Thick Fat","Gluttony"]}
+{"PokemonName":"Minccino","AbilityNames":["Cute Charm","Technician","Skill Link"]}
+{"PokemonName":"Cinccino","AbilityNames":["Cute Charm","Technician","Skill Link"]}
+{"PokemonName":"Bunnelby","AbilityNames":["Pickup","Cheek Pouch","Huge Power"]}
+{"PokemonName":"Diggersby","AbilityNames":["Pickup","Cheek Pouch","Huge Power"]}
+{"PokemonName":"Stufful","AbilityNames":["Fluffy","Klutz","Cute Charm"]}
+{"PokemonName":"Bewear","AbilityNames":["Fluffy","Klutz","Unnerve"]}
+{"PokemonName":"Type: Null","AbilityNames":["Battle Armor"]}
+{"PokemonName":"Skwovet","AbilityNames":["Cheek Pouch","Gluttony"]}
+{"PokemonName":"Greedent","AbilityNames":["Cheek Pouch","Gluttony"]}
+{"PokemonName":"Wooloo","AbilityNames":["Fluffy","Run Away","Bulletproof"]}
+{"PokemonName":"Dubwool","AbilityNames":["Fluffy","Steadfast","Bulletproof"]}
+{"PokemonName":"Obstagoon","AbilityNames":["Reckless","Guts","Defiant"]}
+{"PokemonName":"Machop","AbilityNames":["Guts","No Guard","Steadfast"]}
+{"PokemonName":"Machoke","AbilityNames":["Guts","No Guard","Steadfast"]}
+{"PokemonName":"Machamp","AbilityNames":["Guts","No Guard","Steadfast"]}
+{"PokemonName":"Farfetch'd","AbilityNames":["Steadfast","Scrappy"]}
+{"PokemonName":"Hitmonlee","AbilityNames":["Limber","Reckless","Unburden"]}
+{"PokemonName":"Hitmonchan","AbilityNames":["Keen Eye","Iron Fist","Inner Focus"]}
+{"PokemonName":"Tyrogue","AbilityNames":["Guts","Steadfast","Vital Spirit"]}
+{"PokemonName":"Hitmontop","AbilityNames":["Intimidate","Technician","Steadfast"]}
+{"PokemonName":"Riolu","AbilityNames":["Steadfast","Inner Focus","Prankster"]}
+{"PokemonName":"Lucario","AbilityNames":["Steadfast","Inner Focus","Justified"]}
+{"PokemonName":"Croagunk","AbilityNames":["Anticipation","Dry Skin","Poison Touch"]}
+{"PokemonName":"Meowth","AbilityNames":["Pickup","Technician","Rattled"]}
+{"PokemonName":"Persian","AbilityNames":["Fur Coat","Technician","Rattled"]}
+{"PokemonName":"Umbreon","AbilityNames":["Synchronize","Inner Focus"]}
+{"PokemonName":"Tyranitar","AbilityNames":["Sand Stream","Unnerve"]}
+{"PokemonName":"Sableye","AbilityNames":["Keen Eye","Stall","Prankster"]}
+{"PokemonName":"Stunky","AbilityNames":["Stench","Aftermath","Keen Eye"]}
+{"PokemonName":"Skuntank","AbilityNames":["Stench","Aftermath","Keen Eye"]}
+{"PokemonName":"Drapion","AbilityNames":["Battle Armor","Sniper","Keen Eye"]}
+{"PokemonName":"Purrloin","AbilityNames":["Limber","Unburden","Prankster"]}
+{"PokemonName":"Liepard","AbilityNames":["Limber","Unburden","Prankster"]}
+{"PokemonName":"Scraggy","AbilityNames":["Shed Skin","Moxie","Intimidate"]}
+{"PokemonName":"Scrafty","AbilityNames":["Shed Skin","Moxie","Intimidate"]}
+{"PokemonName":"Pawniard","AbilityNames":["Defiant","Inner Focus","Pressure"]}
+{"PokemonName":"Bisharp","AbilityNames":["Defiant","Inner Focus","Pressure"]}
+{"PokemonName":"Pangoro","AbilityNames":["Iron Fist","Mold Breaker","Scrappy"]}
+{"PokemonName":"Incineroar","AbilityNames":["Blaze","Intimidate"]}
+{"PokemonName":"Nickit","AbilityNames":["Run Away","Unburden","Stakeout"]}
+{"PokemonName":"Thievul","AbilityNames":["Run Away","Unburden","Stakeout"]}
+{"PokemonName":"Impidimp","AbilityNames":["Prankster","Frisk","Pickpocket"]}
+{"PokemonName":"Morgrem","AbilityNames":["Prankster","Frisk","Pickpocket"]}
+{"PokemonName":"Grimmsnarl","AbilityNames":["Prankster","Frisk","Pickpocket"]}
+{"PokemonName":"Toxicroak","AbilityNames":["Anticipation","Dry Skin","Poison Touch"]}
+{"PokemonName":"Timburr","AbilityNames":["Guts","Sheer Force","Iron Fist"]}
+{"PokemonName":"Gurdurr","AbilityNames":["Guts","Sheer Force","Iron Fist"]}
+{"PokemonName":"Conkeldurr","AbilityNames":["Guts","Sheer Force","Iron Fist"]}
+{"PokemonName":"Throh","AbilityNames":["Guts","Inner Focus","Mold Breaker"]}
+{"PokemonName":"Sawk","AbilityNames":["Sturdy","Inner Focus","Mold Breaker"]}
+{"PokemonName":"Pancham","AbilityNames":["Iron Fist","Mold Breaker","Scrappy"]}
+{"PokemonName":"Passimian","AbilityNames":["Receiver","Defiant"]}
+{"PokemonName":"Onix","AbilityNames":["Rock Head","Sturdy","Weak Armor"]}
+{"PokemonName":"Rhyhorn","AbilityNames":["Lightning Rod","Rock Head","Reckless"]}
+{"PokemonName":"Rhydon","AbilityNames":["Lightning Rod","Rock Head","Reckless"]}
+{"PokemonName":"Sudowoodo","AbilityNames":["Sturdy","Rock Head","Rattled"]}
+{"PokemonName":"Shuckle","AbilityNames":["Sturdy","Gluttony","Contrary"]}
+{"PokemonName":"Larvitar","AbilityNames":["Guts","Sand Veil"]}
+{"PokemonName":"Pupitar","AbilityNames":["Shed Skin"]}
+{"PokemonName":"Bonsly","AbilityNames":["Sturdy","Rock Head","Rattled"]}
+{"PokemonName":"Rhyperior","AbilityNames":["Lightning Rod","Solid Rock","Reckless"]}
+{"PokemonName":"Roggenrola","AbilityNames":["Sturdy","Weak Armor","Sand Force"]}
+{"PokemonName":"Boldore","AbilityNames":["Sturdy","Weak Armor","Sand Force"]}
+{"PokemonName":"Gigalith","AbilityNames":["Sturdy","Sand Stream","Sand Force"]}
+{"PokemonName":"Dwebble","AbilityNames":["Sturdy","Shell Armor","Weak Armor"]}
+{"PokemonName":"Crustle","AbilityNames":["Sturdy","Shell Armor","Weak Armor"]}
+{"PokemonName":"Rolycoly","AbilityNames":["Steam Engine","Heatproof","Flash Fire"]}
+{"PokemonName":"Carkol","AbilityNames":["Steam Engine","Flame Body","Flash Fire"]}
+{"PokemonName":"Coalossal","AbilityNames":["Steam Engine","Flame Body","Flash Fire"]}
+{"PokemonName":"Stonjourner","AbilityNames":["Power Spot"]}
+{"PokemonName":"Marshadow","AbilityNames":["Technician"]}
+{"PokemonName":"Clobbopus","AbilityNames":["Limber","Technician"]}
+{"PokemonName":"Grapploct","AbilityNames":["Limber","Technician"]}
+{"PokemonName":"Gastly","AbilityNames":["Levitate"]}
+{"PokemonName":"Haunter","AbilityNames":["Levitate"]}
+{"PokemonName":"Gengar","AbilityNames":["Cursed Body"]}
+{"PokemonName":"Corsola","AbilityNames":["Weak Armor","Cursed Body"]}
+{"PokemonName":"Shedinja","AbilityNames":["Wonder Guard"]}
+{"PokemonName":"Duskull","AbilityNames":["Levitate","Frisk"]}
+{"PokemonName":"Dusclops","AbilityNames":["Pressure","Frisk"]}
+{"PokemonName":"Dusknoir","AbilityNames":["Pressure","Frisk"]}
+{"PokemonName":"Yamask","AbilityNames":["Wandering Spirit","Wandering Spirit"]}
+{"PokemonName":"Cofagrigus","AbilityNames":["Mummy"]}
+{"PokemonName":"Litwick","AbilityNames":["Flash Fire","Flame Body","Infiltrator"]}
+{"PokemonName":"Lampent","AbilityNames":["Flash Fire","Flame Body","Infiltrator"]}
+{"PokemonName":"Chandelure","AbilityNames":["Flash Fire","Flame Body","Infiltrator"]}
+{"PokemonName":"Golett","AbilityNames":["Iron Fist","Klutz","No Guard"]}
+{"PokemonName":"Golurk","AbilityNames":["Iron Fist","Klutz","No Guard"]}
+{"PokemonName":"Honedge","AbilityNames":["No Guard"]}
+{"PokemonName":"Doublade","AbilityNames":["No Guard"]}
+{"PokemonName":"Aegislash","AbilityNames":["Stance Change"]}
+{"PokemonName":"Mimikyu","AbilityNames":["Disguise"]}
+{"PokemonName":"Sinistea","AbilityNames":["Weak Armor","Cursed Body"]}
+{"PokemonName":"Polteageist","AbilityNames":["Weak Armor","Cursed Body"]}
+{"PokemonName":"Cursola","AbilityNames":["Weak Armor","Perish Body"]}
+{"PokemonName":"Runerigus","AbilityNames":["Wandering Spirit"]}
+{"PokemonName":"Sirfetch'd","AbilityNames":["Steadfast","Scrappy"]}
+{"PokemonName":"Falinks","AbilityNames":["Battle Armor","Defiant"]}
+{"PokemonName":"Zamazenta","AbilityNames":["Dauntless Shield"]}
+{"PokemonName":"Charmander","AbilityNames":["Blaze","Solar Power"]}
+{"PokemonName":"Charmeleon","AbilityNames":["Blaze","Solar Power"]}
+{"PokemonName":"Vulpix","AbilityNames":["Flash Fire","Drought"]}
+{"PokemonName":"Ninetales","AbilityNames":["Flash Fire","Drought"]}
+{"PokemonName":"Growlithe","AbilityNames":["Intimidate","Flash Fire","Justified"]}
+{"PokemonName":"Arcanine","AbilityNames":["Intimidate","Flash Fire","Justified"]}
+{"PokemonName":"Caterpie","AbilityNames":["Shield Dust","Run Away"]}
+{"PokemonName":"Metapod","AbilityNames":["Shed Skin"]}
+{"PokemonName":"Nincada","AbilityNames":["Compoundeyes","Run Away"]}
+{"PokemonName":"Skorupi","AbilityNames":["Battle Armor","Sniper","Keen Eye"]}
+{"PokemonName":"Karrablast","AbilityNames":["Swarm","Shed Skin","No Guard"]}
+{"PokemonName":"Escavalier","AbilityNames":["Swarm","Shell Armor","Overcoat"]}
+{"PokemonName":"Shelmet","AbilityNames":["Hydration","Shell Armor","Overcoat"]}
+{"PokemonName":"Accelgor","AbilityNames":["Hydration","Sticky Hold","Unburden"]}
+{"PokemonName":"Durant","AbilityNames":["Swarm","Hustle","Truant"]}
+{"PokemonName":"Grubbin","AbilityNames":["Swarm"]}
+{"PokemonName":"Cutiefly","AbilityNames":["Honey Gather","Shield Dust","Sweet Veil"]}
+{"PokemonName":"Ribombee","AbilityNames":["Honey Gather","Shield Dust","Sweet Veil"]}
+{"PokemonName":"Blipbug","AbilityNames":["Swarm","Compoundeyes","Telepathy"]}
+{"PokemonName":"Sizzlipede","AbilityNames":["Flash Fire","White Smoke","Flame Body"]}
+{"PokemonName":"Centiskorch","AbilityNames":["Flash Fire","White Smoke","Flame Body"]}
+{"PokemonName":"Ponyta","AbilityNames":["Run Away","Flash Fire","Flame Body"]}
+{"PokemonName":"Rapidash","AbilityNames":["Run Away","Flash Fire","Flame Body"]}
+{"PokemonName":"Flareon","AbilityNames":["Flash Fire","Guts"]}
+{"PokemonName":"Torkoal","AbilityNames":["White Smoke","Drought","Shell Armor"]}
+{"PokemonName":"Darmanitan","AbilityNames":["Sheer Force","Zen Mode"]}
+{"PokemonName":"Heatmor","AbilityNames":["Gluttony","Flash Fire","White Smoke"]}
+{"PokemonName":"Litten","AbilityNames":["Blaze","Intimidate"]}
+{"PokemonName":"Torracat","AbilityNames":["Blaze","Intimidate"]}
+{"PokemonName":"Salandit","AbilityNames":["Corrosion","Oblivious"]}
+{"PokemonName":"Salazzle","AbilityNames":["Corrosion","Oblivious"]}
+{"PokemonName":"Scorbunny","AbilityNames":["Blaze","Libero"]}
+{"PokemonName":"Raboot","AbilityNames":["Blaze","Libero"]}
+{"PokemonName":"Cinderace","AbilityNames":["Blaze","Libero"]}
+{"PokemonName":"Diglett","AbilityNames":["Sand Veil","Arena Trap","Sand Force"]}
+{"PokemonName":"Dugtrio","AbilityNames":["Sand Veil","Arena Trap","Sand Force"]}
+{"PokemonName":"Steelix","AbilityNames":["Rock Head","Sturdy","Sheer Force"]}
+{"PokemonName":"Trapinch","AbilityNames":["Hyper Cutter","Arena Trap","Sheer Force"]}
+{"PokemonName":"Hippopotas","AbilityNames":["Sand Stream","Sand Force"]}
+{"PokemonName":"Hippowdon","AbilityNames":["Sand Stream","Sand Force"]}
+{"PokemonName":"Drilbur","AbilityNames":["Sand Rush","Sand Force","Mold Breaker"]}
+{"PokemonName":"Excadrill","AbilityNames":["Sand Rush","Sand Force","Mold Breaker"]}
+{"PokemonName":"Stunfisk","AbilityNames":["Mimicry","Mimicry"]}
+{"PokemonName":"Mudbray","AbilityNames":["Own Tempo","Stamina","Inner Focus"]}
+{"PokemonName":"Mudsdale","AbilityNames":["Own Tempo","Stamina","Inner Focus"]}
+{"PokemonName":"Silicobra","AbilityNames":["Sand Spit","Shed Skin","Sand Veil"]}
+{"PokemonName":"Clefairy","AbilityNames":["Cute Charm","Magic Guard","Friend Guard"]}
+{"PokemonName":"Clefable","AbilityNames":["Cute Charm","Magic Guard","Unaware"]}
+{"PokemonName":"Weezing","AbilityNames":["Levitate","Neutralizing Gas","Misty Surge"]}
+{"PokemonName":"Cleffa","AbilityNames":["Cute Charm","Magic Guard","Friend Guard"]}
+{"PokemonName":"Togepi","AbilityNames":["Hustle","Serene Grace","Super Luck"]}
+{"PokemonName":"Mawile","AbilityNames":["Hyper Cutter","Intimidate","Sheer Force"]}
+{"PokemonName":"Spritzee","AbilityNames":["Healer","Aroma Veil"]}
+{"PokemonName":"Aromatisse","AbilityNames":["Healer","Aroma Veil"]}
+{"PokemonName":"Swirlix","AbilityNames":["Sweet Veil","Unburden"]}
+{"PokemonName":"Slurpuff","AbilityNames":["Sweet Veil","Unburden"]}
+{"PokemonName":"Sylveon","AbilityNames":["Cute Charm","Pixilate"]}
+{"PokemonName":"Milcery","AbilityNames":["Sweet Veil","Aroma Veil"]}
+{"PokemonName":"Alcremie","AbilityNames":["Sweet Veil","Aroma Veil"]}
+{"PokemonName":"Zacian","AbilityNames":["Intrepid Sword"]}
+{"PokemonName":"Sandaconda","AbilityNames":["Sand Spit","Shed Skin","Sand Veil"]}
+{"PokemonName":"Koffing","AbilityNames":["Levitate","Neutralizing Gas","Stench"]}
+{"PokemonName":"Weezing","AbilityNames":["Levitate","Neutralizing Gas","Stench"]}
+{"PokemonName":"Trubbish","AbilityNames":["Stench","Sticky Hold","Aftermath"]}
+{"PokemonName":"Garbodor","AbilityNames":["Stench","Weak Armor","Aftermath"]}
+{"PokemonName":"Meowth","AbilityNames":["Pickup","Tough Claws","Unnerve"]}
+{"PokemonName":"Klink","AbilityNames":["Plus","Minus","Clear Body"]}
+{"PokemonName":"Klang","AbilityNames":["Plus","Minus","Clear Body"]}
+{"PokemonName":"Klinklang","AbilityNames":["Plus","Minus","Clear Body"]}
+{"PokemonName":"Meltan","AbilityNames":["Magnet Pull"]}
+{"PokemonName":"Melmetal","AbilityNames":["Iron Fist"]}
+{"PokemonName":"Melmetal","AbilityNames":["Iron Fist","Iron Fist"]}
+{"PokemonName":"Perrserker","AbilityNames":["Battle Armor","Tough Claws","Steely Spirit"]}
+{"PokemonName":"Cufant","AbilityNames":["Sheer Force","Heavy Metal"]}
+{"PokemonName":"Copperajah","AbilityNames":["Sheer Force","Heavy Metal"]}
