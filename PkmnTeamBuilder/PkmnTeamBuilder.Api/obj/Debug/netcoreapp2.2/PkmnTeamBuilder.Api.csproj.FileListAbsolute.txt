@@ -53,3 +53,4 @@ D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netc
 D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\types.json
 D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\abilities.json
 D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\pokemonAbilities.json
+C:\Users\joshuashields\Documents\GitHub\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Api\bin\Debug\netcoreapp2.2\SeedFiles\pokemonAbilities.json
