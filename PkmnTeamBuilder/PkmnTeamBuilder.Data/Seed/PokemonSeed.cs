@@ -10,7 +10,7 @@ namespace PkmnTeamBuilder.Data.Seed
 {
     public static class PokemonSeed
     {
-        public static void Seed(ModelBuilder builder, List<PokemonType> types)
+        public static void Seed(ModelBuilder builder, List<PokemonType> types, List<PokemonMoveType> moveTypes, List<PokemonMove> moves)
         {
             var resource = SeedHelper.GetResource("pokemon.json");
 
@@ -38,7 +38,23 @@ namespace PkmnTeamBuilder.Data.Seed
             builder.Entity<Pokemon>()
                 .HasData(pokemon.ToArray());
 
+            IEnumerable<PokemonMoveset> levelUps;
+            var tms = new List<PokemonMoveset>();
+            var trs = new List<PokemonMoveset>();
+            var eggs = new List<PokemonMoveset>();
+            var tutors = new List<PokemonMoveset>();
 
+            foreach(var pkmn in fullPokemon)
+            {
+                levelUps = pkmn.Moves.LevelUp
+                    .Select((x, index) => new PokemonMoveset
+                    {
+                        Id = index + 1,
+                        MoveId = moves.First(y => y.Name.ToLower() == x.ToLower()).Id,
+                        MoveTypeId = moveTypes.First(y => y.Name == "Level Up").Id,
+                        PokemonId = pkmn.Id
+                    });
+            }
         }
     }
 }

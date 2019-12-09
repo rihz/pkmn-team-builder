@@ -40,17 +40,9 @@ namespace PkmnTeamBuilder.Entities
 
         public virtual PokemonType Type2 { get; set; }
 
-        public virtual ICollection<PokemonAbility> Abilities { get; set; }
+        public virtual ICollection<PokemonMoveset> Moveset { get; set; }
 
-        public virtual ICollection<PokemonMove> LevelUpMoves { get; set; }
-
-        public virtual ICollection<PokemonMove> TMs { get; set; }
-
-        public virtual ICollection<PokemonMove> TRs { get; set; }
-
-        public virtual ICollection<PokemonMove> EggMoves { get; set; }
-
-        public virtual ICollection<PokemonMove> TutorMoves { get; set; }
+        public virtual ICollection<PokemonAbilityset> Abilities { get; set; }
     }
 
     public class FullPokemon
@@ -97,5 +89,35 @@ namespace PkmnTeamBuilder.Entities
         public string[] Egg { get; set; }
 
         public string[] Tutor { get; set; }
+    }
+
+    public class PokemonMoveset
+    {
+        public int Id { get; set; }
+
+        public int PokemonId { get; set; }
+
+        public int MoveId { get; set; }
+
+        public int MoveTypeId { get; set; }
+
+        public virtual Pokemon Pokemon { get; set; }
+
+        public virtual PokemonMove Move { get; set; }
+
+        public virtual PokemonMoveType MoveType { get; set; }
+    }
+
+    public class PokemonAbilityset
+    {
+        public int Id { get; set; }
+
+        public int PokemonId { get; set; }
+
+        public int AbilityId { get; set; }
+
+        public virtual Pokemon Pokemon { get; set; }
+
+        public virtual PokemonAbility Ability { get; set; }
     }
 }

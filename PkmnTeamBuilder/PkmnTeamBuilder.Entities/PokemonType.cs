@@ -17,5 +17,7 @@ namespace PkmnTeamBuilder.Entities
         public virtual ICollection<PokemonMatchup> Defending { get; set; }
 
         public virtual ICollection<PokemonMove> Moves { get; set; }
+
+        public virtual ICollection<Pokemon> Pokemon { get; set; }
     }
 }
