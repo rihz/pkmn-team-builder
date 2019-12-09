@@ -19,6 +19,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
 using PkmnTeamBuilder.Api.Controllers.Auth;
+using PkmnTeamBuilder.Api.Controllers.Pokemon;
 using PkmnTeamBuilder.Data.Context;
 using PkmnTeamBuilder.Entities;
 
@@ -49,6 +50,7 @@ namespace PkmnTeamBuilder.Api
             _mapperConfiguration = new MapperConfiguration(config =>
             {
                 config.AddProfile(new AuthMapProfile());
+                config.AddProfile(new PokemonMapProfile());
             });
 
             services.AddCors(options =>
@@ -75,6 +77,9 @@ namespace PkmnTeamBuilder.Api
             services.AddMvc();
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
+
+            services.AddScoped<IPokemonRepository, PokemonRepository>();
+            services.AddScoped<IPokemonService, PokemonService>();
             
             services.AddSingleton(sp => _mapperConfiguration.CreateMapper());
 

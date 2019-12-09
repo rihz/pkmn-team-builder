@@ -1,35 +1,31 @@
 import { Injectable } from "@angular/core";
 import { BaseService } from './base.service';
+import { HttpClient } from "@angular/common/http";
+import { ConfigService } from "./config.service";
 
 const Pokedex = require('pokeapi-js-wrapper');
 
 @Injectable()
 export class PkmnService extends BaseService {
-    _pokedex;
-    _pkmn: any[] = [];
+    baseUrl = '';
 
-    constructor() {
+    constructor(private http: HttpClient,
+        private configService: ConfigService) {
         super();
-        const self = this;
-        this._pokedex = new Pokedex.Pokedex();
-        
-        if(this._pkmn.length <= 0) {
-            this._pokedex.resource(['/api/v2/pokemon/?limit=964'])
-            .then(function(response) {
-                self._pkmn = response[0].results;
-            });
-        }
+        this.baseUrl = configService.getApiURL();
     }
 
-    async getPokemon(name: string) {
-        return await this._pokedex.getPokemonByName(name);
+    getPokemon(id: number) {
+        this.http.get(this.baseUrl + '/pokemon/' + id)
+            .subscribe(result => {
+                console.log(result);
+            });
     }
 
     searchPokemon(search: string) {
-        return this._pkmn.filter(pkmn => {
-            if(pkmn.name.indexOf(search) > -1) {
-                return true;
-            }
-        });
+        this.http.get(this.baseUrl + '/pokemon?name=' + search)
+            .subscribe(result => {
+                console.log(result);
+            });
     }
 }

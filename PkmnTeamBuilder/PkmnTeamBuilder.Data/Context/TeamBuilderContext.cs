@@ -8,8 +8,18 @@ namespace PkmnTeamBuilder.Data.Context
     public class TeamBuilderContext : IdentityDbContext<AppUser>
     {
         public DbSet<AppUser> Users { get; set; }
-
         public DbSet<PokemonType> PokemonTypes { get; set; }
+        public DbSet<Pokemon> Pokemon { get; set; }
+        public DbSet<PokemonAbility> PokemonAbilities { get; set; }
+        public DbSet<PokemonAbilityset> PokemonAbilitysets { get; set; }
+        public DbSet<PokemonItem> PokemonItems { get; set; }
+        public DbSet<PokemonMatchup> PokemonMatchups { get; set; }
+        public DbSet<PokemonMove> PokemonMoves { get; set; }
+        public DbSet<PokemonMoveCategory> PokemonMoveCategories { get; set; }
+        public DbSet<PokemonMoveset> PokemonMovesets { get; set; }
+        public DbSet<PokemonMoveType> PokemonMoveTypes { get; set; }
+        public DbSet<PokemonNature> PokemonNatures { get; set; }
+        public DbSet<PokemonStat> PokemonStats { get; set; }
 
         public TeamBuilderContext(DbContextOptions options)
             : base(options)
