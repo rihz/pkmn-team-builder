@@ -18,6 +18,8 @@ namespace PkmnTeamBuilder.Entities
 
         public virtual ICollection<PokemonMove> Moves { get; set; }
 
-        public virtual ICollection<Pokemon> Pokemon { get; set; }
+        public virtual ICollection<Pokemon> PokemonType1 { get; set; }
+
+        public virtual ICollection<Pokemon> PokemonType2 { get; set; }
     }
 }

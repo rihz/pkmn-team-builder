@@ -38,3 +38,4 @@ D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\net
 D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\stats.json
 D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\types.json
 D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\abilities.json
+D:\Projects\pkmn-team-builder\PkmnTeamBuilder\PkmnTeamBuilder.Data\bin\Debug\netcoreapp2.2\SeedFiles\pokemonAbilities.json

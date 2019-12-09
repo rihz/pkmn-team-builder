@@ -9,7 +9,7 @@ namespace PkmnTeamBuilder.Data.Seed
 {
     public static class AbilitySeed
     {
-        public static void Seed(ModelBuilder builder)
+        public static List<PokemonAbility> Seed(ModelBuilder builder)
         {
             var resource = SeedHelper.GetResource("abilities.json");
 
@@ -23,6 +23,8 @@ namespace PkmnTeamBuilder.Data.Seed
 
             builder.Entity<PokemonAbility>()
                 .HasData(abilities.ToArray());
+
+            return abilities.ToList();
         }
     }
 }

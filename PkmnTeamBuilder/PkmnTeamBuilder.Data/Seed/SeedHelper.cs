@@ -25,7 +25,7 @@ namespace PkmnTeamBuilder.Data.Seed
                 while(!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-
+                    
                     var obj = JsonConvert.DeserializeObject<T>(line);
 
                     objects.Add(obj);

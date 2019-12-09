@@ -79,13 +79,13 @@ namespace PkmnTeamBuilder.Data.Context
                 x.Property(y => y.Id).ValueGeneratedOnAdd();
 
                 x.HasOne(y => y.Type1)
-                    .WithMany(y => y.Pokemon)
+                    .WithMany(y => y.PokemonType1)
                     .HasForeignKey(y => y.Type1Id)
                     .OnDelete(DeleteBehavior.Restrict)
                     .HasConstraintName("FK_Type1_Pokemon");
 
                 x.HasOne(y => y.Type2)
-                    .WithMany(y => y.Pokemon)
+                    .WithMany(y => y.PokemonType2)
                     .HasForeignKey(y => y.Type2Id)
                     .OnDelete(DeleteBehavior.Restrict)
                     .HasConstraintName("FK_Type2_Pokemon");
@@ -137,12 +137,12 @@ namespace PkmnTeamBuilder.Data.Context
             var types = TypeSeed.Seed(builder);
             var moveTypes = MoveTypeSeed.Seed(builder);
             MatchupSeed.Seed(builder, types);
-            AbilitySeed.Seed(builder);
+            var abilities = AbilitySeed.Seed(builder);
             ItemSeed.Seed(builder);
             NatureSeed.Seed(builder);
             StatSeed.Seed(builder);
             var moves = MoveSeed.Seed(builder, types, categories);
-            PokemonSeed.Seed(builder, types, moveTypes, moves);
+            PokemonSeed.Seed(builder, types, moveTypes, moves, abilities);
         }
     }
 }

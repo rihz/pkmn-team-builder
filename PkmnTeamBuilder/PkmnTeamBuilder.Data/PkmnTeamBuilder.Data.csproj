@@ -17,6 +17,7 @@
     <None Remove="SeedFiles\moves.json" />
     <None Remove="SeedFiles\natures.json" />
     <None Remove="SeedFiles\pokemon.json" />
+    <None Remove="SeedFiles\pokemonAbilities.json" />
     <None Remove="SeedFiles\stats.json" />
     <None Remove="SeedFiles\types.json" />
   </ItemGroup>
@@ -35,6 +36,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="SeedFiles\pokemon.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeedFiles\pokemonAbilities.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="SeedFiles\stats.json">
