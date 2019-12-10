@@ -25,6 +25,8 @@ export class Pokemon {
     type1Name = '';
     type2Id = 0;
     type2Name = '';
+    moves: Move[] = [];
+    abilities: Ability[] = [];
 }
 
 export class TeamMember {
@@ -50,4 +52,18 @@ export class TeamMember {
     sdefEV = 0;
     spdIV = 0;
     spdEV = 0;
+}
+
+export class Move {
+    id = 0;
+    name = '';
+    description = '';
+    categoryId = 0;
+    categoryName = '';
+}
+
+export class Ability {
+    id = 0;
+    name = '';
+    description = '';
 }

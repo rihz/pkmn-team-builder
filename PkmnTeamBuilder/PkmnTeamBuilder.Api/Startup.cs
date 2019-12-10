@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
+using PkmnTeamBuilder.Api.Controllers.Ability;
 using PkmnTeamBuilder.Api.Controllers.Auth;
 using PkmnTeamBuilder.Api.Controllers.Move;
 using PkmnTeamBuilder.Api.Controllers.Pokemon;
@@ -53,6 +54,7 @@ namespace PkmnTeamBuilder.Api
                 config.AddProfile(new AuthMapProfile());
                 config.AddProfile(new PokemonMapProfile());
                 config.AddProfile(new MoveMapProfile());
+                config.AddProfile(new AbilityMapProfile());
             });
 
             services.AddCors(options =>
