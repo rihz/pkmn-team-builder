@@ -2,8 +2,7 @@ import { Injectable } from "@angular/core";
 import { BaseService } from './base.service';
 import { HttpClient } from "@angular/common/http";
 import { ConfigService } from "./config.service";
-
-const Pokedex = require('pokeapi-js-wrapper');
+import { Observable } from "rxjs";
 
 @Injectable()
 export class PkmnService extends BaseService {
@@ -15,17 +14,11 @@ export class PkmnService extends BaseService {
         this.baseUrl = configService.getApiURL();
     }
 
-    getPokemon(id: number) {
-        this.http.get(this.baseUrl + '/pokemon/' + id)
-            .subscribe(result => {
-                console.log(result);
-            });
+    getPokemon(id: number): Observable<Object> {
+        return this.http.get(this.baseUrl + '/pokemon/' + id)
     }
 
     searchPokemon(search: string) {
-        this.http.get(this.baseUrl + '/pokemon?name=' + search)
-            .subscribe(result => {
-                console.log(result);
-            });
+        return this.http.get(this.baseUrl + '/pokemon?name=' + search)
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace PkmnTeamBuilder.Api.Controllers.Pokemon
 {
@@ -26,7 +27,15 @@ namespace PkmnTeamBuilder.Api.Controllers.Pokemon
 
         public PokemonModel GetPokemon(int id)
         {
-            var pkmn = _context.Pokemon.FirstOrDefault(p => p.Id == id);
+            var pkmn = _context.Pokemon
+                .Include(p => p.Abilities)
+                    .ThenInclude(pp => pp.Ability)
+                .Include(p => p.Moveset)
+                    .ThenInclude(pp => pp.Move)
+                        .ThenInclude(ppp => ppp.Category)
+                .Include(p => p.Type1)
+                .Include(p => p.Type2)
+                .FirstOrDefault(p => p.Id == id);
 
             return pkmn != default(Entities.Pokemon)
                 ? _mapper.Map<PokemonModel>(pkmn)

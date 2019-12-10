@@ -18,12 +18,17 @@
     outline: none;
 }
 
+.result-row {
+    display: inline-flex;
+    width: 100%;
+}
+
+.result-row:hover {
+    cursor: pointer;
+    background-color: mat-color($mat-charmander-accent, 100);
+}
+
 .result {
     padding: 0.5em;
     margin: 0;
-}
-
-.result:hover {
-    cursor: pointer;
-    background-color: mat-color($mat-charmander-accent, 100);
 }

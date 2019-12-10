@@ -10,12 +10,21 @@ export class Credentials {
 
 export class Pokemon {
     id = 0;
-    number = 0;
     name = '';
-    description = '';
-    abilities = [];
-    moves = [];
-
+    number = 0;
+    icon = '';
+    baseHP = 0;
+    baseAtk = 0;
+    baseDef = 0;
+    baseSpAtk = 0;
+    baseSpDef = 0;
+    baseSpe = 0;
+    image = '';
+    shiny = '';
+    type1Id = 0;
+    type1Name = '';
+    type2Id = 0;
+    type2Name = '';
 }
 
 export class TeamMember {

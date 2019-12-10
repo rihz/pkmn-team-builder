@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { PkmnService } from 'src/app/shared/services/pkmn.service';
+import { PkmnService } from '../../shared/services/pkmn.service';
 import { MatDialogRef } from '@angular/material';
 
 @Component({
@@ -14,16 +14,21 @@ export class PkmnSelectorComponent implements OnInit {
     private ref: MatDialogRef<PkmnSelectorComponent>) { }
 
   ngOnInit() {
+
   }
 
-  async search(value: string) {
-    this.results = this.pkmn.searchPokemon(value);
+  search(value: string) {
+    this.pkmn.searchPokemon(value)
+      .subscribe(x => {
+        this.results = x;
+      })
   }
 
-  async select(name: string) {
-    const pokemon = await this.pkmn.getPokemon(name);
-    
-    this.ref.close(pokemon);
+  select(id: number) {
+    this.pkmn.getPokemon(id)
+      .subscribe(pokemon => {
+        this.ref.close(pokemon);
+      })
   }
 
 }

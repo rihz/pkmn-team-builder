@@ -2,7 +2,8 @@
     <div class="input-row">
         <input autocomplete="off" class="search-input" matInput placeholder="Search Pokemon" (input)="search($event.target.value)" />
     </div>
-    <div class="result-row" *ngFor="let result of results" (click)="select(result.name)">
+    <div class="result-row" *ngFor="let result of results" (click)="select(result.id)">
+        <img [src]="result.icon" />
         <h3 class="result">
             {{ result.name }}
         </h3>

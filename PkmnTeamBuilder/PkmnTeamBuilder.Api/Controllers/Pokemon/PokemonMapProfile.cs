@@ -12,7 +12,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Pokemon
         {
             CreateMap<Entities.Pokemon, PokemonModel>()
                 .ForMember(x => x.Type1Name, y => y.MapFrom(z => z.Type1.Name))
-                .ForMember(x => x.Type2Name, y => y.MapFrom(z => z.Type2.Name));
+                .ForMember(x => x.Type2Name, y => y.MapFrom(z => z.Type2.Name))
+                .ForMember(x => x.Moves, y => y.MapFrom(z => z.Moveset));
         }
     }
 }

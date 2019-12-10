@@ -4113,7 +4113,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
+      "sha512": "iYlHb6rxm404llb3aJfbguXhPYGWez4lg5qc/x88cITAdIeTRHMl45pTbznGu8Fe9UZtA688rCaKxFCIsG5OMg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "hasTools": true,
@@ -10045,23 +10045,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joshuashields\\.nuget\\packages\\": {},
+    "C:\\Users\\jshie\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joshuashields\\Documents\\GitHub\\pkmn-team-builder\\PkmnTeamBuilder\\PkmnTeamBuilder.Entities\\PkmnTeamBuilder.Entities.csproj",
+      "projectUniqueName": "C:\\Users\\jshie\\Documents\\GitHub\\pkmn-team-builder\\PkmnTeamBuilder\\PkmnTeamBuilder.Entities\\PkmnTeamBuilder.Entities.csproj",
       "projectName": "PkmnTeamBuilder.Entities",
-      "projectPath": "C:\\Users\\joshuashields\\Documents\\GitHub\\pkmn-team-builder\\PkmnTeamBuilder\\PkmnTeamBuilder.Entities\\PkmnTeamBuilder.Entities.csproj",
-      "packagesPath": "C:\\Users\\joshuashields\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joshuashields\\Documents\\GitHub\\pkmn-team-builder\\PkmnTeamBuilder\\PkmnTeamBuilder.Entities\\obj\\",
+      "projectPath": "C:\\Users\\jshie\\Documents\\GitHub\\pkmn-team-builder\\PkmnTeamBuilder\\PkmnTeamBuilder.Entities\\PkmnTeamBuilder.Entities.csproj",
+      "packagesPath": "C:\\Users\\jshie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jshie\\Documents\\GitHub\\pkmn-team-builder\\PkmnTeamBuilder\\PkmnTeamBuilder.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\joshuashields\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jshie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

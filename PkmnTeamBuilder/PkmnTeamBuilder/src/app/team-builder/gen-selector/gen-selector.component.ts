@@ -8,26 +8,21 @@ import { PkmnService } from 'src/app/shared/services/pkmn.service';
 })
 export class GenSelectorComponent implements OnInit {
   @Output() onSelect: EventEmitter<number> = new EventEmitter<number>();
-  litten: any;
-  popplio: any;
-  rowlet: any;
 
   gen: number = 7;
 
   constructor(private pkmn: PkmnService) { }
 
-  async ngOnInit() {
-    this.litten = await this.getPokemon('litten');
-    this.popplio = await this.getPokemon('popplio');
-    this.rowlet = await this.getPokemon('rowlet');
+  ngOnInit() {
+    
   }
 
-  async getPokemon(name: string) {
-    return await this.pkmn.getPokemon(name);
-  }
+  // async getPokemon(name: string) {
+  //   return await this.pkmn.getPokemon(name);
+  // }
 
-  select() {
-    this.onSelect.emit(this.gen);
-  }
+  // select() {
+  //   this.onSelect.emit(this.gen);
+  // }
 
 }

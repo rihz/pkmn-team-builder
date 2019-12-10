@@ -16,7 +16,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Pokemon
             _svc = svc;
         }
 
-        [Route("pokemon/{id}")]
+        [Route("{id}")]
         [HttpGet]
         public IActionResult GetById(int id)
         {
@@ -25,7 +25,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Pokemon
             return Ok(pkmn);
         }
 
-        [Route("pokemon")]
+        [Route("")]
         [HttpGet]
         public IActionResult Search([FromQuery] string name)
         {

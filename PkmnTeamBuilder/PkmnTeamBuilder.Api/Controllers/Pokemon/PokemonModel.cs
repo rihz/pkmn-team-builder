@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PkmnTeamBuilder.Api.Controllers.Move;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,6 +39,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Pokemon
         public int? Type2Id { get; set; }
 
         public string Type2Name { get; set; }
+
+        public IEnumerable<MoveModel> Moves { get; set; }
     }
 
     public class PokemonSearchResultModel
