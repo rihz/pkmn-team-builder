@@ -8,6 +8,7 @@ import { Pokemon } from 'src/app/shared/models';
 })
 export class BasicInfoComponent implements OnInit {
   @Input() member: Pokemon;
+  isShiny = false;
 
   constructor() { }
 

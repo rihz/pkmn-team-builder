@@ -1,8 +1,7 @@
 @import '../../../common.scss';
 
 .add-pkmn {
-    border: 1px solid mat-color($mat-charmander-accent, 500);
-    border-style: dashed;
+    border: 1px dashed mat-color($mat-charmander-accent, 500);
     text-align: center;
 }
 
