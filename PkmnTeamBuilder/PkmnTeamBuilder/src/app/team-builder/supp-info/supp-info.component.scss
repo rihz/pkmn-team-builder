@@ -1,1 +1,11 @@
 @import '../../../common.scss';
+
+.chip {
+    background-color: mat-color($mat-charmander-accent, 500) !important;
+    color: white !important;
+    width: 150px;
+    font-weight: bold;
+    justify-content: center;
+    margin-top: 15px !important;
+    cursor: pointer;
+}

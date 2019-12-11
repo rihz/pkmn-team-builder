@@ -4,7 +4,7 @@ import { PkmnSelectorComponent } from './pkmn-selector/pkmn-selector.component';
 import { GenSelectorComponent } from './gen-selector/gen-selector.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, NgControl } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDialogModule, MatCheckboxModule, MatChipsModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDialogModule, MatCheckboxModule, MatChipsModule, MatTabsModule } from '@angular/material';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { TeamBuilderComponent } from './team-builder.component';
 import { AddPkmnComponent } from './add-pkmn/add-pkmn.component';
@@ -27,7 +27,8 @@ import { SuppInfoComponent } from './supp-info/supp-info.component';
     MatIconModule,
     MatDialogModule,
     MatCheckboxModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTabsModule
   ],
   providers: [PkmnService],
   entryComponents: [PkmnSelectorComponent]

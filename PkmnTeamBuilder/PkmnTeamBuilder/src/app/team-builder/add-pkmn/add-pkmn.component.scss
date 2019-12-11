@@ -3,6 +3,7 @@
 .add-pkmn {
     border: 1px dashed mat-color($mat-charmander-accent, 500);
     text-align: center;
+    background-color: mat-color($mat-charmander-primary, 200);
 }
 
 .icon {

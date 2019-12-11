@@ -28,3 +28,17 @@ button {
 .container {    
     background-color: white;
 }
+
+.supp-chip-list .mat-chip-list-wrapper {
+    margin: 0px !important;
+    flex-direction: column !important;
+}
+
+.member-tabs .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels .mat-tab-label {
+    height: 32px !important;
+    min-width: 33% !important;
+}
+
+.member-tabs.mat-tab-group {
+    width: 100%;
+}

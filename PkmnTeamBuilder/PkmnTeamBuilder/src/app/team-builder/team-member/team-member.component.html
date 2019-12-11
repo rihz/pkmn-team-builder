@@ -1,4 +1,10 @@
 <div class="team-member">
     <basic-info [member]="member"></basic-info>
-    <supp-info></supp-info>
+    <mat-tab-group class="member-tabs">
+        <mat-tab label="Supplementary">
+            <supp-info></supp-info>
+        </mat-tab>
+        <mat-tab label="Stats">Stats</mat-tab>
+        <mat-tab label="Moves">Moves</mat-tab>
+    </mat-tab-group>
 </div>
