@@ -1,6 +1,8 @@
 <div class="supp-info">
     <mat-chip-list class="supp-chip-list">
-        <mat-chip class="chip">Select Ability</mat-chip>
+        <div [@selected]="selectedState" class="chip-row">
+            <mat-chip class="chip" (click)="select()">Select Ability</mat-chip>
+        </div>
         <mat-chip class="chip">Select Held Item</mat-chip>
     </mat-chip-list>
 </div>

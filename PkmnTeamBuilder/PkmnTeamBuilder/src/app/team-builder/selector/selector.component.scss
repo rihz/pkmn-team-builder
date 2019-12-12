@@ -1,0 +1,15 @@
+@import '../../../common.scss';
+
+.selection-row:hover {
+    cursor: pointer;
+    background-color: mat-color($mat-charmander-accent, 100);
+}
+
+.selection {
+    padding: 0.5em;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+}
