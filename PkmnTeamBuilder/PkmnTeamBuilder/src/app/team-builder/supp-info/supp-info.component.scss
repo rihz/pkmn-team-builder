@@ -8,4 +8,31 @@
     justify-content: center;
     margin-top: 15px !important;
     cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.chip-selected {
+    padding-top: 3px;
+}
+
+.selected {
+    font-size: 9px;
+}
+
+p {
+    margin: 0px;
+}
+
+.ability-description {
+    width: 250px;
+    height: 35px;
+    position: absolute;
+    font-size: 11px;
+    top: 25%;
+    left: 100%;
+}
+
+span {
+    overflow-wrap: break-word;
 }

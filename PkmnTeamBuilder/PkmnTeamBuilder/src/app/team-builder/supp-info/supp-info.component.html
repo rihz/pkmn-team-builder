@@ -1,7 +1,13 @@
 <div class="supp-info">
     <mat-chip-list class="supp-chip-list">
         <div [@selected]="selectedState" class="chip-row">
-            <mat-chip class="chip" (click)="select()">Select Ability</mat-chip>
+            <mat-chip class="chip" [ngClass]="{ 'chip-selected': selectedAbility !== null }" (click)="select()">
+                <p *ngIf="selectedAbility !== null" class="selected">Select Ability</p>
+                <p>{{ selectedAbility === null ? 'Select Ability' : selectedAbility.name }}</p>
+            </mat-chip>
+            <div *ngIf="selectedAbility !== null" class="ability-description">
+                <span>{{ selectedAbility.description }}</span>
+            </div>
         </div>
         <mat-chip class="chip">Select Held Item</mat-chip>
     </mat-chip-list>

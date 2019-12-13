@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Ability } from '../../shared/models';
+import { Component, OnInit, Input } from '@angular/core';
+import { Ability, Pokemon } from '../../shared/models';
 import { FormControl } from '@angular/forms';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { MatDialog } from '@angular/material';
@@ -22,10 +22,7 @@ import { SelectorComponent } from '../selector/selector.component';
   ]
 })
 export class SuppInfoComponent implements OnInit {
-  abilities: Ability[] = [
-    { id: 1, name: 'Ability 1', description: 'abcd'},
-    { id: 2, name: 'Ability 2', description: 'abcdefg'}
-  ];
+  @Input() member: Pokemon;
 
   selectedAbility: Ability = null;
 
@@ -42,10 +39,10 @@ export class SuppInfoComponent implements OnInit {
 
   select() {
     const ref = this.dialog.open(SelectorComponent, {
-      width: '500px',
+      width: '600px',
       data: {
         displayedColumns: ['name', 'description'],
-        selections: this.abilities
+        selections: this.member.abilities
       }
     });
 
