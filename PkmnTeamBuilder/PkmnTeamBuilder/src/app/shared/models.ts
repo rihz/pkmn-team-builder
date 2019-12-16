@@ -67,3 +67,10 @@ export class Ability {
     name = '';
     description = '';
 }
+
+export class Item {
+    id = 0;
+    name = '';
+    description = '';
+    icon = '';
+}

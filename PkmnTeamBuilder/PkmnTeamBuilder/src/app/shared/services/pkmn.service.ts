@@ -21,4 +21,8 @@ export class PkmnService extends BaseService {
     searchPokemon(search: string) {
         return this.http.get(this.baseUrl + '/pokemon?name=' + search)
     }
+
+    getItems() {
+        return this.http.get(this.baseUrl + '/item/');
+    }
 }

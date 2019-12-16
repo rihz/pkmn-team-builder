@@ -20,6 +20,7 @@ using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
 using PkmnTeamBuilder.Api.Controllers.Ability;
 using PkmnTeamBuilder.Api.Controllers.Auth;
+using PkmnTeamBuilder.Api.Controllers.Item;
 using PkmnTeamBuilder.Api.Controllers.Move;
 using PkmnTeamBuilder.Api.Controllers.Pokemon;
 using PkmnTeamBuilder.Data.Context;
@@ -55,6 +56,7 @@ namespace PkmnTeamBuilder.Api
                 config.AddProfile(new PokemonMapProfile());
                 config.AddProfile(new MoveMapProfile());
                 config.AddProfile(new AbilityMapProfile());
+                config.AddProfile(new ItemMapProfile());
             });
 
             services.AddCors(options =>
@@ -84,6 +86,8 @@ namespace PkmnTeamBuilder.Api
 
             services.AddScoped<IPokemonRepository, PokemonRepository>();
             services.AddScoped<IPokemonService, PokemonService>();
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<IItemService, ItemService>();
             
             services.AddSingleton(sp => _mapperConfiguration.CreateMapper());
 

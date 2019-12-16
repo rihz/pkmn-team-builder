@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Pokemon } from 'src/app/shared/models';
+import { Pokemon, Item } from 'src/app/shared/models';
 
 @Component({
   selector: 'team-member',
@@ -8,11 +8,12 @@ import { Pokemon } from 'src/app/shared/models';
 })
 export class TeamMemberComponent implements OnInit {
   @Input() member: Pokemon;
+  @Input() items: Item[];
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.member);
+    
   }
 
 }

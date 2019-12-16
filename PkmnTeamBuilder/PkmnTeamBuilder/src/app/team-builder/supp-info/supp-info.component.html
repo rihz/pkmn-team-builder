@@ -1,16 +1,26 @@
 <div class="supp-info">
     <mat-chip-list class="supp-chip-list">
-        <div [@selected]="selectedState" class="chip-row">
-            <mat-chip class="chip" [ngClass]="{ 'chip-selected': selectedAbility !== null }" (click)="select()">
-                <p *ngIf="selectedAbility !== null" class="selected">Select Ability</p>
-                <p>{{ selectedAbility === null ? 'Select Ability' : selectedAbility.name }}</p>
+        <div [@selected]="selectedAbilityState" class="chip-row">
+            <mat-chip class="chip" [ngClass]="{ 'chip-selected': selectedAbility }" (click)="selectAbility()">
+                <p *ngIf="selectedAbility" class="selected">Select Ability</p>
+                <p>{{ selectedAbility == null ? 'Select Ability' : selectedAbility.name }}</p>
             </mat-chip>
         </div>
-        <div>
-            <div *ngIf="selectedAbility !== null" class="ability-description">
+        <div [@fade]="selectedAbilityState">
+            <div *ngIf="selectedAbility" class="ability-description">
                 <span>{{ selectedAbility.description }}</span>
             </div>
         </div>
-        <mat-chip class="chip">Select Held Item</mat-chip>
+        <div [@selected]="selectedItemState" class="chip-row">
+            <mat-chip class="chip" [ngClass]="{ 'chip-selected': selectedItem }" (click)="selectItem()">
+                <p *ngIf="selectedItem" class="selected">Select Held Item</p>
+                <p>{{ selectedItem == null ? 'Select Held Item' : selectedItem.name }}</p>
+            </mat-chip>
+        </div>
+        <div [@fade]="selectedItemState">
+            <div *ngIf="selectedItem" class="item-description">
+                <span>{{ selectedItem.description }}</span>
+            </div>
+        </div>
     </mat-chip-list>
 </div>

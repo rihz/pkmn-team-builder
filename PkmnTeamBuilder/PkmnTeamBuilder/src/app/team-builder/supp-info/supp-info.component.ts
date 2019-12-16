@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Ability, Pokemon } from '../../shared/models';
+import { Ability, Pokemon, Item } from '../../shared/models';
 import { FormControl } from '@angular/forms';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { MatDialog } from '@angular/material';
@@ -19,25 +19,39 @@ import { SelectorComponent } from '../selector/selector.component';
       })),
       transition('inactive <=> active', animate('500ms ease-in')),
     ]),
+    trigger("fade", [
+      state('active', style({
+        opacity: 1
+      })),
+      state('inactive', style({
+        opacity: 0
+      })),
+      transition('inactive <=> active', animate('500ms 500ms ease-in')),
+    ])
   ]
 })
 export class SuppInfoComponent implements OnInit {
   @Input() member: Pokemon;
+  @Input() items: Item[];
 
   selectedAbility: Ability = null;
+  selectedItem: Item = null;
 
-  abilityControl = new FormControl();
-
-  get selectedState() {
+  get selectedAbilityState() {
     return this.selectedAbility ? 'active' : 'inactive';
+  }
+
+  get selectedItemState() {
+    return this.selectedItem ? 'active' : 'inactive';
   }
 
   constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
+    
   }
 
-  select() {
+  selectAbility() {
     const ref = this.dialog.open(SelectorComponent, {
       width: '600px',
       data: {
@@ -48,6 +62,20 @@ export class SuppInfoComponent implements OnInit {
 
     ref.afterClosed().subscribe(ability => {
       this.selectedAbility = ability;
+    })
+  }
+
+  selectItem() {
+    const ref = this.dialog.open(SelectorComponent, {
+      width: '600px',
+      data: {
+        displayedColumns: ['name', 'description'],
+        selections: this.items
+      }
+    });
+
+    ref.afterClosed().subscribe(item => {
+      this.selectedItem = item;
     })
   }
 
