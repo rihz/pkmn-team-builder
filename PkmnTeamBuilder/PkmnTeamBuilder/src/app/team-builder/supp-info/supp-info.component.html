@@ -5,6 +5,8 @@
                 <p *ngIf="selectedAbility !== null" class="selected">Select Ability</p>
                 <p>{{ selectedAbility === null ? 'Select Ability' : selectedAbility.name }}</p>
             </mat-chip>
+        </div>
+        <div>
             <div *ngIf="selectedAbility !== null" class="ability-description">
                 <span>{{ selectedAbility.description }}</span>
             </div>

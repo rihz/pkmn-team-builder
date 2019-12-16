@@ -29,8 +29,11 @@ p {
     height: 35px;
     position: absolute;
     font-size: 11px;
-    top: 25%;
-    left: 100%;
+    top: 13%;
+    right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 span {
