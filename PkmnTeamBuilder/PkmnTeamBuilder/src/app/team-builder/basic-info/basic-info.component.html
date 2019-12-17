@@ -1,14 +1,14 @@
 <div class="basic-info">
-    <img *ngIf="!isShiny" [src]="member.image" />
-    <img *ngIf="isShiny" [src]="member.shiny" />
+    <img *ngIf="!member.isShiny" [src]="member.pokemon.image" />
+    <img *ngIf="member.isShiny" [src]="member.pokemon.shiny" />
     <div class="info">
-        <h3>{{ member.name }}</h3>
+        <h3 class="nickname">{{ member.nickname != '' ? member.nickname : member.pokemon.name }}</h3>
         <div class="checkbox-group">
-            <mat-checkbox class="shiny-checkbox" [(ngModel)]="isShiny">
+            <mat-checkbox class="shiny-checkbox" [(ngModel)]="member.isShiny">
                 Shiny?
             </mat-checkbox>
         </div>
-        <pkmn-type [name]="member.type1Name"></pkmn-type>
-        <pkmn-type [name]="member.type2Name"></pkmn-type>
+        <pkmn-type [name]="member.pokemon.type1Name"></pkmn-type>
+        <pkmn-type [name]="member.pokemon.type2Name"></pkmn-type>
     </div>
 </div>

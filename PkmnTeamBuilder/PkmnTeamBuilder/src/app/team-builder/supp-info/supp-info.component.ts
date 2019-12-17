@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Ability, Pokemon, Item } from '../../shared/models';
+import { Ability, Pokemon, Item, TeamMember } from '../../shared/models';
 import { FormControl } from '@angular/forms';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { MatDialog } from '@angular/material';
@@ -31,14 +31,23 @@ import { SelectorComponent } from '../selector/selector.component';
   ]
 })
 export class SuppInfoComponent implements OnInit {
-  @Input() member: Pokemon;
+  @Input() member: TeamMember;
   @Input() items: Item[];
 
-  selectedAbility: Ability = null;
-  selectedItem: Item = null;
+  get selectedAbility() {
+    return this.member.ability 
+      ? this.member.ability
+      : null;
+  }
 
   get selectedAbilityState() {
     return this.selectedAbility ? 'active' : 'inactive';
+  }
+
+  get selectedItem() {
+    return this.member.item
+      ? this.member.item
+      : null;
   }
 
   get selectedItemState() {
@@ -56,13 +65,14 @@ export class SuppInfoComponent implements OnInit {
       width: '600px',
       data: {
         displayedColumns: ['name', 'description'],
-        selections: this.member.abilities
+        selections: this.member.pokemon.abilities
       },
       panelClass: 'selector-panel'
     });
 
     ref.afterClosed().subscribe(ability => {
-      this.selectedAbility = ability;
+      this.member.ability = ability;
+      this.member.abilityId = ability.id;
     })
   }
 
@@ -77,7 +87,8 @@ export class SuppInfoComponent implements OnInit {
     });
 
     ref.afterClosed().subscribe(item => {
-      this.selectedItem = item;
+      this.member.item = item;
+      this.member.itemId = item.id;
     })
   }
 

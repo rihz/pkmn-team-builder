@@ -2,42 +2,42 @@
     <mat-tab-group class="stat-tabs" [selectedIndex]="0">
         <mat-tab label="BASE">
             <div class="stats">
-                <stat-display stat="HP" [value]="member.baseHP" [first]="true"></stat-display>
-                <stat-display stat="ATK" [value]="member.baseAtk"></stat-display>
-                <stat-display stat="DEF" [value]="member.baseDef"></stat-display>
-                <stat-display stat="SATK" [value]="member.baseSpAtk"></stat-display>
-                <stat-display stat="SDEF" [value]="member.baseSpDef"></stat-display>
-                <stat-display stat="SPE" [value]="member.baseSpe"></stat-display>
+                <stat-display stat="HP" [value]="member.pokemon.baseHP" [first]="true"></stat-display>
+                <stat-display stat="ATK" [value]="member.pokemon.baseAtk"></stat-display>
+                <stat-display stat="DEF" [value]="member.pokemon.baseDef"></stat-display>
+                <stat-display stat="SATK" [value]="member.pokemon.baseSpAtk"></stat-display>
+                <stat-display stat="SDEF" [value]="member.pokemon.baseSpDef"></stat-display>
+                <stat-display stat="SPE" [value]="member.pokemon.baseSpe"></stat-display>
             </div>
         </mat-tab>
         <mat-tab label="EVs">
             <div class="stats">
-                <ev-display stat="HP" [value]="hpEV" [first]="true"></ev-display>
-                <ev-display stat="ATK" [value]="atkEV"></ev-display>
-                <ev-display stat="DEF" [value]="defEV"></ev-display>
-                <ev-display stat="SATK" [value]="spatkEV"></ev-display>
-                <ev-display stat="SDEF" [value]="spdefEV"></ev-display>
-                <ev-display stat="SPE" [value]="speEV"></ev-display>
+                <ev-display (onChange)="member.hpEV = $event" stat="HP" [value]="member.hpEV" [first]="true"></ev-display>
+                <ev-display (onChange)="member.atkEV = $event" stat="ATK" [value]="member.atkEV"></ev-display>
+                <ev-display (onChange)="member.defEV = $event" stat="DEF" [value]="member.defEV"></ev-display>
+                <ev-display (onChange)="member.spatkEV = $event" stat="SATK" [value]="member.spatkEV"></ev-display>
+                <ev-display (onChange)="member.spdefEV = $event" stat="SDEF" [value]="member.spdefEV"></ev-display>
+                <ev-display (onChange)="member.speEV = $event" stat="SPE" [value]="member.speEV"></ev-display>
             </div>
         </mat-tab>
         <mat-tab label="IVs">
             <div class="stats">
-                <iv-display stat="HP" [value]="hpIV" [first]="true"></iv-display>
-                <iv-display stat="ATK" [value]="atkIV"></iv-display>
-                <iv-display stat="DEF" [value]="defIV"></iv-display>
-                <iv-display stat="SATK" [value]="spatkIV"></iv-display>
-                <iv-display stat="SDEF" [value]="spdefIV"></iv-display>
-                <iv-display stat="SPE" [value]="speIV"></iv-display>
+                <iv-display (onChange)="member.hpIV = $event" stat="HP" [value]="member.hpIV" [first]="true"></iv-display>
+                <iv-display (onChange)="member.atkIV = $event" stat="ATK" [value]="member.atkIV"></iv-display>
+                <iv-display (onChange)="member.defIV = $event" stat="DEF" [value]="member.defIV"></iv-display>
+                <iv-display (onChange)="member.spatkIV = $event" stat="SATK" [value]="member.spatkIV"></iv-display>
+                <iv-display (onChange)="member.spdefIV = $event" stat="SDEF" [value]="member.spdefIV"></iv-display>
+                <iv-display (onChange)="member.speIV = $event" stat="SPE" [value]="member.speIV"></iv-display>
             </div>
         </mat-tab>
         <mat-tab label="TOTAL">
             <div class="stats">
-                <total-display [decreased]="isDecreased('HP')" [increased]="isIncreased('HP')" [ivs]="hpIV"  [evs]="hpEV" stat="HP" [baseStat]="member.baseHP" [first]="true"></total-display>
-                <total-display [decreased]="isDecreased('ATK')" [increased]="isIncreased('ATK')" [ivs]="atkIV" [evs]="atkEV" stat="ATK" [baseStat]="member.baseAtk"></total-display>
-                <total-display [decreased]="isDecreased('DEF')" [increased]="isIncreased('DEF')" [ivs]="defIV" [evs]="defEV" stat="DEF" [baseStat]="member.baseDef"></total-display>
-                <total-display [decreased]="isDecreased('SATK')" [increased]="isIncreased('SATK')" [ivs]="spatkIV" [evs]="spatkEV" stat="SATK" [baseStat]="member.baseSpAtk"></total-display>
-                <total-display [decreased]="isDecreased('SDEF')" [increased]="isIncreased('SDEF')" [ivs]="spdefIV" [evs]="spdefEV" stat="SDEF" [baseStat]="member.baseSpDef"></total-display>
-                <total-display [decreased]="isDecreased('SPE')" [increased]="isIncreased('SPE')" [ivs]="speIV" [evs]="speEV" stat="SPE" [baseStat]="member.baseSpe"></total-display>
+                <total-display [decreased]="isDecreased('HP')" [increased]="isIncreased('HP')" [ivs]="member.hpIV"  [evs]="member.hpEV" stat="HP" [baseStat]="member.pokemon.baseHP" [first]="true"></total-display>
+                <total-display [decreased]="isDecreased('ATK')" [increased]="isIncreased('ATK')" [ivs]="member.atkIV" [evs]="member.atkEV" stat="ATK" [baseStat]="member.pokemon.baseAtk"></total-display>
+                <total-display [decreased]="isDecreased('DEF')" [increased]="isIncreased('DEF')" [ivs]="member.defIV" [evs]="member.defEV" stat="DEF" [baseStat]="member.pokemon.baseDef"></total-display>
+                <total-display [decreased]="isDecreased('SATK')" [increased]="isIncreased('SATK')" [ivs]="member.spatkIV" [evs]="member.spatkEV" stat="SATK" [baseStat]="member.pokemon.baseSpAtk"></total-display>
+                <total-display [decreased]="isDecreased('SDEF')" [increased]="isIncreased('SDEF')" [ivs]="member.spdefIV" [evs]="member.spdefEV" stat="SDEF" [baseStat]="member.pokemon.baseSpDef"></total-display>
+                <total-display [decreased]="isDecreased('SPE')" [increased]="isIncreased('SPE')" [ivs]="member.speIV" [evs]="member.speEV" stat="SPE" [baseStat]="member.pokemon.baseSpe"></total-display>
             </div>
         </mat-tab>
     </mat-tab-group>

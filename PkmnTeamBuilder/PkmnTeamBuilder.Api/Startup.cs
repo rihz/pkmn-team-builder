@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
+using PkmnTeamBuilder.Api.Controllers;
 using PkmnTeamBuilder.Api.Controllers.Ability;
 using PkmnTeamBuilder.Api.Controllers.Auth;
 using PkmnTeamBuilder.Api.Controllers.Item;
@@ -59,6 +60,7 @@ namespace PkmnTeamBuilder.Api
                 config.AddProfile(new AbilityMapProfile());
                 config.AddProfile(new ItemMapProfile());
                 config.AddProfile(new NatureMapProfile());
+                config.AddProfile(new TeamMemberMapProfile());
             });
 
             services.AddCors(options =>

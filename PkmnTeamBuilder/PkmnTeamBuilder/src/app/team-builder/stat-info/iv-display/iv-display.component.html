@@ -1,4 +1,4 @@
 <div class="stat-display">
     <h5 [ngClass]="{ 'stat-name': !first, 'first-stat-name': first }">{{ stat }}</h5>
-    <input min="0" max="31" [ngClass]="{ 'stat-value': !first, 'first-stat-value': first }" type="number" [value]="value" />
+    <input (change)="changeIV($event)" min="0" max="31" [ngClass]="{ 'stat-value': !first, 'first-stat-value': first }" type="number" [(ngModel)]="value" />
 </div>

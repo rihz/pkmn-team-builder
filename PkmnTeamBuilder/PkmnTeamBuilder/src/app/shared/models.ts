@@ -46,12 +46,21 @@ export class TeamMember {
     atkEV = 0;
     defIV = 0;
     defEV = 0;
-    satkIV = 0;
-    satkEV = 0;
-    sdefIV = 0;
-    sdefEV = 0;
-    spdIV = 0;
-    spdEV = 0;
+    spatkIV = 0;
+    spatkEV = 0;
+    spdefIV = 0;
+    spdefEV = 0;
+    speIV = 0;
+    speEV = 0;
+    nickname = '';
+    pokemon: Pokemon;
+    ability: Ability;
+    nature: Nature;
+    item: Item;
+    move1: Move;
+    move2: Move;
+    move3: Move;
+    move4: Move;
 }
 
 export class Move {

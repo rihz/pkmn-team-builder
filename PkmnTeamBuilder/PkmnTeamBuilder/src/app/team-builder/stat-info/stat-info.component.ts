@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Pokemon, Nature } from '../../shared/models';
+import { Pokemon, Nature, TeamMember } from '../../shared/models';
 import { MatDialog } from '@angular/material';
 import { SelectorComponent } from '../selector/selector.component';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -30,24 +30,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class StatInfoComponent implements OnInit {
-  @Input() member: Pokemon;
+  @Input() member: TeamMember;
   @Input() natures: Nature[];
 
-  statType: string = 'BASE STATS';
-  hpEV = 0;
-  atkEV = 0;
-  defEV = 0;
-  spatkEV = 0;
-  spdefEV = 0;
-  speEV = 0;
-  hpIV = 31;
-  atkIV = 31;
-  defIV = 31;
-  spatkIV = 31;
-  spdefIV = 31;
-  speIV = 31;
-
-  selectedNature: Nature = null;
+  get selectedNature() {
+    return this.member.nature
+      ? this.member.nature
+      : null;
+  }
 
   get selectedNatureState() {
     return this.selectedNature ? 'active' : 'inactive';
@@ -70,7 +60,8 @@ export class StatInfoComponent implements OnInit {
     });
 
     ref.afterClosed().subscribe(nature => {
-      this.selectedNature = nature;
+      this.member.nature = nature;
+      this.member.natureId = nature.id;
     })
   }
 

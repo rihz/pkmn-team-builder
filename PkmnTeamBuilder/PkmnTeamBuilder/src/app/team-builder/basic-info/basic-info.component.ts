@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Pokemon } from 'src/app/shared/models';
+import { TeamMember } from '../../shared/models';
 
 @Component({
   selector: 'basic-info',
@@ -7,8 +8,7 @@ import { Pokemon } from 'src/app/shared/models';
   styleUrls: ['./basic-info.component.scss']
 })
 export class BasicInfoComponent implements OnInit {
-  @Input() member: Pokemon;
-  isShiny = false;
+  @Input() member: TeamMember;
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Pokemon, Item, Nature } from 'src/app/shared/models';
+import { Pokemon, Item, Nature, TeamMember } from 'src/app/shared/models';
 
 @Component({
   selector: 'team-member',
@@ -7,7 +7,7 @@ import { Pokemon, Item, Nature } from 'src/app/shared/models';
   styleUrls: ['./team-member.component.scss']
 })
 export class TeamMemberComponent implements OnInit {
-  @Input() member: Pokemon;
+  @Input() member: TeamMember;
   @Input() items: Item[];
   @Input() natures: Nature[];
 
@@ -15,6 +15,10 @@ export class TeamMemberComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  handleClick() {
+    console.log(this.member);
   }
 
 }

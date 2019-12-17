@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../shared/models';
+import { Item, TeamMember } from '../shared/models';
 import { PkmnService } from '../shared/services/pkmn.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { PkmnService } from '../shared/services/pkmn.service';
 })
 export class TeamBuilderComponent implements OnInit {
   gen = null;
-  team: any[] = [];
+  team: TeamMember[] = [];
   items: any;
   natures: any;
 
@@ -36,7 +36,11 @@ export class TeamBuilderComponent implements OnInit {
   }
 
   addPokemon(pokemon: any) {
-    this.team.push(pokemon);
+    let teamMember = new TeamMember();
+    teamMember.pokemonId = pokemon.id;
+    teamMember.pokemon = pokemon;
+
+    this.team.push(teamMember);
   }
 
 }
