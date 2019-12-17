@@ -22,6 +22,7 @@ using PkmnTeamBuilder.Api.Controllers.Ability;
 using PkmnTeamBuilder.Api.Controllers.Auth;
 using PkmnTeamBuilder.Api.Controllers.Item;
 using PkmnTeamBuilder.Api.Controllers.Move;
+using PkmnTeamBuilder.Api.Controllers.Nature;
 using PkmnTeamBuilder.Api.Controllers.Pokemon;
 using PkmnTeamBuilder.Data.Context;
 using PkmnTeamBuilder.Entities;
@@ -57,6 +58,7 @@ namespace PkmnTeamBuilder.Api
                 config.AddProfile(new MoveMapProfile());
                 config.AddProfile(new AbilityMapProfile());
                 config.AddProfile(new ItemMapProfile());
+                config.AddProfile(new NatureMapProfile());
             });
 
             services.AddCors(options =>
@@ -88,6 +90,8 @@ namespace PkmnTeamBuilder.Api
             services.AddScoped<IPokemonService, PokemonService>();
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<INatureRepository, NatureRepository>();
+            services.AddScoped<INatureService, NatureService>();
             
             services.AddSingleton(sp => _mapperConfiguration.CreateMapper());
 

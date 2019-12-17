@@ -8,15 +8,22 @@
 }
 
 .first-stat-value {
-    margin: 0px;
     width: 30px;
 }
 
 .stat-name {
-    margin: 10px 0px 0px 30px;
+    margin: 10px 0px 0px 0px;
 }
 
 .stat-value {
-    margin: 0px 0px 0px 30px;
     width: 30px;
+}
+
+input {
+    border: 0;
+    background-color: transparent;
+    font-size: 1.5em;
+    width: 55px !important;
+    text-align: center;
+    margin-left: 14px !important;
 }
