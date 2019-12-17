@@ -25,4 +25,8 @@ export class PkmnService extends BaseService {
     getItems() {
         return this.http.get(this.baseUrl + '/item/');
     }
+
+    getNatures() {
+        return this.http.get(this.baseUrl + '/nature/');
+    }
 }

@@ -11,6 +11,7 @@ export class TeamBuilderComponent implements OnInit {
   gen = null;
   team: any[] = [];
   items: any;
+  natures: any;
 
   constructor(private pkmn: PkmnService) { }
 
@@ -20,7 +21,12 @@ export class TeamBuilderComponent implements OnInit {
     this.pkmn.getItems()
       .subscribe(x => {
         this.items = x;
-      })
+      });
+
+    this.pkmn.getNatures()
+      .subscribe(x => {
+        this.natures = x;
+      });
   }
 
   setGen(gen: number) {

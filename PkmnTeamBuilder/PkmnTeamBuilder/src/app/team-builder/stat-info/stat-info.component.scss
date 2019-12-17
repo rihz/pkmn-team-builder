@@ -8,8 +8,20 @@
     text-align: center;
 }
 
+.chip-selected {
+    padding-top: 3px;
+}
+
 .stat-type {
     margin: 5px 0px 0px 0px;
+}
+
+.selected {
+    font-size: 9px;
+}
+
+p {
+    margin: 0px;
 }
 
 .chip {
@@ -22,4 +34,19 @@
     cursor: pointer;
     display: inline-block;
     text-align: center;
+}
+
+.controls {
+    display: inline-flex;
+}
+
+.nature-description {
+    width: 250px;
+    height: 35px;
+    position: absolute;
+    font-size: 11px;
+    top: 69%;
+    right: 5%;
+    display: flex;
+    align-items: center;
 }

@@ -16,7 +16,6 @@ export class SelectorComponent implements OnInit {
   }
 
   select(selection: any) {
-    console.log(selection);
     this.ref.close(selection);
   }
 

@@ -57,7 +57,8 @@ export class SuppInfoComponent implements OnInit {
       data: {
         displayedColumns: ['name', 'description'],
         selections: this.member.abilities
-      }
+      },
+      panelClass: 'selector-panel'
     });
 
     ref.afterClosed().subscribe(ability => {
@@ -71,7 +72,8 @@ export class SuppInfoComponent implements OnInit {
       data: {
         displayedColumns: ['name', 'description'],
         selections: this.items
-      }
+      },
+      panelClass: 'selector-panel'
     });
 
     ref.afterClosed().subscribe(item => {

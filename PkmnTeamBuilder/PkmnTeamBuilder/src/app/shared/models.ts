@@ -74,3 +74,10 @@ export class Item {
     description = '';
     icon = '';
 }
+
+export class Nature {
+    id = 0;
+    name = '';
+    increase = '';
+    decrease = '';
+}

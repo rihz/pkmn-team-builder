@@ -1,5 +1,12 @@
 <!-- <gen-selector *ngIf="!gen" (onSelect)="setGen($event)"></gen-selector> -->
 <div class="team-builder-main">
-    <team-member *ngFor="let member of team" [member]="member" [items]="items"></team-member>
-    <add-pkmn (onAdd)="addPokemon($event)"></add-pkmn>
+    <team-member 
+        *ngFor="let member of team" 
+        [member]="member" 
+        [items]="items"
+        [natures]="natures"
+    ></team-member>
+    <add-pkmn
+        (onAdd)="addPokemon($event)"
+    ></add-pkmn>
 </div>

@@ -25,8 +25,16 @@
         </mat-tab>
     </mat-tab-group>
     <div class="controls">
-        <mat-chip class="chip">
-            Select Nature
-        </mat-chip>
+        <div [@selected]="selectedNatureState">
+            <mat-chip [ngClass]="{ 'chip-selected': selectedNature }" (click)="selectNature()" class="chip">
+                <p *ngIf="selectedNature" class="selected">Select Nature</p>
+                <p>{{ selectedNature == null ? 'Select Nature' : selectedNature.name }}</p>
+            </mat-chip>
+        </div>
+        <div [@fade]="selectedNatureState">
+            <div class="nature-description" *ngIf="selectedNature">
+                <span>{{ selectedNature.increase }}</span>
+            </div>
+        </div>
     </div>
 </div>
