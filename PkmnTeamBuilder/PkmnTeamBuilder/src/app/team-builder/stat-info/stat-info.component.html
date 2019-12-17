@@ -20,8 +20,25 @@
                 <ev-display stat="SPE" [value]="speEV"></ev-display>
             </div>
         </mat-tab>
+        <mat-tab label="IVs">
+            <div class="stats">
+                <iv-display stat="HP" [value]="hpIV" [first]="true"></iv-display>
+                <iv-display stat="ATK" [value]="atkIV"></iv-display>
+                <iv-display stat="DEF" [value]="defIV"></iv-display>
+                <iv-display stat="SATK" [value]="spatkIV"></iv-display>
+                <iv-display stat="SDEF" [value]="spdefIV"></iv-display>
+                <iv-display stat="SPE" [value]="speIV"></iv-display>
+            </div>
+        </mat-tab>
         <mat-tab label="TOTAL">
-
+            <div class="stats">
+                <total-display [decreased]="isDecreased('HP')" [increased]="isIncreased('HP')" [ivs]="hpIV"  [evs]="hpEV" stat="HP" [baseStat]="member.baseHP" [first]="true"></total-display>
+                <total-display [decreased]="isDecreased('ATK')" [increased]="isIncreased('ATK')" [ivs]="atkIV" [evs]="atkEV" stat="ATK" [baseStat]="member.baseAtk"></total-display>
+                <total-display [decreased]="isDecreased('DEF')" [increased]="isIncreased('DEF')" [ivs]="defIV" [evs]="defEV" stat="DEF" [baseStat]="member.baseDef"></total-display>
+                <total-display [decreased]="isDecreased('SATK')" [increased]="isIncreased('SATK')" [ivs]="spatkIV" [evs]="spatkEV" stat="SATK" [baseStat]="member.baseSpAtk"></total-display>
+                <total-display [decreased]="isDecreased('SDEF')" [increased]="isIncreased('SDEF')" [ivs]="spdefIV" [evs]="spdefEV" stat="SDEF" [baseStat]="member.baseSpDef"></total-display>
+                <total-display [decreased]="isDecreased('SPE')" [increased]="isIncreased('SPE')" [ivs]="speIV" [evs]="speEV" stat="SPE" [baseStat]="member.baseSpe"></total-display>
+            </div>
         </mat-tab>
     </mat-tab-group>
     <div class="controls">
@@ -33,7 +50,14 @@
         </div>
         <div [@fade]="selectedNatureState">
             <div class="nature-description" *ngIf="selectedNature">
-                <span>{{ selectedNature.increase }}</span>
+                <mat-card class="increase">
+                    <mat-icon>add</mat-icon>
+                    <span>{{ selectedNature.increase }}</span>
+                </mat-card>
+                <mat-card class="decrease">
+                    <mat-icon>remove</mat-icon>
+                    <span>{{ selectedNature.decrease }}</span>
+                </mat-card>
             </div>
         </div>
     </div>

@@ -50,3 +50,27 @@ p {
     display: flex;
     align-items: center;
 }
+
+mat-card {
+    padding: 2px 8px;
+    margin: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+}
+
+mat-card.increase {
+    color: red !important;
+}
+
+mat-card.decrease {
+    color: blue !important;
+}
+
+mat-icon {    
+    font-size: 16px;
+    height: 16px;
+    width: 16px;
+    padding-right: 5px;
+}

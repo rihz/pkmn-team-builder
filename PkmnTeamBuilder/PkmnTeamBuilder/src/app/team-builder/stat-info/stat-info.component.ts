@@ -40,6 +40,12 @@ export class StatInfoComponent implements OnInit {
   spatkEV = 0;
   spdefEV = 0;
   speEV = 0;
+  hpIV = 31;
+  atkIV = 31;
+  defIV = 31;
+  spatkIV = 31;
+  spdefIV = 31;
+  speIV = 31;
 
   selectedNature: Nature = null;
 
@@ -66,6 +72,22 @@ export class StatInfoComponent implements OnInit {
     ref.afterClosed().subscribe(nature => {
       this.selectedNature = nature;
     })
+  }
+
+  isIncreased(stat: string): boolean {
+    if(this.selectedNature) {
+      return stat.toLowerCase() === this.selectedNature.increase.toLowerCase();
+    }
+
+    return false;
+  }
+
+  isDecreased(stat: string): boolean {
+    if(this.selectedNature) {
+      return stat.toLowerCase() === this.selectedNature.decrease.toLowerCase();
+    }
+
+    return false;
   }
 
 }
