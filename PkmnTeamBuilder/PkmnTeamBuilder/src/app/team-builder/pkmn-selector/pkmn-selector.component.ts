@@ -31,4 +31,11 @@ export class PkmnSelectorComponent implements OnInit {
       })
   }
 
+  handleEnter() {
+    this.pkmn.getPokemon(this.results[0].id)
+      .subscribe(pokemon => {
+        this.ref.close(pokemon);
+      })
+  }
+
 }

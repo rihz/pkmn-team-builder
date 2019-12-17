@@ -35,10 +35,23 @@ button {
 }
 
 .member-tabs .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels .mat-tab-label {
-    height: 32px !important;
-    min-width: 33% !important;
+    height: 32px;
+    min-width: 33%;
 }
 
 .member-tabs.mat-tab-group {
     width: 100%;
+}
+
+.stat-tabs mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.stat-tabs mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels .mat-tab-label {
+    height: 20px !important;
+}
+
+.stat-tabs .mat-tab-header {
+    border-bottom: 0px;
 }

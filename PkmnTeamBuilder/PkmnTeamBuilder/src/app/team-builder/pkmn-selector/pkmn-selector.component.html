@@ -1,6 +1,6 @@
 <div class="pkmn-selector">
     <div class="input-row">
-        <input autocomplete="off" class="search-input" matInput placeholder="Search Pokemon" (input)="search($event.target.value)" />
+        <input autocomplete="off" class="search-input" matInput placeholder="Search Pokemon" (input)="search($event.target.value)" (keyup.enter)="handleEnter()" />
     </div>
     <div class="result-row" *ngFor="let result of results" (click)="select(result.id)">
         <img [src]="result.icon" />

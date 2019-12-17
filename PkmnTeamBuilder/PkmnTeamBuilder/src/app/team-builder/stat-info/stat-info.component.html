@@ -1,0 +1,32 @@
+<div class="stat-info">
+    <mat-tab-group class="stat-tabs" [selectedIndex]="1">
+        <mat-tab label="BASE">
+            <div class="stats">
+                <stat-display stat="HP" [value]="member.baseHP" [first]="true"></stat-display>
+                <stat-display stat="ATK" [value]="member.baseAtk"></stat-display>
+                <stat-display stat="DEF" [value]="member.baseDef"></stat-display>
+                <stat-display stat="SATK" [value]="member.baseSpAtk"></stat-display>
+                <stat-display stat="SDEF" [value]="member.baseSpDef"></stat-display>
+                <stat-display stat="SPE" [value]="member.baseSpe"></stat-display>
+            </div>
+        </mat-tab>
+        <mat-tab label="EVs">
+            <div class="stats">
+                <ev-display stat="HP" [value]="hpEV" [first]="true"></ev-display>
+                <ev-display stat="ATK" [value]="atkEV"></ev-display>
+                <ev-display stat="DEF" [value]="defEV"></ev-display>
+                <ev-display stat="SATK" [value]="spatkEV"></ev-display>
+                <ev-display stat="SDEF" [value]="spdefEV"></ev-display>
+                <ev-display stat="SPE" [value]="speEV"></ev-display>
+            </div>
+        </mat-tab>
+        <mat-tab label="TOTAL">
+
+        </mat-tab>
+    </mat-tab-group>
+    <div class="controls">
+        <mat-chip class="chip">
+            Select Nature
+        </mat-chip>
+    </div>
+</div>

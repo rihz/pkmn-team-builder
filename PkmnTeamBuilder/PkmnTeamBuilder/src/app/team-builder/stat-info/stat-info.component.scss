@@ -1,0 +1,25 @@
+@import '../../../common.scss';
+
+.stats {
+    display: inline-flex;
+}
+
+.stat-info {
+    text-align: center;
+}
+
+.stat-type {
+    margin: 5px 0px 0px 0px;
+}
+
+.chip {
+    background-color: mat-color($mat-charmander-accent, 500) !important;
+    color: white !important;
+    width: 150px;
+    font-weight: bold;
+    justify-content: center;
+    margin-top: 10px !important;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}

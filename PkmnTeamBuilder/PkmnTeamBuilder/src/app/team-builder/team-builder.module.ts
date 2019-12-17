@@ -14,11 +14,14 @@ import { TypeComponent } from './type/type.component';
 import { SuppInfoComponent } from './supp-info/supp-info.component';
 import { SelectorComponent } from './selector/selector.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StatInfoComponent } from './stat-info/stat-info.component';
+import { StatDisplayComponent } from './stat-info/stat-display/stat-display.component';
+import { EvDisplayComponent } from './stat-info/ev-display/ev-display.component';
 
 
 
 @NgModule({
-  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, TypeComponent, SuppInfoComponent, SelectorComponent],
+  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, TypeComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent],
   imports: [
     CommonModule,
     SharedModule,
