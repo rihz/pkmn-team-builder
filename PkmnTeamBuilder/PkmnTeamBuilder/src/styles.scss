@@ -34,6 +34,11 @@ button {
     flex-direction: column !important;
 }
 
+.move-chip-list .mat-chip-list-wrapper {
+    margin: 0px !important;
+    justify-content: space-evenly;
+}
+
 .member-tabs .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels .mat-tab-label {
     height: 32px;
     min-width: 33%;
@@ -68,6 +73,7 @@ button {
     padding: 0px !important;
 }
 
-td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type {
-    width: 25% !important;
+td.mat-cell,
+th.mat-header-cell {
+    padding: 8px !important;
 }

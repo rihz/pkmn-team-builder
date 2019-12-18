@@ -4,7 +4,7 @@ import { PkmnSelectorComponent } from './pkmn-selector/pkmn-selector.component';
 import { GenSelectorComponent } from './gen-selector/gen-selector.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, NgControl } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDialogModule, MatCheckboxModule, MatChipsModule, MatTabsModule, MatTableModule, MatCardModule, MatTooltipModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDialogModule, MatCheckboxModule, MatChipsModule, MatTabsModule, MatTableModule, MatCardModule, MatTooltipModule, MatGridListModule } from '@angular/material';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { TeamBuilderComponent } from './team-builder.component';
 import { AddPkmnComponent } from './add-pkmn/add-pkmn.component';
@@ -20,11 +20,12 @@ import { EvDisplayComponent } from './stat-info/ev-display/ev-display.component'
 import { IvDisplayComponent } from './stat-info/iv-display/iv-display.component';
 import { TotalDisplayComponent } from './stat-info/total-display/total-display.component';
 import { NicknameEntryComponent } from './basic-info/nickname-entry/nickname-entry.component';
+import { MoveInfoComponent } from './move-info/move-info.component';
 
 
 
 @NgModule({
-  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, TypeComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent, IvDisplayComponent, TotalDisplayComponent, NicknameEntryComponent],
+  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, TypeComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent, IvDisplayComponent, TotalDisplayComponent, NicknameEntryComponent, MoveInfoComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -40,7 +41,8 @@ import { NicknameEntryComponent } from './basic-info/nickname-entry/nickname-ent
     BrowserAnimationsModule,
     MatTableModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatGridListModule
   ],
   providers: [PkmnService],
   entryComponents: [

@@ -86,6 +86,11 @@ export class Move {
     description = '';
     categoryId = 0;
     categoryName = '';
+    pp = 0;
+    power = 0;
+    accuracy = 0;
+    typeId = 0;
+    typeName = '';
 }
 
 export class Ability {
