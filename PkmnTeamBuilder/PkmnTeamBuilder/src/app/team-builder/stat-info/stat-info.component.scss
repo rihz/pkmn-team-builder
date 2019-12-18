@@ -75,3 +75,16 @@ mat-icon {
     width: 16px;
     padding-right: 5px;
 }
+
+.level-radio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+
+.level-radio-button {
+    font-size: 10px;
+    padding-bottom: 5px;
+}

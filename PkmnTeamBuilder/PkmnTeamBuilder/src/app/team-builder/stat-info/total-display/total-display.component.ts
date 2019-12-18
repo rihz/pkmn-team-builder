@@ -13,8 +13,7 @@ export class TotalDisplayComponent implements OnInit {
   @Input() decreased = false;
   @Input() baseStat: number;
   @Input() first: boolean = false;
-
-  level = 50;
+  @Input() level: number;
 
   get natureValue() {
     if(this.increased) {

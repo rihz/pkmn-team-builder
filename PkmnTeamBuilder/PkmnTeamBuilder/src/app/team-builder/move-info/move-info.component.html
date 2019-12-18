@@ -1,7 +1,24 @@
 <div class="move-info">
     <mat-grid-list cols="2" rowHeight="fit">
         <mat-grid-tile>
-            <mat-chip class="chip" (click)="selectMove1()">Select Move 1</mat-chip>
+            <!-- <mat-chip class="chip" (click)="selectMove1()">Select Move 1</mat-chip> -->
+            <mat-card class="move-card">
+                <div class="card-row">
+                    <div class="move-name">
+                        Text
+                    </div>
+                    <div class="move-supp">
+                        <pkmn-type small="true" name="fighting">
+
+                        </pkmn-type>
+                    </div>
+                </div>
+                <div class="card-row">
+                    <display-card label="PP" value="25">
+
+                    </display-card>
+                </div>
+            </mat-card>
         </mat-grid-tile>
         <mat-grid-tile>
             <mat-chip class="chip" (click)="selectMove2()">Select Move 2</mat-chip>

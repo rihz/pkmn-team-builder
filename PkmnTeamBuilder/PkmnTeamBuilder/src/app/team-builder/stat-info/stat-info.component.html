@@ -32,12 +32,20 @@
         </mat-tab>
         <mat-tab label="TOTAL">
             <div class="stats">
-                <total-display [decreased]="isDecreased('HP')" [increased]="isIncreased('HP')" [ivs]="member.hpIV"  [evs]="member.hpEV" stat="HP" [baseStat]="member.pokemon.baseHP" [first]="true"></total-display>
-                <total-display [decreased]="isDecreased('ATK')" [increased]="isIncreased('ATK')" [ivs]="member.atkIV" [evs]="member.atkEV" stat="ATK" [baseStat]="member.pokemon.baseAtk"></total-display>
-                <total-display [decreased]="isDecreased('DEF')" [increased]="isIncreased('DEF')" [ivs]="member.defIV" [evs]="member.defEV" stat="DEF" [baseStat]="member.pokemon.baseDef"></total-display>
-                <total-display [decreased]="isDecreased('SP. ATK')" [increased]="isIncreased('SP. ATK')" [ivs]="member.spatkIV" [evs]="member.spatkEV" stat="SP. ATK" [baseStat]="member.pokemon.baseSpAtk"></total-display>
-                <total-display [decreased]="isDecreased('SP. DEF')" [increased]="isIncreased('SP. DEF')" [ivs]="member.spdefIV" [evs]="member.spdefEV" stat="SP. DEF" [baseStat]="member.pokemon.baseSpDef"></total-display>
-                <total-display [decreased]="isDecreased('SPE')" [increased]="isIncreased('SPE')" [ivs]="member.speIV" [evs]="member.speEV" stat="SPE" [baseStat]="member.pokemon.baseSpe"></total-display>
+                <mat-radio-group class="level-radio" [(ngModel)]="level">
+                    <mat-radio-button class="level-radio-button" [value]="50">
+                        Lvl. 50
+                    </mat-radio-button>
+                    <mat-radio-button class="level-radio-button" [value]="100">
+                        Lvl. 100
+                    </mat-radio-button>
+                </mat-radio-group>
+                <total-display [level]="level" [decreased]="isDecreased('HP')" [increased]="isIncreased('HP')" [ivs]="member.hpIV"  [evs]="member.hpEV" stat="HP" [baseStat]="member.pokemon.baseHP" [first]="true"></total-display>
+                <total-display [level]="level" [decreased]="isDecreased('ATK')" [increased]="isIncreased('ATK')" [ivs]="member.atkIV" [evs]="member.atkEV" stat="ATK" [baseStat]="member.pokemon.baseAtk"></total-display>
+                <total-display [level]="level" [decreased]="isDecreased('DEF')" [increased]="isIncreased('DEF')" [ivs]="member.defIV" [evs]="member.defEV" stat="DEF" [baseStat]="member.pokemon.baseDef"></total-display>
+                <total-display [level]="level" [decreased]="isDecreased('SP. ATK')" [increased]="isIncreased('SP. ATK')" [ivs]="member.spatkIV" [evs]="member.spatkEV" stat="SP. ATK" [baseStat]="member.pokemon.baseSpAtk"></total-display>
+                <total-display [level]="level" [decreased]="isDecreased('SP. DEF')" [increased]="isIncreased('SP. DEF')" [ivs]="member.spdefIV" [evs]="member.spdefEV" stat="SP. DEF" [baseStat]="member.pokemon.baseSpDef"></total-display>
+                <total-display [level]="level" [decreased]="isDecreased('SPE')" [increased]="isIncreased('SPE')" [ivs]="member.speIV" [evs]="member.speEV" stat="SPE" [baseStat]="member.pokemon.baseSpe"></total-display>
             </div>
         </mat-tab>
     </mat-tab-group>

@@ -33,6 +33,8 @@ export class StatInfoComponent implements OnInit {
   @Input() member: TeamMember;
   @Input() natures: Nature[];
 
+  level = 50;
+
   get selectedNature() {
     return this.member.nature
       ? this.member.nature

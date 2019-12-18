@@ -77,3 +77,25 @@ td.mat-cell,
 th.mat-header-cell {
     padding: 8px !important;
 }
+
+.level-radio .mat-radio-container{
+    height: 15px;
+    width: 15px;
+}
+
+.level-radio .mat-radio-outer-circle{
+    height: 15px;
+    width: 15px;
+}
+
+.level-radio .mat-radio-inner-circle{
+    height: 15px;
+    width: 15px;
+}
+
+.level-radio .mat-radio-button .mat-radio-ripple{
+    height: 20px; 
+    width: 20px; 
+    left: calc(50% - 15px); 
+    top: calc(50% - 15px); 
+}
