@@ -61,7 +61,7 @@ button {
 }
 
 .mat-dialog-container {
-    height: 90vh !important;
+    max-height: 90vh !important;
 }
 
 .selector-panel .mat-dialog-container {

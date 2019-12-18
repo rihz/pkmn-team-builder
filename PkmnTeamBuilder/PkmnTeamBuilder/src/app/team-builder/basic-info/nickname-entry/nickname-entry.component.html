@@ -1,0 +1,6 @@
+<div class="nickname-entry">
+    <div class="input-row">
+        <input autocomplete="off" class="search-input" matInput placeholder="Nickname" (input)="nickname = $event.target.value" (keyup.enter)="finish()" />
+        <button mat-button class="finish-button">Finish</button>
+    </div>
+</div>

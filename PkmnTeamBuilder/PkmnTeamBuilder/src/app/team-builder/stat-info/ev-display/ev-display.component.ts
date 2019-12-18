@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { TeamMember } from '../../../shared/models';
 
 @Component({
   selector: 'ev-display',
@@ -9,6 +10,7 @@ export class EvDisplayComponent implements OnInit {
   @Input() stat: string;
   @Input() value: number;
   @Input() first: boolean = false;
+  @Input() member: TeamMember;
   @Output() onChange: EventEmitter<number> = new EventEmitter<number>();
   
   constructor() { }
@@ -25,6 +27,14 @@ export class EvDisplayComponent implements OnInit {
     } else if(e.target.value < 0) {
       ev = 0;
       this.value = 0;
+    }
+
+    console.log(this.stat, ev, this.member.getEVSum(this.stat, ev));
+    if(this.member.getEVSum(this.stat, ev) > 510) {
+      const diff = Math.abs(510 - this.member.getEVSum(this.stat, ev));
+
+      ev -= diff;
+      this.value = ev;
     }
 
     this.onChange.emit(ev);

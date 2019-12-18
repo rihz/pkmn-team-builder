@@ -14,6 +14,9 @@ img {
 
 h3 {
     margin-bottom: 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .checkbox-group {
@@ -22,11 +25,16 @@ h3 {
 }
 
 .nickname {
-    padding: 0px 5px;
+    margin: 0px 5px 0px 10px;
+    text-align: center;
 }
 
 .nickname:hover {
     background-color: mat-color($mat-charmander-primary, 500);
     cursor: pointer;
     border-radius: 5px;
+}
+
+.info {
+    width: 110px;
 }

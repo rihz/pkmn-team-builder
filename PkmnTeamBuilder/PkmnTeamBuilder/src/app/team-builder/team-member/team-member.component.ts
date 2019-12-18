@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Pokemon, Item, Nature, TeamMember } from 'src/app/shared/models';
+import { Pokemon, Item, Nature, TeamMember } from '../../shared/models';
 
 @Component({
   selector: 'team-member',
@@ -15,10 +15,6 @@ export class TeamMemberComponent implements OnInit {
 
   ngOnInit() {
     
-  }
-
-  handleClick() {
-    console.log(this.member);
   }
 
 }

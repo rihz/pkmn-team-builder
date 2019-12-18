@@ -2,7 +2,11 @@
     <img *ngIf="!member.isShiny" [src]="member.pokemon.image" />
     <img *ngIf="member.isShiny" [src]="member.pokemon.shiny" />
     <div class="info">
-        <h3 class="nickname">{{ member.nickname != '' ? member.nickname : member.pokemon.name }}</h3>
+        <div (click)="showDialog()" class="nickname" matTooltip="Set Pokemon's nickname" matTooltipPosition="right">
+            <h3>
+                {{ member.nickname != '' ? member.nickname : member.pokemon.name }}
+            </h3>
+        </div>
         <div class="checkbox-group">
             <mat-checkbox class="shiny-checkbox" [(ngModel)]="member.isShiny">
                 Shiny?

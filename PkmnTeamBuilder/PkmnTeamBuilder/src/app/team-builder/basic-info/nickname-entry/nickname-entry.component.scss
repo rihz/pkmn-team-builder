@@ -1,0 +1,24 @@
+@import '../../../../common.scss';
+
+.search-input {
+    font-size: 16px; 
+    border: 0px; 
+    width: 50%; 
+    margin-right: 15px;
+    border-radius: 10px; 
+    padding: 10px 15px;
+    background-color: white;
+    text-align: left;
+    color: mat-color($mat-charmander-accent, 900);
+    box-shadow: 0 0 2pt 2pt mat-color($mat-charmander-accent, 100);
+}
+
+.search-input:focus {
+    box-shadow: 0 0 2pt 2pt mat-color($mat-charmander-accent, 300);
+    outline: none;
+}
+
+.input-row {
+    display: inline-flex;
+    width: 100%;
+}

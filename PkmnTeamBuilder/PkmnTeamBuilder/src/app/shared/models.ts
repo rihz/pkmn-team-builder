@@ -40,17 +40,17 @@ export class TeamMember {
     move4Id = 0;
     itemId = 0;
     isShiny = false;
-    hpIV = 0;
+    hpIV = 31;
     hpEV = 0;
-    atkIV = 0;
+    atkIV = 31;
     atkEV = 0;
-    defIV = 0;
+    defIV = 31;
     defEV = 0;
-    spatkIV = 0;
+    spatkIV = 31;
     spatkEV = 0;
-    spdefIV = 0;
+    spdefIV = 31;
     spdefEV = 0;
-    speIV = 0;
+    speIV = 31;
     speEV = 0;
     nickname = '';
     pokemon: Pokemon;
@@ -61,6 +61,23 @@ export class TeamMember {
     move2: Move;
     move3: Move;
     move4: Move;
+
+    getEVSum(stat: string, value: number) {
+        switch (stat.toLowerCase()) {
+            case 'hp':
+                return value + this.atkEV + this.defEV + this.spatkEV + this.spdefEV + this.speEV;
+            case 'atk':
+                return this.hpEV + value + this.defEV + this.spatkEV + this.spdefEV + this.speEV;
+            case 'def':
+                return this.hpEV + this.atkEV + value + this.spatkEV + this.spdefEV + this.speEV;
+            case 'sp. atk':
+                return this.hpEV + this.atkEV + this.defEV + value + this.spdefEV + this.speEV;
+            case 'sp. def':
+                return this.hpEV + this.atkEV + this.defEV + this.spatkEV + value + this.speEV;
+            case 'spe':
+                return this.hpEV + this.atkEV + this.defEV + this.spatkEV + this.spdefEV + value;
+        }
+    }
 }
 
 export class Move {

@@ -4,7 +4,7 @@ import { PkmnSelectorComponent } from './pkmn-selector/pkmn-selector.component';
 import { GenSelectorComponent } from './gen-selector/gen-selector.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, NgControl } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDialogModule, MatCheckboxModule, MatChipsModule, MatTabsModule, MatTableModule, MatCardModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDialogModule, MatCheckboxModule, MatChipsModule, MatTabsModule, MatTableModule, MatCardModule, MatTooltipModule } from '@angular/material';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { TeamBuilderComponent } from './team-builder.component';
 import { AddPkmnComponent } from './add-pkmn/add-pkmn.component';
@@ -19,11 +19,12 @@ import { StatDisplayComponent } from './stat-info/stat-display/stat-display.comp
 import { EvDisplayComponent } from './stat-info/ev-display/ev-display.component';
 import { IvDisplayComponent } from './stat-info/iv-display/iv-display.component';
 import { TotalDisplayComponent } from './stat-info/total-display/total-display.component';
+import { NicknameEntryComponent } from './basic-info/nickname-entry/nickname-entry.component';
 
 
 
 @NgModule({
-  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, TypeComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent, IvDisplayComponent, TotalDisplayComponent],
+  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, TypeComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent, IvDisplayComponent, TotalDisplayComponent, NicknameEntryComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -38,12 +39,14 @@ import { TotalDisplayComponent } from './stat-info/total-display/total-display.c
     MatTabsModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    MatTooltipModule
   ],
   providers: [PkmnService],
   entryComponents: [
     PkmnSelectorComponent,
-    SelectorComponent
+    SelectorComponent,
+    NicknameEntryComponent
   ]
 })
 export class TeamBuilderModule { }
