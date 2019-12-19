@@ -7,38 +7,54 @@
                 </mat-chip>
             </div>
             <div [@fadeIn]="move1State" [@show]="move1State">
-                <move class="move" [move]="member.move1"></move>
+                <move [matTooltip]="getTooltip(member.move1)" matTooltipClass="pre-tooltip" matTooltipPosition="left"
+                    class="move" [move]="member.move1"></move>
+                <button class="move-close-button" mat-mini-fab (click)="member.move1 = null;">
+                    <mat-icon class="move-close-icon">close</mat-icon>
+                </button>
             </div>
         </mat-grid-tile>
         <mat-grid-tile>
-                <div [@fadeOut]="move2State">
-                    <mat-chip class="chip" (click)="selectMove2()">
-                        Select Move 2
-                    </mat-chip>
-                </div>
-                <div [@fadeIn]="move2State" [@show]="move2State">
-                    <move class="move" [move]="member.move2"></move>
-                </div>
+            <div [@fadeOut]="move2State">
+                <mat-chip class="chip" (click)="selectMove2()">
+                    Select Move 2
+                </mat-chip>
+            </div>
+            <div [@fadeIn]="move2State" [@show]="move2State">
+                <move class="move" [move]="member.move2" [matTooltip]="getTooltip(member.move2)"
+                    matTooltipClass="pre-tooltip" matTooltipPosition="left"></move>
+                <button class="move-close-button" mat-mini-fab (click)="member.move2 = null;">
+                    <mat-icon class="move-close-icon">close</mat-icon>
+                </button>
+            </div>
         </mat-grid-tile>
         <mat-grid-tile>
-                <div [@fadeOut]="move3State">
-                    <mat-chip class="chip" (click)="selectMove3()">
-                        Select Move 3
-                    </mat-chip>
-                </div>
-                <div [@fadeIn]="move3State" [@show]="move3State">
-                    <move class="move" [move]="member.move3"></move>
-                </div>
+            <div [@fadeOut]="move3State">
+                <mat-chip class="chip" (click)="selectMove3()">
+                    Select Move 3
+                </mat-chip>
+            </div>
+            <div [@fadeIn]="move3State" [@show]="move3State">
+                <move class="move" [move]="member.move3" [matTooltip]="getTooltip(member.move3)"
+                    matTooltipClass="pre-tooltip" matTooltipPosition="left"></move>
+                <button class="move-close-button" mat-mini-fab (click)="member.move3 = null;">
+                    <mat-icon class="move-close-icon">close</mat-icon>
+                </button>
+            </div>
         </mat-grid-tile>
         <mat-grid-tile>
-                <div [@fadeOut]="move4State">
-                    <mat-chip class="chip" (click)="selectMove4()">
-                        Select Move 4
-                    </mat-chip>
-                </div>
-                <div [@fadeIn]="move4State" [@show]="move4State">
-                    <move class="move" [move]="member.move4"></move>
-                </div>
+            <div [@fadeOut]="move4State">
+                <mat-chip class="chip" (click)="selectMove4()">
+                    Select Move 4
+                </mat-chip>
+            </div>
+            <div [@fadeIn]="move4State" [@show]="move4State">
+                <move class="move" [move]="member.move4" [matTooltip]="getTooltip(member.move4)"
+                    matTooltipClass="pre-tooltip" matTooltipPosition="left"></move>
+                <button class="move-close-button" mat-mini-fab (click)="member.move4 = null;">
+                    <mat-icon class="move-close-icon">close</mat-icon>
+                </button>
+            </div>
         </mat-grid-tile>
     </mat-grid-list>
 </div>

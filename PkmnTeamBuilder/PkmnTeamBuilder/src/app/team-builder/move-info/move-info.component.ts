@@ -17,7 +17,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       state('inactive', style({
         opacity: 1
       })),
-      transition('inactive => active', animate('500ms')),
+      transition('inactive => active', animate('300ms')),
     ]),
     trigger("fadeIn", [
       state('active', style({
@@ -26,16 +26,16 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       state('inactive', style({
         opacity: 0
       })),
-      transition('inactive <=> active', animate('500ms 1000ms ease-in')),
+      transition('inactive <=> active', animate('300ms 600ms ease-in')),
     ]),
     trigger("show", [
       state('inactive', style({
         display: 'none'
       })),
       state('active', style({
-        display: 'block'
+        display: 'flex'
       })),
-      transition('inactive => active', animate('500ms 500ms'))
+      transition('inactive => active', animate('300ms 300ms'))
     ])
   ]
 })
@@ -122,6 +122,14 @@ export class MoveInfoComponent implements OnInit {
       this.member.move4 = move;
       this.member.move4Id = move.id;
     });
+  }
+
+  getTooltip(move: Move) {
+    if(move) {
+      return `${move.categoryName.toUpperCase()}\n${move.description}`;
+    }
+
+    return '';
   }
 
 }

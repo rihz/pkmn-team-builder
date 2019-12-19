@@ -99,3 +99,24 @@ th.mat-header-cell {
     left: calc(50% - 15px); 
     top: calc(50% - 15px); 
 }
+
+.pre-tooltip {
+    white-space: pre-line !important;
+    background-color: mat-color($mat-charmander-primary, 100) !important;
+    border: 1px solid mat-color($mat-charmander-accent, 500) !important;
+    color: black !important;
+}
+
+.move-close-button {
+    width: 25px !important;
+    height: 25px !important;
+    position: absolute !important;
+    line-height: 25px !important;
+    left: 193px;
+    top: 17px;
+}
+
+.move-close-icon {
+    font-size: 16px;
+    margin-top: -10px;
+}
