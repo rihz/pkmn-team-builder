@@ -1,33 +1,44 @@
 <div class="move-info">
     <mat-grid-list cols="2" rowHeight="fit">
         <mat-grid-tile>
-            <!-- <mat-chip class="chip" (click)="selectMove1()">Select Move 1</mat-chip> -->
-            <mat-card class="move-card">
-                <div class="card-row">
-                    <div class="move-name">
-                        Text
-                    </div>
-                    <div class="move-supp">
-                        <pkmn-type small="true" name="fighting">
-
-                        </pkmn-type>
-                    </div>
+            <div [@fadeOut]="move1State">
+                <mat-chip class="chip" (click)="selectMove1()">
+                    Select Move 1
+                </mat-chip>
+            </div>
+            <div [@fadeIn]="move1State">
+                <move class="move" [move]="member.move1"></move>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+                <div [@fadeOut]="move2State">
+                    <mat-chip class="chip" (click)="selectMove2()">
+                        Select Move 2
+                    </mat-chip>
                 </div>
-                <div class="card-row">
-                    <display-card label="PP" value="25">
-
-                    </display-card>
+                <div [@fadeIn]="move2State">
+                    <move class="move" [move]="member.move2"></move>
                 </div>
-            </mat-card>
         </mat-grid-tile>
         <mat-grid-tile>
-            <mat-chip class="chip" (click)="selectMove2()">Select Move 2</mat-chip>
+                <div [@fadeOut]="move3State">
+                    <mat-chip class="chip" (click)="selectMove3()">
+                        Select Move 3
+                    </mat-chip>
+                </div>
+                <div [@fadeIn]="move3State">
+                    <move class="move" [move]="member.move3"></move>
+                </div>
         </mat-grid-tile>
         <mat-grid-tile>
-            <mat-chip class="chip" (click)="selectMove3()">Select Move 3</mat-chip>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-chip class="chip" (click)="selectMove4()">Select Move 4</mat-chip>
+                <div [@fadeOut]="move4State">
+                    <mat-chip class="chip" (click)="selectMove4()">
+                        Select Move 4
+                    </mat-chip>
+                </div>
+                <div [@fadeIn]="move4State">
+                    <move class="move" [move]="member.move4"></move>
+                </div>
         </mat-grid-tile>
     </mat-grid-list>
 </div>

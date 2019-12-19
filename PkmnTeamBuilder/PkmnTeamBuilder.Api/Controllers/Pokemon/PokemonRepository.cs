@@ -33,6 +33,9 @@ namespace PkmnTeamBuilder.Api.Controllers.Pokemon
                 .Include(p => p.Moveset)
                     .ThenInclude(pp => pp.Move)
                         .ThenInclude(ppp => ppp.Category)
+                 .Include(p => p.Moveset)
+                    .ThenInclude(pp => pp.Move)
+                        .ThenInclude(pp => pp.Type)
                 .Include(p => p.Type1)
                 .Include(p => p.Type2)
                 .FirstOrDefault(p => p.Id == id);

@@ -1,0 +1,16 @@
+<div class="move">
+    <div class="card-row">
+        <div class="move-name">
+            {{ move?.name }}
+        </div>
+        <div class="move-supp">
+            <pkmn-type small="true" [name]="move?.typeName">
+            </pkmn-type>
+        </div>
+    </div>
+    <div class="card-row">        
+        <display-card label="PP" [value]="move?.pp"></display-card>
+        <display-card label="POW" [value]="move?.power"></display-card>
+        <display-card label="ACC" [value]="move?.accuracy"></display-card>
+    </div>
+</div>

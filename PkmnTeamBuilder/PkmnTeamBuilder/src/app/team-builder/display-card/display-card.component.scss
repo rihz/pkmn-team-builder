@@ -1,3 +1,19 @@
+@import '../../../common.scss';
+
 .display-card {
     display: inline-flex;
+    padding: 0px;
+    font-size: 12px;
+    border-radius: 0px;
+}
+
+.label {
+    background-color: mat-color($mat-charmander-accent, 500);
+    color: white;
+}
+
+.label,
+.value {
+    padding: 3px;
+    font-weight: bold;
 }
