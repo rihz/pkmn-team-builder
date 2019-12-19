@@ -3,9 +3,9 @@
     <img *ngIf="member.isShiny" [src]="member.pokemon.shiny" />
     <div class="info">
         <div (click)="showDialog()" class="nickname" matTooltip="Set Pokemon's nickname" matTooltipPosition="right">
-            <h3>
+            <h4>
                 {{ member.nickname != '' ? member.nickname : member.pokemon.name }}
-            </h3>
+            </h4>
         </div>
         <div class="checkbox-group">
             <mat-checkbox class="shiny-checkbox" [(ngModel)]="member.isShiny">

@@ -8,11 +8,10 @@ img {
 .basic-info {
     display: inline-flex;
     width: 235px;
-    padding: 0px 10px;
     border-right: 1px dashed mat-color($mat-charmander-accent, 500);
 }
 
-h3 {
+h4 {
     margin-bottom: 0px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -36,5 +35,5 @@ h3 {
 }
 
 .info {
-    width: 110px;
+    width: 115px;
 }

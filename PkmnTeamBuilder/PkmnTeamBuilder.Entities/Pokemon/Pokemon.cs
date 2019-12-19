@@ -7,6 +7,10 @@ namespace PkmnTeamBuilder.Entities
 {
     public class Pokemon
     {
+        public Pokemon()
+        {
+            Moveset = new HashSet<PokemonMoveset>();
+        }
         [Key]
         public int Id { get; set; }
 

@@ -107,13 +107,22 @@ th.mat-header-cell {
     color: black !important;
 }
 
-.move-close-button {
+.move-close-button,
+.move-choose-button {
     width: 25px !important;
     height: 25px !important;
     position: absolute !important;
     line-height: 25px !important;
+    background-color: mat-color($mat-charmander-accent, 500) !important;      
     left: 193px;
-    top: 17px;
+}
+
+.move-close-button {  
+    top: 4px;
+}
+
+.move-choose-button {
+    top: 32px;
 }
 
 .move-close-icon {

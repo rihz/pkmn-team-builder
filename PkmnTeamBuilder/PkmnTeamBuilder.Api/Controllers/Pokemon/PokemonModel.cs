@@ -41,7 +41,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Pokemon
 
         public string Type2Name { get; set; }
 
-        public IEnumerable<MoveModel> Moves { get; set; }
+        public HashSet<MoveModel> Moves { get; set; }
 
         public IEnumerable<AbilityModel> Abilities { get; set; }
     }
