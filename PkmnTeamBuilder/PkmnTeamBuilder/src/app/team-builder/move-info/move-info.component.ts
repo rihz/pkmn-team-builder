@@ -24,10 +24,18 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         opacity: 1
       })),
       state('inactive', style({
-        opacity: 0,
+        opacity: 0
+      })),
+      transition('inactive <=> active', animate('500ms 1000ms ease-in')),
+    ]),
+    trigger("show", [
+      state('inactive', style({
         display: 'none'
       })),
-      transition('inactive <=> active', animate('500ms 500ms ease-in')),
+      state('active', style({
+        display: 'block'
+      })),
+      transition('inactive => active', animate('500ms 500ms'))
     ])
   ]
 })

@@ -6,7 +6,7 @@
                     Select Move 1
                 </mat-chip>
             </div>
-            <div [@fadeIn]="move1State">
+            <div [@fadeIn]="move1State" [@show]="move1State">
                 <move class="move" [move]="member.move1"></move>
             </div>
         </mat-grid-tile>
@@ -16,7 +16,7 @@
                         Select Move 2
                     </mat-chip>
                 </div>
-                <div [@fadeIn]="move2State">
+                <div [@fadeIn]="move2State" [@show]="move2State">
                     <move class="move" [move]="member.move2"></move>
                 </div>
         </mat-grid-tile>
@@ -26,7 +26,7 @@
                         Select Move 3
                     </mat-chip>
                 </div>
-                <div [@fadeIn]="move3State">
+                <div [@fadeIn]="move3State" [@show]="move3State">
                     <move class="move" [move]="member.move3"></move>
                 </div>
         </mat-grid-tile>
@@ -36,7 +36,7 @@
                         Select Move 4
                     </mat-chip>
                 </div>
-                <div [@fadeIn]="move4State">
+                <div [@fadeIn]="move4State" [@show]="move4State">
                     <move class="move" [move]="member.move4"></move>
                 </div>
         </mat-grid-tile>
