@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from './shared/theme/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pokemon Team Builder';
+
+  constructor(private themeService: ThemeService) {
+
+  }
+
+  toggle() {
+    const active = this.themeService.getActiveTheme();
+    console.log(active);
+    this.themeService.setTheme('squirtle');
+  }
 }

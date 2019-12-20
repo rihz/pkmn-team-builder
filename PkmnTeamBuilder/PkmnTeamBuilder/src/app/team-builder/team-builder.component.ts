@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item, TeamMember } from '../shared/models';
 import { PkmnService } from '../shared/services/pkmn.service';
+import { ThemeService } from '../shared/theme/theme.service';
 
 @Component({
   selector: 'team-builder',
@@ -13,7 +14,8 @@ export class TeamBuilderComponent implements OnInit {
   items: any;
   natures: any;
 
-  constructor(private pkmn: PkmnService) { }
+  constructor(private pkmn: PkmnService,
+    private themeService: ThemeService) { }
 
   ngOnInit() {
     this.gen = localStorage.getItem('teamBuilderGen');

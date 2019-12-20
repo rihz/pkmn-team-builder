@@ -10,6 +10,8 @@ import { ConfigService } from './shared/services/config.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeamBuilderComponent } from './team-builder/team-builder.component';
 import { TeamBuilderModule } from './team-builder/team-builder.module';
+import { ThemeModule } from './shared/theme/theme.module';
+import { charmanderTheme, squirtleTheme } from './shared/theme/theme';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,11 @@ import { TeamBuilderModule } from './team-builder/team-builder.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    TeamBuilderModule
+    TeamBuilderModule,
+    ThemeModule.forRoot({
+      themes: [charmanderTheme, squirtleTheme],
+      active: 'charmander'
+    })
   ],
   providers: [ConfigService, AuthGuard],
   bootstrap: [AppComponent]

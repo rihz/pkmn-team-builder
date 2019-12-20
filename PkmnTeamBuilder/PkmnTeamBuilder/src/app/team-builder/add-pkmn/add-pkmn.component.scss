@@ -1,9 +1,9 @@
 @import '../../../common.scss';
 
 .add-pkmn {
-    border: 1px dashed mat-color($mat-charmander-accent, 500);
+    border: 1px dashed var(--a500);
     text-align: center;
-    background-color: mat-color($mat-charmander-primary, 200);
+    background-color: var(--p200);
 }
 
 .icon {
@@ -11,14 +11,14 @@
     width: 80px;
     line-height: 80px;
     font-size: 80px;
-    color: mat-color($mat-charmander-accent, 500);
+    color: var(--a500);
 }
 
 .icon:hover{
-    color: mat-color($mat-charmander-accent, 900);
+    color: var(--a900);
     cursor: pointer;
 }
 
 .add-pkmn:hover {
-    border-color: mat-color($mat-charmander-accent, 900);
+    border-color: var(--a900);
 }
