@@ -21,7 +21,10 @@ export class BasicInfoComponent implements OnInit {
   showDialog() {
     const ref = this.dialog.open(NicknameEntryComponent, {
       width: '300px',
-      panelClass: 'nickname-panel'
+      panelClass: 'nickname-panel',
+      data: {
+        nickname: this.member.nickname ? this.member.nickname : ''
+      }
     });
 
     ref.afterClosed().subscribe(x => {

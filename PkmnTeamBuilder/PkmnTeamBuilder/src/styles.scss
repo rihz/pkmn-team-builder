@@ -45,7 +45,7 @@ button {
 }
 
 .member-tabs.mat-tab-group {
-    width: 100%;
+    width: 465px;
 }
 
 .stat-tabs mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels {
@@ -55,6 +55,7 @@ button {
 
 .stat-tabs mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels .mat-tab-label {
     height: 20px !important;
+    min-width: 25% !important;
 }
 
 .stat-tabs {
