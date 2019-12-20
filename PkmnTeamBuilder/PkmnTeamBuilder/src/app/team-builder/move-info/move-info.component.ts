@@ -57,6 +57,22 @@ export class MoveInfoComponent implements OnInit {
     return this.member.move4 ? 'active' : 'inactive';
   }
 
+  get moves(): Move[] {
+    return this.member.pokemon.moves
+      .sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+      .filter((thing, index, self) =>
+        self.findIndex(t => t.name === thing.name && !this.moveExists(thing.name)) === index);
+  }
+
+  moveExists(name: string): boolean {
+    const move1Match = this.member.move1 ? this.member.move1.name === name : false;
+    const move2Match = this.member.move2 ? this.member.move2.name === name : false;
+    const move3Match = this.member.move3 ? this.member.move3.name === name : false;
+    const move4Match = this.member.move4 ? this.member.move4.name === name : false;
+
+    return move1Match || move2Match || move3Match || move4Match;
+  }
+
   ngOnInit() {
   }
 
@@ -65,14 +81,16 @@ export class MoveInfoComponent implements OnInit {
       width: '650px',
       data: {
         displayedColumns: ['name', 'category', 'description', 'pp', 'power', 'accuracy', 'type'],
-        selections: this.member.pokemon.moves
+        selections: this.moves
       },
       panelClass: 'selector-panel'
     });
 
     ref.afterClosed().subscribe(move => {
-      this.member.move1 = move;
-      this.member.move1Id = move.id;
+      if (move) {
+        this.member.move1 = move;
+        this.member.move1Id = move.id;
+      }
     });
   }
 
@@ -81,14 +99,16 @@ export class MoveInfoComponent implements OnInit {
       width: '650px',
       data: {
         displayedColumns: ['name', 'category', 'description', 'pp', 'power', 'accuracy', 'type'],
-        selections: this.member.pokemon.moves
+        selections: this.moves
       },
       panelClass: 'selector-panel'
     });
 
     ref.afterClosed().subscribe(move => {
-      this.member.move2 = move;
-      this.member.move2Id = move.id;
+      if (move) {
+        this.member.move2 = move;
+        this.member.move2Id = move.id;
+      }
     });
   }
 
@@ -97,14 +117,16 @@ export class MoveInfoComponent implements OnInit {
       width: '650px',
       data: {
         displayedColumns: ['name', 'category', 'description', 'pp', 'power', 'accuracy', 'type'],
-        selections: this.member.pokemon.moves
+        selections: this.moves
       },
       panelClass: 'selector-panel'
     });
 
     ref.afterClosed().subscribe(move => {
-      this.member.move3 = move;
-      this.member.move3Id = move.id;
+      if (move) {
+        this.member.move3 = move;
+        this.member.move3Id = move.id;
+      }
     });
   }
 
@@ -113,19 +135,21 @@ export class MoveInfoComponent implements OnInit {
       width: '650px',
       data: {
         displayedColumns: ['name', 'category', 'description', 'pp', 'power', 'accuracy', 'type'],
-        selections: this.member.pokemon.moves
+        selections: this.moves
       },
       panelClass: 'selector-panel'
     });
 
     ref.afterClosed().subscribe(move => {
-      this.member.move4 = move;
-      this.member.move4Id = move.id;
+      if (move) {
+        this.member.move4 = move;
+        this.member.move4Id = move.id;
+      }
     });
   }
 
   getTooltip(move: Move) {
-    if(move) {
+    if (move) {
       return `${move.categoryName.toUpperCase()}\n${move.description}`;
     }
 
