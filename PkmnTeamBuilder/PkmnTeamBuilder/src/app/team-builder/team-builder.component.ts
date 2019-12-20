@@ -57,4 +57,10 @@ export class TeamBuilderComponent implements OnInit {
 
     this.team.push(teamMember);
   }
+
+  removeMember(member: any) {
+    this.team = this.team.filter((value, index, array) => {
+      return value.pokemon.id != member.pokemon.id;
+    });
+  }
 }

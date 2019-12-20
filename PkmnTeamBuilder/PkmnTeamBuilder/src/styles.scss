@@ -5,6 +5,7 @@
 body {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg);
 }
 
 button {
@@ -44,6 +45,7 @@ button {
 
 .member-tabs.mat-tab-group {
     width: 465px;
+    height: 155px;
 }
 
 .stat-tabs mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-labels {
@@ -139,4 +141,8 @@ th.mat-header-cell {
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar,
 .mat-form-field.mat-focused .mat-form-field-ripple {
     background-color: var(--input) !important;
+}
+
+.mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+    background-color: var(--button) !important;
 }

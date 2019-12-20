@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pokemon, Item, Nature, TeamMember } from '../../shared/models';
 
 @Component({
@@ -10,6 +10,8 @@ export class TeamMemberComponent implements OnInit {
   @Input() member: TeamMember;
   @Input() items: Item[];
   @Input() natures: Nature[];
+  @Output() onRemove = new EventEmitter<any>();
+  @Output() onChange = new EventEmitter<any>();
 
   constructor() { }
 
@@ -17,4 +19,15 @@ export class TeamMemberComponent implements OnInit {
     
   }
 
+  remove() {
+    this.onRemove.emit(this.member);
+  }
+
+  replace() {
+
+  }
+
+  openNotes() {
+
+  }
 }

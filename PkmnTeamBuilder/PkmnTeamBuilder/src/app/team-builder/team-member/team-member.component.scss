@@ -1,11 +1,25 @@
 @import '../../../common.scss';
 
-.team-member {
+.team-member-card {
     border: 1px solid var(--border);
     margin-bottom: 10px;
     border-radius: 10px;
     display: inline-flex;
-    width: 100%;
+    width: 635px;
     background-color: var(--member-bg);    
     color: black;
+}
+
+.controls-card {
+    width: 45px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: -10px 0px 0px 0px;
+}
+
+.team-member {
+    display: flex;
+    justify-content: space-between;
 }

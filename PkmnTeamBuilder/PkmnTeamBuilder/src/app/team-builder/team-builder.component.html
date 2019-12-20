@@ -10,6 +10,14 @@
             </mat-select>
         </mat-form-field>
     </div>
-    <team-member *ngFor="let member of team" [member]="member" [items]="items" [natures]="natures"></team-member>
-    <add-pkmn (onAdd)="addPokemon($event)"></add-pkmn>
+    <div class="team-member">
+        <team-member 
+            *ngFor="let member of team" 
+            [member]="member" 
+            [items]="items" 
+            [natures]="natures"
+            (onRemove)="removeMember($event)">
+        </team-member>
+    </div>
+    <add-pkmn (onAdd)="addPokemon($event)" *ngIf="team.length <= 5"></add-pkmn>
 </div>

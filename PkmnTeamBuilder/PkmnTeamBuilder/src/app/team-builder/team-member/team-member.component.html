@@ -1,14 +1,27 @@
 <div class="team-member">
-    <basic-info [member]="member"></basic-info>
-    <mat-tab-group class="member-tabs">
-        <mat-tab label="Supplementary">
-            <supp-info [items]="items" [member]="member"></supp-info>
-        </mat-tab>
-        <mat-tab label="Stats">
-            <stat-info [natures]="natures" [member]="member"></stat-info>
-        </mat-tab>
-        <mat-tab label="Moves">
-            <move-info [member]="member"></move-info>
-        </mat-tab>
-    </mat-tab-group>
+    <div class="team-member-card">
+        <basic-info [member]="member"></basic-info>
+        <mat-tab-group class="member-tabs">
+            <mat-tab label="Supplementary">
+                <supp-info [items]="items" [member]="member"></supp-info>
+            </mat-tab>
+            <mat-tab label="Stats">
+                <stat-info [natures]="natures" [member]="member"></stat-info>
+            </mat-tab>
+            <mat-tab label="Moves">
+                <move-info [member]="member"></move-info>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div class="controls-card">
+        <button mat-mini-fab (click)="remove()">
+            <mat-icon>close</mat-icon>
+        </button>
+        <button mat-mini-fab (click)="replace()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <button mat-mini-fab (click)="openNotes()">
+            <mat-icon>note_add</mat-icon>
+        </button>
+    </div>
 </div>
