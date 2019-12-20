@@ -4,7 +4,7 @@ import { PkmnSelectorComponent } from './pkmn-selector/pkmn-selector.component';
 import { GenSelectorComponent } from './gen-selector/gen-selector.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, NgControl } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDialogModule, MatCheckboxModule, MatChipsModule, MatTabsModule, MatTableModule, MatCardModule, MatTooltipModule, MatGridListModule, MatRadioModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDialogModule, MatCheckboxModule, MatChipsModule, MatTabsModule, MatTableModule, MatCardModule, MatTooltipModule, MatGridListModule, MatRadioModule, MatSelectModule, MatOptionModule } from '@angular/material';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { TeamBuilderComponent } from './team-builder.component';
 import { AddPkmnComponent } from './add-pkmn/add-pkmn.component';
@@ -45,7 +45,9 @@ import { MoveDisplayComponent } from './move-info/move-display/move-display.comp
     MatCardModule,
     MatTooltipModule,
     MatGridListModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule,
+    MatOptionModule
   ],
   providers: [PkmnService],
   entryComponents: [

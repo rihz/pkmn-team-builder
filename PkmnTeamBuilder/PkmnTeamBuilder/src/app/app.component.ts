@@ -12,10 +12,4 @@ export class AppComponent {
   constructor(private themeService: ThemeService) {
 
   }
-
-  toggle() {
-    const active = this.themeService.getActiveTheme();
-    console.log(active);
-    this.themeService.setTheme('squirtle');
-  }
 }

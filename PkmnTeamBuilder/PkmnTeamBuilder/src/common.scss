@@ -282,6 +282,3 @@ $pikachu-accent: mat-palette($md-pikachuacc);
 $pikachu-theme: mat-light-theme($pikachu-primary, $pikachu-accent);
 
 @include angular-material-theme($mat-charmander-theme);
-@include angular-material-theme($squirtle-theme);
-@include angular-material-theme($bulbasaur-theme);
-@include angular-material-theme($pikachu-theme);

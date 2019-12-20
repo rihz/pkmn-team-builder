@@ -1,12 +1,15 @@
 <!-- <gen-selector *ngIf="!gen" (onSelect)="setGen($event)"></gen-selector> -->
 <div theme class="team-builder-main">
-    <team-member 
-        *ngFor="let member of team" 
-        [member]="member" 
-        [items]="items"
-        [natures]="natures"
-    ></team-member>
-    <add-pkmn
-        (onAdd)="addPokemon($event)"
-    ></add-pkmn>
+    <div class="controls">
+        <mat-form-field>
+            <mat-select [(value)]="activeTheme" placeholder="Theme">
+                <mat-option value="bulbasaur">Bulbasaur</mat-option>
+                <mat-option value="charmander">Charmander</mat-option>
+                <mat-option value="squirtle">Squirtle</mat-option>
+                <mat-option value="pikachu">Pikachu</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <team-member *ngFor="let member of team" [member]="member" [items]="items" [natures]="natures"></team-member>
+    <add-pkmn (onAdd)="addPokemon($event)"></add-pkmn>
 </div>

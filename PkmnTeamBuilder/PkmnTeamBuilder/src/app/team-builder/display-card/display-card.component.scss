@@ -8,7 +8,7 @@
 }
 
 .label {
-    background-color: mat-color($mat-charmander-accent, 500);
+    background-color: var(--display-label);
     color: white;
 }
 

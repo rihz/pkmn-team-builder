@@ -61,6 +61,7 @@ export class TeamMember {
     move2: Move;
     move3: Move;
     move4: Move;
+    userId = 0;
 
     getEVSum(stat: string, value: number) {
         switch (stat.toLowerCase()) {
@@ -111,4 +112,14 @@ export class Nature {
     name = '';
     increase = '';
     decrease = '';
+}
+
+export class Team {
+    id = 0;
+    name = '';
+    description = '';
+    likes = 0;
+    code = '';
+    members: TeamMember[] = [];
+    lastModified: Date = new Date();
 }

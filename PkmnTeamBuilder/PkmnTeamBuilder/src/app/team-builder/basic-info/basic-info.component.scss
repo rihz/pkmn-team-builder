@@ -8,7 +8,7 @@ img {
 .basic-info {
     display: inline-flex;
     width: 235px;
-    border-right: 1px dashed mat-color($mat-charmander-accent, 500);
+    border-right: 1px dashed var(--border);
 }
 
 h4 {
@@ -29,7 +29,7 @@ h4 {
 }
 
 .nickname:hover {
-    background-color: mat-color($mat-charmander-primary, 500);
+    background-color: var(--highlight);
     cursor: pointer;
     border-radius: 5px;
 }

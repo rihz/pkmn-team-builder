@@ -9,12 +9,11 @@
     margin: 5px 0px;
     background-color: white;
     text-align: left;
-    color: mat-color($mat-charmander-accent, 900);
-    box-shadow: 0 0 2pt 2pt mat-color($mat-charmander-accent, 100);
+    box-shadow: 0 0 2pt 2pt var(--box-shadow);
 }
 
 .search-input:focus {
-    box-shadow: 0 0 2pt 2pt mat-color($mat-charmander-accent, 300);
+    box-shadow: 0 0 2pt 2pt var(--box-shadow-focus);
     outline: none;
 }
 
@@ -25,7 +24,7 @@
 
 .result-row:hover {
     cursor: pointer;
-    background-color: mat-color($mat-charmander-accent, 100);
+    background-color: var(--highlight);
 }
 
 .result {

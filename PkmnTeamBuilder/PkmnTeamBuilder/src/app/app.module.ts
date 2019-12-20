@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeamBuilderComponent } from './team-builder/team-builder.component';
 import { TeamBuilderModule } from './team-builder/team-builder.module';
 import { ThemeModule } from './shared/theme/theme.module';
-import { charmanderTheme, squirtleTheme } from './shared/theme/theme';
+import { charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme } from './shared/theme/theme';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { charmanderTheme, squirtleTheme } from './shared/theme/theme';
     BrowserAnimationsModule,
     TeamBuilderModule,
     ThemeModule.forRoot({
-      themes: [charmanderTheme, squirtleTheme],
+      themes: [charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme],
       active: 'charmander'
     })
   ],

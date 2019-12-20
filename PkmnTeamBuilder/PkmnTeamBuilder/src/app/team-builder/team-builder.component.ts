@@ -13,9 +13,20 @@ export class TeamBuilderComponent implements OnInit {
   team: TeamMember[] = [];
   items: any;
   natures: any;
+  _activeTheme: string = '';
 
   constructor(private pkmn: PkmnService,
     private themeService: ThemeService) { }
+
+  get activeTheme() {
+    return this._activeTheme;
+  }
+
+  set activeTheme(value: string) {
+    this._activeTheme = value;
+
+    this.themeService.setTheme(value);
+  }
 
   ngOnInit() {
     this.gen = localStorage.getItem('teamBuilderGen');
@@ -29,6 +40,8 @@ export class TeamBuilderComponent implements OnInit {
       .subscribe(x => {
         this.natures = x;
       });
+
+    this.activeTheme = this.themeService.getActiveTheme().name;
   }
 
   setGen(gen: number) {
@@ -44,5 +57,4 @@ export class TeamBuilderComponent implements OnInit {
 
     this.team.push(teamMember);
   }
-
 }

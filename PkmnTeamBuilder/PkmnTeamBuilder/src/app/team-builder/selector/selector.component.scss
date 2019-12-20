@@ -2,7 +2,7 @@
 
 .selection-row:hover {
     cursor: pointer;
-    background-color: mat-color($mat-charmander-accent, 100);
+    background-color: var(--highlight);
 }
 
 .selection {

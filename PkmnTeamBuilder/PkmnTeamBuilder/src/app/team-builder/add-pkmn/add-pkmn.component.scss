@@ -1,9 +1,9 @@
 @import '../../../common.scss';
 
 .add-pkmn {
-    border: 1px dashed var(--a500);
+    border: 1px dashed var(--border);
     text-align: center;
-    background-color: var(--p200);
+    background-color: var(--member-bg);
 }
 
 .icon {
@@ -11,14 +11,14 @@
     width: 80px;
     line-height: 80px;
     font-size: 80px;
-    color: var(--a500);
+    color: var(--icon);
 }
 
 .icon:hover{
-    color: var(--a900);
+    color: var(--icon-hover);
     cursor: pointer;
 }
 
 .add-pkmn:hover {
-    border-color: var(--a900);
+    border-color: var(--icon-hover);
 }
