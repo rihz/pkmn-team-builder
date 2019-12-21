@@ -1,5 +1,10 @@
 <div class="selector">
-    <table mat-table [dataSource]="data.selections" class="selection-table">
+    <div class="input-row">
+        <input autocomplete="off" class="search-input" matInput
+            placeholder="Search" (input)="search($event.target.value)"
+            *ngIf="data.search" (keyup.enter)="handleEnter()" />
+    </div>
+    <table mat-table [dataSource]="selections" class="selection-table">
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>
                 Name

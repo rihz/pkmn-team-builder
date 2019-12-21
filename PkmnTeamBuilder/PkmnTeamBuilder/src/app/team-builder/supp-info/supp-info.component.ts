@@ -81,7 +81,8 @@ export class SuppInfoComponent implements OnInit {
       width: '600px',
       data: {
         displayedColumns: ['name', 'description'],
-        selections: this.items
+        selections: this.items,
+        search: true
       },
       panelClass: 'selector-panel'
     });

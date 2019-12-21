@@ -81,7 +81,8 @@ export class MoveInfoComponent implements OnInit {
       width: '650px',
       data: {
         displayedColumns: ['name', 'category', 'description', 'pp', 'power', 'accuracy', 'type'],
-        selections: this.moves
+        selections: this.moves,
+        search: true
       },
       panelClass: 'selector-panel'
     });
@@ -99,7 +100,8 @@ export class MoveInfoComponent implements OnInit {
       width: '650px',
       data: {
         displayedColumns: ['name', 'category', 'description', 'pp', 'power', 'accuracy', 'type'],
-        selections: this.moves
+        selections: this.moves,
+        search: true
       },
       panelClass: 'selector-panel'
     });
@@ -117,7 +119,8 @@ export class MoveInfoComponent implements OnInit {
       width: '650px',
       data: {
         displayedColumns: ['name', 'category', 'description', 'pp', 'power', 'accuracy', 'type'],
-        selections: this.moves
+        selections: this.moves,
+        search: true
       },
       panelClass: 'selector-panel'
     });
@@ -135,7 +138,8 @@ export class MoveInfoComponent implements OnInit {
       width: '650px',
       data: {
         displayedColumns: ['name', 'category', 'description', 'pp', 'power', 'accuracy', 'type'],
-        selections: this.moves
+        selections: this.moves,
+        search: true
       },
       panelClass: 'selector-panel'
     });
