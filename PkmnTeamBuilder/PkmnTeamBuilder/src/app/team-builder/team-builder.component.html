@@ -16,7 +16,8 @@
             [member]="member" 
             [items]="items" 
             [natures]="natures"
-            (onRemove)="removeMember($event)">
+            (onRemove)="removeMember($event)"
+            (onChange)="changeMember($event)">
         </team-member>
     </div>
     <add-pkmn (onAdd)="addPokemon($event)" *ngIf="team.length <= 5"></add-pkmn>

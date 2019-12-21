@@ -63,4 +63,14 @@ export class TeamBuilderComponent implements OnInit {
       return value.pokemon.id != member.pokemon.id;
     });
   }
+
+  changeMember(chg: any) {
+    const index = this.team.findIndex(x => x.pokemon.id === chg.previous.pokemon.id);
+    
+    let teamMember = new TeamMember();
+    teamMember.pokemonId = chg.next.id;
+    teamMember.pokemon = chg.next;
+
+    this.team[index] = teamMember;
+  }
 }

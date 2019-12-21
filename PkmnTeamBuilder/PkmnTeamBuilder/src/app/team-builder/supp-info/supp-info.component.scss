@@ -6,10 +6,14 @@
     width: 150px;
     font-weight: bold;
     justify-content: center;
-    margin-top: 15px !important;
+    margin-top: 20px !important;
     cursor: pointer;
     display: inline-block;
     text-align: center;
+}
+
+.supp-info {
+    height: 135px;
 }
 
 .chip-selected {
@@ -42,7 +46,7 @@ p {
     height: 35px;
     position: absolute;
     font-size: 11px;
-    top: 62%;
+    top: 58%;
     right: 5%;
     display: flex;
     align-items: center;
@@ -52,4 +56,8 @@ p {
 
 span {
     overflow-wrap: break-word;
+}
+
+.supp-chip-list {
+    justify-content: space-between;
 }

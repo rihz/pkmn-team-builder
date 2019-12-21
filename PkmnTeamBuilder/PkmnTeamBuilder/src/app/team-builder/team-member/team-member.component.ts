@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pokemon, Item, Nature, TeamMember } from '../../shared/models';
+import { MatDialog } from '@angular/material';
+import { PkmnSelectorComponent } from '../pkmn-selector/pkmn-selector.component';
 
 @Component({
   selector: 'team-member',
@@ -13,7 +15,7 @@ export class TeamMemberComponent implements OnInit {
   @Output() onRemove = new EventEmitter<any>();
   @Output() onChange = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
     
@@ -24,7 +26,18 @@ export class TeamMemberComponent implements OnInit {
   }
 
   replace() {
+    const ref = this.dialog.open(PkmnSelectorComponent, {
+      width: '600px'
+    });
 
+    ref.afterClosed().subscribe(x => {
+      if(x) {
+        this.onChange.emit({
+          previous: this.member,
+          next: x
+        });
+      }
+    });
   }
 
   openNotes() {
