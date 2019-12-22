@@ -15,5 +15,7 @@ namespace PkmnTeamBuilder.Entities
         public string Icon { get; set; }
 
         public string Description { get; set; }
+
+        public virtual ICollection<TeamMember> TeamMembers { get; set; }
     }
 }

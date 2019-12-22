@@ -73,4 +73,8 @@ export class TeamBuilderComponent implements OnInit {
 
     this.team[index] = teamMember;
   }
+
+  save() {
+    console.log(this.team);
+  }
 }

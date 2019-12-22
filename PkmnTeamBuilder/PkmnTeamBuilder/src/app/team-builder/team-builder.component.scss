@@ -2,3 +2,31 @@
     width: 700px;
     margin: 0 auto;
 }
+
+.name-input {
+    font-size: 16px;
+    border: 0px;
+    width: 75%;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 10px 0px;
+    background-color: white;
+    text-align: left;
+    box-shadow: 0 0 2pt 2pt var(--box-shadow);
+}
+
+.name-input:focus {
+    box-shadow: 0 0 2pt 2pt var(--box-shadow-focus);
+    outline: none;
+}
+
+.save-button {
+    background-color: var(--button);
+    color: white;
+    height: 50%;
+    margin: auto 0px auto auto;
+}
+
+.controls {
+    display: flex;
+}

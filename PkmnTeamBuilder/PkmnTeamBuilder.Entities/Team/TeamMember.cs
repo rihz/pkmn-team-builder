@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PkmnTeamBuilder.Entities.Team;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -54,6 +55,8 @@ namespace PkmnTeamBuilder.Entities
 
         public bool IsShiny { get; set; }
 
+        public string Notes { get; set; }
+
         public virtual Pokemon Pokemon { get; set; }
 
         public virtual PokemonAbility Ability { get; set; }
@@ -69,5 +72,7 @@ namespace PkmnTeamBuilder.Entities
         public virtual PokemonMove Move3 { get; set; }
 
         public virtual PokemonMove Move4 { get; set; }
+
+        public virtual ICollection<TeamMembers> Members { get; set; }
     }
 }

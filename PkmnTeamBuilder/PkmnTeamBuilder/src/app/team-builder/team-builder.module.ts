@@ -23,11 +23,12 @@ import { NicknameEntryComponent } from './basic-info/nickname-entry/nickname-ent
 import { MoveInfoComponent } from './move-info/move-info.component';
 import { DisplayCardComponent } from './display-card/display-card.component';
 import { MoveDisplayComponent } from './move-info/move-display/move-display.component';
+import { NotesComponent } from './notes/notes.component';
 
 
 
 @NgModule({
-  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, TypeComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent, IvDisplayComponent, TotalDisplayComponent, NicknameEntryComponent, MoveInfoComponent, DisplayCardComponent, MoveDisplayComponent],
+  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, TypeComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent, IvDisplayComponent, TotalDisplayComponent, NicknameEntryComponent, MoveInfoComponent, DisplayCardComponent, MoveDisplayComponent, NotesComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -53,7 +54,8 @@ import { MoveDisplayComponent } from './move-info/move-display/move-display.comp
   entryComponents: [
     PkmnSelectorComponent,
     SelectorComponent,
-    NicknameEntryComponent
+    NicknameEntryComponent,
+    NotesComponent
   ]
 })
 export class TeamBuilderModule { }

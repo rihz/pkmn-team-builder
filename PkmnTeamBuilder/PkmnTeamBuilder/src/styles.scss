@@ -108,6 +108,12 @@ th.mat-header-cell {
     color: black !important;
 }
 
+.tooltip {
+    background-color: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    color: black !important;
+}
+
 .move-close-button,
 .move-choose-button {
     width: 25px !important;

@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pokemon, Item, Nature, TeamMember } from '../../shared/models';
 import { MatDialog } from '@angular/material';
 import { PkmnSelectorComponent } from '../pkmn-selector/pkmn-selector.component';
+import { NotesComponent } from '../notes/notes.component';
 
 @Component({
   selector: 'team-member',
@@ -41,6 +42,15 @@ export class TeamMemberComponent implements OnInit {
   }
 
   openNotes() {
+    const ref = this.dialog.open(NotesComponent, {
+      width: '600px',
+      data: {
+        notes: this.member.notes
+      }
+    });
 
+    ref.afterClosed().subscribe(notes => {
+      this.member.notes = notes;
+    });
   }
 }

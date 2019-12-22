@@ -17,5 +17,20 @@ namespace PkmnTeamBuilder.Entities.Team
         public string Code { get; set; }
 
         public DateTime LastModified { get; set; }
+
+        public virtual ICollection<TeamMembers> Members { get; set; }
+    }
+
+    public class TeamMembers
+    {
+        public int Id { get; set; }
+
+        public int TeamId { get; set; }
+
+        public int TeamMemberId { get; set; }
+
+        public virtual Team Team { get; set; }
+
+        public virtual TeamMember TeamMember { get; set; }
     }
 }

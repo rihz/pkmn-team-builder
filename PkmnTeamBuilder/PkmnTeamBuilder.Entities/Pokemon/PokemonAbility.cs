@@ -15,6 +15,8 @@ namespace PkmnTeamBuilder.Entities
         public string Description { get; set; }
 
         public virtual ICollection<PokemonAbilityset> Abilityset { get; set; }
+
+        public virtual ICollection<TeamMember> TeamMembers { get; set; }
     }
 
     public class PokemonAbilities

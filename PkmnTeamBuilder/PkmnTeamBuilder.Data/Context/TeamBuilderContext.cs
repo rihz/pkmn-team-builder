@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PkmnTeamBuilder.Data.Seed;
 using PkmnTeamBuilder.Entities;
+using PkmnTeamBuilder.Entities.Team;
 
 namespace PkmnTeamBuilder.Data.Context
 {
@@ -20,6 +21,9 @@ namespace PkmnTeamBuilder.Data.Context
         public DbSet<PokemonMoveType> PokemonMoveType { get; set; }
         public DbSet<PokemonNature> PokemonNature { get; set; }
         public DbSet<PokemonStat> PokemonStat { get; set; }
+        public DbSet<TeamMember> TeamMember { get; set; }
+        public DbSet<Team> Team { get; set; }
+        public DbSet<TeamMembers> TeamMembers { get; set; }
 
         public TeamBuilderContext(DbContextOptions options)
             : base(options)
@@ -141,6 +145,84 @@ namespace PkmnTeamBuilder.Data.Context
                     .HasForeignKey(y => y.PokemonId)
                     .OnDelete(DeleteBehavior.Restrict)
                     .HasConstraintName("FK_Pokemon_Abilityset");
+            });
+
+            builder.Entity<TeamMember>(x =>
+            {
+                x.HasKey(y => y.Id);
+                x.Property(y => y.Id).ValueGeneratedOnAdd();
+
+                x.HasOne(y => y.Pokemon)
+                    .WithMany(y => y.TeamMembers)
+                    .HasForeignKey(y => y.PokemonId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMember_Pokemon");
+
+                x.HasOne(y => y.Ability)
+                    .WithMany(y => y.TeamMembers)
+                    .HasForeignKey(y => y.AbilityId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMember_PokemonAbility");
+
+                x.HasOne(y => y.Nature)
+                    .WithMany(y => y.TeamMembers)
+                    .HasForeignKey(y => y.NatureId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMember_Nature");
+
+                x.HasOne(y => y.Item)
+                    .WithMany(y => y.TeamMembers)
+                    .HasForeignKey(y => y.ItemId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMember_Item");
+
+                x.HasOne(y => y.Move1)
+                    .WithMany(y => y.TeamMembers1)
+                    .HasForeignKey(y => y.Move1Id)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMember_Move1");
+
+                x.HasOne(y => y.Move2)
+                    .WithMany(y => y.TeamMembers2)
+                    .HasForeignKey(y => y.Move2Id)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMember_Move2");
+
+                x.HasOne(y => y.Move3)
+                    .WithMany(y => y.TeamMembers3)
+                    .HasForeignKey(y => y.Move3Id)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMember_Move3");
+
+                x.HasOne(y => y.Move4)
+                    .WithMany(y => y.TeamMembers4)
+                    .HasForeignKey(y => y.Move4Id)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMember_Move4");
+            });
+
+            builder.Entity<Team>(x =>
+            {
+                x.HasKey(a => a.Id);
+                x.Property(a => a.Id).ValueGeneratedOnAdd();
+            });
+
+            builder.Entity<TeamMembers>(x =>
+            {
+                x.HasKey(a => a.Id);
+                x.Property(a => a.Id).ValueGeneratedOnAdd();
+
+                x.HasOne(a => a.Team)
+                    .WithMany(a => a.Members)
+                    .HasForeignKey(a => a.TeamId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMembers_Team");
+
+                x.HasOne(a => a.TeamMember)
+                    .WithMany(a => a.Members)
+                    .HasForeignKey(a => a.TeamMemberId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMembers_TeamMember");
             });
 
             var categories = CategorySeed.Seed(builder);

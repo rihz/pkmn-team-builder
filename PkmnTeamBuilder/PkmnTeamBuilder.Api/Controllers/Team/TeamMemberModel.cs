@@ -58,6 +58,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
         public bool IsShiny { get; set; }
 
+        public string Notes { get; set; }
+
         public PokemonModel Pokemon { get; set; }
 
         public AbilityModel Ability { get; set; }

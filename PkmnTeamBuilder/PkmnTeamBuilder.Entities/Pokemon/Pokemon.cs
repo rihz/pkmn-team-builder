@@ -11,6 +11,7 @@ namespace PkmnTeamBuilder.Entities
         {
             Moveset = new HashSet<PokemonMoveset>();
         }
+
         [Key]
         public int Id { get; set; }
 
@@ -47,6 +48,8 @@ namespace PkmnTeamBuilder.Entities
         public virtual ICollection<PokemonMoveset> Moveset { get; set; }
 
         public virtual ICollection<PokemonAbilityset> Abilities { get; set; }
+
+        public virtual ICollection<TeamMember> TeamMembers { get; set; }
     }
 
     public class FullPokemon

@@ -53,6 +53,7 @@ export class TeamMember {
     speIV = 31;
     speEV = 0;
     nickname = '';
+    notes = '';
     pokemon: Pokemon;
     ability: Ability;
     nature: Nature;

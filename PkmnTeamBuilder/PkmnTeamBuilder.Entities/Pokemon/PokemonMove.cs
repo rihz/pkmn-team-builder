@@ -29,6 +29,14 @@ namespace PkmnTeamBuilder.Entities
         public virtual PokemonMoveCategory Category { get; set; }
 
         public virtual ICollection<PokemonMoveset> Moveset { get; set; }
+
+        public virtual ICollection<TeamMember> TeamMembers1 { get; set; }
+
+        public virtual ICollection<TeamMember> TeamMembers2 { get; set; }
+
+        public virtual ICollection<TeamMember> TeamMembers3 { get; set; }
+
+        public virtual ICollection<TeamMember> TeamMembers4 { get; set; }
     }
 
     public class FullMove
