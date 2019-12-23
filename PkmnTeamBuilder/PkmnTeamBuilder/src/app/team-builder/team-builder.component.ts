@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item, TeamMember } from '../shared/models';
+import { Item, TeamMember, Team } from '../shared/models';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { ThemeService } from '../shared/theme/theme.service';
 
@@ -10,7 +10,7 @@ import { ThemeService } from '../shared/theme/theme.service';
 })
 export class TeamBuilderComponent implements OnInit {
   gen = null;
-  team: TeamMember[] = [];
+  team: Team = new Team();
   items: any;
   natures: any;
   _activeTheme: string = '';
@@ -55,17 +55,17 @@ export class TeamBuilderComponent implements OnInit {
     teamMember.pokemonId = pokemon.id;
     teamMember.pokemon = pokemon;
 
-    this.team.push(teamMember);
+    this.team.members.push(teamMember);
   }
 
   removeMember(member: any) {
-    this.team = this.team.filter((value, index, array) => {
+    this.team.members = this.team.members.filter((value, index, array) => {
       return value.pokemon.id != member.pokemon.id;
     });
   }
 
   changeMember(chg: any) {
-    const index = this.team.findIndex(x => x.pokemon.id === chg.previous.pokemon.id);
+    const index = this.team.members.findIndex(x => x.pokemon.id === chg.previous.pokemon.id);
     
     let teamMember = new TeamMember();
     teamMember.pokemonId = chg.next.id;
@@ -75,6 +75,80 @@ export class TeamBuilderComponent implements OnInit {
   }
 
   save() {
-    console.log(this.team);
+    this.team.errors = [];
+    this.validateTeam();
+    
+    if(this.team.errors.length === 0) {
+      this.pkmn.saveTeam(this.team)
+        .subscribe(result => {
+          // show success toast
+        });
+    }
+  }
+
+  validateTeam() {
+    this.team.members.forEach((member, index, array) => {
+      this.validateMember(member);
+    });
+
+    if(!this.team.name) {
+      this.team.errors.push({
+        memberIndex: -1,
+        error: 'A name is required.'
+      });
+    }
+  }
+
+  validateMember(member: TeamMember) {
+    const index = this.team.members.findIndex(x => x.pokemon.number === member.pokemon.number);
+
+    if(member.natureId <= 0) {
+      this.team.errors.push({
+        memberIndex: index,
+        error: 'A nature must be selected.'
+      });
+    }
+
+    if(member.itemId <= 0) {
+      this.team.errors.push({
+        memberIndex: index,
+        error: 'An item must be selected.'
+      });
+    }
+
+    if(member.abilityId <= 0) {
+      this.team.errors.push({
+        memberIndex: index,
+        error: 'An ability must be selected.'
+      });
+    }
+
+    if(member.move1Id <= 0) {
+      this.team.errors.push({
+        memberIndex: index,
+        error: 'Move 1 must be selected.'
+      });
+    }
+
+    if(member.move2Id <= 0) {
+      this.team.errors.push({
+        memberIndex: index,
+        error: 'Move 2 must be selected.'
+      });
+    }
+
+    if(member.move3Id <= 0) {
+      this.team.errors.push({
+        memberIndex: index,
+        error: 'Move 3 must be selected.'
+      });
+    }
+
+    if(member.move4Id <= 0) {
+      this.team.errors.push({
+        memberIndex: index,
+        error: 'Move 4 must be selected.'
+      });
+    }
   }
 }

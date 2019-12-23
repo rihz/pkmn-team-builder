@@ -3,6 +3,7 @@ import { BaseService } from './base.service';
 import { HttpClient } from "@angular/common/http";
 import { ConfigService } from "./config.service";
 import { Observable } from "rxjs";
+import { Team } from "../models";
 
 @Injectable()
 export class PkmnService extends BaseService {
@@ -28,5 +29,9 @@ export class PkmnService extends BaseService {
 
     getNatures() {
         return this.http.get(this.baseUrl + '/nature/');
+    }
+
+    saveTeam(team: Team) {
+        return this.http.post(this.baseUrl + '/team/', team);
     }
 }

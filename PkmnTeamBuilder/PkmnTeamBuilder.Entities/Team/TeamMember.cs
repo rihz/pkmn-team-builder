@@ -8,7 +8,6 @@ namespace PkmnTeamBuilder.Entities
 {
     public class TeamMember
     {
-        [Key]
         public int Id { get; set; }
 
         public int PokemonId { get; set; }

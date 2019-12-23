@@ -123,4 +123,10 @@ export class Team {
     code = '';
     members: TeamMember[] = [];
     lastModified: Date = new Date();
+    errors: TeamError[] = [];
+}
+
+export class TeamError {
+    error = '';
+    memberIndex = 0;
 }

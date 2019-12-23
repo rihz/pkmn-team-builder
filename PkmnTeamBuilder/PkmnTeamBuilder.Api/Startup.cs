@@ -25,6 +25,7 @@ using PkmnTeamBuilder.Api.Controllers.Item;
 using PkmnTeamBuilder.Api.Controllers.Move;
 using PkmnTeamBuilder.Api.Controllers.Nature;
 using PkmnTeamBuilder.Api.Controllers.Pokemon;
+using PkmnTeamBuilder.Api.Controllers.Team;
 using PkmnTeamBuilder.Data.Context;
 using PkmnTeamBuilder.Entities;
 
@@ -94,6 +95,8 @@ namespace PkmnTeamBuilder.Api
             services.AddScoped<IItemService, ItemService>();
             services.AddScoped<INatureRepository, NatureRepository>();
             services.AddScoped<INatureService, NatureService>();
+            services.AddScoped<ITeamRepository, TeamRepository>();
+            services.AddScoped<ITeamService, TeamService>();
             
             services.AddSingleton(sp => _mapperConfiguration.CreateMapper());
 
