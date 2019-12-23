@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit, OnDestroy {
             localStorage.setItem('username', result.username);
             localStorage.setItem('userId', result.id);
 
-            this.router.navigate(['/']);
+            this.router.navigate(['/team']);
           }
         }, errors => {
           this.errors = 'Username or password is incorrect';

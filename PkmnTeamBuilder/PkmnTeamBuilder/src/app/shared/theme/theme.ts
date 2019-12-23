@@ -6,6 +6,7 @@ export const charmanderTheme: Theme = {
         '--bg': '#ffdfc6', //p100
         '--member-bg': '#ffcaa0', //p200,
         '--input': '#ff9441', //p500
+        '--header': '#ff651c', //p900
         '--bg-color': '#000', //black
         '--border': '#de5239', //a500
         '--icon': '#de5239', //a500
@@ -24,6 +25,7 @@ export const squirtleTheme: Theme = {
         '--bg': '#cee1e4', //p100
         '--member-bg': '#adced2', //p200
         '--input': '#5a9ca4', //p500
+        '--header': '#2e6e78', //p900
         '--bg-color': '#000', //black
         '--border': '#6eb0ba', //a500
         '--icon': '#6eb0ba', //a500
@@ -42,6 +44,7 @@ export const bulbasaurTheme: Theme = {
         '--bg': '#c4dfdf', //p100
         '--member-bg': '#9ccaca', //p200
         '--input': '#399494', //p500
+        '--header': '#176565', //p900
         '--bg-color': '#000', //black
         '--highlight': '#d0f2e9', //a100
         '--box-shadow': '#d0f2e9', //a100
@@ -60,6 +63,7 @@ export const pikachuTheme: Theme = {
         '--bg': '#fcf8cb', //p100
         '--member-bg': '#fbf3a9', //p200
         '--input': '#ef980b', //p500
+        '--header': '#efd528', //p900
         '--bg-color': '#000', //black
         '--highlight': '#fcebbc', //a100
         '--box-shadow': '#fcebbc', //a100

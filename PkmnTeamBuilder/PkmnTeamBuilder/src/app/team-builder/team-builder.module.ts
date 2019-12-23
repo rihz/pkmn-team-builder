@@ -41,7 +41,6 @@ import { NotesComponent } from './notes/notes.component';
     MatCheckboxModule,
     MatChipsModule,
     MatTabsModule,
-    BrowserAnimationsModule,
     MatTableModule,
     MatCardModule,
     MatTooltipModule,
