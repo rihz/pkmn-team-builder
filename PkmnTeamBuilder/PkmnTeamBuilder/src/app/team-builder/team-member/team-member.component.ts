@@ -3,6 +3,7 @@ import { Pokemon, Item, Nature, TeamMember } from '../../shared/models';
 import { MatDialog } from '@angular/material';
 import { PkmnSelectorComponent } from '../pkmn-selector/pkmn-selector.component';
 import { NotesComponent } from '../notes/notes.component';
+import { BooleanDialogComponent } from '../../shared/boolean-dialog/boolean-dialog.component';
 
 @Component({
   selector: 'team-member',
@@ -23,7 +24,18 @@ export class TeamMemberComponent implements OnInit {
   }
 
   remove() {
-    this.onRemove.emit(this.member);
+    const ref = this.dialog.open(BooleanDialogComponent, {
+      width: '600px',
+      data: {
+        message: 'Are you sure you would like to remove this Pokemon?'
+      }
+    });
+
+    ref.afterClosed().subscribe(result => {
+      if(result) {
+        this.onRemove.emit(this.member);
+      }
+    })
   }
 
   replace() {

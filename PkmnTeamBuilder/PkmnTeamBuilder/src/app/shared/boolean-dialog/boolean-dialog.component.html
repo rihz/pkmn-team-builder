@@ -1,0 +1,9 @@
+<div class="dialog">
+    <div class="message">
+        <h4>{{ data.message ? data.message : 'Confirm?' }}</h4>
+    </div>
+    <div class="controls">
+        <button mat-button (click)="close(true)">{{ data.confirmText ? data.confirmText : 'Yes' }}</button>
+        <button mat-button (click)="close(false)">{{ data.denyText ? data.denyText : 'No' }}</button>
+    </div>
+</div>

@@ -4,9 +4,10 @@ import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatButtonModule, 
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { BooleanDialogComponent } from './boolean-dialog/boolean-dialog.component';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, BooleanDialogComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -21,6 +22,9 @@ import { HeaderComponent } from './header/header.component';
   ],
   exports: [
     HeaderComponent
+  ],
+  entryComponents: [
+    BooleanDialogComponent
   ]
 })
 export class SharedModule { }
