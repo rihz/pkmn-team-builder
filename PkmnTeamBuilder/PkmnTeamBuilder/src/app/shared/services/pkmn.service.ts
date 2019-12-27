@@ -32,6 +32,14 @@ export class PkmnService extends BaseService {
     }
 
     saveTeam(team: Team) {
+        const userId = localStorage.getItem('userId');
+
+        team.userId = userId;
+
+        team.members.forEach((value, index, array) => {
+            value.userId = userId;
+        });
+
         return this.http.post(this.baseUrl + '/team/', team);
     }
 }

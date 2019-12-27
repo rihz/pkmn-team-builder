@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
     this.errors = '';
     
     if (valid) {
-      this.userService.register(value.email, value.password);
+      this.userService.register(value.email, value.password, value.username);
     }
   }
 
@@ -44,6 +44,10 @@ export class SignupComponent implements OnInit {
 
   validateConfirm(value: string, toConfirm: string) {
     return value === toConfirm;
+  }
+
+  validateUser(value: string) {
+    return value.length >= 4 && value.length <= 12;
   }
 
 }

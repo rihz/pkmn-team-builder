@@ -5,6 +5,13 @@
     <div class="container-body">
         <form #f="ngForm" novalidate (ngSubmit)="registerUser(f)">
             <div class="form-group">
+                <input matInput id="username" type="text" ngModel required name="username" placeholder="Username"
+                    #username="ngModel" autocomplete="off" />
+                <mat-hint *ngIf="!validateUser(username.value) && username.dirty" style=" color: red;">
+                    Username must be between 4 and 12 characters
+                </mat-hint>
+            </div>
+            <div class="form-group">
                 <input matInput id="email" type="text" ngModel required name="email" placeholder="Email"
                     #email="ngModel" autocomplete="off" />
                 <mat-hint *ngIf="!validateEmail(email.value) && email.dirty" style=" color: red;">

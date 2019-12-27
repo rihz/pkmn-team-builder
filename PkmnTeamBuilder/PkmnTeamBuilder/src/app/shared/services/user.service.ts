@@ -25,8 +25,8 @@ export class UserService extends BaseService {
         this.baseUrl = configService.getApiURL();
     }
 
-    register(email: string, password: string) {
-        const body = JSON.stringify({ email, password });
+    register(email: string, password: string, username: string) {
+        const body = JSON.stringify({ email, password, username });
         const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
         this.http.post(this.baseUrl + '/auth/signup', body, { headers: headers })

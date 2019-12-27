@@ -5,14 +5,13 @@ using PkmnTeamBuilder.Entities.Team;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace PkmnTeamBuilder.Api.Controllers.Team
 {
     public interface ITeamRepository
     {
         TeamModel GetTeam(string code);
-        IEnumerable<TeamModel> GetTeams(int userId);
+        IEnumerable<TeamModel> GetTeams(string userId);
         TeamModel AddTeam(TeamModel model);
         IEnumerable<TeamMember> AddTeamMembers(IEnumerable<TeamMemberModel> members);
     }
@@ -38,7 +37,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
             _context.SaveChanges();
 
-            foreach(var member in members)
+            foreach (var member in members)
             {
                 _context.TeamMembers.Add(new TeamMembers
                 {
@@ -57,7 +56,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             var added = new List<TeamMember>();
             var mapped = members.Select(y => _mapper.Map<TeamMember>(y));
 
-            foreach(var map in mapped)
+            foreach (var map in mapped)
             {
                 _context.TeamMember.Add(map);
 
@@ -74,9 +73,30 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             throw new NotImplementedException();
         }
 
-        public IEnumerable<TeamModel> GetTeams(int userId)
+        public IEnumerable<TeamModel> GetTeams(string userId)
         {
-            throw new NotImplementedException();
+            var teams = _context.Team.Where(x => x.UserId == userId);
+
+            var mappedTeams = teams.Select(x => _mapper.Map<TeamModel>(x));
+
+            foreach (var team in mappedTeams)
+            {
+                var members = _context.TeamMembers.Where(y => y.TeamId == team.Id);
+                var list = new List<TeamMemberModel>();
+
+                foreach (var member in members)
+                {
+                    list.Add(
+                        _mapper.Map<TeamMemberModel>(
+                            _context.TeamMember.First(z => z.Id == member.Id)
+                        )
+                    );
+                }
+
+                team.Members = list.AsEnumerable();
+            }
+
+            return mappedTeams;
         }
     }
 }

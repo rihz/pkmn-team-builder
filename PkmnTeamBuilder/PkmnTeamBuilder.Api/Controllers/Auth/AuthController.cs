@@ -44,25 +44,23 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
         public async Task<IActionResult> Signup([FromBody] SignupViewModel model)
         {
             var identity = _mapper.Map<AppUser>(model);
-            identity.UserName = identity.Email;
-
-            var result = await _userManager.CreateAsync(identity, model.Password);
-
-            if (!result.Succeeded)
-            {
-                return new BadRequestObjectResult(result.Errors.First());
-            }
-
-            await _context.Users.AddAsync(identity);
+            identity.UserName = model.Username;
 
             try
             {
-                _context.SaveChanges();
+                var result = await _userManager.CreateAsync(identity, model.Password);
+
+                if (!result.Succeeded)
+                {
+                    return new BadRequestObjectResult(result.Errors.First());
+                }
+
+                await _context.Users.AddAsync(identity);
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                Console.WriteLine(ex);
-            }
+                Console.WriteLine("dsa");
+            }        
 
             return Ok(true);
         }

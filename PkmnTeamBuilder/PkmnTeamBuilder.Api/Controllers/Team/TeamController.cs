@@ -22,5 +22,12 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         {
             return Ok(_service.AddTeam(team));
         }
+
+        [Route("")]
+        [HttpGet]
+        public IActionResult GetTeamsForUser([FromQuery] string userId)
+        {
+            return Ok(_service.GetTeams(userId));
+        }
     }
 }

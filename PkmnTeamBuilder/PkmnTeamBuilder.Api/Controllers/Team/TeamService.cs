@@ -8,6 +8,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
     public interface ITeamService
     {
         TeamModel AddTeam(TeamModel model);
+        IEnumerable<TeamModel> GetTeams(string userId);
     }
 
     public class TeamService : ITeamService
@@ -22,6 +23,11 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         public TeamModel AddTeam(TeamModel model)
         {
             return _repo.AddTeam(model);
+        }
+
+        public IEnumerable<TeamModel> GetTeams(string userId)
+        {
+            return _repo.GetTeams(userId);
         }
     }
 }

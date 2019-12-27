@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.errors = '';
 
     if (valid) {
-      this.userService.login(value.email, value.password)
+      this.userService.login(value.username, value.password)
         .subscribe(result => {
           if (result) {
             localStorage.setItem('auth_token', result.auth_token);

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace PkmnTeamBuilder.Entities
 {
@@ -8,5 +10,9 @@ namespace PkmnTeamBuilder.Entities
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
+        public virtual ICollection<Team.Team> Teams { get; set; }
+
+        public virtual ICollection<TeamMember> TeamMembers { get; set; }
     }
 }

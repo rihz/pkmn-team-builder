@@ -199,12 +199,24 @@ namespace PkmnTeamBuilder.Data.Context
                     .HasForeignKey(y => y.Move4Id)
                     .OnDelete(DeleteBehavior.Restrict)
                     .HasConstraintName("FK_TeamMember_Move4");
+
+                x.HasOne(y => y.User)
+                    .WithMany(y => y.TeamMembers)
+                    .HasForeignKey(y => y.UserId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamMember_User");
             });
 
             builder.Entity<Team>(x =>
             {
                 x.HasKey(a => a.Id);
                 x.Property(a => a.Id).ValueGeneratedOnAdd();
+
+                x.HasOne(y => y.User)
+                    .WithMany(y => y.Teams)
+                    .HasForeignKey(y => y.UserId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_Team_User");
             });
 
             builder.Entity<TeamMembers>(x =>

@@ -10,6 +10,8 @@ namespace PkmnTeamBuilder.Entities
     {
         public int Id { get; set; }
 
+        public string UserId { get; set; }
+
         public int PokemonId { get; set; }
 
         public int AbilityId { get; set; }
@@ -55,6 +57,8 @@ namespace PkmnTeamBuilder.Entities
         public bool IsShiny { get; set; }
 
         public string Notes { get; set; }
+
+        public virtual AppUser User { get; set; }
 
         public virtual Pokemon Pokemon { get; set; }
 

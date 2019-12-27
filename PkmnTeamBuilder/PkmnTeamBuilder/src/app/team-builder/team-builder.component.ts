@@ -82,7 +82,7 @@ export class TeamBuilderComponent implements OnInit {
       this.pkmn.saveTeam(this.team)
         .subscribe(result => {
           // show success toast
-        });
+        })
     }
   }
 

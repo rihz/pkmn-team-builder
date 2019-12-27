@@ -1,11 +1,13 @@
 export class UserRegistration {
     email: string;
     password: string;
+    username: string;
 }
 
 export class Credentials {
     email: string;
     password: string;
+    username: string;
 }
 
 export class Pokemon {
@@ -62,7 +64,7 @@ export class TeamMember {
     move2: Move;
     move3: Move;
     move4: Move;
-    userId = 0;
+    userId = '';
 
     getEVSum(stat: string, value: number) {
         switch (stat.toLowerCase()) {
@@ -124,6 +126,7 @@ export class Team {
     members: TeamMember[] = [];
     lastModified: Date = new Date();
     errors: TeamError[] = [];
+    userId = '';
 }
 
 export class TeamError {
