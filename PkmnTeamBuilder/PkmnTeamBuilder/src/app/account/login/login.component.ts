@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   errors: string;
   isRequesting: boolean;
   submitted = false;
-  credentials: Credentials = { email: '', password: '' };
+  credentials: Credentials = { email: '', password: '', username: '' };
   loginError = '';
 
   constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute) { }

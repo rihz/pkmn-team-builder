@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule, MatMenuModule } from '@angular/material';
+import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule, MatMenuModule, MatCardModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { BooleanDialogComponent } from './boolean-dialog/boolean-dialog.component';
+import { ThemeSelectorComponent } from './theme-selector/theme-selector.component';
 
 @NgModule({
-  declarations: [HeaderComponent, BooleanDialogComponent],
+  declarations: [HeaderComponent, BooleanDialogComponent, ThemeSelectorComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -18,13 +19,15 @@ import { BooleanDialogComponent } from './boolean-dialog/boolean-dialog.componen
     MatMenuModule,
     MatIconModule,
     RouterModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ],
   exports: [
     HeaderComponent
   ],
   entryComponents: [
-    BooleanDialogComponent
+    BooleanDialogComponent,
+    ThemeSelectorComponent
   ]
 })
 export class SharedModule { }

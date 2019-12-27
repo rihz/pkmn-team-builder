@@ -1,0 +1,34 @@
+<div class="theme-selector">
+    <mat-card 
+        *ngFor="let th of themes"
+        [style.border]="getBorder(th)"
+    >
+        <mat-card-content 
+            [style.background-color]="getBg(th)"
+        >
+            <div 
+                class="name"        
+                [style.background-color]="getMemberBg(th)"
+            >
+                <div 
+                    class="header"
+                    [style.background-color]="getHeader(th)"
+                >
+                    <h3
+                        [style.color]="getHeaderColor(th)"
+                    >
+                        {{ th.name }}
+                    </h3>
+                </div>
+                <button
+                    mat-button
+                    [style.background-color]="getButton(th)"   
+                    [style.color]="getButtonColor(th)" 
+                    (click)="select(th)"
+                >
+                    Choose
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

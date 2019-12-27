@@ -42,4 +42,8 @@ export class PkmnService extends BaseService {
 
         return this.http.post(this.baseUrl + '/team/', team);
     }
+
+    getTeams(userId: string) {
+        return this.http.get(this.baseUrl + `/team?${userId}`);
+    }
 }

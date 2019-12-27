@@ -4,14 +4,6 @@
         <input matInput class="name-input" placeholder="Team Name" autocomplete="off" [(ngModel)]="team.name" />
         <button class="save-button" mat-button (click)="save()">Save Team</button>
     </div>
-    <mat-form-field>
-        <mat-select [(value)]="activeTheme" placeholder="Theme">
-            <mat-option value="bulbasaur">Bulbasaur</mat-option>
-            <mat-option value="charmander">Charmander</mat-option>
-            <mat-option value="squirtle">Squirtle</mat-option>
-            <mat-option value="pikachu">Pikachu</mat-option>
-        </mat-select>
-    </mat-form-field>
     <div class="team-member">
         <team-member *ngFor="let member of team.members" [member]="member" [items]="items" [natures]="natures"
             (onRemove)="removeMember($event)" (onChange)="changeMember($event)">
