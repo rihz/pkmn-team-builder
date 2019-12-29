@@ -12,6 +12,7 @@ import { TeamBuilderComponent } from './team-builder/team-builder.component';
 import { TeamBuilderModule } from './team-builder/team-builder.module';
 import { ThemeModule } from './shared/theme/theme.module';
 import { charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme } from './shared/theme/theme';
+import { TeamViewerModule } from './team-viewer/team-viewer.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme } from './
     HttpClientModule,
     BrowserAnimationsModule,
     TeamBuilderModule,
+    TeamViewerModule,
     ThemeModule.forRoot({
       themes: [charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme],
       active: 'charmander'

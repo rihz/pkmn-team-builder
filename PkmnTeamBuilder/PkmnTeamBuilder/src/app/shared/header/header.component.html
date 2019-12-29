@@ -1,8 +1,12 @@
 <mat-toolbar class="header">
-    <div style="width: 50%;" routerLink="/">
+    <div style="cursor: pointer;" routerLink="/">
         <h2>PokeTeam</h2>
     </div>
-    <div style="width: 50%; text-align: right;">
+    <mat-button-toggle-group name="view">
+        <mat-button-toggle routerLink="/teams">View Teams</mat-button-toggle>
+        <mat-button-toggle routerLink="/build">Build a Team</mat-button-toggle>
+    </mat-button-toggle-group>
+    <div style="text-align: right;">
         <mat-menu #userMenu="matMenu">
             <button (click)="logout()" mat-menu-item>Logout</button>
             <button (click)="changeTheme()" mat-menu-item>Change Theme</button>

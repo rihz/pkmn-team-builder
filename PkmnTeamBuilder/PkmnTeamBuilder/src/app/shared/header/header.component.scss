@@ -5,6 +5,12 @@
     top: 0;
     z-index: 1000;
     height: 50px;
+    justify-content: space-between;
+}
+
+.mat-button-toggle {
+    background-color: var(--header);
+    color: var(--button-color);
 }
 
 .user-button {

@@ -24,6 +24,7 @@ import { MoveInfoComponent } from './move-info/move-info.component';
 import { DisplayCardComponent } from './display-card/display-card.component';
 import { MoveDisplayComponent } from './move-info/move-display/move-display.component';
 import { NotesComponent } from './notes/notes.component';
+import { builderRoute } from './team-builder.routing';
 
 
 
@@ -47,7 +48,8 @@ import { NotesComponent } from './notes/notes.component';
     MatGridListModule,
     MatRadioModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    builderRoute
   ],
   providers: [PkmnService],
   entryComponents: [

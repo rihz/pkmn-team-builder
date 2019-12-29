@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule, MatMenuModule, MatCardModule } from '@angular/material';
+import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule, MatMenuModule, MatCardModule, MatButtonToggleModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -20,7 +20,8 @@ import { ThemeSelectorComponent } from './theme-selector/theme-selector.componen
     MatIconModule,
     RouterModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonToggleModule
   ],
   exports: [
     HeaderComponent

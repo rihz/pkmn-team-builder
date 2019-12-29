@@ -44,6 +44,10 @@ export class PkmnService extends BaseService {
     }
 
     getTeams(userId: string) {
-        return this.http.get(this.baseUrl + `/team?${userId}`);
+        return this.http.get(this.baseUrl + `/team?userId=${userId}`);
+    }
+
+    deleteTeam(id: number) {
+        return this.http.delete(this.baseUrl + `/team/${id}`);
     }
 }

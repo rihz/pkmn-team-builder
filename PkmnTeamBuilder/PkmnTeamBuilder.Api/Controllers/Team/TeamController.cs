@@ -29,5 +29,14 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         {
             return Ok(_service.GetTeams(userId));
         }
+
+        [Route("{id}")]
+        [HttpDelete]
+        public IActionResult DeleteTeam(int id)
+        {
+            _service.DeleteTeam(id);
+
+            return Ok();
+        }
     }
 }

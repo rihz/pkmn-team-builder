@@ -5,6 +5,7 @@ using PkmnTeamBuilder.Entities.Team;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace PkmnTeamBuilder.Api.Controllers.Team
 {
@@ -14,6 +15,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         IEnumerable<TeamModel> GetTeams(string userId);
         TeamModel AddTeam(TeamModel model);
         IEnumerable<TeamMember> AddTeamMembers(IEnumerable<TeamMemberModel> members);
+        void DeleteTeam(int id);
     }
 
     public class TeamRepository : ITeamRepository
@@ -77,7 +79,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         {
             var teams = _context.Team.Where(x => x.UserId == userId);
 
-            var mappedTeams = teams.Select(x => _mapper.Map<TeamModel>(x));
+            var mappedTeams = teams.Select(x => _mapper.Map<TeamModel>(x)).ToList();
 
             foreach (var team in mappedTeams)
             {
@@ -88,15 +90,30 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                 {
                     list.Add(
                         _mapper.Map<TeamMemberModel>(
-                            _context.TeamMember.First(z => z.Id == member.Id)
+                            _context.TeamMember
+                                .Include(x => x.Pokemon)
+                                .First(z => z.Id == member.TeamMemberId)
                         )
                     );
                 }
 
-                team.Members = list.AsEnumerable();
+                team.Members = list;
             }
 
             return mappedTeams;
+        }
+
+        public void DeleteTeam(int id)
+        {
+            _context.TeamMembers.RemoveRange(
+                _context.TeamMembers.Where(x => x.TeamId == id)
+            );
+
+            _context.Team.Remove(
+                _context.Team.First(x => x.Id == id)
+            );
+
+            _context.SaveChanges();
         }
     }
 }

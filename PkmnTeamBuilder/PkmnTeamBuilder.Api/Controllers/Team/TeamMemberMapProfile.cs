@@ -13,6 +13,14 @@ namespace PkmnTeamBuilder.Api.Controllers
         public TeamMemberMapProfile()
         {
             CreateMap<TeamMember, TeamMemberModel>()
+                .ForMember(x => x.Pokemon, y => y.MapFrom(z => z.Pokemon))
+                .ForMember(x => x.Item, y => y.Ignore())
+                .ForMember(x => x.Nature, y => y.Ignore())
+                .ForMember(x => x.Ability, y => y.Ignore())
+                .ForMember(x => x.Move1, y => y.Ignore())
+                .ForMember(x => x.Move2, y => y.Ignore())
+                .ForMember(x => x.Move3, y => y.Ignore())
+                .ForMember(x => x.Move4, y => y.Ignore())
                 .ReverseMap()
                 .ForMember(x => x.Pokemon, y => y.Ignore())
                 .ForMember(x => x.Item, y => y.Ignore())
@@ -27,17 +35,6 @@ namespace PkmnTeamBuilder.Api.Controllers
                 .ForMember(x => x.Members, y => y.Ignore())
                 .ReverseMap()
                 .ForMember(x => x.Members, y => y.Ignore());
-
-            CreateMap<TeamMemberModel, TeamMember>()
-                .ForMember(x => x.Pokemon, y => y.Ignore())
-                .ForMember(x => x.Ability, y => y.Ignore())
-                .ForMember(x => x.Item, y => y.Ignore())
-                .ForMember(x => x.Nature, y => y.Ignore())
-                .ForMember(x => x.Move1, y => y.Ignore())
-                .ForMember(x => x.Move2, y => y.Ignore())
-                .ForMember(x => x.Move3, y => y.Ignore())
-                .ForMember(x => x.Move4, y => y.Ignore())
-                .ReverseMap();
         }
     }
 }

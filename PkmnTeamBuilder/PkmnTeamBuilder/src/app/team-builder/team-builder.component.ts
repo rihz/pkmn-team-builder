@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Item, TeamMember, Team } from '../shared/models';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { ThemeService } from '../shared/theme/theme.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'team-builder',
@@ -16,7 +17,8 @@ export class TeamBuilderComponent implements OnInit {
   _activeTheme: string = '';
 
   constructor(private pkmn: PkmnService,
-    private themeService: ThemeService) { }
+    private themeService: ThemeService,
+    private router: Router) { }
 
   get activeTheme() {
     return this._activeTheme;
@@ -81,7 +83,7 @@ export class TeamBuilderComponent implements OnInit {
     if(this.team.errors.length === 0) {
       this.pkmn.saveTeam(this.team)
         .subscribe(result => {
-          // show success toast
+          this.router.navigate(['/teams']);
         })
     }
   }
