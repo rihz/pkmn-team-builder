@@ -10,6 +10,12 @@ export class Credentials {
     username: string;
 }
 
+export class User {
+    email: string;
+    username: string;
+    defaultTheme: string;
+}
+
 export class Pokemon {
     id = 0;
     name = '';

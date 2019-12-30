@@ -80,7 +80,9 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
                 id = identity.Claims.Single(x => x.Type == "id").Value,
                 auth_token = await _factory.GenerateEncodedToken(model.Username, identity),
                 expires_in = (int)_options.ValidFor.TotalSeconds,
-                username = model.Username
+                username = model.Username,
+                email = "testemail@email.email",
+                theme = "bulbasaur"
             };
 
             var json = JsonConvert.SerializeObject(response, _serializerSettings);

@@ -65,6 +65,18 @@ export class UserService extends BaseService {
     get username() {
         const un = localStorage.getItem('username');
 
-        return un ? un : 'User'
+        return un ? un : 'User';
+    }
+
+    get email() {
+        const em = localStorage.getItem('email');
+
+        return em ? em : '';
+    }
+
+    get theme() {
+        const th = localStorage.getItem('theme');
+
+        return th? th : 'charmander';
     }
 }

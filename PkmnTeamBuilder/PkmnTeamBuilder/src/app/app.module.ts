@@ -13,6 +13,8 @@ import { TeamBuilderModule } from './team-builder/team-builder.module';
 import { ThemeModule } from './shared/theme/theme.module';
 import { charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme } from './shared/theme/theme';
 import { TeamViewerModule } from './team-viewer/team-viewer.module';
+import { SharedModule } from './shared/shared.module';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { TeamViewerModule } from './team-viewer/team-viewer.module';
   ],
   imports: [
     AccountModule,
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

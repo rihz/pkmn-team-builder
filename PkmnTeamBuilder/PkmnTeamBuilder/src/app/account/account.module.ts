@@ -8,9 +8,10 @@ import { HttpClient } from '@angular/common/http';
 import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { UserService } from '../shared/services/user.service';
 import { SharedModule } from '../shared/shared.module';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-  declarations: [SignupComponent, LoginComponent],
+  declarations: [SignupComponent, LoginComponent, ProfileComponent],
   imports: [
     CommonModule,    
     SharedModule,

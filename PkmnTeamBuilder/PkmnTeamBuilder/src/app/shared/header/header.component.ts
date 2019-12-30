@@ -28,6 +28,11 @@ export class HeaderComponent implements OnInit {
     this.themeService.setTheme(value);
   }
 
+  get showHeader() {
+    return this.router.url !== '/account/login'
+      && this.router.url !== '/register';
+  }
+
   ngOnInit() {
     this.activeTheme = this.themeService.getActiveTheme().name;
   }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule, MatMenuModule, MatCardModule, MatButtonToggleModule } from '@angular/material';
+import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatTableModule, MatMenuModule, MatCardModule, MatButtonToggleModule, MatProgressSpinnerModule, MatSpinner } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -21,10 +21,12 @@ import { ThemeSelectorComponent } from './theme-selector/theme-selector.componen
     RouterModule,
     MatTableModule,
     MatCardModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatProgressSpinnerModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    MatSpinner
   ],
   entryComponents: [
     BooleanDialogComponent,

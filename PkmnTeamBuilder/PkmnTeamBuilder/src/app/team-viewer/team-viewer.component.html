@@ -1,5 +1,5 @@
-<header></header>
 <div class="team-viewer">
+    <mat-spinner *ngIf="loading"></mat-spinner>
     <div class="team" *ngFor="let team of teams">
         <div class="team-name">
             <h3>{{ team.name }}</h3>
