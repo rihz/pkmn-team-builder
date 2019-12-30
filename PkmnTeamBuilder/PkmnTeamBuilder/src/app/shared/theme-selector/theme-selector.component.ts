@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Theme } from '../theme/symbols';
-import { charmanderTheme, bulbasaurTheme, squirtleTheme, pikachuTheme } from '../theme/theme';
+import { Theme, ALL_THEMES } from '../theme/symbols';
+import { charmanderTheme, bulbasaurTheme, squirtleTheme, pikachuTheme, umbreonTheme, celebiTheme } from '../theme/theme';
 
 @Component({
   selector: 'app-theme-selector',
@@ -9,12 +9,7 @@ import { charmanderTheme, bulbasaurTheme, squirtleTheme, pikachuTheme } from '..
   styleUrls: ['./theme-selector.component.scss']
 })
 export class ThemeSelectorComponent implements OnInit {
-  themes: Theme[] = [
-    charmanderTheme,
-    bulbasaurTheme,
-    squirtleTheme,
-    pikachuTheme
-  ];
+  themes: Theme[] = ALL_THEMES;
 
   constructor(private ref: MatDialogRef<ThemeSelectorComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }

@@ -52,3 +52,19 @@ img {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
+
+.mat-card {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+    margin: 0 auto;
+    font-weight: bold;
+    display: flex;
+}
+
+.build-button {
+    background-color: var(--button);
+    color: var(--button-color);
+}

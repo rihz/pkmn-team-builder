@@ -1,5 +1,11 @@
 <div class="team-viewer">
     <mat-spinner *ngIf="loading"></mat-spinner>
+    <mat-card *ngIf="!loading && teams.length === 0">
+        You do not currently have any teams.
+        <button mat-button class="build-button" routerLink="/build">
+            Build a Team
+        </button>
+    </mat-card>
     <div class="team" *ngFor="let team of teams">
         <div class="team-name">
             <h3>{{ team.name }}</h3>

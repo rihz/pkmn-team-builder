@@ -45,7 +45,8 @@ export class HeaderComponent implements OnInit {
 
   changeTheme() {
     const ref = this.dialog.open(ThemeSelectorComponent, {
-      width: '600px'
+      width: '600px',
+      panelClass: 'theme-panel'
     });
 
     ref.afterClosed().subscribe(themeName => {

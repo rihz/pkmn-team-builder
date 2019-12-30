@@ -11,10 +11,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeamBuilderComponent } from './team-builder/team-builder.component';
 import { TeamBuilderModule } from './team-builder/team-builder.module';
 import { ThemeModule } from './shared/theme/theme.module';
-import { charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme } from './shared/theme/theme';
+import { charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme, umbreonTheme, celebiTheme } from './shared/theme/theme';
 import { TeamViewerModule } from './team-viewer/team-viewer.module';
 import { SharedModule } from './shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material';
+import { ALL_THEMES, CURRENT_THEME } from './shared/theme/symbols';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,8 @@ import { MatProgressSpinnerModule } from '@angular/material';
     TeamBuilderModule,
     TeamViewerModule,
     ThemeModule.forRoot({
-      themes: [charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme],
-      active: 'charmander'
+      themes: ALL_THEMES,
+      active: CURRENT_THEME
     })
   ],
   providers: [ConfigService, AuthGuard],

@@ -5,7 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { viewerRoute } from './team-viewer.routing';
-import { MatButtonModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatCardModule } from '@angular/material';
 
 
 
@@ -17,7 +17,8 @@ import { MatButtonModule, MatIconModule } from '@angular/material';
     FormsModule,
     viewerRoute,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers: [PkmnService]
 })

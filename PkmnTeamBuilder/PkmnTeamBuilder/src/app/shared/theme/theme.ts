@@ -83,3 +83,45 @@ export const pikachuTheme: Theme = {
         '--icon-hover': '#ef980b', //a900
     }
 }
+
+export const celebiTheme: Theme = {
+    name: 'celebi',
+    properties: {
+        '--bg': '#fffff5',
+        '--member-bg': '#ffffe3',
+        '--input': '#ffffd5',
+        '--header': '#437813',
+        '--header-color': '#fff',
+        '--bg-color': '#000',
+        '--highlight': '#d5e4c1',
+        '--box-shadow': '#d5e4c1',
+        '--box-shadow-focus': '#9dbf6f',
+        '--button': '#73a431',
+        '--button-color': '#fff',
+        '--display-label': '#73a431',
+        '--border': '#73a431',
+        '--icon': '#73a431',
+        '--icon-hover': '#437813'
+    }
+}
+
+export const umbreonTheme: Theme = {
+    name: 'umbreon',
+    properties: {
+        '--bg': '#c6c6cb',
+        '--member-bg': '#a0a0a9',
+        '--input': '#414152',
+        '--header': '#1c1c28',
+        '--header-color': '#fff',
+        '--bg-color': '#fff',
+        '--highlight': '#bfc1c9',
+        '--box-shadow': '#bfc1c9',
+        '--box-shadow-focus': '#696f80',
+        '--button': '#29314a',
+        '--button-color': '#fff',
+        '--display-label': '#29314a',
+        '--border': '#29314a',
+        '--icon': '#29314a',
+        '--icon-hover': '#0f1322'
+    }
+}
