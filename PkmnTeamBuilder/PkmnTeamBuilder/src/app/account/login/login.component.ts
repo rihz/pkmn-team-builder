@@ -52,7 +52,9 @@ export class LoginComponent implements OnInit, OnDestroy {
             localStorage.setItem('username', result.username);
             localStorage.setItem('userId', result.id);
             localStorage.setItem('email', result.email);
-            localStorage.setItem('theme', result.theme);
+            localStorage.setItem('settings', result.settings);
+
+            console.log(result.settings);
 
             this.router.navigate(['/teams']);
           }

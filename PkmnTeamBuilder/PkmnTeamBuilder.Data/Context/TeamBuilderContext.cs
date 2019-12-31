@@ -9,6 +9,7 @@ namespace PkmnTeamBuilder.Data.Context
     public class TeamBuilderContext : IdentityDbContext<AppUser>
     {
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<UserSetting> UserSetting { get; set; }
         public DbSet<PokemonType> PokemonTypes { get; set; }
         public DbSet<Pokemon> Pokemon { get; set; }
         public DbSet<PokemonAbility> PokemonAbility { get; set; }
@@ -32,6 +33,18 @@ namespace PkmnTeamBuilder.Data.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<UserSetting>(x =>
+            {
+                x.HasKey(y => y.Id);
+                x.Property(y => y.Id).ValueGeneratedOnAdd();
+
+                x.HasOne(y => y.User)
+                    .WithOne(y => y.Settings)
+                    .HasForeignKey<UserSetting>(y => y.UserId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_User_Settings");
+            });
 
             builder.Entity<PokemonType>(x =>
             {

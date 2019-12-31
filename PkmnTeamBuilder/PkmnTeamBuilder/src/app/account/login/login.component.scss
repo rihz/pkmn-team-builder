@@ -2,7 +2,7 @@
 
 .title {
     border-radius: 5px 5px 0px 0px;
-    color: white;
+    color: white !important;
 }
 
 .container {
@@ -16,7 +16,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background: var(--member-bg);
+    background: white;
 }
 
 .container-body {
@@ -27,8 +27,12 @@ button {
     font-weight: bold;
     width: 100%;
     margin-top: 15px;
-    background-color: var(--button) !important;
+    background-color: indianred !important;
     color: white !important;
+}
+
+button:disabled {
+    opacity: 0.5;
 }
 
 input {
@@ -50,4 +54,8 @@ input:focus {
 
 .login {    
     margin-right: 10px;
+}
+
+.form-title {
+    background-color: #ee1515;
 }

@@ -1,5 +1,5 @@
 import { InjectionToken } from '@angular/core';
-import { charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme, celebiTheme, umbreonTheme, voltorbTheme } from './theme';
+import { charmanderTheme, squirtleTheme, bulbasaurTheme, pikachuTheme, celebiTheme, umbreonTheme } from './theme';
 
 export const THEMES = new InjectionToken('THEMES');
 export const ACTIVE_THEME = new InjectionToken('ACTIVE_THEME');

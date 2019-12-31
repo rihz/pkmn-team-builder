@@ -1,11 +1,8 @@
 <div class="profile">
     <div class="username-section">
-        <input class="username" matInput placeholder="Username" [(ngModel)]="userService.username" />
+        <input readonly class="username" matInput placeholder="Username" [(ngModel)]="userService.username" />
     </div>
     <div class="email-section">
-        <input class="email" matInput placeholder="Email" [(ngModel)]="userService.email" />
-    </div>
-    <div class="default-theme">
-        
+        <input readonly class="email" matInput placeholder="Email" [(ngModel)]="userService.email" />
     </div>
 </div>

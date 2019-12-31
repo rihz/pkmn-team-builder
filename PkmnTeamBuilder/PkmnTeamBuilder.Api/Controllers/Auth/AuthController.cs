@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using PkmnTeamBuilder.Api.Controllers.Auth.Settings;
 using PkmnTeamBuilder.Api.Models;
 using PkmnTeamBuilder.Data.Context;
 using PkmnTeamBuilder.Entities;
@@ -17,22 +18,25 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
     [Route("api/[controller]")]
     public class AuthController : Controller
     {
-        private readonly TeamBuilderContext _context;
-        private readonly UserManager<AppUser> _userManager;
-        private readonly IMapper _mapper;
-        private readonly IJwtFactory _factory;
-        private readonly JwtIssuerOptions _options;
-        private readonly JsonSerializerSettings _serializerSettings;
+        TeamBuilderContext _context;
+        UserManager<AppUser> _userManager;
+        IMapper _mapper;
+        IJwtFactory _factory;
+        JwtIssuerOptions _options;
+        JsonSerializerSettings _serializerSettings;
+        IUserSettingsService _service;
 
         public AuthController(UserManager<AppUser> userManager, IMapper mapper, 
             TeamBuilderContext context, IJwtFactory factory,
-            IOptions<JwtIssuerOptions> options)
+            IOptions<JwtIssuerOptions> options,
+            IUserSettingsService service)
         {
             _context = context;
             _mapper = mapper;
             _userManager = userManager;
             _factory = factory;
             _options = options.Value;
+            _service = service;
 
             _serializerSettings = new JsonSerializerSettings
             {
@@ -56,10 +60,14 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
                 }
 
                 await _context.Users.AddAsync(identity);
+
+                var user = await GetClaimsIdentity(model.Username, model.Password);
+
+                _service.PostSettings(user.Claims.First(x => x.Type == "id").Value);
             }
             catch(Exception ex)
             {
-                Console.WriteLine("dsa");
+                Console.WriteLine("An error occured");
             }        
 
             return Ok(true);
@@ -75,6 +83,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
                 return BadRequest("Login Failure");
             }
 
+            var settings = _service.GetSettings(identity.Claims.First(x => x.Type == "id").Value);
+
             var response = new
             {
                 id = identity.Claims.Single(x => x.Type == "id").Value,
@@ -82,11 +92,17 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
                 expires_in = (int)_options.ValidFor.TotalSeconds,
                 username = model.Username,
                 email = "testemail@email.email",
-                theme = "bulbasaur"
+                settings
             };
 
             var json = JsonConvert.SerializeObject(response, _serializerSettings);
             return new OkObjectResult(json);
+        }
+
+        [HttpGet("{id}/settings")]
+        public IActionResult GetSettings(string id)
+        {
+            return Ok(_service.GetSettings(id));
         }
 
         private async Task<ClaimsIdentity> GetClaimsIdentity(string username, string password)
