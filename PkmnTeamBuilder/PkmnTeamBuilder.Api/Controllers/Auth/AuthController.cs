@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using PkmnTeamBuilder.Api.Controllers.Auth.Settings;
 using PkmnTeamBuilder.Api.Models;
 using PkmnTeamBuilder.Data.Context;
 using PkmnTeamBuilder.Entities;
@@ -24,19 +23,16 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
         IJwtFactory _factory;
         JwtIssuerOptions _options;
         JsonSerializerSettings _serializerSettings;
-        IUserSettingsService _service;
 
         public AuthController(UserManager<AppUser> userManager, IMapper mapper, 
             TeamBuilderContext context, IJwtFactory factory,
-            IOptions<JwtIssuerOptions> options,
-            IUserSettingsService service)
+            IOptions<JwtIssuerOptions> options)
         {
             _context = context;
             _mapper = mapper;
             _userManager = userManager;
             _factory = factory;
             _options = options.Value;
-            _service = service;
 
             _serializerSettings = new JsonSerializerSettings
             {
@@ -49,6 +45,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
         {
             var identity = _mapper.Map<AppUser>(model);
             identity.UserName = model.Username;
+            identity.Theme = "charmander";
 
             try
             {
@@ -62,8 +59,6 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
                 await _context.Users.AddAsync(identity);
 
                 var user = await GetClaimsIdentity(model.Username, model.Password);
-
-                _service.PostSettings(user.Claims.First(x => x.Type == "id").Value);
             }
             catch(Exception ex)
             {
@@ -77,13 +72,12 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
         public async Task<IActionResult> Login([FromBody] LoginViewModel model)
         {
             var identity = await GetClaimsIdentity(model.Username, model.Password);
+            var user = await _userManager.FindByNameAsync(model.Username);
 
             if (identity == null)
             {
                 return BadRequest("Login Failure");
             }
-
-            var settings = _service.GetSettings(identity.Claims.First(x => x.Type == "id").Value);
 
             var response = new
             {
@@ -91,18 +85,29 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
                 auth_token = await _factory.GenerateEncodedToken(model.Username, identity),
                 expires_in = (int)_options.ValidFor.TotalSeconds,
                 username = model.Username,
-                email = "testemail@email.email",
-                settings
+                email = user.Email,
+                settings = new
+                {
+                    theme = user.Theme,
+                    sortTeamsAscending = user.SortTeamsAscending
+                }
             };
 
             var json = JsonConvert.SerializeObject(response, _serializerSettings);
             return new OkObjectResult(json);
         }
 
-        [HttpGet("{id}/settings")]
-        public IActionResult GetSettings(string id)
+        [HttpPut("settings")]
+        public async Task<IActionResult> UpdateSettings([FromBody] UserSettings settings)
         {
-            return Ok(_service.GetSettings(id));
+            var usr = await _userManager.FindByIdAsync(settings.UserId);
+
+            usr.Theme = settings.Theme;
+            usr.SortTeamsAscending = settings.SortTeamsAscending;
+
+            var result = await _userManager.UpdateAsync(usr);
+
+            return result.Succeeded ? (IActionResult)Ok() : BadRequest();
         }
 
         private async Task<ClaimsIdentity> GetClaimsIdentity(string username, string password)

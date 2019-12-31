@@ -34,7 +34,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activeTheme = this.themeService.getActiveTheme().name;
+    const settings = JSON.parse(localStorage.getItem('settings'));
+
+    this.activeTheme = settings.theme;
   }
 
   logout() {
@@ -52,6 +54,17 @@ export class HeaderComponent implements OnInit {
     ref.afterClosed().subscribe(themeName => {
       if(themeName !== '') {
         this.activeTheme = themeName;
+
+        const userId = localStorage.getItem('userId');
+        const settings = JSON.parse(localStorage.getItem('settings'));
+
+        let newSettings = {
+          userId: userId,
+          ...settings
+        };
+        newSettings.theme = themeName;
+
+        this.userService.changeSettings(newSettings);
       }
     });
   }

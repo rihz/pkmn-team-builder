@@ -6,12 +6,12 @@ export class ThemeService {
     themeChange = new EventEmitter<Theme>();
 
     constructor(@Inject(THEMES) public themes: Theme[],
-        @Inject(ACTIVE_THEME) public theme: string) {}
+        @Inject(ACTIVE_THEME) public theme: string) { }
 
     getTheme(name: string) {
         const theme = this.themes.find(t => t.name === name);
 
-        if(!theme) {
+        if (!theme) {
             throw new Error(`Theme '${name}' could not be found.`);
         }
 
@@ -19,7 +19,7 @@ export class ThemeService {
     }
 
     getActiveTheme() {
-        if(this.theme) {
+        if (this.theme) {
             return this.getTheme(this.theme);
         }
     }
@@ -29,8 +29,11 @@ export class ThemeService {
     }
 
     setTheme(name: string) {
-        this.theme = name;
-        this.themeChange.emit(this.getActiveTheme());
+        console.log(name);
+        if (name !== '') {
+            this.theme = name;
+            this.themeChange.emit(this.getActiveTheme());
+        }
     }
 
     registerTheme(theme: Theme) {
@@ -45,7 +48,7 @@ export class ThemeService {
             ...properties
         };
 
-        if(name === this.theme) {
+        if (name === this.theme) {
             this.themeChange.emit(theme);
         }
     }

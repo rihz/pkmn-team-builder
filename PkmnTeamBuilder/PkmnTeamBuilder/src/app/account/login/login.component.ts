@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { UserService } from 'src/app/shared/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Credentials } from 'src/app/shared/models';
+import { ThemeService } from 'src/app/shared/theme/theme.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   credentials: Credentials = { email: '', password: '', username: '' };
   loginError = '';
 
-  constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute,
+    private themeService: ThemeService) { }
 
   ngOnInit() {
     // subscribe to router event
@@ -48,14 +50,14 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.userService.login(value.username, value.password)
         .subscribe(result => {
           if (result) {
+            const settings = result.settings;
+
             localStorage.setItem('auth_token', result.auth_token);
             localStorage.setItem('username', result.username);
             localStorage.setItem('userId', result.id);
             localStorage.setItem('email', result.email);
-            localStorage.setItem('settings', result.settings);
-
-            console.log(result.settings);
-
+            localStorage.setItem('settings', JSON.stringify(settings));
+            
             this.router.navigate(['/teams']);
           }
         }, errors => {

@@ -9,6 +9,7 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/ma
 import { UserService } from '../shared/services/user.service';
 import { SharedModule } from '../shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
+import { ThemeService } from '../shared/theme/theme.service';
 
 @NgModule({
   declarations: [SignupComponent, LoginComponent, ProfileComponent],
@@ -21,6 +22,6 @@ import { ProfileComponent } from './profile/profile.component';
     MatInputModule,
     MatButtonModule
   ],
-  providers: [UserService]
+  providers: [UserService, ThemeService]
 })
 export class AccountModule { }

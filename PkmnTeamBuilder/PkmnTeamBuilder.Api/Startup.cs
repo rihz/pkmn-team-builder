@@ -21,7 +21,6 @@ using Newtonsoft.Json.Serialization;
 using PkmnTeamBuilder.Api.Controllers;
 using PkmnTeamBuilder.Api.Controllers.Ability;
 using PkmnTeamBuilder.Api.Controllers.Auth;
-using PkmnTeamBuilder.Api.Controllers.Auth.Settings;
 using PkmnTeamBuilder.Api.Controllers.Item;
 using PkmnTeamBuilder.Api.Controllers.Move;
 using PkmnTeamBuilder.Api.Controllers.Nature;
@@ -63,7 +62,6 @@ namespace PkmnTeamBuilder.Api
                 config.AddProfile(new ItemMapProfile());
                 config.AddProfile(new NatureMapProfile());
                 config.AddProfile(new TeamMemberMapProfile());
-                config.AddProfile(new UserSettingsMapProfile());
             });
 
             services.AddCors(options =>
@@ -99,8 +97,6 @@ namespace PkmnTeamBuilder.Api
             services.AddScoped<INatureService, NatureService>();
             services.AddScoped<ITeamRepository, TeamRepository>();
             services.AddScoped<ITeamService, TeamService>();
-            services.AddScoped<ISettingsRepository, SettingsRepository>();
-            services.AddScoped<IUserSettingsService, UserSettingsService>();
             
             services.AddSingleton(sp => _mapperConfiguration.CreateMapper());
 

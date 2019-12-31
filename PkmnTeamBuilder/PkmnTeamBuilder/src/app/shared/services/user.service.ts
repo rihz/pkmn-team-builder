@@ -62,6 +62,15 @@ export class UserService extends BaseService {
         //this._authNavStatusSource.next(true);
     }
 
+    changeSettings(settings: any) {
+        this.http.put(this.baseUrl + '/auth/settings', settings)
+            .subscribe(result => {
+                if(result) {
+                    localStorage.setItem('settings', settings);
+                }
+            })
+    }
+
     get username() {
         const un = localStorage.getItem('username');
 

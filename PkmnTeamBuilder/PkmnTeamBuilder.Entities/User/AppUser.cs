@@ -11,10 +11,21 @@ namespace PkmnTeamBuilder.Entities
 
         public string LastName { get; set; }
 
+        public string Theme { get; set; }
+
+        public bool SortTeamsAscending { get; set; }
+
         public virtual ICollection<Team.Team> Teams { get; set; }
 
         public virtual ICollection<TeamMember> TeamMembers { get; set; }
+    }
 
-        public virtual UserSetting Settings { get; set; }
+    public class UserSettings
+    {
+        public string UserId { get; set; }
+
+        public string Theme { get; set; }
+
+        public bool SortTeamsAscending { get; set; }
     }
 }
