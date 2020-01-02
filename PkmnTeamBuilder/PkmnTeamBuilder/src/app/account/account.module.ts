@@ -5,7 +5,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { routing } from './account.routing';
 import { HttpClient } from '@angular/common/http';
-import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, MatIconModule, MatTooltipModule } from '@angular/material';
 import { UserService } from '../shared/services/user.service';
 import { SharedModule } from '../shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
@@ -20,7 +20,10 @@ import { ThemeService } from '../shared/theme/theme.service';
     routing,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [UserService, ThemeService]
 })

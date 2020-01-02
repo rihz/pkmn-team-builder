@@ -26,8 +26,6 @@ export class TeamBuilderComponent implements OnInit {
 
   set activeTheme(value: string) {
     this._activeTheme = value;
-
-    this.themeService.setTheme(value);
   }
 
   ngOnInit() {

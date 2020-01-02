@@ -1,0 +1,27 @@
+<mat-card class="control-card">
+    <div class="label">
+        <span>
+            {{ label }}
+        </span>
+    </div>
+    <div class="value">
+        <span *ngIf="!editing">
+            {{ value }}
+        </span>
+        <input #valueInput *ngIf="editing" matInput [placeholder]="label" [(ngModel)]="value" />
+    </div>
+    <div class="controls">
+        <button *ngIf="editable && !editing" class="control" mat-icon-button [matTooltip]="'Edit ' + label"
+            matTooltipClass="tooltip" matTooltipPosition="right" (click)="edit()">
+            <mat-icon>
+                edit
+            </mat-icon>
+        </button>
+        <button *ngIf="editing" class="control" mat-icon-button [matTooltip]="'Save ' + label" matTooltipClass="tooltip"
+            matTooltipPosition="right" (click)="save()">
+            <mat-icon>
+                save
+            </mat-icon>
+        </button>
+    </div>
+</mat-card>

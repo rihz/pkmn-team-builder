@@ -29,7 +29,6 @@ export class EvDisplayComponent implements OnInit {
       this.value = 0;
     }
 
-    console.log(this.stat, ev, this.member.getEVSum(this.stat, ev));
     if(this.member.getEVSum(this.stat, ev) > 510) {
       const diff = Math.abs(510 - this.member.getEVSum(this.stat, ev));
 

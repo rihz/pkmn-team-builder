@@ -29,7 +29,7 @@ export class ThemeService {
     }
 
     setTheme(name: string) {
-        console.log(name);
+        
         if (name !== '') {
             this.theme = name;
             this.themeChange.emit(this.getActiveTheme());

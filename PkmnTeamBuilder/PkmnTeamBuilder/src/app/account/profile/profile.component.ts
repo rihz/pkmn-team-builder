@@ -8,7 +8,8 @@ import { UserService } from '../../shared/services/user.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
+  touched = false;
+  
   constructor(public userService: UserService) { }
 
   ngOnInit() {

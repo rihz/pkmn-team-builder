@@ -1,8 +1,27 @@
 <div class="profile">
-    <div class="username-section">
-        <input readonly class="username" matInput placeholder="Username" [(ngModel)]="userService.username" />
+    <div class="section">
+        <app-control
+            label="Username"
+            [value]="userService.username"
+            editable="true"
+            (touched)="touched = true"
+        ></app-control>
     </div>
-    <div class="email-section">
-        <input readonly class="email" matInput placeholder="Email" [(ngModel)]="userService.email" />
+    <div class="section">
+        <app-control
+            label="Email"
+            [value]="userService.email"
+            editable="true"
+            (touched)="touched = true"
+        ></app-control>
+    </div>
+    <div class="control-section">
+        <button
+            *ngIf="touched"
+            mat-button 
+            class="save-button"
+        >
+            Save Changes
+        </button>
     </div>
 </div>

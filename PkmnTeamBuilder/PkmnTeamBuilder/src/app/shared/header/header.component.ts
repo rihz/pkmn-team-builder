@@ -35,8 +35,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     const settings = JSON.parse(localStorage.getItem('settings'));
-
-    this.activeTheme = settings.theme;
+    
+    if(settings.theme) {
+      this.activeTheme = settings.theme;
+    }
   }
 
   logout() {
