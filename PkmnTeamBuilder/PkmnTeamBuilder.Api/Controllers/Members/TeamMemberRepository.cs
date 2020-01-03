@@ -32,6 +32,22 @@ namespace PkmnTeamBuilder.Api.Controllers.Members
                 .Include(x => x.Ability)
                 .Include(x => x.Nature)
                 .Include(x => x.Item)
+                .Include(x => x.Move1)
+                    .ThenInclude(y => y.Category)
+                .Include(x => x.Move2)
+                    .ThenInclude(y => y.Category)
+                .Include(x => x.Move3)
+                    .ThenInclude(y => y.Category)
+                .Include(x => x.Move4)
+                    .ThenInclude(y => y.Category)
+                .Include(x => x.Move1)
+                    .ThenInclude(y => y.Type)
+                .Include(x => x.Move2)
+                    .ThenInclude(y => y.Type)
+                .Include(x => x.Move3)
+                    .ThenInclude(y => y.Type)
+                .Include(x => x.Move4)
+                    .ThenInclude(y => y.Type)
                 .Select(x => _mapper.Map<TeamMemberModel>(x));
         }
     }

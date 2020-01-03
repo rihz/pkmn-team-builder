@@ -34,27 +34,27 @@ namespace PkmnTeamBuilder.Api.Controllers
 
         public string Nickname { get; set; }
 
-        public int HPEV { get; set; }
+        public int HpEV { get; set; }
 
         public int AtkEV { get; set; }
 
         public int DefEV { get; set; }
 
-        public int SpAtkEV { get; set; }
+        public int SpatkEV { get; set; }
 
-        public int SpDefEV { get; set; }
+        public int SpdefEV { get; set; }
 
         public int SpeEV { get; set; }
 
-        public int HPIV { get; set; }
+        public int HpIV { get; set; }
 
         public int AtkIV { get; set; }
 
         public int DefIV { get; set; }
 
-        public int SpAtkIV { get; set; }
+        public int SpatkIV { get; set; }
 
-        public int SpDefIV { get; set; }
+        public int SpdefIV { get; set; }
 
         public int SpeIV { get; set; }
 

@@ -1,12 +1,47 @@
 <div class="pkmn-selector">
     <mat-tab-group class="pkmn-selection-tabs">
         <mat-tab label="Use Existing">
-            <div class="result-row" *ngFor="let member of existing"
-                (click)="select(member.id)">
-                <img [src]="member.pokemon.icon" />
-                <h3 class="result">
-                    {{ member.nickname !== '' ? member.nickname : member.pokemon.name }}
-                </h3>
+            <div class="result-row" *ngFor="let member of existing" (click)="select(member.id)">
+                <div class="basic-info">
+                    <img [src]="member.pokemon.icon" />
+                    <h3 class="result">
+                        {{ member.nickname !== '' ? member.nickname : member.pokemon.name }}
+                    </h3>
+                </div>
+                <div class="details">
+                    <div class="supp-row row">
+                        <display-card label="Ability" [value]="member.ability.name"
+                            [matTooltip]="member.ability.description" matTooltipClass="tooltip"></display-card>
+                        <display-card label="Item" [value]="member.item.name" [matTooltip]="member.item.description"
+                            matTooltipClass="tooltip">
+                        </display-card>
+                        <display-card label="Nature" [value]="member.nature.name"
+                            [matTooltip]="getNatureTooltip(member)" matTooltipClass="tooltip">
+                        </display-card>
+                    </div>
+                    <div class="stat-row-1 row">
+                        <display-card label="IVs" matTooltip="HP | ATK | DEF | SPATK | SPDEF | SPE"
+                            matTooltipClass="tooltip" [value]="getIVs(member)"></display-card>
+                        <display-card label="EVs" matTooltip="HP | ATK | DEF | SPATK | SPDEF | SPE"
+                            matTooltipClass="tooltip" [value]="getEVs(member)"></display-card>
+                    </div>
+                    <div class="move-row row">
+                        <display-card label="Move 1" [value]="member.move1.name" [type]="member.move1.typeName"
+                            [matTooltip]="getMoveTooltip(member.move1)" matTooltipClass="pre-tooltip">
+                        </display-card>
+                        <display-card label="Move 2" [value]="member.move2.name" [type]="member.move2.typeName"
+                            [matTooltip]="getMoveTooltip(member.move2)" matTooltipClass="pre-tooltip">
+                        </display-card>
+                    </div>
+                    <div class="move-row-2 row">
+                        <display-card label="Move 3" [value]="member.move3.name" [type]="member.move3.typeName"
+                            [matTooltip]="getMoveTooltip(member.move3)" matTooltipClass="pre-tooltip">
+                        </display-card>
+                        <display-card label="Move 4" [value]="member.move4.name" [type]="member.move4.typeName"
+                            [matTooltip]="getMoveTooltip(member.move4)" matTooltipClass="pre-tooltip">
+                        </display-card>
+                    </div>
+                </div>
             </div>
         </mat-tab>
         <mat-tab label="Add New">

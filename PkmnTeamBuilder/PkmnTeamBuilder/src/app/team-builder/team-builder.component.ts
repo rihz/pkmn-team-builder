@@ -8,7 +8,8 @@ import { TeamService } from '../shared/services/team.service';
 @Component({
   selector: 'team-builder',
   templateUrl: './team-builder.component.html',
-  styleUrls: ['./team-builder.component.scss']
+  styleUrls: ['./team-builder.component.scss'],
+  providers: [TeamService]
 })
 export class TeamBuilderComponent implements OnInit {
   gen = null;

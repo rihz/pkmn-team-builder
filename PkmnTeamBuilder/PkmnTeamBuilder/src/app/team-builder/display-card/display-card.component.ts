@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DisplayCardComponent implements OnInit {
   @Input() label: string;
   @Input() value: any;
+  @Input() type: string;
 
   constructor() { }
 

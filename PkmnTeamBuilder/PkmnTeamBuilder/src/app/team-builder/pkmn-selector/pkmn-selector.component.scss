@@ -19,8 +19,8 @@
 
 .result-row {
     display: inline-flex;
-    width: 100%;
-    padding: 0px 10px;
+    width: 95%;
+    padding: 0px 15px;
 }
 
 .result-row:hover {
@@ -35,4 +35,19 @@
 
 .input-row {
     padding: 10px;
+}
+
+.details {
+    width: 75%;
+    padding: 10px 5px 10px 15px;
+}
+
+.basic-info {
+    width: 25%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
 }

@@ -21,6 +21,12 @@ namespace PkmnTeamBuilder.Api.Controllers
                 .ForMember(x => x.Move2, y => y.MapFrom(z => z.Move2))
                 .ForMember(x => x.Move3, y => y.MapFrom(z => z.Move3))
                 .ForMember(x => x.Move4, y => y.MapFrom(z => z.Move4))
+                .ForMember(x => x.HpEV, y => y.MapFrom(z => z.HPEV))
+                .ForMember(x => x.HpIV, y => y.MapFrom(z => z.HPIV))
+                .ForMember(x => x.SpatkEV, y => y.MapFrom(z => z.SpAtkEV))
+                .ForMember(x => x.SpatkIV, y => y.MapFrom(z => z.SpAtkIV))
+                .ForMember(x => x.SpdefEV, y => y.MapFrom(z => z.SpDefEV))
+                .ForMember(x => x.SpdefIV, y => y.MapFrom(z => z.SpDefIV))
                 .ReverseMap()
                 .ForMember(x => x.Pokemon, y => y.Ignore())
                 .ForMember(x => x.Item, y => y.Ignore())
@@ -29,7 +35,13 @@ namespace PkmnTeamBuilder.Api.Controllers
                 .ForMember(x => x.Move1, y => y.Ignore())
                 .ForMember(x => x.Move2, y => y.Ignore())
                 .ForMember(x => x.Move3, y => y.Ignore())
-                .ForMember(x => x.Move4, y => y.Ignore());
+                .ForMember(x => x.Move4, y => y.Ignore())
+                .ForMember(x => x.HPEV, y => y.MapFrom(z => z.HpEV))
+                .ForMember(x => x.HPIV, y => y.MapFrom(z => z.HpIV))
+                .ForMember(x => x.SpAtkEV, y => y.MapFrom(z => z.SpatkEV))
+                .ForMember(x => x.SpAtkIV, y => y.MapFrom(z => z.SpatkIV))
+                .ForMember(x => x.SpDefEV, y => y.MapFrom(z => z.SpdefEV))
+                .ForMember(x => x.SpDefIV, y => y.MapFrom(z => z.SpdefIV));
 
             CreateMap<TeamModel, Entities.Team.Team>()
                 .ForMember(x => x.Members, y => y.Ignore())

@@ -2,11 +2,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PkmnService } from '../../shared/services/pkmn.service';
 import { MatDialogRef } from '@angular/material';
 import { MemberService } from '../../shared/services/member.service';
+import { TeamMember, Move } from '../../shared/models';
 
 @Component({
   selector: 'pkmn-selector',
   templateUrl: './pkmn-selector.component.html',
-  styleUrls: ['./pkmn-selector.component.scss']
+  styleUrls: ['./pkmn-selector.component.scss'],
+  providers: [MemberService]
 })
 export class PkmnSelectorComponent implements OnInit {
   results: any;
@@ -21,7 +23,6 @@ export class PkmnSelectorComponent implements OnInit {
 
     this.members.getMembers(userId)
       .subscribe(x => {
-        console.log(x);
         this.existing = x;
       });
   }
@@ -45,6 +46,22 @@ export class PkmnSelectorComponent implements OnInit {
       .subscribe(pokemon => {
         this.ref.close(pokemon);
       })
+  }
+
+  getIVs(member: TeamMember): string {
+    return `${member.hpIV} | ${member.atkIV} | ${member.defIV} | ${member.spatkIV} | ${member.spdefIV} | ${member.speIV}`;
+  }
+
+  getEVs(member: TeamMember): string {
+    return `${member.hpEV} | ${member.atkEV} | ${member.defEV} | ${member.spatkEV} | ${member.spdefEV} | ${member.speEV}`;
+  }
+
+  getNatureTooltip(member: TeamMember): string {
+    return `${member.nature.increase} is increased | ${member.nature.decrease} is decreased`;
+  }
+
+  getMoveTooltip(move: Move): string {
+    return `${move.categoryName.toUpperCase()}\n${move.description}`;
   }
 
 }
