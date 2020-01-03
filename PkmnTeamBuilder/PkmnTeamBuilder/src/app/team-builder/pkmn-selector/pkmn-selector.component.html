@@ -1,12 +1,17 @@
 <div class="pkmn-selector">
     <mat-tab-group class="pkmn-selection-tabs">
-        <mat-tab label="Use Existing">
-            <div class="result-row" *ngFor="let member of existing" (click)="select(member.id)">
+        <mat-tab label="Use Existing" *ngIf="existing && existing.length > 0">
+            <div class="result-row" *ngFor="let member of existing" (click)="selectMember(member)">
                 <div class="basic-info">
                     <img [src]="member.pokemon.icon" />
                     <h3 class="result">
+                        <mat-icon *ngIf="member.notes !== ''" [matTooltip]="member.notes" matTooltipClass="pre-tooltip">
+                            comment
+                        </mat-icon>
                         {{ member.nickname !== '' ? member.nickname : member.pokemon.name }}
                     </h3>
+                    <pkmn-type [name]="member.pokemon.type1Name"></pkmn-type>
+                    <pkmn-type [name]="member.pokemon.type2Name"></pkmn-type>
                 </div>
                 <div class="details">
                     <div class="supp-row row">

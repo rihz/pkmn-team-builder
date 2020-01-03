@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PkmnService } from '../../shared/services/pkmn.service';
 import { MatDialogRef } from '@angular/material';
 import { MemberService } from '../../shared/services/member.service';
-import { TeamMember, Move } from '../../shared/models';
+import { TeamMember, Move, Pokemon } from '../../shared/models';
 
 @Component({
   selector: 'pkmn-selector',
@@ -31,14 +31,29 @@ export class PkmnSelectorComponent implements OnInit {
     this.pkmn.searchPokemon(value)
       .subscribe(x => {
         this.results = x;
-      })
+      });
   }
 
   select(id: number) {
     this.pkmn.getPokemon(id)
       .subscribe(pokemon => {
-        this.ref.close(pokemon);
-      })
+        this.ref.close({
+          result: 'pokemon',
+          payload: pokemon
+        });
+      });
+  }
+
+  selectMember(member: TeamMember) {
+    this.pkmn.getPokemon(member.pokemonId)
+      .subscribe(pokemon => {
+        member.pokemon = <Pokemon>pokemon;
+
+        this.ref.close({
+          result: 'member',
+          payload: member
+        });
+      });
   }
 
   handleEnter() {

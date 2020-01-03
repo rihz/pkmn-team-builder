@@ -44,6 +44,16 @@
 
 .basic-info {
     width: 25%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.basic-info img {
+    width: 40px;
+    height: 40px;
 }
 
 .row {

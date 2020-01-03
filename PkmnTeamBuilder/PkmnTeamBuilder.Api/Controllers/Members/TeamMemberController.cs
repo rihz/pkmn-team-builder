@@ -16,7 +16,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Members
             _service = service;
         }
 
-        [Route("{userId}")]
+        [Route("user/{userId}")]
         [HttpGet]
         public IActionResult GetForUser(string userId)
         {

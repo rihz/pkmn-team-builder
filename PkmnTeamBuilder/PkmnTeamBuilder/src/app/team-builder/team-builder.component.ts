@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item, TeamMember, Team } from '../shared/models';
+import { Item, TeamMember, Team, Pokemon } from '../shared/models';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { ThemeService } from '../shared/theme/theme.service';
 import { Router } from '@angular/router';
@@ -29,6 +29,14 @@ export class TeamBuilderComponent implements OnInit {
 
   set activeTheme(value: string) {
     this._activeTheme = value;
+  }
+
+  get duplicate() {
+    const arr = this.team.members.map(function(m) { return m.pokemonId });
+
+    return arr.some(function(m, index) {
+      return arr.indexOf(m, index + 1) !== -1
+    });
   }
 
   ngOnInit() {
@@ -61,20 +69,25 @@ export class TeamBuilderComponent implements OnInit {
     this.team.members.push(teamMember);
   }
 
-  removeMember(member: any) {
-    this.team.members = this.team.members.filter((value, index, array) => {
-      return value.pokemon.id != member.pokemon.id;
-    });
+  addExisting(member: TeamMember) {
+    this.team.members.push(member);
   }
 
-  changeMember(chg: any) {
-    const index = this.team.members.findIndex(x => x.pokemon.id === chg.previous.pokemon.id);
-    
-    let teamMember = new TeamMember();
-    teamMember.pokemonId = chg.next.id;
-    teamMember.pokemon = chg.next;
+  removeMember(index: number) {
+    this.team.members.splice(index, 1);
+  }
 
-    this.team[index] = teamMember;
+  changeMember(index: number, chg: any) {
+    if(chg.result === 'pokemon') {
+      let teamMember = new TeamMember();
+      
+      teamMember.pokemonId = chg.payload.id;
+      teamMember.pokemon = chg.payload;
+
+      this.team.members[index] = teamMember;
+    } else if(chg.result === 'member') {
+      this.team.members[index] = chg.payload;
+    }
   }
 
   save() {

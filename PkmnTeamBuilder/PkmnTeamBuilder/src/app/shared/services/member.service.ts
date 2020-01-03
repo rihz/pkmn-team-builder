@@ -16,6 +16,10 @@ export class MemberService extends BaseService {
     }
 
     getMembers(id: string) {
-        return this.http.get(this.baseUrl + `/member/${id}`);
+        return this.http.get(this.baseUrl + `/member/user/${id}`);
+    }
+
+    getMember(id: number) {
+        return this.http.get(this.baseUrl + `/member/${id}`)
     }
 }

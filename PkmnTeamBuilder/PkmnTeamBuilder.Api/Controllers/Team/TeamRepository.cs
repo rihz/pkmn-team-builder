@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using PkmnTeamBuilder.Data.Context;
 using PkmnTeamBuilder.Entities;
 using PkmnTeamBuilder.Entities.Team;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 namespace PkmnTeamBuilder.Api.Controllers.Team
 {
@@ -34,6 +34,16 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             var team = _mapper.Map<Entities.Team.Team>(model);
 
             var members = AddTeamMembers(model.Members);
+
+            string code = "";
+
+            do
+            {
+                code = GenerateCode(6);
+            }
+            while (_context.Team.FirstOrDefault(x => x.Code == code) != default(Entities.Team.Team));
+
+            team.Code = code;
 
             _context.Add(team);
 
@@ -114,6 +124,22 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             );
 
             _context.SaveChanges();
+        }
+
+        string GenerateCode(int size)
+        {
+            const string pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+            var random = new Random();
+
+            var code = new char[size];
+
+            for(int i = 0; i < size; i++)
+            {
+                code[i] = pool[random.Next(pool.Length)];
+            }
+
+            return new string(code);
         }
     }
 }

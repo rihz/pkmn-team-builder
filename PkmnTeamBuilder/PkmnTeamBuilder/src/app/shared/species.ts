@@ -1,0 +1,97 @@
+// export class Species {
+//     members: number[] = [];
+//     //name: string = '';
+
+//     constructor(members: number[]) {
+//         //this.name = name;
+//         this.members = members;
+//     }
+// }
+
+// export const ALL_SPECIES: Species[] = [
+//     { members: [4, 5, 6] },
+//     { members: [810, 811, 812] },
+//     { members: [813, 814, 815] },
+//     { members: [816, 817, 818] },
+//     { members: [819, 820] },
+//     { members: [821, 822, 823] },
+//     { members: [824, 825, 826] },
+//     { members: [827, 828] },
+//     { members: [829, 830] },
+//     { members: [831, 832] },
+//     { members: [833, 834] },
+//     { members: [835, 836] },
+//     { members: [837, 838, 839] },
+//     { members: [840, 841, 842] },
+//     { members: [843, 844] },
+//     { members: [845] },
+//     { members: [846, 847] },
+//     { members: [848, 849] },
+//     { members: [850, 851] },
+//     { members: [852, 853] },
+//     { members: [854, 855] },
+//     { members: [856, 857, 858] },
+//     { members: [859, 860, 861] },
+//     { members: [263, 264, 862] },
+//     { members: [863] }, // Perrserker
+//     { members: [864] }, // Cursola
+//     { members: [865] }, // sirfetch'd
+//     { members: [866] }, // mr. rime
+//     { members: [867] }, // runerigus
+//     { members: [868, 869] },
+//     { members: [870] },
+//     { members: [871] },
+//     { members: [872, 873] },
+//     { members: [874] },
+//     { members: [875] },
+//     { members: [876] },
+//     { members: [877] },
+//     { members: [878, 879] },
+//     { members: [880] },
+//     { members: [881] },
+//     { members: [882] },
+//     { members: [883] },
+//     { members: [884] },
+//     { members: [885, 886, 887] },
+//     { members: [888] },
+//     { members: [889] },
+//     { members: [890] },
+//     { members: [10, 11, 12] },
+//     { members: [25, 26] }, // Pikachu
+//     { members: [736, 737, 738] },
+//     { members: [163, 164] },
+//     { members: [519, 520, 521] },
+//     { members: [270, 271, 272] },
+//     { members: [273, 274, 275] },
+//     { members: [509, 510] },
+//     { members: [659, 660] },
+//     { members: [572, 573] },
+//     { members: [761, 762, 763] },
+//     { members: [43, 44, 45, 182] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+//     { members: [] },
+// ]

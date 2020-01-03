@@ -40,15 +40,13 @@ export class TeamMemberComponent implements OnInit {
 
   replace() {
     const ref = this.dialog.open(PkmnSelectorComponent, {
-      width: '600px'
+      width: '600px',
+      panelClass: 'pokemon-selector'
     });
 
     ref.afterClosed().subscribe(x => {
       if(x) {
-        this.onChange.emit({
-          previous: this.member,
-          next: x
-        });
+        this.onChange.emit(x);
       }
     });
   }
