@@ -3,6 +3,7 @@ import { Team } from '../shared/models';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { MatDialog } from '@angular/material';
 import { BooleanDialogComponent } from '../shared/boolean-dialog/boolean-dialog.component';
+import { TeamService } from '../shared/services/team.service';
 
 @Component({
   selector: 'team-viewer',
@@ -14,6 +15,7 @@ export class TeamViewerComponent implements OnInit {
   loading = true;
 
   constructor(private pkmn: PkmnService,
+    private teamService: TeamService,
     private dialog: MatDialog) { }
 
   ngOnInit() {
@@ -30,7 +32,7 @@ export class TeamViewerComponent implements OnInit {
 
     ref.afterClosed().subscribe(result => {
       if (result) {
-        this.pkmn.deleteTeam(id)
+        this.teamService.deleteTeam(id)
           .subscribe(result => {
             this.getTeams();
           })
@@ -40,9 +42,9 @@ export class TeamViewerComponent implements OnInit {
 
   getTeams() {
     const userId = localStorage.getItem('userId');
-
+    
     this.loading = true;
-    this.pkmn.getTeams(userId)
+    this.teamService.getTeams(userId)
       .subscribe(x => {
         this.loading = false;
         this.teams = x;

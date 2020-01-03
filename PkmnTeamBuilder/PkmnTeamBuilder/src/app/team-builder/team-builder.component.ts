@@ -3,6 +3,7 @@ import { Item, TeamMember, Team } from '../shared/models';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { ThemeService } from '../shared/theme/theme.service';
 import { Router } from '@angular/router';
+import { TeamService } from '../shared/services/team.service';
 
 @Component({
   selector: 'team-builder',
@@ -17,6 +18,7 @@ export class TeamBuilderComponent implements OnInit {
   _activeTheme: string = '';
 
   constructor(private pkmn: PkmnService,
+    private teams: TeamService,
     private themeService: ThemeService,
     private router: Router) { }
 
@@ -79,7 +81,7 @@ export class TeamBuilderComponent implements OnInit {
     this.validateTeam();
     
     if(this.team.errors.length === 0) {
-      this.pkmn.saveTeam(this.team)
+      this.teams.saveTeam(this.team)
         .subscribe(result => {
           this.router.navigate(['/teams']);
         })

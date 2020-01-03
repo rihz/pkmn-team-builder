@@ -25,6 +25,8 @@ import { DisplayCardComponent } from './display-card/display-card.component';
 import { MoveDisplayComponent } from './move-info/move-display/move-display.component';
 import { NotesComponent } from './notes/notes.component';
 import { builderRoute } from './team-builder.routing';
+import { TeamService } from '../shared/services/team.service';
+import { MemberService } from '../shared/services/member.service';
 
 
 
@@ -51,7 +53,11 @@ import { builderRoute } from './team-builder.routing';
     MatOptionModule,
     builderRoute
   ],
-  providers: [PkmnService],
+  providers: [
+    PkmnService,
+    TeamService,
+    MemberService
+  ],
   entryComponents: [
     PkmnSelectorComponent,
     SelectorComponent,

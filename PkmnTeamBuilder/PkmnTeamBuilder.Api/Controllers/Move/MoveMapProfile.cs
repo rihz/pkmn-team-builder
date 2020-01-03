@@ -21,6 +21,14 @@ namespace PkmnTeamBuilder.Api.Controllers.Move
                 .ForMember(d => d.Power, s => s.MapFrom(x => x.Move.Power))
                 .ForMember(d => d.PP, s => s.MapFrom(x => x.Move.PP))
                 .ForMember(d => d.TypeName, s => s.MapFrom(x => x.Move.Type.Name));
+
+            CreateMap<PokemonMove, MoveModel>()
+                .ReverseMap()
+                .ForMember(x => x.Moveset, y => y.Ignore())
+                .ForMember(x => x.TeamMembers1, y => y.Ignore())
+                .ForMember(x => x.TeamMembers2, y => y.Ignore())
+                .ForMember(x => x.TeamMembers3, y => y.Ignore())
+                .ForMember(x => x.TeamMembers4, y => y.Ignore());
         }
     }
 }

@@ -29,25 +29,5 @@ export class PkmnService extends BaseService {
 
     getNatures() {
         return this.http.get(this.baseUrl + '/nature/');
-    }
-
-    saveTeam(team: Team) {
-        const userId = localStorage.getItem('userId');
-
-        team.userId = userId;
-
-        team.members.forEach((value, index, array) => {
-            value.userId = userId;
-        });
-
-        return this.http.post(this.baseUrl + '/team/', team);
-    }
-
-    getTeams(userId: string) {
-        return this.http.get(this.baseUrl + `/team?userId=${userId}`);
-    }
-
-    deleteTeam(id: number) {
-        return this.http.delete(this.baseUrl + `/team/${id}`);
-    }
+    }    
 }

@@ -20,6 +20,7 @@
 .result-row {
     display: inline-flex;
     width: 100%;
+    padding: 0px 10px;
 }
 
 .result-row:hover {
@@ -30,4 +31,8 @@
 .result {
     padding: 0.5em;
     margin: 0;
+}
+
+.input-row {
+    padding: 10px;
 }

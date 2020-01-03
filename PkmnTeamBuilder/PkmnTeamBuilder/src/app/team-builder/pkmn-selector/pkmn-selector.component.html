@@ -1,11 +1,25 @@
 <div class="pkmn-selector">
-    <div class="input-row">
-        <input autocomplete="off" class="search-input" matInput placeholder="Search Pokemon" (input)="search($event.target.value)" (keyup.enter)="handleEnter()" />
-    </div>
-    <div class="result-row" *ngFor="let result of results" (click)="select(result.id)">
-        <img [src]="result.icon" />
-        <h3 class="result">
-            {{ result.name }}
-        </h3>
-    </div>
+    <mat-tab-group class="pkmn-selection-tabs">
+        <mat-tab label="Use Existing">
+            <div class="result-row" *ngFor="let member of existing"
+                (click)="select(member.id)">
+                <img [src]="member.pokemon.icon" />
+                <h3 class="result">
+                    {{ member.nickname !== '' ? member.nickname : member.pokemon.name }}
+                </h3>
+            </div>
+        </mat-tab>
+        <mat-tab label="Add New">
+            <div class="input-row">
+                <input autocomplete="off" class="search-input" matInput placeholder="Search Pokemon"
+                    (input)="search($event.target.value)" (keyup.enter)="handleEnter()" />
+            </div>
+            <div class="result-row" *ngFor="let result of results" (click)="select(result.id)">
+                <img [src]="result.icon" />
+                <h3 class="result">
+                    {{ result.name }}
+                </h3>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
 </div>
