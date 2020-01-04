@@ -32,6 +32,10 @@ export class TeamService extends BaseService {
         return this.http.get(this.baseUrl + `/team?userId=${userId}`);
     }
 
+    public getTeam(code: string) {
+        return this.http.get(this.baseUrl + `/team/code/${code}`);
+    }
+
     public deleteTeam(id: number) {
         return this.http.delete(this.baseUrl + `/team/${id}`);
     }

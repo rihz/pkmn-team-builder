@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Item, TeamMember, Team, Pokemon } from '../shared/models';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { ThemeService } from '../shared/theme/theme.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { TeamService } from '../shared/services/team.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'team-builder',
@@ -11,17 +12,19 @@ import { TeamService } from '../shared/services/team.service';
   styleUrls: ['./team-builder.component.scss'],
   providers: [TeamService]
 })
-export class TeamBuilderComponent implements OnInit {
+export class TeamBuilderComponent implements OnInit, OnDestroy {
   gen = null;
   team: Team = new Team();
   items: any;
   natures: any;
   _activeTheme: string = '';
+  routes: Subscription;
 
   constructor(private pkmn: PkmnService,
     private teams: TeamService,
     private themeService: ThemeService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   get activeTheme() {
     return this._activeTheme;
@@ -40,7 +43,15 @@ export class TeamBuilderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.gen = localStorage.getItem('teamBuilderGen');
+    //this.gen = localStorage.getItem('teamBuilderGen');
+    this.routes = this.route.params.subscribe(params => {
+      if(params['code']) {
+        this.teams.getTeam(params['code'])
+          .subscribe(team => {
+            this.team = <Team>team;
+          });
+      }
+    });
 
     this.pkmn.getItems()
       .subscribe(x => {
@@ -53,6 +64,10 @@ export class TeamBuilderComponent implements OnInit {
       });
 
     this.activeTheme = this.themeService.getActiveTheme().name;
+  }
+
+  ngOnDestroy() {
+    this.routes.unsubscribe();
   }
 
   setGen(gen: number) {

@@ -16,6 +16,12 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             _service = service;
         }
 
+        [Route("code/{code}")]
+        public IActionResult GetTeam(string code)
+        {
+            return Ok(_service.GetTeam(code));
+        }
+
         [Route("")]
         [HttpPost]
         public IActionResult AddTeam([FromBody] TeamModel team)

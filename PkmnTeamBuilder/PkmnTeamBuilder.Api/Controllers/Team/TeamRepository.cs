@@ -70,7 +70,10 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
             foreach (var map in mapped)
             {
-                _context.TeamMember.Add(map);
+                if (map.Id <= 0)
+                {
+                    _context.TeamMember.Add(map);
+                }
 
                 added.Add(map);
             }
@@ -82,7 +85,46 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
         public TeamModel GetTeam(string code)
         {
-            throw new NotImplementedException();
+            var team = _context.Team.FirstOrDefault(x => x.Code == code);
+
+            var mappedTeam = _mapper.Map<TeamModel>(team);
+
+            var members = _context.TeamMembers.Where(x => x.TeamId == mappedTeam.Id);
+            var list = new List<TeamMemberModel>();
+
+            foreach (var member in members)
+            {
+                list.Add(
+                    _mapper.Map<TeamMemberModel>(
+                        _context.TeamMember
+                            .Include(x => x.Pokemon)
+                            .Include(x => x.Ability)
+                            .Include(x => x.Nature)
+                            .Include(x => x.Item)
+                            .Include(x => x.Move1)
+                                .ThenInclude(y => y.Category)
+                            .Include(x => x.Move2)
+                                .ThenInclude(y => y.Category)
+                            .Include(x => x.Move3)
+                                .ThenInclude(y => y.Category)
+                            .Include(x => x.Move4)
+                                .ThenInclude(y => y.Category)
+                            .Include(x => x.Move1)
+                                .ThenInclude(y => y.Type)
+                            .Include(x => x.Move2)
+                                .ThenInclude(y => y.Type)
+                            .Include(x => x.Move3)
+                                .ThenInclude(y => y.Type)
+                            .Include(x => x.Move4)
+                                .ThenInclude(y => y.Type)
+                            .First(z => z.Id == member.TeamMemberId)
+                    )
+                );
+            }
+
+            mappedTeam.Members = list;
+
+            return mappedTeam;
         }
 
         public IEnumerable<TeamModel> GetTeams(string userId)
@@ -134,7 +176,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
             var code = new char[size];
 
-            for(int i = 0; i < size; i++)
+            for (int i = 0; i < size; i++)
             {
                 code[i] = pool[random.Next(pool.Length)];
             }
