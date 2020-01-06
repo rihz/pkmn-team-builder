@@ -113,7 +113,7 @@ export const umbreonTheme: Theme = {
         '--input': '#414152',
         '--header': '#1c1c28',
         '--header-color': '#fff',
-        '--bg-color': '#fff',
+        '--bg-color': '#000',
         '--highlight': '#bfc1c9',
         '--box-shadow': '#bfc1c9',
         '--box-shadow-focus': '#696f80',

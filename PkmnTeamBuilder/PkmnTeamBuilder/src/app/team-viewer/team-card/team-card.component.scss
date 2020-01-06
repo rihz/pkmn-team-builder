@@ -1,0 +1,55 @@
+.team-card {
+    border: 1px solid var(--border);
+    background-color: var(--member-bg);
+    width: 550px;
+}
+
+.team {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.team-makeup {
+    display: flex;
+}
+
+h3,
+h6 {
+    margin: 0;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+
+.team-name {
+    padding: 0px 0px 10px 5px;
+}
+
+.member-card {
+    background-color: var(--button);
+    color: var(--button-color);
+    margin: 5px;
+    cursor: pointer;
+}
+
+.vacant {
+    width: 50px;
+    height: 82px;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 65pt;
+}
+
+.index {
+    margin: 0;
+    top: 5px;
+    left: 5px;
+    position: absolute;
+}

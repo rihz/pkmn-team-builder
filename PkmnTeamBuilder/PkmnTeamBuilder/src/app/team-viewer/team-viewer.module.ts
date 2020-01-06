@@ -5,13 +5,14 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { viewerRoute } from './team-viewer.routing';
-import { MatButtonModule, MatIconModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatCardModule, MatRippleModule } from '@angular/material';
 import { TeamService } from '../shared/services/team.service';
+import { TeamCardComponent } from './team-card/team-card.component';
 
 
 
 @NgModule({
-  declarations: [TeamViewerComponent],
+  declarations: [TeamViewerComponent, TeamCardComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -19,7 +20,8 @@ import { TeamService } from '../shared/services/team.service';
     viewerRoute,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatRippleModule
   ],
   providers: [
     PkmnService, 
