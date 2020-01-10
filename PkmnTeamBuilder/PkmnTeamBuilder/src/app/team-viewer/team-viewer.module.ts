@@ -7,11 +7,13 @@ import { PkmnService } from '../shared/services/pkmn.service';
 import { viewerRoute } from './team-viewer.routing';
 import { MatButtonModule, MatIconModule, MatCardModule } from '@angular/material';
 import { TeamService } from '../shared/services/team.service';
+import { ReadonlyTeamComponent } from './readonly-team/readonly-team.component';
+import { TeamBuilderModule } from '../team-builder/team-builder.module';
 
 
 
 @NgModule({
-  declarations: [TeamViewerComponent],
+  declarations: [TeamViewerComponent, ReadonlyTeamComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -19,7 +21,8 @@ import { TeamService } from '../shared/services/team.service';
     viewerRoute,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    TeamBuilderModule
   ],
   providers: [
     PkmnService, 

@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChildren, QueryList } from '@angular/core';
 import { Item, TeamMember, Team, Pokemon } from '../shared/models';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { ThemeService } from '../shared/theme/theme.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TeamService } from '../shared/services/team.service';
 import { Subscription } from 'rxjs';
+import { TeamMemberComponent } from './team-member/team-member.component';
 
 @Component({
   selector: 'team-builder',
@@ -44,11 +45,14 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     //this.gen = localStorage.getItem('teamBuilderGen');
+    
     this.routes = this.route.params.subscribe(params => {
       if(params['code']) {
         this.teams.getTeam(params['code'])
           .subscribe(team => {
             this.team = <Team>team;
+          }, error => {
+            alert(error);
           });
       }
     });
@@ -115,6 +119,12 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
           this.router.navigate(['/teams']);
         })
     }
+  }
+
+  getErrorsForMember(index: number): string[] {
+    return this.team.errors
+      .filter(x => x.memberIndex === index)
+      .map(x => x.error);
   }
 
   validateTeam() {

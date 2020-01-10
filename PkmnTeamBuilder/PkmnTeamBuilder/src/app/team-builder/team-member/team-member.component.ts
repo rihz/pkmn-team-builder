@@ -63,4 +63,8 @@ export class TeamMemberComponent implements OnInit {
       this.member.notes = notes;
     });
   }
+
+  validate() {
+    
+  }
 }

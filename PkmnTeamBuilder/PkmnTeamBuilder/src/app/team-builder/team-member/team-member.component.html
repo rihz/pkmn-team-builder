@@ -1,5 +1,5 @@
 <div class="team-member">
-    <div class="team-member-card">
+    <div class="team-member-card" *ngIf="member">
         <basic-info [member]="member"></basic-info>
         <mat-tab-group class="member-tabs">
             <mat-tab label="Supplementary">
