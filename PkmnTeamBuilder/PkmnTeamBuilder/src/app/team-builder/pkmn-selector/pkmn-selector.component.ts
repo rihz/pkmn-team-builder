@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { PkmnService } from '../../shared/services/pkmn.service';
 import { MatDialogRef } from '@angular/material';
 import { MemberService } from '../../shared/services/member.service';
@@ -13,6 +13,7 @@ import { TeamMember, Move, Pokemon } from '../../shared/models';
 export class PkmnSelectorComponent implements OnInit {
   results: any;
   existing: any;
+  @ViewChild('newInput', null) newInput: ElementRef;
 
   constructor(private pkmn: PkmnService,
     private members: MemberService,
@@ -24,7 +25,11 @@ export class PkmnSelectorComponent implements OnInit {
     this.members.getMembers(userId)
       .subscribe(x => {
         this.existing = x;
-      });
+        
+        setTimeout(() => {
+          this.newInput.nativeElement.focus();
+        }, 250);
+      });    
   }
 
   search(value: string) {
@@ -57,10 +62,14 @@ export class PkmnSelectorComponent implements OnInit {
   }
 
   handleEnter() {
+    console.log(this.results[0]);
     this.pkmn.getPokemon(this.results[0].id)
       .subscribe(pokemon => {
-        this.ref.close(pokemon);
-      })
+        this.ref.close({
+          result: 'pokemon',
+          payload: pokemon
+        });
+      });
   }
 
   getIVs(member: TeamMember): string {
@@ -77,6 +86,10 @@ export class PkmnSelectorComponent implements OnInit {
 
   getMoveTooltip(move: Move): string {
     return `${move.categoryName.toUpperCase()}\n${move.description}`;
+  }
+
+  changeTab(e: any) {
+    this.newInput.nativeElement.focus();
   }
 
 }
