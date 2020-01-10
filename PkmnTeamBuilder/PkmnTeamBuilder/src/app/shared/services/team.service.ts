@@ -28,6 +28,10 @@ export class TeamService extends BaseService {
         return this.http.post(this.baseUrl + '/team/', team);
     }
 
+    public updateTeam(team: Team) {
+        return this.http.put(this.baseUrl + `/team/`, team);
+    }
+
     public getTeams(userId: string) {
         return this.http.get(this.baseUrl + `/team?userId=${userId}`);
     }

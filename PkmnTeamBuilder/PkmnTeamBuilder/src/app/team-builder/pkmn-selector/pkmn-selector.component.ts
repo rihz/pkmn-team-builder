@@ -70,23 +70,7 @@ export class PkmnSelectorComponent implements OnInit {
           payload: pokemon
         });
       });
-  }
-
-  getIVs(member: TeamMember): string {
-    return `${member.hpIV} | ${member.atkIV} | ${member.defIV} | ${member.spatkIV} | ${member.spdefIV} | ${member.speIV}`;
-  }
-
-  getEVs(member: TeamMember): string {
-    return `${member.hpEV} | ${member.atkEV} | ${member.defEV} | ${member.spatkEV} | ${member.spdefEV} | ${member.speEV}`;
-  }
-
-  getNatureTooltip(member: TeamMember): string {
-    return `${member.nature.increase} is increased | ${member.nature.decrease} is decreased`;
-  }
-
-  getMoveTooltip(move: Move): string {
-    return `${move.categoryName.toUpperCase()}\n${move.description}`;
-  }
+  }  
 
   changeTab(e: any) {
     this.newInput.nativeElement.focus();

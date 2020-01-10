@@ -1,0 +1,7 @@
+<mat-card class="display-card">
+    <div class="label">{{ label }}</div>
+    <div class="value">{{ value }}</div>
+    <div *ngIf="type" class="type">
+        <pkmn-type small="true" [name]="type"></pkmn-type>
+    </div>
+</mat-card>

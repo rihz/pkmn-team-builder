@@ -1,7 +1,7 @@
 .team-card {
     border: 1px solid var(--border);
     background-color: var(--member-bg);
-    width: 550px;
+    width: 500px;
     margin: 0 auto;
 }
 
@@ -28,14 +28,19 @@ img {
 .team-name {
     padding: 0px 0px 10px 5px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.member-card {
+.team-member-card {
     background-color: var(--button);
     color: var(--button-color);
     margin: 5px;
+    padding: 0px 12px;
     cursor: pointer;
+}
+
+.selected {
+    background-color: var(--icon-hover) !important;
 }
 
 .vacant {
@@ -44,6 +49,7 @@ img {
     opacity: 0.5;
     display: flex;
     align-items: center;
+    cursor: default !important;
 }
 
 h1 {
@@ -59,4 +65,21 @@ h1 {
 
 .action-button {
     margin: -10px 0px 0px 10px;
+}
+
+.action-button:hover,
+.populated:hover {
+    background-color: var(--icon-hover) !important;
+}
+
+.selected:hover {
+    background-color: var(--button) !important;
+}
+
+.member {
+    padding-top: 5px;
+}
+
+.member-details {
+    padding: 0px 5px;
 }

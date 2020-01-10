@@ -7,9 +7,13 @@ import { HeaderComponent } from './header/header.component';
 import { BooleanDialogComponent } from './boolean-dialog/boolean-dialog.component';
 import { ThemeSelectorComponent } from './theme-selector/theme-selector.component';
 import { ControlComponent } from './control/control.component';
+import { MemberCardComponent } from './member-card/member-card.component';
+import { TypeComponent } from './type/type.component';
+import { DisplayCardComponent } from './display-card/display-card.component';
 
 @NgModule({
-  declarations: [HeaderComponent, BooleanDialogComponent, ThemeSelectorComponent, ControlComponent],
+  declarations: [HeaderComponent, BooleanDialogComponent, ThemeSelectorComponent, ControlComponent, MemberCardComponent,
+    TypeComponent, DisplayCardComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -29,7 +33,10 @@ import { ControlComponent } from './control/control.component';
   exports: [
     HeaderComponent,
     MatSpinner,
-    ControlComponent
+    ControlComponent,
+    MemberCardComponent,
+    TypeComponent,
+    DisplayCardComponent
   ],
   entryComponents: [
     BooleanDialogComponent,

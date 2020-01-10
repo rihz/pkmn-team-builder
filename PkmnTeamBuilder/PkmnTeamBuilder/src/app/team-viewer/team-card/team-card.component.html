@@ -2,36 +2,46 @@
     <mat-card class="team-card">
         <div class="team-name">
             <h3>{{ team.name }}</h3>
-            <button class="action-button" mat-mini-fab>
-                <mat-icon>edit</mat-icon>
-            </button>
-            <button class="action-button" mat-mini-fab>
-                <mat-icon>close</mat-icon>
-            </button>
+            <div class="controls">
+                <button class="action-button" mat-mini-fab>
+                    <mat-icon>link</mat-icon>
+                </button>
+                <button (click)="edit()" class="action-button" mat-mini-fab>
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="delete()" class="action-button" mat-mini-fab>
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
         </div>
         <div class="team-makeup">
-            <mat-card mat-ripple class="member-card" *ngFor="let member of team.members; let i = index;">
+            <mat-card (click)="selectMember(member)" mat-ripple class="team-member-card"
+                [ngClass]="{'selected': selectedMember === member, 'populated': selectedMember !== member}"
+                *ngFor="let member of team.members; let i = index;">
                 <h5 class="index">{{ i + 1 }}</h5>
                 <div class="member">
                     <img [src]="member.pokemon.icon" />
                     <h6>{{ member.nickname !== '' ? member.nickname : member.pokemon.name }}</h6>
                 </div>
             </mat-card>
-            <mat-card class="member-card vacant" *ngIf="!team.members[1]">
+            <mat-card class="team-member-card vacant" *ngIf="!team.members[1]">
                 <h1>2</h1>
             </mat-card>
-            <mat-card class="member-card vacant" *ngIf="!team.members[2]">
+            <mat-card class="team-member-card vacant" *ngIf="!team.members[2]">
                 <h1>3</h1>
             </mat-card>
-            <mat-card class="member-card vacant" *ngIf="!team.members[3]">
+            <mat-card class="team-member-card vacant" *ngIf="!team.members[3]">
                 <h1>4</h1>
             </mat-card>
-            <mat-card class="member-card vacant" *ngIf="!team.members[4]">
+            <mat-card class="team-member-card vacant" *ngIf="!team.members[4]">
                 <h1>5</h1>
             </mat-card>
-            <mat-card class="member-card vacant" *ngIf="!team.members[5]">
+            <mat-card class="team-member-card vacant" *ngIf="!team.members[5]">
                 <h1>6</h1>
             </mat-card>
         </div>
+        <div class="member-details">
+            <member-card *ngIf="selectedMember" [member]="selectedMember"></member-card>
+        </div>
     </mat-card>
-</div> 
+</div>

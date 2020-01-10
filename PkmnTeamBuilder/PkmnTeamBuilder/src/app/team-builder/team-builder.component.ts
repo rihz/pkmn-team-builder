@@ -36,18 +36,18 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
   }
 
   get duplicate() {
-    const arr = this.team.members.map(function(m) { return m.pokemonId });
+    const arr = this.team.members.map(function (m) { return m.pokemonId });
 
-    return arr.some(function(m, index) {
+    return arr.some(function (m, index) {
       return arr.indexOf(m, index + 1) !== -1
     });
   }
 
   ngOnInit() {
     //this.gen = localStorage.getItem('teamBuilderGen');
-    
+
     this.routes = this.route.params.subscribe(params => {
-      if(params['code']) {
+      if (params['code']) {
         this.teams.getTeam(params['code'])
           .subscribe(team => {
             this.team = <Team>team;
@@ -76,7 +76,7 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
 
   setGen(gen: number) {
     this.gen = gen;
-    
+
     localStorage.setItem('teamBuilderGen', gen.toString());
   }
 
@@ -97,14 +97,14 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
   }
 
   changeMember(index: number, chg: any) {
-    if(chg.result === 'pokemon') {
+    if (chg.result === 'pokemon') {
       let teamMember = new TeamMember();
-      
+
       teamMember.pokemonId = chg.payload.id;
       teamMember.pokemon = chg.payload;
 
       this.team.members[index] = teamMember;
-    } else if(chg.result === 'member') {
+    } else if (chg.result === 'member') {
       this.team.members[index] = chg.payload;
     }
   }
@@ -112,19 +112,28 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
   save() {
     this.team.errors = [];
     this.validateTeam();
-    
-    if(this.team.errors.length === 0) {
-      this.teams.saveTeam(this.team)
-        .subscribe(result => {
-          this.router.navigate(['/teams']);
-        })
+
+    if (this.team.errors.length === 0) {
+      if (this.team.id) {
+        this.teams.updateTeam(this.team)
+          .subscribe(result => {
+            this.router.navigate(['/teams']);
+          });
+      } else {
+        this.teams.saveTeam(this.team)
+          .subscribe(result => {
+            this.router.navigate(['/teams']);
+          });
+      }
     }
   }
 
   getErrorsForMember(index: number): string[] {
     return this.team.errors
-      .filter(x => x.memberIndex === index)
-      .map(x => x.error);
+      ? this.team.errors
+        .filter(x => x.memberIndex === index)
+        .map(x => x.error)
+      : [];
   }
 
   validateTeam() {
@@ -132,7 +141,7 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
       this.validateMember(member);
     });
 
-    if(!this.team.name) {
+    if (!this.team.name) {
       this.team.errors.push({
         memberIndex: -1,
         error: 'A name is required.'
@@ -143,49 +152,49 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
   validateMember(member: TeamMember) {
     const index = this.team.members.findIndex(x => x.pokemon.number === member.pokemon.number);
 
-    if(member.natureId <= 0) {
+    if (member.natureId <= 0) {
       this.team.errors.push({
         memberIndex: index,
         error: 'A nature must be selected.'
       });
     }
 
-    if(member.itemId <= 0) {
+    if (member.itemId <= 0) {
       this.team.errors.push({
         memberIndex: index,
         error: 'An item must be selected.'
       });
     }
 
-    if(member.abilityId <= 0) {
+    if (member.abilityId <= 0) {
       this.team.errors.push({
         memberIndex: index,
         error: 'An ability must be selected.'
       });
     }
 
-    if(member.move1Id <= 0) {
+    if (member.move1Id <= 0) {
       this.team.errors.push({
         memberIndex: index,
         error: 'Move 1 must be selected.'
       });
     }
 
-    if(member.move2Id <= 0) {
+    if (member.move2Id <= 0) {
       this.team.errors.push({
         memberIndex: index,
         error: 'Move 2 must be selected.'
       });
     }
 
-    if(member.move3Id <= 0) {
+    if (member.move3Id <= 0) {
       this.team.errors.push({
         memberIndex: index,
         error: 'Move 3 must be selected.'
       });
     }
 
-    if(member.move4Id <= 0) {
+    if (member.move4Id <= 0) {
       this.team.errors.push({
         memberIndex: index,
         error: 'Move 4 must be selected.'

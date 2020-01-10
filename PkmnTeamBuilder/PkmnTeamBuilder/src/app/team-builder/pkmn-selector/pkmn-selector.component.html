@@ -13,7 +13,10 @@
             </div>
         </mat-tab>
         <mat-tab label="Use Existing" *ngIf="existing && existing.length > 0">
-            <div class="result-row" *ngFor="let member of existing" (click)="selectMember(member)">
+            <div class="result-row" *ngFor="let member of existing">
+                <member-card [member]="member"></member-card>
+            </div>
+            <!-- <div class="result-row" *ngFor="let member of existing" (click)="selectMember(member)">
                 <div class="basic-info">
                     <img [src]="member.pokemon.icon" />
                     <h3 class="result">
@@ -59,7 +62,7 @@
                         </display-card>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </mat-tab>
     </mat-tab-group>
 </div>

@@ -30,6 +30,13 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         }
 
         [Route("")]
+        [HttpPut]
+        public IActionResult UpdateTeam([FromBody] TeamModel team)
+        {
+            return Ok(_service.UpdateTeam(team));
+        }
+
+        [Route("")]
         [HttpGet]
         public IActionResult GetTeamsForUser([FromQuery] string userId)
         {

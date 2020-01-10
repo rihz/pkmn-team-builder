@@ -9,6 +9,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
     {
         TeamModel GetTeam(string code);
         TeamModel AddTeam(TeamModel model);
+        TeamModel UpdateTeam(TeamModel model);
         IEnumerable<TeamModel> GetTeams(string userId);
         void DeleteTeam(int id);
     }
@@ -30,6 +31,11 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         public TeamModel AddTeam(TeamModel model)
         {
             return _repo.AddTeam(model);
+        }
+
+        public TeamModel UpdateTeam(TeamModel model)
+        {
+            return _repo.UpdateTeam(model);
         }
 
         public IEnumerable<TeamModel> GetTeams(string userId)

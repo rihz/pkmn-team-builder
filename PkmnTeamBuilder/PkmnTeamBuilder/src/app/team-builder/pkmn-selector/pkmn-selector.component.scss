@@ -28,36 +28,13 @@
     background-color: var(--highlight);
 }
 
-.result {
-    padding: 0.5em;
-    margin: 0;
-}
-
 .input-row {
     padding: 10px;
 }
 
-.details {
-    width: 75%;
-    padding: 10px 5px 10px 15px;
-}
-
-.basic-info {
-    width: 25%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.basic-info img {
+img {
     width: 40px;
     height: 40px;
-}
-
-.row {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 10px;
+    margin: auto 0;
+    padding-right: 10px;
 }

@@ -14,7 +14,9 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         TeamModel GetTeam(string code);
         IEnumerable<TeamModel> GetTeams(string userId);
         TeamModel AddTeam(TeamModel model);
+        TeamModel UpdateTeam(TeamModel model);
         IEnumerable<TeamMember> AddTeamMembers(IEnumerable<TeamMemberModel> members);
+        void UpdateTeamMembers(IEnumerable<TeamMemberModel> members);
         void DeleteTeam(int id);
     }
 
@@ -63,6 +65,31 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             return _mapper.Map<TeamModel>(team);
         }
 
+        public TeamModel UpdateTeam(TeamModel model)
+        {
+            var team = _mapper.Map<Entities.Team.Team>(model);
+
+            UpdateTeamMembers(model.Members);
+
+            _context.Update(team);
+
+            _context.SaveChanges();
+
+            return _mapper.Map<TeamModel>(team);
+        }
+
+        public void UpdateTeamMembers(IEnumerable<TeamMemberModel> members)
+        {
+            var mapped = members.Select(y => _mapper.Map<TeamMember>(y));
+
+            foreach(var map in mapped)
+            {
+                _context.TeamMember.Update(map);
+            }
+
+            _context.SaveChanges();
+        }
+
         public IEnumerable<TeamMember> AddTeamMembers(IEnumerable<TeamMemberModel> members)
         {
             var added = new List<TeamMember>();
@@ -97,7 +124,12 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                 list.Add(
                     _mapper.Map<TeamMemberModel>(
                         _context.TeamMember
-                            .Include(x => x.Pokemon)
+                             .Include(x => x.Pokemon)
+                                 .ThenInclude(y => y.Abilities)
+                                    .ThenInclude(z => z.Ability)
+                             .Include(x => x.Pokemon)
+                                 .ThenInclude(y => y.Moveset)
+                                    .ThenInclude(z => z.Move)
                             .Include(x => x.Ability)
                             .Include(x => x.Nature)
                             .Include(x => x.Item)
@@ -144,6 +176,28 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                         _mapper.Map<TeamMemberModel>(
                             _context.TeamMember
                                 .Include(x => x.Pokemon)
+                                    .ThenInclude(y => y.Abilities)
+                                .Include(x => x.Pokemon)
+                                    .ThenInclude(y => y.Moveset)
+                                .Include(x => x.Ability)
+                                .Include(x => x.Nature)
+                                .Include(x => x.Item)
+                                .Include(x => x.Move1)
+                                    .ThenInclude(y => y.Category)
+                                .Include(x => x.Move2)
+                                    .ThenInclude(y => y.Category)
+                                .Include(x => x.Move3)
+                                    .ThenInclude(y => y.Category)
+                                .Include(x => x.Move4)
+                                    .ThenInclude(y => y.Category)
+                                .Include(x => x.Move1)
+                                    .ThenInclude(y => y.Type)
+                                .Include(x => x.Move2)
+                                    .ThenInclude(y => y.Type)
+                                .Include(x => x.Move3)
+                                    .ThenInclude(y => y.Type)
+                                .Include(x => x.Move4)
+                                    .ThenInclude(y => y.Type)
                                 .First(z => z.Id == member.TeamMemberId)
                         )
                     );

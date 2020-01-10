@@ -10,7 +10,6 @@ import { TeamBuilderComponent } from './team-builder.component';
 import { AddPkmnComponent } from './add-pkmn/add-pkmn.component';
 import { TeamMemberComponent } from './team-member/team-member.component';
 import { BasicInfoComponent } from './basic-info/basic-info.component';
-import { TypeComponent } from './type/type.component';
 import { SuppInfoComponent } from './supp-info/supp-info.component';
 import { SelectorComponent } from './selector/selector.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +20,7 @@ import { IvDisplayComponent } from './stat-info/iv-display/iv-display.component'
 import { TotalDisplayComponent } from './stat-info/total-display/total-display.component';
 import { NicknameEntryComponent } from './basic-info/nickname-entry/nickname-entry.component';
 import { MoveInfoComponent } from './move-info/move-info.component';
-import { DisplayCardComponent } from './display-card/display-card.component';
+import { DisplayCardComponent } from '../shared/display-card/display-card.component';
 import { MoveDisplayComponent } from './move-info/move-display/move-display.component';
 import { NotesComponent } from './notes/notes.component';
 import { builderRoute } from './team-builder.routing';
@@ -31,7 +30,7 @@ import { MemberService } from '../shared/services/member.service';
 
 
 @NgModule({
-  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, TypeComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent, IvDisplayComponent, TotalDisplayComponent, NicknameEntryComponent, MoveInfoComponent, DisplayCardComponent, MoveDisplayComponent, NotesComponent],
+  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent, IvDisplayComponent, TotalDisplayComponent, NicknameEntryComponent, MoveInfoComponent, MoveDisplayComponent, NotesComponent],
   imports: [
     CommonModule,
     SharedModule,

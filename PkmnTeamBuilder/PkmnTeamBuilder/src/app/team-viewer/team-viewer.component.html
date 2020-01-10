@@ -7,7 +7,10 @@
         </button>
     </mat-card>
     <div class="team" *ngFor="let team of teams">
-        <team-card [team]="team"></team-card>
+        <team-card
+            [team]="team"
+            (onDelete)="deleteTeam($event.id)"
+        ></team-card>
         <!-- <div class="team-name">
             <h3>{{ team.name }}</h3>
             <div class="controls">
