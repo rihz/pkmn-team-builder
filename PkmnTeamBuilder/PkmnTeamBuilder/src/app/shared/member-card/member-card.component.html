@@ -27,18 +27,22 @@
             <display-card label="EVs" matTooltip="HP | ATK | DEF | SPATK | SPDEF | SPE"
                 matTooltipClass="tooltip" [matTooltipShowDelay]="showDelay" [value]="getEVs(member)"></display-card>
         </div>
-        <div class="move-row row">
+        <div class="move-row">
             <display-card label="Move 1" [value]="member.move1.name" [type]="member.move1.typeName"
                 [matTooltip]="getMoveTooltip(member.move1)" [matTooltipShowDelay]="showDelay" matTooltipClass="pre-tooltip">
             </display-card>
+        </div>
+        <div class="move-row">
             <display-card label="Move 2" [value]="member.move2.name" [type]="member.move2.typeName"
                 [matTooltip]="getMoveTooltip(member.move2)" [matTooltipShowDelay]="showDelay" matTooltipClass="pre-tooltip">
             </display-card>
         </div>
-        <div class="move-row-2 row">
+        <div class="move-row">
             <display-card label="Move 3" [value]="member.move3.name" [type]="member.move3.typeName"
                 [matTooltip]="getMoveTooltip(member.move3)" [matTooltipShowDelay]="showDelay" matTooltipClass="pre-tooltip">
             </display-card>
+        </div>
+        <div class="move-row">
             <display-card label="Move 4" [value]="member.move4.name" [type]="member.move4.typeName"
                 [matTooltip]="getMoveTooltip(member.move4)" [matTooltipShowDelay]="showDelay" matTooltipClass="pre-tooltip">
             </display-card>

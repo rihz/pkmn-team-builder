@@ -52,3 +52,11 @@
 .team-member-section {
     margin-bottom: 10px;
 }
+
+.mat-spinner {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}

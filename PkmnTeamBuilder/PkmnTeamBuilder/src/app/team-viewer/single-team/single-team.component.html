@@ -1,0 +1,12 @@
+<div class="team-view">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+    <team-card
+        *ngIf="!loading && team"
+        [team]="team"
+        [canEdit]="false"
+        [canDelete]="false"
+        [canLink]="false"
+        [expandAll]="true"
+    >
+    </team-card>
+</div>

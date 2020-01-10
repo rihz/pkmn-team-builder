@@ -10,10 +10,21 @@ import { ControlComponent } from './control/control.component';
 import { MemberCardComponent } from './member-card/member-card.component';
 import { TypeComponent } from './type/type.component';
 import { DisplayCardComponent } from './display-card/display-card.component';
+import { CopyClipboardDirective } from './clipboard.directive';
+import { TeamCardComponent } from './team-card/team-card.component';
 
 @NgModule({
-  declarations: [HeaderComponent, BooleanDialogComponent, ThemeSelectorComponent, ControlComponent, MemberCardComponent,
-    TypeComponent, DisplayCardComponent],
+  declarations: [
+    HeaderComponent, 
+    BooleanDialogComponent, 
+    ThemeSelectorComponent, 
+    ControlComponent, 
+    MemberCardComponent,
+    TypeComponent, 
+    DisplayCardComponent, 
+    CopyClipboardDirective,
+    TeamCardComponent
+  ],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -36,7 +47,9 @@ import { DisplayCardComponent } from './display-card/display-card.component';
     ControlComponent,
     MemberCardComponent,
     TypeComponent,
-    DisplayCardComponent
+    DisplayCardComponent,
+    CopyClipboardDirective,
+    TeamCardComponent
   ],
   entryComponents: [
     BooleanDialogComponent,

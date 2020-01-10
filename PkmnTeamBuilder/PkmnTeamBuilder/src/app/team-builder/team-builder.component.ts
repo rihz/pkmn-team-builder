@@ -20,6 +20,7 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
   natures: any;
   _activeTheme: string = '';
   routes: Subscription;
+  loading = true;
 
   constructor(private pkmn: PkmnService,
     private teams: TeamService,
@@ -51,9 +52,12 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
         this.teams.getTeam(params['code'])
           .subscribe(team => {
             this.team = <Team>team;
+            this.loading = false;
           }, error => {
             alert(error);
           });
+      } else {
+        this.loading = false;
       }
     });
 

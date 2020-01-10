@@ -1,5 +1,9 @@
 .member-card {
     display: inline-flex;
+    margin: 5px 0px;
+    padding: 0px 10px;
+    border: 1px solid var(--border);
+    width: 470px;
 }
 
 .details {
@@ -30,4 +34,10 @@
 .result {
     padding: 0.5em;
     margin: 0;
+}
+
+.move-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }

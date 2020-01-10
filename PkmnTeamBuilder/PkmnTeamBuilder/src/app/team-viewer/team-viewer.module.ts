@@ -8,12 +8,10 @@ import { viewerRoute } from './team-viewer.routing';
 import { MatButtonModule, MatIconModule, MatCardModule, MatRippleModule } from '@angular/material';
 import { TeamService } from '../shared/services/team.service';
 import { TeamBuilderModule } from '../team-builder/team-builder.module';
-import { TeamCardComponent } from './team-card/team-card.component';
-
-
+import { SingleTeamComponent } from './single-team/single-team.component';
 
 @NgModule({
-  declarations: [TeamViewerComponent, TeamCardComponent],
+  declarations: [TeamViewerComponent, SingleTeamComponent],
   imports: [
     CommonModule,
     SharedModule,

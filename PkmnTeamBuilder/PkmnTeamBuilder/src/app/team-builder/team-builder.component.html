@@ -1,9 +1,10 @@
 <div class="team-builder-main">
-    <div class="controls">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+    <div *ngIf="!loading" class="controls">
         <input matInput class="name-input" placeholder="Team Name" autocomplete="off" [(ngModel)]="team.name" />
         <button class="save-button" mat-button (click)="save()">Save Team</button>
     </div>
-    <div class="team-member">
+    <div *ngIf="!loading" class="team-member">
         <mat-card class="warning-card" *ngIf="duplicate">Teams with duplicate Pokemon species are typically prohibited
             in competitive formats</mat-card>
         <div class="team-member-section" *ngFor="let member of team.members; let i = index">
@@ -17,6 +18,6 @@
             </div>
         </div>
     </div>
-    <add-pkmn (onAdd)="addPokemon($event)" (onAddExisting)="addExisting($event)" *ngIf="team.members.length <= 5">
+    <add-pkmn (onAdd)="addPokemon($event)" (onAddExisting)="addExisting($event)" *ngIf="!loading && team.members.length <= 5">
     </add-pkmn>
 </div>

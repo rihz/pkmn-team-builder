@@ -29,6 +29,14 @@ export class TeamService extends BaseService {
     }
 
     public updateTeam(team: Team) {
+        const userId = localStorage.getItem('userId');
+
+        team.userId = userId;
+
+        team.members.forEach((value, index, array) => {
+            value.userId = userId;
+        });
+        
         return this.http.put(this.baseUrl + `/team/`, team);
     }
 

@@ -9,6 +9,9 @@
     <div class="team" *ngFor="let team of teams">
         <team-card
             [team]="team"
+            [canDelete]="true"
+            [canEdit]="true"
+            [canLink]="true"
             (onDelete)="deleteTeam($event.id)"
         ></team-card>
         <!-- <div class="team-name">

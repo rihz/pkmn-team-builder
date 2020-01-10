@@ -16,7 +16,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         TeamModel AddTeam(TeamModel model);
         TeamModel UpdateTeam(TeamModel model);
         IEnumerable<TeamMember> AddTeamMembers(IEnumerable<TeamMemberModel> members);
-        void UpdateTeamMembers(IEnumerable<TeamMemberModel> members);
+        //void UpdateTeamMembers(IEnumerable<TeamMemberModel> members);
         void DeleteTeam(int id);
     }
 
@@ -68,27 +68,42 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         public TeamModel UpdateTeam(TeamModel model)
         {
             var team = _mapper.Map<Entities.Team.Team>(model);
-
-            UpdateTeamMembers(model.Members);
+            
+            var members = AddTeamMembers(model.Members);
 
             _context.Update(team);
+
+            _context.SaveChanges();
+
+            foreach (var member in members)
+            {
+                _context.TeamMembers.Add(new TeamMembers
+                {
+                    TeamId = team.Id,
+                    TeamMemberId = member.Id
+                });
+            }
 
             _context.SaveChanges();
 
             return _mapper.Map<TeamModel>(team);
         }
 
-        public void UpdateTeamMembers(IEnumerable<TeamMemberModel> members)
-        {
-            var mapped = members.Select(y => _mapper.Map<TeamMember>(y));
+        //public void UpdateTeamMembers(IEnumerable<TeamMemberModel> members, string userId)
+        //{
+        //    var mapped = members.Select(y => _mapper.Map<TeamMember>(y));
 
-            foreach(var map in mapped)
-            {
-                _context.TeamMember.Update(map);
-            }
+        //    foreach(var map in mapped)
+        //    {
+        //        if(map.UserId == null)
+        //        {
+        //            map.UserId = userId;
+        //        }
+        //        _context.TeamMember.Update(map);
+        //    }
 
-            _context.SaveChanges();
-        }
+        //    _context.SaveChanges();
+        //}
 
         public IEnumerable<TeamMember> AddTeamMembers(IEnumerable<TeamMemberModel> members)
         {
@@ -100,6 +115,10 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                 if (map.Id <= 0)
                 {
                     _context.TeamMember.Add(map);
+                }
+                else
+                {
+                    _context.TeamMember.Update(map);
                 }
 
                 added.Add(map);
