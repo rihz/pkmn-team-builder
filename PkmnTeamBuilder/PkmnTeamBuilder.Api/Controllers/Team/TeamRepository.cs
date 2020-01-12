@@ -68,6 +68,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         public TeamModel UpdateTeam(TeamModel model)
         {
             var team = _mapper.Map<Entities.Team.Team>(model);
+
+            DeleteTeamMembers(model.Id);
             
             var members = AddTeamMembers(model.Members);
 
@@ -115,10 +117,6 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                 if (map.Id <= 0)
                 {
                     _context.TeamMember.Add(map);
-                }
-                else
-                {
-                    _context.TeamMember.Update(map);
                 }
 
                 added.Add(map);
@@ -255,6 +253,15 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             }
 
             return new string(code);
+        }
+
+        void DeleteTeamMembers(int teamId)
+        {
+            _context.TeamMembers.RemoveRange(
+                _context.TeamMembers.Where(x => x.TeamId == teamId)
+            );
+
+            _context.SaveChanges();
         }
     }
 }

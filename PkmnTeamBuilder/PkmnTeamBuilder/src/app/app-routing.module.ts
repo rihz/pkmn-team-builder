@@ -9,7 +9,7 @@ import { TeamViewerComponent } from './team-viewer/team-viewer.component';
 const routes: Routes = [
   { path: '', component: TeamViewerComponent, canActivate: [AuthGuard] },
   { path: 'account', loadChildren: './account/account.module#AccountModule' },
-  { path: 'build', loadChildren: './team-builder/team-builder.module#TeamBuilderModule', canActivate: [AuthGuard] },
+  { path: 'build', loadChildren: './team-builder/team-builder.module#TeamBuilderModule' },
   { path: 'teams', loadChildren: './team-viewer/team-viewer.module#TeamViewerModule', canActivate: [AuthGuard] }
 ];
 

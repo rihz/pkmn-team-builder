@@ -3,6 +3,7 @@ import { Team } from '../../shared/models';
 import { TeamMember } from '../models';
 import { Router } from '@angular/router';
 import { ConfigService } from '../services/config.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'team-card',
@@ -19,7 +20,8 @@ export class TeamCardComponent implements OnInit {
   @Output() onDelete = new EventEmitter<Team>();
 
   constructor(private router: Router,
-    private config: ConfigService) { }
+    private config: ConfigService,
+    private snackBar: MatSnackBar) { }
 
   get teamUrl(): string {
     return this.config.getBaseURL() + `/teams/${this.team.code}`;
@@ -50,7 +52,14 @@ export class TeamCardComponent implements OnInit {
   }
 
   copyLink(payload: string) {
-    alert(payload + ' has been copied');
+    this.snackBar.open(
+      'Link copied to clipboard',
+      null,
+      {
+        duration: 1000,
+        panelClass: 'snack'
+      }
+    );
   }
 
 }

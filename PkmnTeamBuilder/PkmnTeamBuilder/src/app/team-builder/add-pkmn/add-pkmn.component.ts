@@ -19,7 +19,7 @@ export class AddPkmnComponent implements OnInit {
 
   showDialog() {
     const ref = this.dialog.open(PkmnSelectorComponent, {
-      width: '600px',
+      width: '550px',
       panelClass: 'pokemon-selector'
     });
 

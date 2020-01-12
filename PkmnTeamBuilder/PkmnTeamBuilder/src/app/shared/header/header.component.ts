@@ -33,6 +33,10 @@ export class HeaderComponent implements OnInit {
       && this.router.url !== '/register';
   }
 
+  get logo(): string {
+    return this.themeService.getLogoUrl();
+  }
+
   ngOnInit() {
     const settings = JSON.parse(localStorage.getItem('settings'));
     

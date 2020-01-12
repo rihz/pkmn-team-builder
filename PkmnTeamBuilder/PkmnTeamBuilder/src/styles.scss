@@ -169,3 +169,13 @@ th.mat-header-cell {
 .pokemon-selector .mat-dialog-container {
     padding: 0px !important;
 }
+
+.snack {
+    background-color: var(--member-bg);
+    opacity: 0.8 !important;
+    color: var(--bg-color);
+}
+
+.snack .mat-simple-snackbar {
+    justify-content: center !important;
+}

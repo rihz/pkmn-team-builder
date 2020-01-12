@@ -18,6 +18,7 @@ export const charmanderTheme: Theme = {
         '--button': '#de5239', //a500
         '--button-color': '#fff', //p900
         '--display-label': '#de5239', //a500
+        '--logo': '../../../assets/logo-white.png'
     }
 }
 
@@ -39,6 +40,7 @@ export const squirtleTheme: Theme = {
         '--button': '#6eb0ba', //a500
         '--button-color': '#fff', //p900
         '--display-label': '#6eb0ba', //a500
+        '--logo': '../../../assets/logo-white.png'
     }
 }
 
@@ -60,6 +62,7 @@ export const bulbasaurTheme: Theme = {
         '--button-color': '#fff', //p900
         '--display-label': '#5a9ca4', //a500
         '--icon-hover': '#34ba8c', //a900
+        '--logo': '../../../assets/logo-white.png'
     }
 }
 
@@ -81,6 +84,7 @@ export const pikachuTheme: Theme = {
         '--border': '#f6bd20', //a500
         '--icon': '#f6bd20', //a500
         '--icon-hover': '#ef980b', //a900
+        '--logo': '../../../assets/logo-black.png'
     }
 }
 
@@ -101,7 +105,8 @@ export const celebiTheme: Theme = {
         '--display-label': '#73a431',
         '--border': '#73a431',
         '--icon': '#73a431',
-        '--icon-hover': '#437813'
+        '--icon-hover': '#437813',
+        '--logo': '../../../assets/logo-white.png'
     }
 }
 
@@ -122,6 +127,7 @@ export const umbreonTheme: Theme = {
         '--display-label': '#29314a',
         '--border': '#29314a',
         '--icon': '#29314a',
-        '--icon-hover': '#0f1322'
+        '--icon-hover': '#0f1322',
+        '--logo': '../../../assets/logo-white.png'
     }
 }

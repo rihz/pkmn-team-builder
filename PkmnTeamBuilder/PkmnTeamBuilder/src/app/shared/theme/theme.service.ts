@@ -24,6 +24,10 @@ export class ThemeService {
         }
     }
 
+    getLogoUrl() {
+        return this.getActiveTheme().properties['--logo'];
+    }
+
     getProperty(propName: string) {
         return this.getActiveTheme().properties[propName];
     }
