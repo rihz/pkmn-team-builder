@@ -16,10 +16,12 @@ import { TeamViewerModule } from './team-viewer/team-viewer.module';
 import { SharedModule } from './shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { ALL_THEMES, CURRENT_THEME } from './shared/theme/symbols';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     AccountModule,

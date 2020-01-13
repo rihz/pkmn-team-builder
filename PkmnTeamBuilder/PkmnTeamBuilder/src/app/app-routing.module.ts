@@ -4,10 +4,11 @@ import { LoginComponent } from './account/login/login.component';
 import { AuthGuard } from './auth.guard';
 import { TeamBuilderComponent } from './team-builder/team-builder.component';
 import { TeamViewerComponent } from './team-viewer/team-viewer.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
-  { path: '', component: TeamViewerComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent },
   { path: 'account', loadChildren: './account/account.module#AccountModule' },
   { path: 'build', loadChildren: './team-builder/team-builder.module#TeamBuilderModule' },
   { path: 'teams', loadChildren: './team-viewer/team-viewer.module#TeamViewerModule', canActivate: [AuthGuard] }

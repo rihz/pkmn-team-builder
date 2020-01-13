@@ -28,6 +28,10 @@ export class ThemeService {
         return this.getActiveTheme().properties['--logo'];
     }
 
+    getBgLogoUrl() {
+        return this.getActiveTheme().properties['--bg-logo'];
+    }
+
     getProperty(propName: string) {
         return this.getActiveTheme().properties[propName];
     }

@@ -17,6 +17,12 @@
     font-size: 20px;
 }
 
+.header-button {
+    background-color: var(--button);
+    color: var(--button-color);
+    margin: 0px 10px;
+}
+
 .logo {
     width: 150px;
     cursor: pointer;

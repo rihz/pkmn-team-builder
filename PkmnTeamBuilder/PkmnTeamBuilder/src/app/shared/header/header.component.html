@@ -1,10 +1,14 @@
 <mat-toolbar class="header" *ngIf="showHeader">
     <img [src]="logo" class="logo" routerLink="/" />
     <!-- <div class="logo" routerLink="/" [style.background-image]="'url('+logo+')'"></div> -->
-    <mat-button-toggle-group name="view">
+    <!-- <mat-button-toggle-group name="view">
         <mat-button-toggle routerLink="/teams">View Teams</mat-button-toggle>
         <mat-button-toggle routerLink="/build">Build a Team</mat-button-toggle>
-    </mat-button-toggle-group>
+    </mat-button-toggle-group> -->
+    <div class="options">
+        <button mat-button routerLink="/teams" class="header-button">View Teams</button>
+        <button mat-button routerLink="/build" class="header-button">Build Team</button>
+    </div>
     <div style="text-align: right;">
         <mat-menu #userMenu="matMenu">
             <button routerLink="/account/profile" mat-menu-item>Profile</button>
