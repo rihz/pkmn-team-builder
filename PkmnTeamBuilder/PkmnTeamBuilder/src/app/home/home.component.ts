@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../shared/theme/theme.service';
+import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,15 @@ import { ThemeService } from '../shared/theme/theme.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  
   constructor(
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private userService: UserService
   ) { }
+
+  get loggedIn(): boolean {
+    return this.userService.isLoggedIn();
+  }
 
   ngOnInit() {
   }

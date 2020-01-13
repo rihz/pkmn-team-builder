@@ -1,0 +1,11 @@
+<mat-card class="control-card">
+    <div class="label">
+        <span>
+            {{ label }}
+        </span>
+    </div>
+    <div class="value">
+        <input [type]="inputType" #valueInput matInput [placeholder]="label"
+            [(ngModel)]="value" (ngModelChange)="onChange($event)" />
+    </div>
+</mat-card>

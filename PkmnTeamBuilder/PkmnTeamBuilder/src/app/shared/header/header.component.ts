@@ -28,6 +28,10 @@ export class HeaderComponent implements OnInit {
     this.themeService.setTheme(value);
   }
 
+  get loggedIn(): boolean {
+    return this.userService.isLoggedIn();
+  }
+
   get showHeader() {
     return this.router.url !== '/account/login'
       && this.router.url !== '/register';

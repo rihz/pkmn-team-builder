@@ -1,31 +1,61 @@
-.container {
-    width: 30%;
-    margin: 0;
-    position: absolute;
+// .container {
+//     width: 30%;
+//     margin: 0;
+//     position: absolute;
+//     text-align: center;
+//     border: 1px solid var(--border);
+//     border-radius: 7px;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     -ms-transform: translate(-50%, -50%);
+//     background: white;
+// }
+
+// .container-body {
+//     padding: 15px;
+// }
+
+// button {
+//     font-weight: bold;
+//     width: 100%;
+//     margin-top: 15px;
+//     background-color: indianred !important;
+//     color: white !important;
+// }
+
+// button:disabled {
+//     opacity: 0.5;
+// }
+
+// input {
+//     font-size: 16px;
+//     border: 0px;
+//     width: 95%;
+//     border-radius: 10px;
+//     padding: 10px 15px;
+//     margin: 5px 0px 15px 0px;
+//     background-color: white;
+//     text-align: left;
+//     box-shadow: 0 0 2pt 2pt var(--box-shadow);
+// }
+
+// input:focus {
+//     box-shadow: 0 0 2pt 2pt var(--box-shadow-focus);
+//     outline: none;
+// }
+
+// .form-title {
+//     background-color: #ee1515;
+// }
+
+h5 {
     text-align: center;
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background: white;
 }
 
-.container-body {
-    padding: 15px;
-}
-
-button {
-    font-weight: bold;
-    width: 100%;
-    margin-top: 15px;
-    background-color: indianred !important;
-    color: white !important;
-}
-
-button:disabled {
-    opacity: 0.5;
+.register {
+    width: 400px;
+    margin: 10px auto 0px auto;
 }
 
 input {
@@ -34,7 +64,7 @@ input {
     width: 95%;
     border-radius: 10px;
     padding: 10px 15px;
-    margin: 5px 0px 15px 0px;
+    margin: 5px 0px;
     background-color: white;
     text-align: left;
     box-shadow: 0 0 2pt 2pt var(--box-shadow);
@@ -45,6 +75,41 @@ input:focus {
     outline: none;
 }
 
-.form-title {
-    background-color: #ee1515;
+.label {
+    background-color: var(--display-label);
+    color: white;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.label,
+.value {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.display-card {
+    display: inline-flex;
+    padding: 0px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.control {
+    background-color: var(--display-label);
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.value {
+    margin: auto;
+}
+
+.save-button {
+    background-color: var(--button);
+    color: var(--button-color);
+    width: 100%;
+}
+
+.section {
+    padding: 10px 0px;
 }

@@ -3,7 +3,7 @@
         <app-control
             label="Username"
             [value]="userService.username"
-            editable="true"
+            controlType="editable"
             (touched)="touched = true"
         ></app-control>
     </div>
@@ -11,7 +11,7 @@
         <app-control
             label="Email"
             [value]="userService.email"
-            editable="true"
+            controlType="editable"
             (touched)="touched = true"
         ></app-control>
     </div>

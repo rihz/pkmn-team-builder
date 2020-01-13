@@ -8,7 +8,6 @@ import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter }
 export class ControlComponent implements OnInit {
   @Input() label: string;
   @Input() value: any;
-  @Input() editable: boolean;
   @ViewChild('valueInput', null) input: ElementRef;
   @Output() touched = new EventEmitter<boolean>();
 
@@ -17,7 +16,7 @@ export class ControlComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    
   }
 
   edit() {

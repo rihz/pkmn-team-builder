@@ -5,7 +5,7 @@
     top: 0;
     z-index: 1000;
     height: 50px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .mat-button-toggle {
@@ -24,8 +24,20 @@
 }
 
 .logo {
-    width: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110px;
     cursor: pointer;
     height: 65px;
-    padding-top: 10px;
+}
+
+.button-group {
+    border-radius: 0px;
+    font-size: 12pt;
+}
+
+.right-side {
+    position: absolute;
+    right: 0;
 }

@@ -1,24 +1,33 @@
 <mat-toolbar class="header" *ngIf="showHeader">
     <img [src]="logo" class="logo" routerLink="/" />
     <!-- <div class="logo" routerLink="/" [style.background-image]="'url('+logo+')'"></div> -->
-    <!-- <mat-button-toggle-group name="view">
+    <mat-button-toggle-group class="view-group button-group" name="view">
         <mat-button-toggle routerLink="/teams">View Teams</mat-button-toggle>
         <mat-button-toggle routerLink="/build">Build a Team</mat-button-toggle>
-    </mat-button-toggle-group> -->
-    <div class="options">
+    </mat-button-toggle-group>
+    <!-- <div class="options">
         <button mat-button routerLink="/teams" class="header-button">View Teams</button>
         <button mat-button routerLink="/build" class="header-button">Build Team</button>
-    </div>
-    <div style="text-align: right;">
+    </div> -->
+    <div class="right-side">
         <mat-menu #userMenu="matMenu">
             <button routerLink="/account/profile" mat-menu-item>Profile</button>
             <button (click)="changeTheme()" mat-menu-item>Change Theme</button>
             <button (click)="logout()" mat-menu-item>Logout</button>
         </mat-menu>
 
-        <button class="user-button" mat-button [matMenuTriggerFor]="userMenu">
+        <button
+            *ngIf="loggedIn" 
+            class="user-button" 
+            mat-button 
+            [matMenuTriggerFor]="userMenu"
+        >
             {{ userService.username }}
             <mat-icon>account_circle</mat-icon>
         </button>
+        <mat-button-toggle-group class="button-group" name="loginRegister" *ngIf="!loggedIn">
+            <mat-button-toggle routerLink="/account/register">Register</mat-button-toggle>
+            <mat-button-toggle routerLink="/account/login">Log In</mat-button-toggle>
+        </mat-button-toggle-group>
     </div>
 </mat-toolbar>

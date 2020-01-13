@@ -1,0 +1,54 @@
+.label,
+.control {
+    background-color: var(--display-label);
+    color: var(--header-color);
+    align-items: center;
+    display: flex;
+}
+
+.label span,
+.value span {
+    padding: 4px;
+    font-weight: bold;
+    justify-content: center;
+    display: flex;
+    font-size: 12px;
+}
+
+.value {
+    width: 70%;
+    margin-top: 2px;
+}
+
+.label {
+    border-radius: 5px 0px 0px 5px;
+    width: 25%;
+}
+
+.control {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.control-card {
+    display: inline-flex;
+    padding: 0px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+}
+
+input {
+    font-size: 16px;
+    border: 0px;
+    padding: 10px;
+    background-color: white;
+    text-align: left;
+    width: 100%;
+    border-radius: 0px 5px 5px 0px;
+}
+
+input:focus {
+    box-shadow: 1px 0px 10px 3px var(--box-shadow-focus);
+    outline: none;
+}

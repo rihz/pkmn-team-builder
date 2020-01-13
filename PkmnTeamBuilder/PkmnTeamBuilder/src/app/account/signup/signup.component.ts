@@ -9,7 +9,8 @@ import { UserRegistration } from '../../shared/models';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-
+  registration = new UserRegistration();
+  confirm: string = '';
   errors: string;
   isRequesting: boolean;
   submitted = false;
@@ -18,6 +19,10 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  register() {
+    console.log(this.registration);
   }
 
   registerUser({ value, valid }: { value: UserRegistration, valid: boolean }) {

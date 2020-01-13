@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="form-title primary">
         <h2>Please enter your information</h2>
     </div>
@@ -39,7 +39,7 @@
                     Up
                 </button>
                 <button mat-button routerLink="/">Back</button>
-                <!-- <app-spinner [isRunning]="isRequesting"></app-spinner>  -->
+                <app-spinner [isRunning]="isRequesting"></app-spinner>
             </div>
 
             <div *ngIf="errors" class="alert alert-danger" role="alert">
@@ -47,5 +47,46 @@
             </div>
 
         </form>
+    </div>
+</div> -->
+
+<div class="register">
+    <h5>
+        Please fill out the information below to create your account.
+    </h5>
+    <div class="section">
+        <app-input
+            label="Email"
+            (changed)="registration.email = $event"
+        ></app-input>
+    </div>
+    <div class="section">
+        <app-input
+            label="Username"
+            (changed)="registration.username = $event"
+        ></app-input>
+    </div>
+    <div class="section">
+        <app-input
+            label="Password"
+            (changed)="registration.password = $event"
+            [password]="true"
+        ></app-input>
+    </div>
+    <div class="section">
+        <app-input
+            label="Confirm Password"
+            (changed)="confirm = $event"
+            [password]="true"
+        ></app-input>
+    </div>
+    <div class="control-section">
+        <button
+            mat-button 
+            class="save-button"
+            (click)="register()"
+        >
+            Register
+        </button>
     </div>
 </div>

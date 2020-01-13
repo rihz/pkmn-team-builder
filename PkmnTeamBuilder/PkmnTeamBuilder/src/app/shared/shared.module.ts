@@ -12,6 +12,7 @@ import { TypeComponent } from './type/type.component';
 import { DisplayCardComponent } from './display-card/display-card.component';
 import { CopyClipboardDirective } from './clipboard.directive';
 import { TeamCardComponent } from './team-card/team-card.component';
+import { AppInputComponent } from './app-input/app-input.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TeamCardComponent } from './team-card/team-card.component';
     TypeComponent, 
     DisplayCardComponent, 
     CopyClipboardDirective,
-    TeamCardComponent
+    TeamCardComponent,
+    AppInputComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +52,8 @@ import { TeamCardComponent } from './team-card/team-card.component';
     TypeComponent,
     DisplayCardComponent,
     CopyClipboardDirective,
-    TeamCardComponent
+    TeamCardComponent,
+    AppInputComponent
   ],
   entryComponents: [
     BooleanDialogComponent,

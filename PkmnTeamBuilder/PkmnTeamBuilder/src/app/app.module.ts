@@ -17,11 +17,11 @@ import { SharedModule } from './shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { ALL_THEMES, CURRENT_THEME } from './shared/theme/symbols';
 import { HomeComponent } from './home/home.component';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     AccountModule,
@@ -35,7 +35,8 @@ import { HomeComponent } from './home/home.component';
     ThemeModule.forRoot({
       themes: ALL_THEMES,
       active: CURRENT_THEME
-    })
+    }),
+    HomeModule
   ],
   providers: [ConfigService, AuthGuard],
   bootstrap: [AppComponent]
