@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { UserService } from 'src/app/shared/services/user.service';
+import { UserService } from '../../shared/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Credentials } from 'src/app/shared/models';
 import { ThemeService } from 'src/app/shared/theme/theme.service';
@@ -41,13 +41,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  login({ value, valid }: { value: Credentials, valid: boolean }) {
-    this.submitted = true;
-    this.isRequesting = true;
-    this.errors = '';
-
-    if (valid) {
-      this.userService.login(value.username, value.password)
+  login() {
+      this.userService.login(this.credentials.username, this.credentials.password)
         .subscribe(result => {
           if (result) {
             const settings = result.settings;
@@ -63,7 +58,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         }, errors => {
           this.errors = 'Username or password is incorrect';
         });
-    }
   }
 
 }

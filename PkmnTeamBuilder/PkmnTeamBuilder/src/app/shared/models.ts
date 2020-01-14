@@ -1,7 +1,7 @@
 export class UserRegistration {
-    email: string;
-    password: string;
-    username: string;
+    email: string = '';
+    password: string = '';
+    username: string = '';
 }
 
 export class Credentials {

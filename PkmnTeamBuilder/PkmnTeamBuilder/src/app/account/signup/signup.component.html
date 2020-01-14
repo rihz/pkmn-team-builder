@@ -1,55 +1,3 @@
-<!-- <div class="container">
-    <div class="form-title primary">
-        <h2>Please enter your information</h2>
-    </div>
-    <div class="container-body">
-        <form #f="ngForm" novalidate (ngSubmit)="registerUser(f)">
-            <div class="form-group">
-                <input matInput id="username" type="text" ngModel required name="username" placeholder="Username"
-                    #username="ngModel" autocomplete="off" />
-                <mat-hint *ngIf="!validateUser(username.value) && username.dirty" style=" color: red;">
-                    Username must be between 4 and 12 characters
-                </mat-hint>
-            </div>
-            <div class="form-group">
-                <input matInput id="email" type="text" ngModel required name="email" placeholder="Email"
-                    #email="ngModel" autocomplete="off" />
-                <mat-hint *ngIf="!validateEmail(email.value) && email.dirty" style=" color: red;">
-                    Please enter a valid email address
-                </mat-hint>
-            </div>
-            <div class="form-group">
-                <input matInput type="password" ngModel required class="form-control" id="password" name="password"
-                    placeholder="Password" #password="ngModel">
-                <mat-hint *ngIf="!validatePassword(password.value) && password.dirty" style=" color: red;">
-                    Password must have at least 5 characters and contain at least one uppercase, lowercase, and
-                    number
-                </mat-hint>
-            </div>
-            <div class="form-group">
-                <input matInput type="password" required class="form-control" id="password" name="confirm"
-                    placeholder="Confirm Password" ngModel #confirm="ngModel">
-                <mat-hint *ngIf="!validateConfirm(confirm.value, password.value) && confirm.dirty" style=" color: red;">
-                    Passwords must match
-                </mat-hint>
-            </div>
-            <div class="form-group">
-                <button mat-button type="submit"
-                    [disabled]="!validateEmail(email.value) || !validatePassword(password.value) || !validateConfirm(confirm.value, password.value)">Sign
-                    Up
-                </button>
-                <button mat-button routerLink="/">Back</button>
-                <app-spinner [isRunning]="isRequesting"></app-spinner>
-            </div>
-
-            <div *ngIf="errors" class="alert alert-danger" role="alert">
-                <strong>Oops!</strong> {{errors}}
-            </div>
-
-        </form>
-    </div>
-</div> -->
-
 <div class="register">
     <h5>
         Please fill out the information below to create your account.
@@ -57,34 +5,51 @@
     <div class="section">
         <app-input
             label="Email"
-            (changed)="registration.email = $event"
+            (changed)="registration.email = $event; emailDirty = true;"
         ></app-input>
+        <mat-hint *ngIf="!validateEmail(registration.email) && emailDirty" style=" color: red;">
+            Please enter a valid email address
+        </mat-hint>
     </div>
     <div class="section">
         <app-input
             label="Username"
-            (changed)="registration.username = $event"
+            (changed)="registration.username = $event; usernameDirty = true;"
         ></app-input>
+        <mat-hint *ngIf="!validateUser(registration.username) && usernameDirty" style=" color: red;">
+            Username must be between 4 and 12 characters
+        </mat-hint>
     </div>
     <div class="section">
         <app-input
             label="Password"
-            (changed)="registration.password = $event"
+            (changed)="registration.password = $event; passwordDirty = true;"
             [password]="true"
         ></app-input>
+        <mat-hint *ngIf="!validatePassword(registration.password) && passwordDirty" style=" color: red;">
+            Password must have at least 5 characters and contain at least one uppercase, lowercase, and
+            number
+        </mat-hint>
     </div>
     <div class="section">
         <app-input
             label="Confirm Password"
-            (changed)="confirm = $event"
+            (changed)="confirm = $event; confirmDirty = true;"
             [password]="true"
         ></app-input>
+        <mat-hint *ngIf="!validateConfirm(confirm, registration.password) && confirmDirty" style=" color: red;">
+            Passwords must match
+        </mat-hint>
     </div>
     <div class="control-section">
         <button
             mat-button 
             class="save-button"
             (click)="register()"
+            [disabled]="!validateEmail(registration.email) 
+                || !validatePassword(registration.password) 
+                || !validateConfirm(confirm, registration.password)
+                || !validateUser(registration.username)"
         >
             Register
         </button>

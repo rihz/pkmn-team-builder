@@ -24,6 +24,7 @@ namespace PkmnTeamBuilder.Data.Context
         public DbSet<TeamMember> TeamMember { get; set; }
         public DbSet<Team> Team { get; set; }
         public DbSet<TeamMembers> TeamMembers { get; set; }
+        public DbSet<NewsItem> News { get; set; }
 
         public TeamBuilderContext(DbContextOptions options)
             : base(options)
@@ -235,6 +236,12 @@ namespace PkmnTeamBuilder.Data.Context
                     .HasForeignKey(a => a.TeamMemberId)
                     .OnDelete(DeleteBehavior.Restrict)
                     .HasConstraintName("FK_TeamMembers_TeamMember");
+            });
+
+            builder.Entity<NewsItem>(x =>
+            {
+                x.HasKey(a => a.Id);
+                x.Property(a => a.Id).ValueGeneratedOnAdd();
             });
 
             var categories = CategorySeed.Seed(builder);

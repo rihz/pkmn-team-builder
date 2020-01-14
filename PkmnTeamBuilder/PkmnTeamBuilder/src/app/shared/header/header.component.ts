@@ -32,11 +32,6 @@ export class HeaderComponent implements OnInit {
     return this.userService.isLoggedIn();
   }
 
-  get showHeader() {
-    return this.router.url !== '/account/login'
-      && this.router.url !== '/register';
-  }
-
   get logo(): string {
     return this.themeService.getLogoUrl();
   }

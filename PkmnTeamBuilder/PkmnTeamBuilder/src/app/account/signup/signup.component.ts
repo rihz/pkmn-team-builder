@@ -10,6 +10,10 @@ import { UserRegistration } from '../../shared/models';
 })
 export class SignupComponent implements OnInit {
   registration = new UserRegistration();
+  usernameDirty = false;
+  passwordDirty = false;
+  emailDirty = false;
+  confirmDirty = false;
   confirm: string = '';
   errors: string;
   isRequesting: boolean;
@@ -22,7 +26,11 @@ export class SignupComponent implements OnInit {
   }
 
   register() {
-    console.log(this.registration);
+    this.userService.register(
+      this.registration.email, 
+      this.registration.password, 
+      this.registration.username
+    )
   }
 
   registerUser({ value, valid }: { value: UserRegistration, valid: boolean }) {

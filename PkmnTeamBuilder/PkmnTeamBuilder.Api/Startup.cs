@@ -25,6 +25,7 @@ using PkmnTeamBuilder.Api.Controllers.Item;
 using PkmnTeamBuilder.Api.Controllers.Members;
 using PkmnTeamBuilder.Api.Controllers.Move;
 using PkmnTeamBuilder.Api.Controllers.Nature;
+using PkmnTeamBuilder.Api.Controllers.News;
 using PkmnTeamBuilder.Api.Controllers.Pokemon;
 using PkmnTeamBuilder.Api.Controllers.Team;
 using PkmnTeamBuilder.Data.Context;
@@ -63,6 +64,7 @@ namespace PkmnTeamBuilder.Api
                 config.AddProfile(new ItemMapProfile());
                 config.AddProfile(new NatureMapProfile());
                 config.AddProfile(new TeamMemberMapProfile());
+                config.AddProfile(new NewsMapProfile());
             });
 
             services.AddCors(options =>
