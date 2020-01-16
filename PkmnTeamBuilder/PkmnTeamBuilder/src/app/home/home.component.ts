@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '../shared/theme/theme.service';
 import { UserService } from '../shared/services/user.service';
+import { NewsService } from '../shared/services/news.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,12 @@ import { UserService } from '../shared/services/user.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  
+  news: any;
+
   constructor(
     private themeService: ThemeService,
-    private userService: UserService
+    private userService: UserService,
+    private newsService: NewsService
   ) { }
 
   get loggedIn(): boolean {
@@ -19,6 +22,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.newsService.getNews()
+      .subscribe(result => {
+        this.news = result;
+        console.log(result);
+      });
   }
 
   getBgLogo() {

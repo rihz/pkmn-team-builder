@@ -8,4 +8,21 @@
     <h4 *ngIf="loggedIn">
         Welcome back!
     </h4>
+    <div class="news">
+        <h2>News</h2>
+        <mat-accordion>
+            <mat-expansion-panel class="news-panel" *ngFor="let item of news">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="title">
+                        {{ item.name }}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{ item.createdOn | date: 'longDate' }}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="content" [innerHtml]="item.content"></div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
 </div>

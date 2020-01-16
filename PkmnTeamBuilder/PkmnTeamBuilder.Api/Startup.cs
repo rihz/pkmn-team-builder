@@ -102,6 +102,8 @@ namespace PkmnTeamBuilder.Api
             services.AddScoped<ITeamService, TeamService>();
             services.AddScoped<ITeamMemberRepository, TeamMemberRepository>();
             services.AddScoped<ITeamMemberService, TeamMemberService>();
+            services.AddScoped<INewsRepository, NewsRepository>();
+            services.AddScoped<INewsService, NewsService>();
             
             services.AddSingleton(sp => _mapperConfiguration.CreateMapper());
 
