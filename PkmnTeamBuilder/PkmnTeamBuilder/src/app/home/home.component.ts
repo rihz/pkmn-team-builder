@@ -10,6 +10,7 @@ import { NewsService } from '../shared/services/news.service';
 })
 export class HomeComponent implements OnInit {
   news: any;
+  loading = true;
 
   constructor(
     private themeService: ThemeService,
@@ -25,7 +26,10 @@ export class HomeComponent implements OnInit {
     this.newsService.getNews()
       .subscribe(result => {
         this.news = result;
-        console.log(result);
+        this.loading = false;
+      }, error => {
+        alert(error);
+        this.loading = false;
       });
   }
 

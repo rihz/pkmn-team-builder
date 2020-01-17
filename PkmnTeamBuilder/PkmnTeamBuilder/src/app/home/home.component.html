@@ -10,7 +10,11 @@
     </h4>
     <div class="news">
         <h2>News</h2>
-        <mat-accordion>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+        <h4 *ngIf="!loading && news.length === 0">
+            There is no news.
+        </h4>
+        <mat-accordion *ngIf="!loading">
             <mat-expansion-panel class="news-panel" *ngFor="let item of news">
                 <mat-expansion-panel-header>
                     <mat-panel-title class="title">

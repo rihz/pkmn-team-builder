@@ -179,3 +179,7 @@ th.mat-header-cell {
 .snack .mat-simple-snackbar {
     justify-content: center !important;
 }
+
+.mat-spinner svg circle {
+    stroke: var(--header);
+}

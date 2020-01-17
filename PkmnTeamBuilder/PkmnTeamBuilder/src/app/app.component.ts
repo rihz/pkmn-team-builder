@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'Pokemon Team Builder';
 
   constructor(private themeService: ThemeService) {
-
+    
   }
 
   

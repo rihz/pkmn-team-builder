@@ -49,6 +49,10 @@ export class UserService extends BaseService {
 
     logout() {
         localStorage.removeItem('auth_token');
+        localStorage.removeItem('username');
+        localStorage.removeItem('userId');
+        localStorage.removeItem('email');
+        localStorage.removeItem('settings');
         this.loggedIn = false;
         //this._authNavStatusSource.next(false);
     }

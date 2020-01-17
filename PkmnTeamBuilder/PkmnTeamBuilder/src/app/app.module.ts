@@ -18,6 +18,7 @@ import { MatProgressSpinnerModule } from '@angular/material';
 import { ALL_THEMES, CURRENT_THEME } from './shared/theme/symbols';
 import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
+import { UserService } from './shared/services/user.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { HomeModule } from './home/home.module';
     }),
     HomeModule
   ],
-  providers: [ConfigService, AuthGuard],
+  providers: [ConfigService, AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
