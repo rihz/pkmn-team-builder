@@ -6,6 +6,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TeamService } from '../shared/services/team.service';
 import { Subscription } from 'rxjs';
 import { TeamMemberComponent } from './team-member/team-member.component';
+import { UserService } from '../shared/services/user.service';
+import { MatDialog } from '@angular/material';
+import { CodeDisplayComponent } from './code-display/code-display.component';
 
 @Component({
   selector: 'team-builder',
@@ -26,7 +29,9 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
     private teams: TeamService,
     private themeService: ThemeService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private userService: UserService,
+    private dialog: MatDialog) { }
 
   get activeTheme() {
     return this._activeTheme;
@@ -46,7 +51,12 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     //this.gen = localStorage.getItem('teamBuilderGen');
-
+    const ref = this.dialog.open(CodeDisplayComponent, {
+      width: '400px',
+      data: {
+        code: 'a2c3F4'
+      }
+    });
     this.routes = this.route.params.subscribe(params => {
       if (params['code']) {
         this.teams.getTeam(params['code'])
@@ -126,7 +136,16 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
       } else {
         this.teams.saveTeam(this.team)
           .subscribe(result => {
-            this.router.navigate(['/teams']);
+            if(this.userService.isLoggedIn()) {
+              this.router.navigate(['/teams']);
+            } else {
+              const ref = this.dialog.open(CodeDisplayComponent, {
+                width: '400px',
+                data: {
+                  code: result.code
+                }
+              });
+            }
           });
       }
     }

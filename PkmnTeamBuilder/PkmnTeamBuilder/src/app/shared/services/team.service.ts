@@ -3,6 +3,7 @@ import { BaseService } from "./base.service";
 import { HttpClient } from "@angular/common/http";
 import { ConfigService } from "./config.service";
 import { Team } from "../models";
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class TeamService extends BaseService {
@@ -16,7 +17,7 @@ export class TeamService extends BaseService {
         this.baseUrl = config.getApiURL();
     }
 
-    public saveTeam(team: Team) {
+    public saveTeam(team: Team): Observable<any> {
         const userId = localStorage.getItem('userId');
 
         team.userId = userId;

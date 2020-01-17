@@ -4,7 +4,7 @@ import { PkmnSelectorComponent } from './pkmn-selector/pkmn-selector.component';
 import { GenSelectorComponent } from './gen-selector/gen-selector.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, NgControl } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDialogModule, MatCheckboxModule, MatChipsModule, MatTabsModule, MatTableModule, MatCardModule, MatTooltipModule, MatGridListModule, MatRadioModule, MatSelectModule, MatOptionModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatDialogModule, MatCheckboxModule, MatChipsModule, MatTabsModule, MatTableModule, MatCardModule, MatTooltipModule, MatGridListModule, MatRadioModule, MatSelectModule, MatOptionModule, MatSnackBarModule } from '@angular/material';
 import { PkmnService } from '../shared/services/pkmn.service';
 import { TeamBuilderComponent } from './team-builder.component';
 import { AddPkmnComponent } from './add-pkmn/add-pkmn.component';
@@ -26,11 +26,13 @@ import { NotesComponent } from './notes/notes.component';
 import { builderRoute } from './team-builder.routing';
 import { TeamService } from '../shared/services/team.service';
 import { MemberService } from '../shared/services/member.service';
+import { UserService } from '../shared/services/user.service';
+import { CodeDisplayComponent } from './code-display/code-display.component';
 
 
 
 @NgModule({
-  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent, IvDisplayComponent, TotalDisplayComponent, NicknameEntryComponent, MoveInfoComponent, MoveDisplayComponent, NotesComponent],
+  declarations: [TeamBuilderComponent, PkmnSelectorComponent, GenSelectorComponent, AddPkmnComponent, TeamMemberComponent, BasicInfoComponent, SuppInfoComponent, SelectorComponent, StatInfoComponent, StatDisplayComponent, EvDisplayComponent, IvDisplayComponent, TotalDisplayComponent, NicknameEntryComponent, MoveInfoComponent, MoveDisplayComponent, NotesComponent, CodeDisplayComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -50,18 +52,21 @@ import { MemberService } from '../shared/services/member.service';
     MatRadioModule,
     MatSelectModule,
     MatOptionModule,
-    builderRoute
+    builderRoute,
+    MatSnackBarModule
   ],
   providers: [
     PkmnService,
     TeamService,
-    MemberService
+    MemberService,
+    UserService
   ],
   entryComponents: [
     PkmnSelectorComponent,
     SelectorComponent,
     NicknameEntryComponent,
-    NotesComponent
+    NotesComponent,
+    CodeDisplayComponent
   ]
 })
 export class TeamBuilderModule { }
