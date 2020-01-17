@@ -4,6 +4,7 @@ import { UserService } from '../../shared/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Credentials } from 'src/app/shared/models';
 import { ThemeService } from 'src/app/shared/theme/theme.service';
+import { TeamService } from '../../shared/services/team.service';
 
 @Component({
   selector: 'app-login',
@@ -20,9 +21,10 @@ export class LoginComponent implements OnInit, OnDestroy {
   submitted = false;
   credentials: Credentials = { email: '', password: '', username: '' };
   loginError = '';
+  linkCode = '';
 
   constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute,
-    private themeService: ThemeService) { }
+    private themeService: ThemeService, private teams: TeamService) { }
 
   ngOnInit() {
     // subscribe to router event
@@ -33,6 +35,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.brandNew = param.brandNew;
         this.credentials.email = param.email;
         this.loginError = param.loginError;
+        this.linkCode = param.code;
       });
   }
 
@@ -52,8 +55,15 @@ export class LoginComponent implements OnInit, OnDestroy {
             localStorage.setItem('userId', result.id);
             localStorage.setItem('email', result.email);
             localStorage.setItem('settings', JSON.stringify(settings));
-            
-            this.router.navigate(['/teams']);
+
+            if(this.linkCode) {
+              this.teams.linkTeam(this.linkCode, result.id)
+                .subscribe(x => {
+                  this.router.navigate(['/teams']);
+                });
+            } else {            
+              this.router.navigate(['/teams']);
+            }
           }
         }, errors => {
           this.errors = 'Username or password is incorrect';

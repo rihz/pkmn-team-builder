@@ -10,6 +10,7 @@ import { UserService } from '../shared/services/user.service';
 import { SharedModule } from '../shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
 import { ThemeService } from '../shared/theme/theme.service';
+import { TeamService } from '../shared/services/team.service';
 
 @NgModule({
   declarations: [SignupComponent, LoginComponent, ProfileComponent],
@@ -25,6 +26,6 @@ import { ThemeService } from '../shared/theme/theme.service';
     MatIconModule,
     MatTooltipModule
   ],
-  providers: [UserService, ThemeService]
+  providers: [UserService, ThemeService, TeamService]
 })
 export class AccountModule { }

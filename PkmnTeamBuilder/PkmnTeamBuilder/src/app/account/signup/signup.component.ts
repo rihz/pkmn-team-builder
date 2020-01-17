@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../shared/services/user.service';
 import { UserRegistration } from '../../shared/models';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -18,18 +19,24 @@ export class SignupComponent implements OnInit {
   errors: string;
   isRequesting: boolean;
   submitted = false;
+  subscription: Subscription;
+  linkCode = '';
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-
+    this.subscription = this.activatedRoute.queryParams.subscribe(
+      (param: any) => {
+        this.linkCode = param.code;
+      });
   }
 
   register() {
     this.userService.register(
       this.registration.email, 
       this.registration.password, 
-      this.registration.username
+      this.registration.username,
+      this.linkCode
     )
   }
 
@@ -39,7 +46,7 @@ export class SignupComponent implements OnInit {
     this.errors = '';
     
     if (valid) {
-      this.userService.register(value.email, value.password, value.username);
+      this.userService.register(value.email, value.password, value.username, this.linkCode);
     }
   }
 

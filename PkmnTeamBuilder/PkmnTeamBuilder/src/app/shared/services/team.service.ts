@@ -52,4 +52,8 @@ export class TeamService extends BaseService {
     public deleteTeam(id: number) {
         return this.http.delete(this.baseUrl + `/team/${id}`);
     }
+
+    public linkTeam(code: string, userId: string) {
+        return this.http.patch(this.baseUrl + `/team/${code}/link/${userId}`, null);
+    }
 }

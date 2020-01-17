@@ -2,7 +2,7 @@
     <button mat-button class="code-button" (copied)="copyCode($event)" [copy-clipboard]="data.code">{{ data.code }}</button>
     <h5>Please copy this code to view this team at a later time, or login/register to link it to your account.</h5>
     <div class="controls">
-        <button mat-button class="control-button">Login</button>
-        <button mat-button class="control-button">Register</button>
+        <button mat-button class="control-button" (click)="goToLogin()">Login</button>
+        <button mat-button class="control-button" (click)="goToRegister()">Register</button>
     </div>
 </div>

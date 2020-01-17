@@ -7,7 +7,7 @@ import { TeamService } from '../shared/services/team.service';
 import { Subscription } from 'rxjs';
 import { TeamMemberComponent } from './team-member/team-member.component';
 import { UserService } from '../shared/services/user.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { CodeDisplayComponent } from './code-display/code-display.component';
 
 @Component({
@@ -24,6 +24,7 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
   _activeTheme: string = '';
   routes: Subscription;
   loading = true;
+  code = '';
 
   constructor(private pkmn: PkmnService,
     private teams: TeamService,
@@ -31,7 +32,8 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute,
     private userService: UserService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private snackbar: MatSnackBar) { }
 
   get activeTheme() {
     return this._activeTheme;
@@ -50,11 +52,10 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    //this.gen = localStorage.getItem('teamBuilderGen');
     const ref = this.dialog.open(CodeDisplayComponent, {
       width: '400px',
       data: {
-        code: 'a2c3F4'
+        code: 'a12bvC'
       }
     });
     this.routes = this.route.params.subscribe(params => {
@@ -145,6 +146,10 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
                   code: result.code
                 }
               });
+
+              ref.afterClosed().subscribe(x => {
+                this.code = result.code;
+              });
             }
           });
       }
@@ -223,5 +228,16 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
         error: 'Move 4 must be selected.'
       });
     }
+  }
+
+  copyCode(payload: string) {
+    this.snackbar.open(
+      `${payload} was copied to clipboard`,
+      null,
+      {
+        duration: 1000,
+        panelClass: 'snack'
+      }
+    );
   }
 }

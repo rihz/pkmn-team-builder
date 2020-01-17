@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-code-display',
@@ -10,7 +11,8 @@ export class CodeDisplayComponent implements OnInit {
 
   constructor(private ref: MatDialogRef<CodeDisplayComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private snackbar: MatSnackBar) { }
+    private snackbar: MatSnackBar,
+    private router: Router) { }
 
   ngOnInit() {
     
@@ -25,6 +27,18 @@ export class CodeDisplayComponent implements OnInit {
         panelClass: 'snack'
       }
     );
+  }
+
+  goToLogin() {
+    this.router.navigate(['/account/login'], { queryParams: { code: this.data.code }});
+
+    this.ref.close();
+  }
+
+  goToRegister() {
+    this.router.navigate(['/account/register'], { queryParams: { code: this.data.code }});
+
+    this.ref.close();
   }
 
 }

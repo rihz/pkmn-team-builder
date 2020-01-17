@@ -51,5 +51,14 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
             return Ok();
         }
+
+        [Route("{code}/link/{userId}")]
+        [HttpPatch]
+        public IActionResult LinkTeam(string code, string userId)
+        {
+            _service.LinkTeam(code, userId);
+
+            return Ok();
+        }
     }
 }

@@ -6,13 +6,20 @@
 .name-input {
     font-size: 16px;
     border: 0px;
-    width: 75%;
     border-radius: 10px;
     padding: 10px 15px;
     margin: 10px 0px;
     background-color: white;
     text-align: left;
     box-shadow: 0 0 2pt 2pt var(--box-shadow);
+}
+
+.big-input {
+    width: 75%;
+}
+
+.small-input {
+    width: 65%;
 }
 
 .name-input:focus {
@@ -59,4 +66,8 @@
     left: 47%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+}
+
+.code-button {
+    font-size: 1em;
 }

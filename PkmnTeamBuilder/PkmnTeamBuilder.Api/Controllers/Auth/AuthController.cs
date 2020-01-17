@@ -46,6 +46,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
             var identity = _mapper.Map<AppUser>(model);
             identity.UserName = model.Username;
             identity.Theme = "charmander";
+            string json = "";
 
             try
             {
@@ -59,13 +60,20 @@ namespace PkmnTeamBuilder.Api.Controllers.Auth
                 await _context.Users.AddAsync(identity);
 
                 var user = await GetClaimsIdentity(model.Username, model.Password);
+
+                var response = new
+                {
+                    id = user.Claims.Single(x => x.Type == "id").Value
+                };
+
+                json = JsonConvert.SerializeObject(response, _serializerSettings);
             }
             catch(Exception ex)
             {
                 Console.WriteLine("An error occured");
-            }        
+            }
 
-            return Ok(true);
+            return new OkObjectResult(json);
         }
 
         [HttpPost("login")]

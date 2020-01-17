@@ -12,6 +12,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         TeamModel UpdateTeam(TeamModel model);
         IEnumerable<TeamModel> GetTeams(string userId);
         void DeleteTeam(int id);
+        void LinkTeam(string code, string userId);
     }
 
     public class TeamService : ITeamService
@@ -46,6 +47,11 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         public void DeleteTeam(int id)
         {
             _repo.DeleteTeam(id);
+        }
+
+        public void LinkTeam(string code, string userId)
+        {
+            _repo.LinkTeam(code, userId);
         }
     }
 }

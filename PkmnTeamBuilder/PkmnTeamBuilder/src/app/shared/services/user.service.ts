@@ -6,6 +6,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { UserRegistration } from '../models';
 import { ConfigService } from './config.service';
 import { Router } from '@angular/router';
+import { TeamService } from './team.service';
 
 @Injectable()
 export class UserService extends BaseService {
@@ -16,23 +17,31 @@ export class UserService extends BaseService {
 
     private loggedIn = false;
 
-    constructor(private http: HttpClient, 
+    constructor(private http: HttpClient,
         private configService: ConfigService,
-        private router: Router) {
+        private router: Router,
+        private teams: TeamService) {
         super();
         this.loggedIn = !!localStorage.getItem('auth_token');
         this._authNavStatusSource.next(this.loggedIn);
         this.baseUrl = configService.getApiURL();
     }
 
-    register(email: string, password: string, username: string) {
+    register(email: string, password: string, username: string, linkCode: string) {
         const body = JSON.stringify({ email, password, username });
         const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
         this.http.post(this.baseUrl + '/auth/signup', body, { headers: headers })
             .subscribe(result => {
-                if(result) {
-                    this.router.navigate(['/']);
+                if (result) {
+                    if (linkCode) {
+                        this.teams.linkTeam(linkCode, (<any>result).id)
+                            .subscribe(x => {
+                                this.router.navigate(['/']);
+                            })
+                    } else {
+                        this.router.navigate(['/']);
+                    }
                 }
             });
     }
@@ -69,7 +78,7 @@ export class UserService extends BaseService {
     changeSettings(settings: any) {
         this.http.put(this.baseUrl + '/auth/settings', settings)
             .subscribe(result => {
-                if(result) {
+                if (result) {
                     localStorage.setItem('settings', settings);
                 }
             })
@@ -90,6 +99,6 @@ export class UserService extends BaseService {
     get theme() {
         const th = localStorage.getItem('theme');
 
-        return th? th : 'charmander';
+        return th ? th : 'charmander';
     }
 }

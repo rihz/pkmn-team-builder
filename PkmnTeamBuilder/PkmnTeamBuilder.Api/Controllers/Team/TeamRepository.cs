@@ -18,6 +18,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         IEnumerable<TeamMember> AddTeamMembers(IEnumerable<TeamMemberModel> members);
         //void UpdateTeamMembers(IEnumerable<TeamMemberModel> members);
         void DeleteTeam(int id);
+
+        void LinkTeam(string code, string userId);
     }
 
     public class TeamRepository : ITeamRepository
@@ -235,6 +237,22 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             _context.Team.Remove(
                 _context.Team.First(x => x.Id == id)
             );
+
+            _context.SaveChanges();
+        }
+
+        public void LinkTeam(string code, string userId)
+        {
+            var team = _context.Team.First(x => x.Code == code);
+            team.UserId = userId;
+
+            var members = _context.TeamMembers.Where(x => x.TeamId == team.Id);
+
+            foreach(var member in members)
+            {
+                var m = _context.TeamMember.First(x => x.Id == member.TeamMemberId);
+                m.UserId = userId;
+            }
 
             _context.SaveChanges();
         }
