@@ -40,7 +40,7 @@ export class UserService extends BaseService {
                                 this.router.navigate(['/']);
                             })
                     } else {
-                        this.router.navigate(['/']);
+                        this.router.navigate(['/account/login']);
                     }
                 }
             });

@@ -14,13 +14,15 @@ import { TeamService } from '../shared/services/team.service';
 export class TeamViewerComponent implements OnInit {
   teams: any;
   loading = true;
+  skip = 0;
+  take = 10;
 
   constructor(private pkmn: PkmnService,
     private teamService: TeamService,
     private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.getTeams();
+    this.getAllTeams();
   }
 
   deleteTeam(id: number) {
@@ -35,17 +37,27 @@ export class TeamViewerComponent implements OnInit {
       if (result) {
         this.teamService.deleteTeam(id)
           .subscribe(result => {
-            this.getTeams();
+            this.getMyTeams();
           })
       }
     })
   }
 
-  getTeams() {
+  getAllTeams() {
+    this.loading = true;
+
+    this.teamService.getAllTeams(this.skip, this.take)
+      .subscribe(x => {
+        this.loading = false;
+        this.teams = x;
+      })
+  }
+
+  getMyTeams() {
     const userId = localStorage.getItem('userId');
     
     this.loading = true;
-    this.teamService.getTeams(userId)
+    this.teamService.getMyTeams(userId)
       .subscribe(x => {
         this.loading = false;
         this.teams = x;

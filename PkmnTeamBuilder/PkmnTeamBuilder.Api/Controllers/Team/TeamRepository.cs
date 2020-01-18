@@ -12,7 +12,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
     public interface ITeamRepository
     {
         TeamModel GetTeam(string code);
-        IEnumerable<TeamModel> GetTeams(string userId);
+        IEnumerable<TeamModel> GetAllTeams(int skip, int take);
+        IEnumerable<TeamModel> GetMyTeams(string userId);
         TeamModel AddTeam(TeamModel model);
         TeamModel UpdateTeam(TeamModel model);
         IEnumerable<TeamMember> AddTeamMembers(IEnumerable<TeamMemberModel> members);
@@ -93,22 +94,6 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             return _mapper.Map<TeamModel>(team);
         }
 
-        //public void UpdateTeamMembers(IEnumerable<TeamMemberModel> members, string userId)
-        //{
-        //    var mapped = members.Select(y => _mapper.Map<TeamMember>(y));
-
-        //    foreach(var map in mapped)
-        //    {
-        //        if(map.UserId == null)
-        //        {
-        //            map.UserId = userId;
-        //        }
-        //        _context.TeamMember.Update(map);
-        //    }
-
-        //    _context.SaveChanges();
-        //}
-
         public IEnumerable<TeamMember> AddTeamMembers(IEnumerable<TeamMemberModel> members)
         {
             var added = new List<TeamMember>();
@@ -178,7 +163,24 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             return mappedTeam;
         }
 
-        public IEnumerable<TeamModel> GetTeams(string userId)
+        public IEnumerable<TeamModel> GetAllTeams(int skip, int take)
+        {
+            var teams = _context.Team
+                .Skip(skip)
+                .Take(take)
+                .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+
+            foreach(var team in teams)
+            {
+                var members = _context.TeamMembers.Where(y => y.TeamId == team.Id);
+
+                team.Members = GetTeamMembers(members);
+            }
+
+            return teams;
+        }
+
+        public IEnumerable<TeamModel> GetMyTeams(string userId)
         {
             var teams = _context.Team.Where(x => x.UserId == userId);
 
@@ -187,42 +189,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             foreach (var team in mappedTeams)
             {
                 var members = _context.TeamMembers.Where(y => y.TeamId == team.Id);
-                var list = new List<TeamMemberModel>();
 
-                foreach (var member in members)
-                {
-                    list.Add(
-                        _mapper.Map<TeamMemberModel>(
-                            _context.TeamMember
-                                .Include(x => x.Pokemon)
-                                    .ThenInclude(y => y.Abilities)
-                                .Include(x => x.Pokemon)
-                                    .ThenInclude(y => y.Moveset)
-                                .Include(x => x.Ability)
-                                .Include(x => x.Nature)
-                                .Include(x => x.Item)
-                                .Include(x => x.Move1)
-                                    .ThenInclude(y => y.Category)
-                                .Include(x => x.Move2)
-                                    .ThenInclude(y => y.Category)
-                                .Include(x => x.Move3)
-                                    .ThenInclude(y => y.Category)
-                                .Include(x => x.Move4)
-                                    .ThenInclude(y => y.Category)
-                                .Include(x => x.Move1)
-                                    .ThenInclude(y => y.Type)
-                                .Include(x => x.Move2)
-                                    .ThenInclude(y => y.Type)
-                                .Include(x => x.Move3)
-                                    .ThenInclude(y => y.Type)
-                                .Include(x => x.Move4)
-                                    .ThenInclude(y => y.Type)
-                                .First(z => z.Id == member.TeamMemberId)
-                        )
-                    );
-                }
-
-                team.Members = list;
+                team.Members = GetTeamMembers(members);
             }
 
             return mappedTeams;
@@ -280,6 +248,46 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             );
 
             _context.SaveChanges();
+        }
+
+        IEnumerable<TeamMemberModel> GetTeamMembers(IEnumerable<TeamMembers> memberRefs)
+        {
+            var list = new List<TeamMemberModel>();
+
+            foreach (var member in memberRefs)
+            {
+                list.Add(
+                    _mapper.Map<TeamMemberModel>(
+                        _context.TeamMember
+                            .Include(x => x.Pokemon)
+                                .ThenInclude(y => y.Abilities)
+                            .Include(x => x.Pokemon)
+                                .ThenInclude(y => y.Moveset)
+                            .Include(x => x.Ability)
+                            .Include(x => x.Nature)
+                            .Include(x => x.Item)
+                            .Include(x => x.Move1)
+                                .ThenInclude(y => y.Category)
+                            .Include(x => x.Move2)
+                                .ThenInclude(y => y.Category)
+                            .Include(x => x.Move3)
+                                .ThenInclude(y => y.Category)
+                            .Include(x => x.Move4)
+                                .ThenInclude(y => y.Category)
+                            .Include(x => x.Move1)
+                                .ThenInclude(y => y.Type)
+                            .Include(x => x.Move2)
+                                .ThenInclude(y => y.Type)
+                            .Include(x => x.Move3)
+                                .ThenInclude(y => y.Type)
+                            .Include(x => x.Move4)
+                                .ThenInclude(y => y.Type)
+                            .First(z => z.Id == member.TeamMemberId)
+                    )
+                );
+            }
+
+            return list;
         }
     }
 }

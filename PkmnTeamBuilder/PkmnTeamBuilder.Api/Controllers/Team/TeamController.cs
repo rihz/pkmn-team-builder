@@ -38,9 +38,16 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
         [Route("")]
         [HttpGet]
-        public IActionResult GetTeamsForUser([FromQuery] string userId)
+        public IActionResult GetAllTeams([FromQuery] int skip, [FromQuery] int take)
         {
-            return Ok(_service.GetTeams(userId));
+            return Ok(_service.GetAllTeams(skip, take));
+        }
+
+        [Route("user/{id}")]
+        [HttpGet]
+        public IActionResult GetTeamsForUser(string id)
+        {
+            return Ok(_service.GetMyTeams(id));
         }
 
         [Route("{id}")]

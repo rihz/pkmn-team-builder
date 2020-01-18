@@ -52,12 +52,6 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    const ref = this.dialog.open(CodeDisplayComponent, {
-      width: '400px',
-      data: {
-        code: 'a12bvC'
-      }
-    });
     this.routes = this.route.params.subscribe(params => {
       if (params['code']) {
         this.teams.getTeam(params['code'])
@@ -156,6 +150,15 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
     }
   }
 
+  openCodeDialog() {
+    const ref = this.dialog.open(CodeDisplayComponent, {
+      width: '400px',
+      data: {
+        code: this.code
+      }
+    });
+  }
+
   getErrorsForMember(index: number): string[] {
     return this.team.errors
       ? this.team.errors
@@ -228,16 +231,5 @@ export class TeamBuilderComponent implements OnInit, OnDestroy {
         error: 'Move 4 must be selected.'
       });
     }
-  }
-
-  copyCode(payload: string) {
-    this.snackbar.open(
-      `${payload} was copied to clipboard`,
-      null,
-      {
-        duration: 1000,
-        panelClass: 'snack'
-      }
-    );
   }
 }
