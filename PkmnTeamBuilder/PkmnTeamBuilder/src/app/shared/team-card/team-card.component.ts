@@ -18,6 +18,7 @@ export class TeamCardComponent implements OnInit {
   @Input() expandAll = false;
   selectedMembers: TeamMember[] = [];
   @Output() onDelete = new EventEmitter<Team>();
+  @Output() onFilterUser = new EventEmitter<string>();
 
   constructor(private router: Router,
     private config: ConfigService,
@@ -60,6 +61,10 @@ export class TeamCardComponent implements OnInit {
         panelClass: 'snack'
       }
     );
+  }
+
+  filterByUser(userName: string) {
+    this.onFilterUser.emit(userName);
   }
 
 }

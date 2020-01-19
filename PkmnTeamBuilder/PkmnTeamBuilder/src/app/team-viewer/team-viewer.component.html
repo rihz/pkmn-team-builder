@@ -8,16 +8,12 @@
     </mat-card>
     <div class="controls" *ngIf="!loading && teams.length > 0">
         <div class="main-control">
-            <mat-select value="5" class="filter-select">
-                <mat-option value="1">Ability</mat-option>
-                <mat-option value="2">Item</mat-option>
-                <mat-option value="3">Move</mat-option>
-                <mat-option value="4">Nature</mat-option>
-                <mat-option value="5">Pokemon</mat-option>
-                <mat-option value="6">Team</mat-option>
-                <mat-option value="7">User</mat-option>
+            <mat-select [(value)]="selectedFilter" class="filter-select">
+                <mat-option *ngFor="let filter of filters" [value]="filter.value">
+                    {{ filter.name }}
+                </mat-option>
             </mat-select>
-            <input matInput class="filter-input" placeholder="Search" />
+            <input [(value)]="filter" matInput class="filter-input" placeholder="Search" />
         </div>
     </div>
     <div class="team" *ngFor="let team of teams">
@@ -27,6 +23,7 @@
             [canEdit]="true"
             [canLink]="true"
             (onDelete)="deleteTeam($event.id)"
+            (onFilterUser)="filterByUser($event)"
         ></team-card>
         <!-- <div class="team-name">
             <h3>{{ team.name }}</h3>

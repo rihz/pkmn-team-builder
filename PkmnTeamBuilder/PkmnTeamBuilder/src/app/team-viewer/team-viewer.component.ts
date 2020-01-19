@@ -16,6 +16,17 @@ export class TeamViewerComponent implements OnInit {
   loading = true;
   skip = 0;
   take = 10;
+  filters = [
+    { name: "Ability", value: 1 },
+    { name: "Item", value: 2 },
+    { name: "Move", value: 3 },
+    { name: "Nature", value: 4 },
+    { name: "Pokemon", value: 5 },
+    { name: "Team", value: 6 },
+    { name: "User", value: 7 },
+  ];
+  selectedFilter = 5;
+  filter = '';
 
   constructor(private pkmn: PkmnService,
     private teamService: TeamService,
@@ -62,6 +73,11 @@ export class TeamViewerComponent implements OnInit {
         this.loading = false;
         this.teams = x;
       });
+  }
+
+  filterByUser(userName: string) {
+    this.selectedFilter = 7;
+    this.filter = userName;
   }
 
 }

@@ -83,3 +83,12 @@ h1 {
 .member-details {
     padding: 0px 5px;
 }
+
+.user-name {
+    color: var(--button);
+    cursor: pointer;
+}
+
+.user-name:hover {
+    color: var(--icon-hover);
+}
