@@ -133,6 +133,7 @@ export class Team {
     lastModified: Date = new Date();
     errors: TeamError[] = [];
     userId = '';
+    userName = '';
 }
 
 export class TeamError {

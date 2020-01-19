@@ -166,6 +166,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         public IEnumerable<TeamModel> GetAllTeams(int skip, int take)
         {
             var teams = _context.Team
+                .Include(x => x.User)
                 .Skip(skip)
                 .Take(take)
                 .Select(x => _mapper.Map<TeamModel>(x)).ToList();

@@ -183,3 +183,8 @@ th.mat-header-cell {
 .mat-spinner svg circle {
     stroke: var(--header);
 }
+
+.filter-select .mat-select-value,
+.filter-select .mat-select-arrow {
+    color: var(--button-color);
+}

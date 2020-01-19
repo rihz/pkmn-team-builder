@@ -46,7 +46,8 @@ namespace PkmnTeamBuilder.Api.Controllers
             CreateMap<TeamModel, Entities.Team.Team>()
                 .ForMember(x => x.Members, y => y.Ignore())
                 .ReverseMap()
-                .ForMember(x => x.Members, y => y.Ignore());
+                .ForMember(x => x.Members, y => y.Ignore())
+                .ForMember(x => x.UserName, y => y.MapFrom(z => z.User.UserName));
         }
     }
 }

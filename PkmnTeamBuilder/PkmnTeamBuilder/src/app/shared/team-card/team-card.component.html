@@ -1,7 +1,10 @@
 <div class="team">
     <mat-card class="team-card">
         <div class="team-name">
-            <h3>{{ team.name }}</h3>
+            <div class="name-details">
+                <h3>{{ team.name }}</h3>
+                <h6>Created by: {{ team.userName ? team.userName : 'Anonymous' }}</h6>
+            </div>
             <div class="controls">
                 <button *ngIf="canLink" [copy-clipboard]="teamUrl" (copied)="copyLink($event)" class="action-button" mat-mini-fab>
                     <mat-icon>link</mat-icon>

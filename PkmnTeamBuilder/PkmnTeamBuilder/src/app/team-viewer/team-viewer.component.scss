@@ -69,3 +69,30 @@ img {
     background-color: var(--button);
     color: var(--button-color);
 }
+
+.controls {
+    width: 535px;
+    margin: 5px auto 15px auto;
+}
+
+.filter-select {
+    width: 100px;
+    background-color: var(--button);
+    padding: 5px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.filter-input {
+    font-size: 16px;
+    border: 0px;
+    width: 415px;
+    border-radius: 0px 5px 5px 0px;
+    padding: 5px;
+    background-color: white;
+    text-align: left;
+}
+
+.filter-input:focus {
+    box-shadow: 2px 0 5pt 2pt var(--box-shadow-focus);
+    outline: none;
+}
