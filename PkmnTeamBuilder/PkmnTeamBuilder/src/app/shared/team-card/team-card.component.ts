@@ -50,7 +50,6 @@ export class TeamCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.team);
     if(this.expandAll) {
       Object.assign(this.selectedMembers, this.team.members);
     }

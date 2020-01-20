@@ -1,30 +1,75 @@
 <div class="team-viewer">
     <mat-spinner *ngIf="loading"></mat-spinner>
-    <mat-card *ngIf="!loading && teams.length === 0">
-        There are currently no teams.
-        <button mat-button class="build-button" routerLink="/build">
-            Build a Team
-        </button>
-    </mat-card>
     <div class="controls" *ngIf="!initialLoad">
-        <div class="main-control">
+        <div class="main-control" [ngClass]="{'close-offset': filter}">
             <mat-select [(value)]="selectedFilter" class="filter-select">
                 <mat-option *ngFor="let filter of filters" [value]="filter.value">
                     {{ filter.name }}
                 </mat-option>
             </mat-select>
             <input (input)="changeFilter($event)" [value]="filter" matInput class="filter-input" placeholder="Search" />
+            <mat-icon (click)="clearFilter()" *ngIf="filter" class="close-icon">close</mat-icon>
+        </div>
+        <div class="extra-controls">
+            <button (click)="getMyTeams()" mat-button class="button" *ngIf="isLoggedIn">
+                My Teams
+            </button>
+        </div>
+        <div *ngIf="!loading && teams.length > 0" class="paging-control">
+            <button class="paging-button" [disabled]="isFirstPage" mat-button (click)="previousPage()">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+            <div class="paging">
+                <h5>{{ showing }}</h5>
+            </div>
+            <mat-select [(value)]="take" class="take-select">
+                <mat-option [value]="5">5</mat-option>
+                <mat-option [value]="10">10</mat-option>
+                <mat-option [value]="15">15</mat-option>
+                <mat-option [value]="20">20</mat-option>
+                <mat-option [value]="25">25</mat-option>
+            </mat-select>
+            <mat-select [(value)]="sortBy" class="take-select sort-select">
+                <mat-option [value]="1">A to Z</mat-option>
+                <mat-option [value]="2">Popularity</mat-option>
+            </mat-select>
+            <button class="paging-button" [disabled]="isLastPage" mat-button (click)="nextPage()">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
         </div>
     </div>
     <div class="team" *ngFor="let team of teams">
-        <team-card
-            [team]="team"
-            [canDelete]="hasControls(team)"
-            [canEdit]="hasControls(team)"
-            [canLink]="hasControls(team)"
-            (onDelete)="deleteTeam($event.id)"
-            (onFilterUser)="filterByUser($event)"
-            (onChangeLike)="changeLike($event)"
-        ></team-card>
+        <team-card [team]="team" [canDelete]="hasControls(team)" [canEdit]="hasControls(team)"
+            [canLink]="hasControls(team)" (onDelete)="deleteTeam($event.id)" (onFilterUser)="filterByUser($event)"
+            (onChangeLike)="changeLike($event)"></team-card>
     </div>
+    <div *ngIf="!loading && teams.length > 0" class="controls paging-control">
+        <button class="paging-button" [disabled]="isFirstPage" mat-button (click)="previousPage()">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <div class="paging">
+            <h5>{{ showing }}</h5>
+        </div>
+        <mat-select [(value)]="take" class="take-select">
+            <mat-option [value]="5">5</mat-option>
+            <mat-option [value]="10">10</mat-option>
+            <mat-option [value]="15">15</mat-option>
+            <mat-option [value]="20">20</mat-option>
+            <mat-option [value]="25">25</mat-option>
+        </mat-select>
+        <mat-select [(value)]="sortBy" class="take-select sort-select">
+            <mat-option [value]="1">A to Z</mat-option>
+            <mat-option [value]="2">Popularity</mat-option>
+        </mat-select>
+        <button class="paging-button" [disabled]="isLastPage" mat-button (click)="nextPage()">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+    </div>
+    <mat-card *ngIf="!loading && teams.length === 0">
+        <!-- There are currently no teams.
+        <button mat-button class="build-button" routerLink="/build">
+            Build a Team
+        </button> -->
+        No teams were found.
+    </mat-card>
 </div>

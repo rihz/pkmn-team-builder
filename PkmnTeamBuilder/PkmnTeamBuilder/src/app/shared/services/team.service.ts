@@ -37,25 +37,26 @@ export class TeamService extends BaseService {
         team.members.forEach((value, index, array) => {
             value.userId = userId;
         });
-        
+
         return this.http.put(this.baseUrl + `/team/`, team);
     }
 
-    public getAllTeams(skip: number, take: number) {
+    public getAllTeams(skip: number, take: number): Observable<any> {
         return this.http.get(this.baseUrl + `/team?skip=${skip}&take=${take}`);
     }
 
-    public getTeamsForUser(skip: number, take: number, search: string) {
+    public getTeamsForUser(skip: number, take: number, search: string): Observable<any> {
         return this.http.get(this.baseUrl + `/team?skip=${skip}&take=${take}&filterType=7&search=${search}`);
     }
 
-    public getFilteredTeams(skip: number, take: number, filterType: number, search: string) {
+    public getFilteredTeams(skip: number, take: number, 
+        filterType: number, search: string, sortBy: number): Observable<any> {
         return this.http.get(this.baseUrl +
-            `/team?skip=${skip}&take=${take}&filterType=${filterType}&search=${search}`
+            `/team?skip=${skip}&take=${take}&filterType=${filterType}&search=${search}&sort=${sortBy}`
         );
     }
 
-    public getMyTeams(userId: string) {
+    public getMyTeams(userId: string): Observable<any> {
         return this.http.get(this.baseUrl + `/team/user/${userId}`);
     }
 

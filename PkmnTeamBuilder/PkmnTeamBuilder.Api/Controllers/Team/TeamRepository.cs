@@ -12,8 +12,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
     public interface ITeamRepository
     {
         TeamModel GetTeam(string code);
-        IEnumerable<TeamModel> GetAllTeams(int skip, int take, int filterType, string search);
-        IEnumerable<TeamModel> GetMyTeams(string userId);
+        TeamSearchResultModel GetAllTeams(int skip, int take, int filterType, string search, int sort);
+        TeamSearchResultModel GetMyTeams(string userId);
         TeamModel AddTeam(TeamModel model);
         TeamModel UpdateTeam(TeamModel model);
         IEnumerable<TeamMember> AddTeamMembers(IEnumerable<TeamMemberModel> members);
@@ -167,21 +167,21 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             return mappedTeam;
         }
 
-        public IEnumerable<TeamModel> GetAllTeams(int skip, int take, int filterType, string search)
+        public TeamSearchResultModel GetAllTeams(int skip, int take, int filterType, string search, int sort)
         {
-            var teams = FilterTeams(skip, take, filterType, search);
+            var result = FilterTeams(skip, take, filterType, search, sort);
 
-            foreach (var team in teams)
+            foreach (var team in result.Teams)
             {
                 var members = _context.TeamMembers.Where(y => y.TeamId == team.Id);
 
                 team.Members = GetTeamMembers(members);
             }
 
-            return teams;
+            return result;
         }
 
-        public IEnumerable<TeamModel> GetMyTeams(string userId)
+        public TeamSearchResultModel GetMyTeams(string userId)
         {
             var teams = _context.Team
                             .Include(x => x.Likes)
@@ -196,7 +196,11 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                 team.Members = GetTeamMembers(members);
             }
 
-            return mappedTeams;
+            return new TeamSearchResultModel
+            {
+                Teams = mappedTeams,
+                Total = teams.Count()
+            };
         }
 
         public void DeleteTeam(int id)
@@ -227,10 +231,10 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
             _context.SaveChanges();
         }
-
-        IEnumerable<TeamModel> FilterTeams(int skip, int take, int filterType, string search)
+        TeamSearchResultModel FilterTeams(int skip, int take, int filterType, string search, int sort)
         {
-            var teams = new List<TeamModel>();
+            IQueryable<Entities.Team.Team> teams;
+            var result = new TeamSearchResultModel();
 
             if (search != null)
             {
@@ -243,10 +247,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                             .Include(x => x.Members)
                                 .ThenInclude(x => x.TeamMember)
                                     .ThenInclude(x => x.Ability)
-                            .Where(x => x.Members.Any(y => y.TeamMember.Ability.Name.ToLower().Contains(search.ToLower())))
-                            .Skip(skip)
-                            .Take(take)
-                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                            .Where(x => x.Members.Any(y => y.TeamMember.Ability.Name.ToLower().Contains(search.ToLower())));
                         break;
                     case 2:
                         teams = _context.Team
@@ -255,10 +256,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                             .Include(x => x.Members)
                                 .ThenInclude(x => x.TeamMember)
                                     .ThenInclude(x => x.Item)
-                            .Where(x => x.Members.Any(y => y.TeamMember.Item.Name.ToLower().Contains(search.ToLower())))
-                            .Skip(skip)
-                            .Take(take)
-                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                            .Where(x => x.Members.Any(y => y.TeamMember.Item.Name.ToLower().Contains(search.ToLower())));
                         break;
                     case 3:
                         teams = _context.Team
@@ -281,10 +279,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                                 || x.Members.Any(y => y.TeamMember.Move2.Name.ToLower().Contains(search.ToLower()))
                                 || x.Members.Any(y => y.TeamMember.Move3.Name.ToLower().Contains(search.ToLower()))
                                 || x.Members.Any(y => y.TeamMember.Move4.Name.ToLower().Contains(search.ToLower()))
-                            )
-                            .Skip(skip)
-                            .Take(take)
-                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                            );
                         break;
                     case 4:
                         teams = _context.Team
@@ -293,10 +288,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                             .Include(x => x.Members)
                                 .ThenInclude(x => x.TeamMember)
                                     .ThenInclude(x => x.Nature)
-                            .Where(x => x.Members.Any(y => y.TeamMember.Nature.Name.ToLower().Contains(search.ToLower())))
-                            .Skip(skip)
-                            .Take(take)
-                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                            .Where(x => x.Members.Any(y => y.TeamMember.Nature.Name.ToLower().Contains(search.ToLower())));
                         break;
                     case 5:
                         teams = _context.Team
@@ -308,36 +300,24 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                             .Where(x =>
                                 x.Members.Any(y => y.TeamMember.Nickname.ToLower().Contains(search.ToLower()))
                                 || x.Members.Any(y => y.TeamMember.Pokemon.Name.ToLower().Contains(search.ToLower()))
-                            )
-                            .Skip(skip)
-                            .Take(take)
-                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                            );
                         break;
                     case 6:
                         teams = _context.Team
                             .Include(x => x.User)
                             .Include(x => x.Likes)
-                            .Where(x => x.Name.ToLower().Contains(search.ToLower()))
-                            .Skip(skip)
-                            .Take(take)
-                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                            .Where(x => x.Name.ToLower().Contains(search.ToLower()));
                         break;
                     case 7:
                         teams = _context.Team
                             .Include(x => x.User)
                             .Include(x => x.Likes)
-                            .Where(x => x.User.UserName == search)
-                            .Skip(skip)
-                            .Take(take)
-                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                            .Where(x => x.User.UserName == search);
                         break;
                     default:
                         teams = _context.Team
                             .Include(x => x.User)
-                            .Include(x => x.Likes)
-                            .Skip(skip)
-                            .Take(take)
-                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                            .Include(x => x.Likes);
                         break;
                 }
             }
@@ -345,13 +325,18 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             {
                 teams = _context.Team
                     .Include(x => x.User)
-                    .Include(x => x.Likes)
-                    .Skip(skip)
-                    .Take(take)
-                    .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                    .Include(x => x.Likes);
             }
 
-            return teams;
+            teams = SortTeams(teams, sort);
+
+            result.Teams = teams
+                .Skip(skip)
+                .Take(take)
+                .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+            result.Total = teams.Count();
+
+            return result;
         }
 
         public LikeModel UpdateLike(int teamId, string userId)
@@ -405,6 +390,18 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             );
 
             _context.SaveChanges();
+        }
+
+        IQueryable<Entities.Team.Team> SortTeams(IQueryable<Entities.Team.Team> teams, int sort)
+        {
+            switch(sort)
+            {
+                default:
+                case 1:
+                    return teams.OrderBy(x => x.Name);
+                case 2:
+                    return teams.OrderByDescending(x => x.Likes.Count);
+            }
         }
 
         IEnumerable<TeamMemberModel> GetTeamMembers(IEnumerable<TeamMembers> memberRefs)

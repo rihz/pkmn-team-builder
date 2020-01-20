@@ -22,7 +22,7 @@
                 </button>
                 <button (click)="updateLike()" [disabled]="ownedTeam" mat-icon-button class="like-button" [matBadge]="team.likes"
                     matBadgePosition="above before">
-                    <mat-icon [ngClass]="{'disliked': !liked}">thumb_up</mat-icon>
+                    <mat-icon class="like-icon" [ngClass]="{'disliked': !liked}">thumb_up</mat-icon>
                 </button>
             </div>
         </div>

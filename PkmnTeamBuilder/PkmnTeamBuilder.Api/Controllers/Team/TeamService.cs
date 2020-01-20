@@ -10,8 +10,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         TeamModel GetTeam(string code);
         TeamModel AddTeam(TeamModel model);
         TeamModel UpdateTeam(TeamModel model);
-        IEnumerable<TeamModel> GetAllTeams(int skip, int take, int filterType, string search);
-        IEnumerable<TeamModel> GetMyTeams(string userId);
+        TeamSearchResultModel GetAllTeams(int skip, int take, int filterType, string search, int sort);
+        TeamSearchResultModel GetMyTeams(string userId);
         void DeleteTeam(int id);
         void LinkTeam(string code, string userId);
 
@@ -42,12 +42,12 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             return _repo.UpdateTeam(model);
         }
 
-        public IEnumerable<TeamModel> GetAllTeams(int skip, int take, int filterType, string search)
+        public TeamSearchResultModel GetAllTeams(int skip, int take, int filterType, string search, int sort)
         {
-            return _repo.GetAllTeams(skip, take, filterType, search);
+            return _repo.GetAllTeams(skip, take, filterType, search, sort);
         }
 
-        public IEnumerable<TeamModel> GetMyTeams(string userId)
+        public TeamSearchResultModel GetMyTeams(string userId)
         {
             return _repo.GetMyTeams(userId);
         }

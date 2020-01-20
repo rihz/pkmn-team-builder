@@ -27,4 +27,10 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
         public IEnumerable<TeamMemberModel> Members { get; set; }
     }
+
+    public class TeamSearchResultModel
+    {
+        public IEnumerable<TeamModel> Teams { get; set; }
+        public int Total { get; set; }
+    }
 }
