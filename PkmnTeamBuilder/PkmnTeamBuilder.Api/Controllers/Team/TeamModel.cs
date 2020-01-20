@@ -19,6 +19,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
         public int Likes { get; set; }
 
+        public string[] LikedBy { get; set; }
+
         public string Code { get; set; }
 
         public DateTime LastModified { get; set; }

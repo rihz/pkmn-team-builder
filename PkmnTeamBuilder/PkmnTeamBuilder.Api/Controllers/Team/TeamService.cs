@@ -15,7 +15,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         void DeleteTeam(int id);
         void LinkTeam(string code, string userId);
 
-        int UpdateLike(int teamId, string userId);
+        LikeModel UpdateLike(int teamId, string userId);
     }
 
     public class TeamService : ITeamService
@@ -62,7 +62,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             _repo.LinkTeam(code, userId);
         }
 
-        public int UpdateLike(int teamId, string userId)
+        public LikeModel UpdateLike(int teamId, string userId)
         {
             return _repo.UpdateLike(teamId, userId);
         }

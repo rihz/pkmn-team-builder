@@ -47,7 +47,9 @@ namespace PkmnTeamBuilder.Api.Controllers
                 .ForMember(x => x.Members, y => y.Ignore())
                 .ReverseMap()
                 .ForMember(x => x.Members, y => y.Ignore())
-                .ForMember(x => x.UserName, y => y.MapFrom(z => z.User.UserName));
+                .ForMember(x => x.UserName, y => y.MapFrom(z => z.User.UserName))
+                .ForMember(x => x.Likes, y => y.MapFrom(z => z.Likes.Count))
+                .ForMember(x => x.LikedBy, y => y.MapFrom(z => z.Likes.Select(aa => aa.UserId).ToArray()));
         }
     }
 }

@@ -3,13 +3,15 @@
         <div class="team-name">
             <div class="name-details">
                 <h3>{{ team.name }}</h3>
-                <h6>Created by: 
-                    <span *ngIf="team.userName" class="user-name" (click)="filterByUser(team.userName)" matTooltipClass="tooltip" matTooltip="Filter teams for this user">{{ team.userName }}</span>
+                <h6>Created by:
+                    <span *ngIf="team.userName" class="user-name" (click)="filterByUser(team.userName)"
+                        matTooltipClass="tooltip" matTooltip="Filter teams for this user">{{ team.userName }}</span>
                     <span *ngIf="!team.userName">Anonymous</span>
                 </h6>
             </div>
             <div class="controls">
-                <button *ngIf="canLink" [copy-clipboard]="teamUrl" (copied)="copyLink($event)" class="action-button" mat-mini-fab>
+                <button *ngIf="canLink" [copy-clipboard]="teamUrl" (copied)="copyLink($event)" class="action-button"
+                    mat-mini-fab>
                     <mat-icon>link</mat-icon>
                 </button>
                 <button *ngIf="canEdit" (click)="edit()" class="action-button" mat-mini-fab>
@@ -18,8 +20,9 @@
                 <button *ngIf="canDelete" (click)="delete()" class="action-button" mat-mini-fab>
                     <mat-icon>close</mat-icon>
                 </button>
-                <button mat-icon-button>
-                    <mat-icon class="like-badge" [matBadge]="team.likes" matBadgePosition="above before">thumb_up</mat-icon>
+                <button (click)="updateLike()" [disabled]="ownedTeam" mat-icon-button class="like-button" [matBadge]="team.likes"
+                    matBadgePosition="above before">
+                    <mat-icon [ngClass]="{'disliked': !liked}">thumb_up</mat-icon>
                 </button>
             </div>
         </div>

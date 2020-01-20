@@ -24,6 +24,7 @@
             [canLink]="hasControls(team)"
             (onDelete)="deleteTeam($event.id)"
             (onFilterUser)="filterByUser($event)"
+            (onChangeLike)="changeLike($event)"
         ></team-card>
     </div>
 </div>

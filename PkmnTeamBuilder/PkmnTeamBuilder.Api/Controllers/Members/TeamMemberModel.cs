@@ -62,6 +62,10 @@ namespace PkmnTeamBuilder.Api.Controllers
 
         public string Notes { get; set; }
 
+        public int Likes { get; set; }
+
+        public string[] LikedBy { get; set; }
+
         public PokemonModel Pokemon { get; set; }
 
         public AbilityModel Ability { get; set; }
@@ -77,5 +81,11 @@ namespace PkmnTeamBuilder.Api.Controllers
         public MoveModel Move3 { get; set; }
 
         public MoveModel Move4 { get; set; }
+    }
+
+    public class LikeModel
+    {
+        public int Likes { get; set; }
+        public string[] LikedBy { get; set; }
     }
 }

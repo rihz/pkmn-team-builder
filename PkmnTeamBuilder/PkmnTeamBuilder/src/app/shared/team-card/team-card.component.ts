@@ -19,16 +19,38 @@ export class TeamCardComponent implements OnInit {
   selectedMembers: TeamMember[] = [];
   @Output() onDelete = new EventEmitter<Team>();
   @Output() onFilterUser = new EventEmitter<string>();
+  @Output() onChangeLike = new EventEmitter<number>();
 
   constructor(private router: Router,
     private config: ConfigService,
     private snackBar: MatSnackBar) { }
+
+  get liked(): boolean {
+    const userId = localStorage.getItem('userId');
+
+    if(userId) {
+      return this.team.likedBy.findIndex(x => x === userId) > -1;
+    } else {
+      return false;
+    }
+  }
+
+  get ownedTeam(): boolean {
+    const userId = localStorage.getItem('userId');
+
+    if(userId) {
+      return this.team.userId === userId;
+    } else {
+      return false;
+    }
+  }
 
   get teamUrl(): string {
     return this.config.getBaseURL() + `/teams/${this.team.code}`;
   }
 
   ngOnInit() {
+    console.log(this.team);
     if(this.expandAll) {
       Object.assign(this.selectedMembers, this.team.members);
     }
@@ -65,6 +87,10 @@ export class TeamCardComponent implements OnInit {
 
   filterByUser(userName: string) {
     this.onFilterUser.emit(userName);
+  }
+
+  updateLike() {
+    this.onChangeLike.emit(this.team.id);
   }
 
 }

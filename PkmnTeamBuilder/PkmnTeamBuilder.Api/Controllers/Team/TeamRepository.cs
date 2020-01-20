@@ -22,7 +22,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
         void LinkTeam(string code, string userId);
 
-        int UpdateLike(int teamId, string userId);
+        LikeModel UpdateLike(int teamId, string userId);
     }
 
     public class TeamRepository : ITeamRepository
@@ -118,7 +118,9 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
         public TeamModel GetTeam(string code)
         {
-            var team = _context.Team.FirstOrDefault(x => x.Code == code);
+            var team = _context.Team
+                            .Include(x => x.Likes)
+                            .FirstOrDefault(x => x.Code == code);
 
             var mappedTeam = _mapper.Map<TeamModel>(team);
 
@@ -181,7 +183,9 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
         public IEnumerable<TeamModel> GetMyTeams(string userId)
         {
-            var teams = _context.Team.Where(x => x.UserId == userId);
+            var teams = _context.Team
+                            .Include(x => x.Likes)
+                            .Where(x => x.UserId == userId);
 
             var mappedTeams = teams.Select(x => _mapper.Map<TeamModel>(x)).ToList();
 
@@ -235,6 +239,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                     case 1:
                         teams = _context.Team
                             .Include(x => x.User)
+                            .Include(x => x.Likes)
                             .Include(x => x.Members)
                                 .ThenInclude(x => x.TeamMember)
                                     .ThenInclude(x => x.Ability)
@@ -246,6 +251,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                     case 2:
                         teams = _context.Team
                             .Include(x => x.User)
+                            .Include(x => x.Likes)
                             .Include(x => x.Members)
                                 .ThenInclude(x => x.TeamMember)
                                     .ThenInclude(x => x.Item)
@@ -257,6 +263,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                     case 3:
                         teams = _context.Team
                             .Include(x => x.User)
+                            .Include(x => x.Likes)
                             .Include(x => x.Members)
                                 .ThenInclude(x => x.TeamMember)
                                     .ThenInclude(x => x.Move1)
@@ -282,6 +289,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                     case 4:
                         teams = _context.Team
                             .Include(x => x.User)
+                            .Include(x => x.Likes)
                             .Include(x => x.Members)
                                 .ThenInclude(x => x.TeamMember)
                                     .ThenInclude(x => x.Nature)
@@ -293,6 +301,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                     case 5:
                         teams = _context.Team
                             .Include(x => x.User)
+                            .Include(x => x.Likes)
                             .Include(x => x.Members)
                                 .ThenInclude(x => x.TeamMember)
                                     .ThenInclude(x => x.Pokemon)
@@ -307,6 +316,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                     case 6:
                         teams = _context.Team
                             .Include(x => x.User)
+                            .Include(x => x.Likes)
                             .Where(x => x.Name.ToLower().Contains(search.ToLower()))
                             .Skip(skip)
                             .Take(take)
@@ -315,6 +325,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                     case 7:
                         teams = _context.Team
                             .Include(x => x.User)
+                            .Include(x => x.Likes)
                             .Where(x => x.User.UserName == search)
                             .Skip(skip)
                             .Take(take)
@@ -323,6 +334,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                     default:
                         teams = _context.Team
                             .Include(x => x.User)
+                            .Include(x => x.Likes)
                             .Skip(skip)
                             .Take(take)
                             .Select(x => _mapper.Map<TeamModel>(x)).ToList();
@@ -333,6 +345,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             {
                 teams = _context.Team
                     .Include(x => x.User)
+                    .Include(x => x.Likes)
                     .Skip(skip)
                     .Take(take)
                     .Select(x => _mapper.Map<TeamModel>(x)).ToList();
@@ -341,25 +354,32 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             return teams;
         }
 
-        public int UpdateLike(int teamId, string userId)
+        public LikeModel UpdateLike(int teamId, string userId)
         {
             var existing = _context.TeamLikes.FirstOrDefault(x => x.TeamId == teamId && x.UserId == userId);
 
-            if(existing == default(TeamLike))
+            if (existing == default(TeamLike))
             {
                 _context.TeamLikes.Add(new TeamLike
                 {
                     TeamId = teamId,
                     UserId = userId
                 });
-            } else
+            }
+            else
             {
                 _context.TeamLikes.Remove(existing);
             }
 
             _context.SaveChanges();
 
-            return _context.TeamLikes.Where(x => x.TeamId == teamId).Count();
+            var likes = _context.TeamLikes.Where(x => x.TeamId == teamId);
+
+            return new LikeModel
+            {
+                Likes = likes.Count(),
+                LikedBy = likes.Select(x => x.UserId).ToArray()
+            };
         }
 
         string GenerateCode(int size)

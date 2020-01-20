@@ -128,6 +128,7 @@ export class Team {
     name = '';
     description = '';
     likes = 0;
+    likedBy: string[] = [];
     code = '';
     members: TeamMember[] = [];
     lastModified: Date = new Date();

@@ -70,4 +70,8 @@ export class TeamService extends BaseService {
     public linkTeam(code: string, userId: string) {
         return this.http.patch(this.baseUrl + `/team/${code}/link/${userId}`, null);
     }
+
+    public updateLike(teamId: number, userId: string): Observable<any> {
+        return this.http.put(this.baseUrl + `/team/${teamId}/like/${userId}`, null);
+    }
 }

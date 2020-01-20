@@ -106,4 +106,17 @@ export class TeamViewerComponent implements OnInit {
       && localStorage.getItem('username') === team.userName;
   }
 
+  changeLike(teamId: number) {
+    const userId = localStorage.getItem('userId');
+
+    if(userId) {
+      this.teamService.updateLike(teamId, userId)
+        .subscribe(result => {
+          let team = this.teams.find(x => x.id === teamId);
+          team.likes = result.likes;
+          team.likedBy = result.likedBy;
+        })
+    }
+  }
+
 }
