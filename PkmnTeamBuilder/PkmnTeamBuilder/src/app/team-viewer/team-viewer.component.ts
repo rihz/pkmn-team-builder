@@ -78,6 +78,17 @@ export class TeamViewerComponent implements OnInit {
   filterByUser(userName: string) {
     this.selectedFilter = 7;
     this.filter = userName;
+
+    this.loading = true;
+    this.teamService.getTeamsForUser(this.skip, this.take, userName)
+      .subscribe(result => {
+        this.loading = false;
+        this.teams = result;
+      });
+  }
+
+  hasControls(team: Team): boolean {
+    return localStorage.getItem('username') === team.userName;
   }
 
 }

@@ -19,32 +19,11 @@
     <div class="team" *ngFor="let team of teams">
         <team-card
             [team]="team"
-            [canDelete]="true"
-            [canEdit]="true"
-            [canLink]="true"
+            [canDelete]="hasControls(team)"
+            [canEdit]="hasControls(team)"
+            [canLink]="hasControls(team)"
             (onDelete)="deleteTeam($event.id)"
             (onFilterUser)="filterByUser($event)"
         ></team-card>
-        <!-- <div class="team-name">
-            <h3>{{ team.name }}</h3>
-            <div class="controls">
-                <button mat-icon-button>
-                    <mat-icon>edit</mat-icon>
-                </button>
-                <button (click)="deleteTeam(team.id)" mat-icon-button>
-                    <mat-icon>close</mat-icon>
-                </button>
-            </div>
-        </div>
-        <div class="team-members">
-            <div class="member" *ngFor="let member of team.members">
-                <div class="member-name">
-                    {{ member.nickname !== '' ? member.nickname : member.pokemon.name }}
-                </div>
-                <div class="member-sprite">
-                    <img [src]="member.pokemon.icon" />
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>

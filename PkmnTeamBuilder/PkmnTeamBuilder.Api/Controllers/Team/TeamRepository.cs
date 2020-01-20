@@ -12,7 +12,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
     public interface ITeamRepository
     {
         TeamModel GetTeam(string code);
-        IEnumerable<TeamModel> GetAllTeams(int skip, int take);
+        IEnumerable<TeamModel> GetAllTeams(int skip, int take, int filterType, string search);
         IEnumerable<TeamModel> GetMyTeams(string userId);
         TeamModel AddTeam(TeamModel model);
         TeamModel UpdateTeam(TeamModel model);
@@ -73,7 +73,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             var team = _mapper.Map<Entities.Team.Team>(model);
 
             DeleteTeamMembers(model.Id);
-            
+
             var members = AddTeamMembers(model.Members);
 
             _context.Update(team);
@@ -163,15 +163,30 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             return mappedTeam;
         }
 
-        public IEnumerable<TeamModel> GetAllTeams(int skip, int take)
+        public IEnumerable<TeamModel> GetAllTeams(int skip, int take, int filterType, string search)
         {
-            var teams = _context.Team
-                .Include(x => x.User)
-                .Skip(skip)
-                .Take(take)
-                .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+            var teams = new List<TeamModel>();
 
-            foreach(var team in teams)
+            switch (filterType)
+            {
+                case 7:
+                    teams = _context.Team
+                        .Include(x => x.User)
+                        .Where(x => x.User.UserName == search)
+                        .Skip(skip)
+                        .Take(take)
+                        .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                    break;
+                default:
+                    teams = _context.Team
+                        .Include(x => x.User)
+                        .Skip(skip)
+                        .Take(take)
+                        .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                    break;
+            }
+
+            foreach (var team in teams)
             {
                 var members = _context.TeamMembers.Where(y => y.TeamId == team.Id);
 
@@ -217,7 +232,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
             var members = _context.TeamMembers.Where(x => x.TeamId == team.Id);
 
-            foreach(var member in members)
+            foreach (var member in members)
             {
                 var m = _context.TeamMember.First(x => x.Id == member.TeamMemberId);
                 m.UserId = userId;
