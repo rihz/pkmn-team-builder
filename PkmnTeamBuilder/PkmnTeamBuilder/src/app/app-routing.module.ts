@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'account', loadChildren: './account/account.module#AccountModule' },
   { path: 'build', loadChildren: './team-builder/team-builder.module#TeamBuilderModule' },
-  { path: 'teams', loadChildren: './team-viewer/team-viewer.module#TeamViewerModule', canActivate: [AuthGuard] }
+  { path: 'teams', loadChildren: './team-viewer/team-viewer.module#TeamViewerModule' }
 ];
 
 const config: ExtraOptions = {

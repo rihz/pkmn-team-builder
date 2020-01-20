@@ -23,6 +23,7 @@ namespace PkmnTeamBuilder.Data.Context
         public DbSet<PokemonStat> PokemonStat { get; set; }
         public DbSet<TeamMember> TeamMember { get; set; }
         public DbSet<Team> Team { get; set; }
+        public DbSet<TeamLike> TeamLikes { get; set; }
         public DbSet<TeamMembers> TeamMembers { get; set; }
         public DbSet<NewsItem> News { get; set; }
 
@@ -218,6 +219,24 @@ namespace PkmnTeamBuilder.Data.Context
                     .HasForeignKey(y => y.UserId)
                     .OnDelete(DeleteBehavior.Restrict)
                     .HasConstraintName("FK_Team_User");
+            });
+
+            builder.Entity<TeamLike>(x =>
+            {
+                x.HasKey(a => a.Id);
+                x.Property(a => a.Id).ValueGeneratedOnAdd();
+
+                x.HasOne(a => a.Team)
+                    .WithMany(a => a.Likes)
+                    .HasForeignKey(a => a.TeamId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_TeamLikes_Team");
+
+                x.HasOne(a => a.User)
+                    .WithMany(a => a.TeamLikes)
+                    .HasForeignKey(a => a.UserId)
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .HasConstraintName("FK_User_TeamMember");
             });
 
             builder.Entity<TeamMembers>(x =>

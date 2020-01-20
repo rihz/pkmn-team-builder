@@ -14,6 +14,7 @@ import { TeamService } from '../shared/services/team.service';
 export class TeamViewerComponent implements OnInit {
   teams: any;
   loading = true;
+  initialLoad = true;
   skip = 0;
   take = 10;
   filters = [
@@ -34,6 +35,18 @@ export class TeamViewerComponent implements OnInit {
 
   ngOnInit() {
     this.getAllTeams();
+  }
+
+  changeFilter(e: any) {
+    this.filter = e.target.value;
+
+    this.loading = true;
+    this.teams = [];
+    this.teamService.getFilteredTeams(this.skip, this.take, this.selectedFilter, this.filter)
+      .subscribe(result => {
+        this.loading = false;
+        this.teams = result;
+      });
   }
 
   deleteTeam(id: number) {
@@ -60,6 +73,7 @@ export class TeamViewerComponent implements OnInit {
     this.teamService.getAllTeams(this.skip, this.take)
       .subscribe(x => {
         this.loading = false;
+        this.initialLoad = false;
         this.teams = x;
       })
   }
@@ -88,7 +102,8 @@ export class TeamViewerComponent implements OnInit {
   }
 
   hasControls(team: Team): boolean {
-    return localStorage.getItem('username') === team.userName;
+    return localStorage.getItem('username')
+      && localStorage.getItem('username') === team.userName;
   }
 
 }

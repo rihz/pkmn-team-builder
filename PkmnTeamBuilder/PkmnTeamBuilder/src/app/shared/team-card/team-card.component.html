@@ -18,6 +18,9 @@
                 <button *ngIf="canDelete" (click)="delete()" class="action-button" mat-mini-fab>
                     <mat-icon>close</mat-icon>
                 </button>
+                <button mat-icon-button>
+                    <mat-icon class="like-badge" [matBadge]="team.likes" matBadgePosition="above before">thumb_up</mat-icon>
+                </button>
             </div>
         </div>
         <div class="team-makeup">

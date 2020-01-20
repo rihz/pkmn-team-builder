@@ -49,6 +49,12 @@ export class TeamService extends BaseService {
         return this.http.get(this.baseUrl + `/team?skip=${skip}&take=${take}&filterType=7&search=${search}`);
     }
 
+    public getFilteredTeams(skip: number, take: number, filterType: number, search: string) {
+        return this.http.get(this.baseUrl +
+            `/team?skip=${skip}&take=${take}&filterType=${filterType}&search=${search}`
+        );
+    }
+
     public getMyTeams(userId: string) {
         return this.http.get(this.baseUrl + `/team/user/${userId}`);
     }

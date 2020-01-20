@@ -14,13 +14,13 @@ namespace PkmnTeamBuilder.Entities.Team
 
         public string Description { get; set; }
 
-        public int Likes { get; set; }
-
         public string Code { get; set; }
 
         public DateTime LastModified { get; set; }
 
         public virtual ICollection<TeamMembers> Members { get; set; }
+
+        public virtual ICollection<TeamLike> Likes { get; set; }
 
         public virtual AppUser User { get; set; }
     }

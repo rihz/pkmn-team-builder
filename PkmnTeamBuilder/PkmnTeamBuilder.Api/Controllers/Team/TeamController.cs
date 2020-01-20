@@ -67,5 +67,12 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
             return Ok();
         }
+
+        [Route("{id}/like/{userId}")]
+        [HttpPut]
+        public IActionResult UpdateLike(int id, string userId)
+        {
+            return Ok(_service.UpdateLike(id, userId));
+        }
     }
 }

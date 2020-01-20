@@ -6,14 +6,14 @@
             Build a Team
         </button>
     </mat-card>
-    <div class="controls" *ngIf="!loading && teams.length > 0">
+    <div class="controls" *ngIf="!initialLoad">
         <div class="main-control">
             <mat-select [(value)]="selectedFilter" class="filter-select">
                 <mat-option *ngFor="let filter of filters" [value]="filter.value">
                     {{ filter.name }}
                 </mat-option>
             </mat-select>
-            <input [(value)]="filter" matInput class="filter-input" placeholder="Search" />
+            <input (input)="changeFilter($event)" [value]="filter" matInput class="filter-input" placeholder="Search" />
         </div>
     </div>
     <div class="team" *ngFor="let team of teams">

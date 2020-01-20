@@ -21,6 +21,8 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
         void DeleteTeam(int id);
 
         void LinkTeam(string code, string userId);
+
+        int UpdateLike(int teamId, string userId);
     }
 
     public class TeamRepository : ITeamRepository
@@ -165,26 +167,7 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
 
         public IEnumerable<TeamModel> GetAllTeams(int skip, int take, int filterType, string search)
         {
-            var teams = new List<TeamModel>();
-
-            switch (filterType)
-            {
-                case 7:
-                    teams = _context.Team
-                        .Include(x => x.User)
-                        .Where(x => x.User.UserName == search)
-                        .Skip(skip)
-                        .Take(take)
-                        .Select(x => _mapper.Map<TeamModel>(x)).ToList();
-                    break;
-                default:
-                    teams = _context.Team
-                        .Include(x => x.User)
-                        .Skip(skip)
-                        .Take(take)
-                        .Select(x => _mapper.Map<TeamModel>(x)).ToList();
-                    break;
-            }
+            var teams = FilterTeams(skip, take, filterType, search);
 
             foreach (var team in teams)
             {
@@ -239,6 +222,144 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
             }
 
             _context.SaveChanges();
+        }
+
+        IEnumerable<TeamModel> FilterTeams(int skip, int take, int filterType, string search)
+        {
+            var teams = new List<TeamModel>();
+
+            if (search != null)
+            {
+                switch (filterType)
+                {
+                    case 1:
+                        teams = _context.Team
+                            .Include(x => x.User)
+                            .Include(x => x.Members)
+                                .ThenInclude(x => x.TeamMember)
+                                    .ThenInclude(x => x.Ability)
+                            .Where(x => x.Members.Any(y => y.TeamMember.Ability.Name.ToLower().Contains(search.ToLower())))
+                            .Skip(skip)
+                            .Take(take)
+                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                        break;
+                    case 2:
+                        teams = _context.Team
+                            .Include(x => x.User)
+                            .Include(x => x.Members)
+                                .ThenInclude(x => x.TeamMember)
+                                    .ThenInclude(x => x.Item)
+                            .Where(x => x.Members.Any(y => y.TeamMember.Item.Name.ToLower().Contains(search.ToLower())))
+                            .Skip(skip)
+                            .Take(take)
+                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                        break;
+                    case 3:
+                        teams = _context.Team
+                            .Include(x => x.User)
+                            .Include(x => x.Members)
+                                .ThenInclude(x => x.TeamMember)
+                                    .ThenInclude(x => x.Move1)
+                            .Include(x => x.Members)
+                                .ThenInclude(x => x.TeamMember)
+                                    .ThenInclude(x => x.Move2)
+                            .Include(x => x.Members)
+                                .ThenInclude(x => x.TeamMember)
+                                    .ThenInclude(x => x.Move3)
+                            .Include(x => x.Members)
+                                .ThenInclude(x => x.TeamMember)
+                                    .ThenInclude(x => x.Move4)
+                            .Where(x =>
+                                x.Members.Any(y => y.TeamMember.Move1.Name.ToLower().Contains(search.ToLower()))
+                                || x.Members.Any(y => y.TeamMember.Move2.Name.ToLower().Contains(search.ToLower()))
+                                || x.Members.Any(y => y.TeamMember.Move3.Name.ToLower().Contains(search.ToLower()))
+                                || x.Members.Any(y => y.TeamMember.Move4.Name.ToLower().Contains(search.ToLower()))
+                            )
+                            .Skip(skip)
+                            .Take(take)
+                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                        break;
+                    case 4:
+                        teams = _context.Team
+                            .Include(x => x.User)
+                            .Include(x => x.Members)
+                                .ThenInclude(x => x.TeamMember)
+                                    .ThenInclude(x => x.Nature)
+                            .Where(x => x.Members.Any(y => y.TeamMember.Nature.Name.ToLower().Contains(search.ToLower())))
+                            .Skip(skip)
+                            .Take(take)
+                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                        break;
+                    case 5:
+                        teams = _context.Team
+                            .Include(x => x.User)
+                            .Include(x => x.Members)
+                                .ThenInclude(x => x.TeamMember)
+                                    .ThenInclude(x => x.Pokemon)
+                            .Where(x =>
+                                x.Members.Any(y => y.TeamMember.Nickname.ToLower().Contains(search.ToLower()))
+                                || x.Members.Any(y => y.TeamMember.Pokemon.Name.ToLower().Contains(search.ToLower()))
+                            )
+                            .Skip(skip)
+                            .Take(take)
+                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                        break;
+                    case 6:
+                        teams = _context.Team
+                            .Include(x => x.User)
+                            .Where(x => x.Name.ToLower().Contains(search.ToLower()))
+                            .Skip(skip)
+                            .Take(take)
+                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                        break;
+                    case 7:
+                        teams = _context.Team
+                            .Include(x => x.User)
+                            .Where(x => x.User.UserName == search)
+                            .Skip(skip)
+                            .Take(take)
+                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                        break;
+                    default:
+                        teams = _context.Team
+                            .Include(x => x.User)
+                            .Skip(skip)
+                            .Take(take)
+                            .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+                        break;
+                }
+            }
+            else
+            {
+                teams = _context.Team
+                    .Include(x => x.User)
+                    .Skip(skip)
+                    .Take(take)
+                    .Select(x => _mapper.Map<TeamModel>(x)).ToList();
+            }
+
+            return teams;
+        }
+
+        public int UpdateLike(int teamId, string userId)
+        {
+            var existing = _context.TeamLikes.FirstOrDefault(x => x.TeamId == teamId && x.UserId == userId);
+
+            if(existing == default(TeamLike))
+            {
+                _context.TeamLikes.Add(new TeamLike
+                {
+                    TeamId = teamId,
+                    UserId = userId
+                });
+            } else
+            {
+                _context.TeamLikes.Remove(existing);
+            }
+
+            _context.SaveChanges();
+
+            return _context.TeamLikes.Where(x => x.TeamId == teamId).Count();
         }
 
         string GenerateCode(int size)

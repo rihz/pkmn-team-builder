@@ -188,3 +188,18 @@ th.mat-header-cell {
 .filter-select .mat-select-arrow {
     color: var(--button-color);
 }
+
+.mat-select-panel-wrap .mat-select-panel {
+    font-size: 12px !important;
+    background-color: var(--button);
+}
+
+.mat-select-panel-wrap .mat-select-panel .mat-option {
+    color: var(--button-color);
+}
+
+.like-badge .mat-badge-content {
+    left: 15px !important;
+    top: -10px !important;
+    background-color: transparent;
+}
