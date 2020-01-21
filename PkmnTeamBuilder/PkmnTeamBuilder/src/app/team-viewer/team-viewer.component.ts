@@ -24,8 +24,9 @@ export class TeamViewerComponent implements OnInit {
     { name: "Move", value: 3 },
     { name: "Nature", value: 4 },
     { name: "Pokemon", value: 5 },
-    { name: "Team", value: 6 },
+    { name: "Team Name", value: 6 },
     { name: "User", value: 7 },
+    { name: "Team Code", value: 8 }
   ];
   _selectedFilter = 5;
   _sortBy = 2;

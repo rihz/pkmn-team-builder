@@ -314,6 +314,12 @@ namespace PkmnTeamBuilder.Api.Controllers.Team
                             .Include(x => x.Likes)
                             .Where(x => x.User.UserName == search);
                         break;
+                    case 8:
+                        teams = _context.Team
+                            .Include(x => x.User)
+                            .Include(x => x.Likes)
+                            .Where(x => x.Code == search);
+                        break;
                     default:
                         teams = _context.Team
                             .Include(x => x.User)
