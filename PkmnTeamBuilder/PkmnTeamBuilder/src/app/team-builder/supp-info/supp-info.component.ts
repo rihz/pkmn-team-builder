@@ -34,6 +34,13 @@ export class SuppInfoComponent implements OnInit {
   @Input() member: TeamMember;
   @Input() items: Item[];
 
+  get abilities(): Ability[] {
+    return this.member.pokemon.abilities
+      .sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+      .filter((thing, index, self) =>
+        self.findIndex(t => t.name === thing.name) === index);
+  }
+
   get selectedAbility() {
     return this.member.ability 
       ? this.member.ability
@@ -65,7 +72,7 @@ export class SuppInfoComponent implements OnInit {
       width: '600px',
       data: {
         displayedColumns: ['name', 'description'],
-        selections: this.member.pokemon.abilities
+        selections: this.abilities
       },
       panelClass: 'selector-panel'
     });
